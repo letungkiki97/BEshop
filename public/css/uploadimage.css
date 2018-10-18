@@ -1,0 +1,123 @@
+.image-item{
+    width: 19%;
+    float: left;
+    text-align: center;
+    height: 160px;
+    margin-right: 1%;
+    border: 1px solid #ccc;
+    padding: 10px 0px;
+    margin-bottom: 1%;
+    cursor: pointer;
+}
+.image-item.active{
+    box-shadow: 2px 2px 4px -1px;
+}
+.wrap-loading-icon {
+    display: none;
+    position: absolute;
+    right: 220px;
+    width: auto;
+    top: -34px;
+}
+.lds-dual-ring{
+    width: 15px;
+    height: 15px;
+    margin: 0 auto;
+}
+.lds-dual-ring:after{
+    width: 15px;
+    height: 15px;
+    content: " ";
+    display: block;
+    margin: 1px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    border-color: #000 transparent #000 transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+.wrap-library .wrap-loading-icon{
+    width: 100%;
+    position: relative;
+    margin-top: 10px;
+    right: inherit;
+    top: inherit;
+}
+.wrap-library .lds-dual-ring {
+    width: 30px;
+    height: 30px;
+}
+.wrap-library .lds-dual-ring:after {
+    width: 30px;
+    height: 30px;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.lazy-image{
+    width: auto;
+    max-height: 140px;
+    max-width: 170px;
+}
+.search_images{
+    position: absolute;
+    right: 28px;
+    top: -41px;
+    height: 32px;
+    border: 1px solid #ccc;
+    padding: 0px 10px;
+}
+.wrap-check-icon{
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    background-color: #0073aa;
+    padding-top: 3px;
+    top: 0px;
+    right: -1px;
+    display: none;
+}
+.wrap-check-icon i{
+    color: #fff;
+}
+.image-item.active .wrap-check-icon{
+    display: inline-block;
+}
+.ajax-file-upload-statusbar{
+    width: 48%;
+    float: left;
+}
+#url td {
+    padding: 10px;
+}
+.modal-f{
+    text-align: right;
+    padding-right: 27px;
+    padding-top: 15px;
+    position: absolute;
+    right: -1px;
+    bottom: -4px;
+}
+.modal-h{
+    text-align: right;
+    padding-right: 0px;
+    padding-top: 15px;
+    display: inline-block;
+    width: 100%;
+}
+#uploadModal .tab-content > .active{
+    display: inline-block;
+}
+.ajax-file-upload-filename{
+    display: none;
+}
+#uploadModal.modal, #editModal.modal{
+    z-index: 10000;
+}
+.wrap-image-page img{
+    max-width: 200px;
+}

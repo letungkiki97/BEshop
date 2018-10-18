@@ -1,0 +1,20 @@
+<?php 
+return array (
+  'date_range' => 'Date Range',
+  'day' => 'Day',
+  'month' => 'Month',
+  'profitability' => 'Profitability',
+  'purchase' => 'Purchase report',
+  'revenue' => 'Revenue report',
+  'sales' => 'Sales',
+  'sales_by_agent' => 'Sales By Sales Agent',
+  'sales_by_category' => 'Sales By Product Category',
+  'sales_by_channel' => 'Request By Channel',
+  'sales_by_customer' => 'Sales By Customer Type',
+  'title' => 'Dashboard',
+  'top_ten_request' => 'Top 10 Products (Request)',
+  'top_ten_request-by-order' => 'Top 10 Products (Request) - by # orders',
+  'top_ten_sales' => 'Top 10 Products (Sales)',
+  'top_ten_sales-by-order' => 'Top 10 Products (Sales) - by # orders',
+  'week' => 'Week',
+);
