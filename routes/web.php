@@ -7,6 +7,13 @@ Route::pattern('slug3', '[a-z0-9-_]+');
 Route::pattern('id', '[0-9]+');
 
 /******************   APP routes  ********************************/
+Route::get('/trangchu','FrontendController@index');
+Route::get('/productall','FrontendController@productall');
+Route::get('/contact','FrontendController@contact');
+Route::get('/introduce','FrontendController@introduce');
+Route::get('/blog','FrontendController@blog');
+
+
 
 Route::get('/', 'Users\DashboardController@index');
 Route::get('home', 'Users\DashboardController@index');
