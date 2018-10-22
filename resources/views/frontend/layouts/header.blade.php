@@ -14,7 +14,7 @@
 			<div class="header-navbar text-right">
 				<ul class="no-bullets">
 					<li class="active ">
-						<a href="index.html" class="text-center">
+						<a href="{{url('/trangchu')}}" class="text-center">
 							<span>Trang chủ</span>
 
 						</a>
