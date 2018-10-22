@@ -58,14 +58,6 @@
             </div>
         </div>
         <div class="clear"></div>
-        <div class="form-group col-xs-6 {{ $errors->has('counter') ? 'has-error' : '' }}">
-            {!! Form::label('counter', __('category.counter'), array('class' => 'control-label')) !!}
-            <div class="controls">
-                {!! Form::text('counter', null, array('class' => 'form-control')) !!}
-                <span class="help-block">{{ $errors->first('counter', ':message') }}</span>
-            </div>
-        </div>
-        <div class="clear"></div>
 
         <!-- upload IMG -->
         <div class="form-group fileinput col-xs-6 fileinput-{{isset($category) && $category->image ? 'exists' : 'new' }}" data-provides="fileinput">
@@ -88,32 +80,6 @@
             </div>
         </div>
         <div class="clear"></div>
-        <!-- End upload IMG -->
-
-        {!! Form::label('feature', __('common.feature'), array('class' => 'control-label col-xs-12')) !!}
-        <div id="sortable" class='form-group col-xs-12'>
-            @if(isset($category) && $category->category_feature->count())
-                @foreach ($category->category_feature as $k => $v)
-                <div class="ui-state-default" style="overflow: hidden; padding: 10px 0; margin: 10px 0">
-                    <div class="controls col-xs-4">
-                        <select name="feature[]" class="form-control feature">
-                            <option value="{{$v->feature->id}}">{{$v->feature->name}}</option>
-                        </select>
-                    </div>
-                    <div class="col-xs-8">
-                        <a href="javascript:void(0)" class="remove-item">
-                            <i class="fa fa-times fa-fw pull-right text-danger"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="clear"></div>
-                @endforeach
-            @endif
-        </div>
-        <div class="form-group col-xs-12">
-        <button type="button" id="add-feature" class="btn btn-primary">{{__('form.add_feature')}}</button>
-        </div>
-
         <!-- Form Actions -->
         <div class="form-group col-xs-12">
             <div class="controls">
@@ -124,9 +90,6 @@
                 @endif
             </div>
         </div>
-        <!-- ./ form actions -->
-
-        {!! Form::close() !!}
     </div>
 </div>
 

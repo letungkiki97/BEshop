@@ -1,7 +1,7 @@
 <?php 
 return array (
   'code' => 'Code',
-  'counter' => 'Counter',
+  'loaisp' => 'Thuộc loại',
   'edit' => 'Edit product category',
   'meta_description' => 'Meta title',
   'meta_title' => 'Meta description',

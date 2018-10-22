@@ -6,7 +6,6 @@ use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
-use App\Models\CategoryFeature;
 use Yajra\Datatables\Datatables;
 use App\Helpers\Functions;
 use App\Models\Image;
@@ -84,18 +83,6 @@ class CategoryController extends UserController
 
         $category = Category::create($request->except('feature', 'image_file'));
 
-        $i = 0;
-        if ($request->feature) {
-            foreach ($request->feature as $f) {
-            $i++;
-                $feature = new CategoryFeature;
-                $feature->category_id = $category->id;
-                $feature->feature_id = $f;
-                $feature->order = $i;
-                $feature->save();
-            }
-        }
-
         return redirect("category");
     }
 
@@ -129,18 +116,7 @@ class CategoryController extends UserController
         $request->merge(['image' => $image]);
 
         $category->update($request->except('category_id', 'feature', 'image_file'));
-        $category->feature()->detach();
-        $i = 0;
-        if ($request->feature) {
-            foreach ($request->feature as $f) {
-            $i++;
-                $feature = new CategoryFeature;
-                $feature->category_id = $category->id;
-                $feature->feature_id = $f;
-                $feature->order = $i;
-                $feature->save();
-            }
-        }
+        
         return redirect($request->session()->get('redirect_category'));
     }
 
