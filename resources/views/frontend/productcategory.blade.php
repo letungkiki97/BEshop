@@ -1,5 +1,5 @@
 @extends('frontend.layouts.master')
-@section('title', 'Tất cả sản phẩm')
+@section('title', 'Sản phẩm theo danh mục')
 @section('Content')
 @include('frontend.layouts.breadcrumb')
 <div id="PageContainer" class="is-moved-by-drawer">
@@ -14,7 +14,7 @@
                                     <div class="grid">
                                         <div class="grid__item large--seven-twelfths medium--one-half small--one-whole">
                                             <div class="collection-title">
-                                                <h1>Tất cả sản phẩm</h1>
+                                                <h1>Danh mục: </h1>
                                             </div>
                                         </div>
                                         <div class="grid__item large--five-twelfths medium--one-half small--one-whole">
@@ -63,40 +63,17 @@
                                 </div>
                                 <div class="collection-body">
                                     <div class="grid-uniform product-list md-mg-left-5">
-
-
-
                                         <div class="grid__item large--one-third medium--one-third small--one-half md-pd-left5">
-
-
-
-
-
-
-
 
                                             <div class="product-item">
                                                 <div class="product-img">
                                                     <a href="../products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-9.html">
 
-
-
-
-
                                                         <img id="1090801495" src="http://product.hstatic.net/1000305059/product/suplo-012a-01_b4073d98b6534c619a361549e0b2f118_large.jpg"
                                                             alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
 
-
-
-
-
-
                                                         <img id="1090801496" src="http://product.hstatic.net/1000305059/product/suplo-007a-01_0f20da25349d4464bcb9e87104b92602_large.jpg"
                                                             alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
-
-
-
-
 
 
                                                     </a>
@@ -134,57 +111,15 @@
                                         </div>
                                         <div class="grid__item large--one-third medium--one-third small--one-half md-pd-left5">
 
-
-
-
-
-
-
-
-
-
                                             <div class="product-item">
                                                 <div class="product-img">
                                                     <a href="../products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-6.html">
 
-
-
-
-
                                                         <img id="1090799919" src="http://product.hstatic.net/1000305059/product/suplo-009a-01_large.jpg"
                                                             alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
 
-
-
-
-
-
                                                         <img id="1090799920" src="http://product.hstatic.net/1000305059/product/suplo-010a-01_large.jpg"
                                                             alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
                                                     </a>
@@ -226,9 +161,6 @@
                                             </div>
 
                                         </div>
-
-
-
                                     </div>
                                     <div class="pagination not-filter">
                                         <div id="pagination-" class="text-center clear-left">

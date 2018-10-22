@@ -13,6 +13,9 @@ Route::get('/contact','FrontendController@contact');
 Route::get('/introduce','FrontendController@introduce');
 Route::get('/blog','FrontendController@blog');
 
+/******************   san pham  ********************************/
+Route::get('/productcategory','FrontendController@productcategory');
+Route::get('/productdetail','FrontendController@productdetail');
 
 
 Route::get('/', 'Users\DashboardController@index');
