@@ -56,9 +56,10 @@ class FrontendController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function search()
     {
         //
+        return view('frontend.search');
     }
 
     /**

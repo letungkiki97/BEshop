@@ -24,7 +24,7 @@
 
 					</li>
 					<li class=" megamenu">
-						<a href="{{url('/productall')}}" class="text-center">
+						<a href="{{url('/san-pham')}}" class="text-center">
 							<span>Sản phẩm của chúng tôi</span>
 							<i class="fas fa-caret-down"></i>
 						</a>
@@ -50,7 +50,7 @@
 
 					</li>
 					<li class=" ">
-						<a href="{{url('/contact')}}" class="text-center">
+						<a href="{{url('/lien-he')}}" class="text-center">
 							<span>Liên hệ</span>
 						</a>
 					</li>
@@ -124,7 +124,7 @@
 					</li>
 
 					<li class=" ">
-						<a href="{{url('/introduce')}}" class="text-center">
+						<a href="{{url('/gioi-thieu')}}" class="text-center">
 							<span>Về chúng tôi</span>
 						</a>
 					</li>
