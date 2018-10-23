@@ -18,7 +18,8 @@ class ProductController extends Controller
         //
         $product = Product::get();
         $categoryparents = Category::where('parent_id',0)->get();
-        return view('frontend.home',compact('product','categoryparents'));
+        $productmaymocs = Product::where('catego',2)->get();
+        return view('frontend.home',compact('product','categoryparents','productmaymocs'));
     }
     public function productall()
     {

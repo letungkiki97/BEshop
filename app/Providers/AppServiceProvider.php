@@ -88,7 +88,11 @@ class AppServiceProvider extends ServiceProvider
     	Schema::defaultStringLength(191);
         $this->setDbConfigurations();
         $categorys = Category::get();
-        view()->share( 'categorys', $categorys );
+        $categotype = [1 => 'From mẫu ô tô', 2 => 'Máy móc công nghệ', 3 => 'Nguyên liệu vật tư',];
+        view()->share([
+            'categorys'=>$categorys,
+            'categotype'=>$categotype
+        ]);
     }
 
     /**
