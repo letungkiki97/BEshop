@@ -122,18 +122,6 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,900&amp;subset=vietnamese" rel="stylesheet">
 
-
-
-
-
-
-
-
-
-
-
-
-
 	<script>
 		window.file_url = "http://file.hstatic.net/1000305059/file/";
 		window.asset_url = "http://theme.hstatic.net/1000305059/1000394224/14/?v=3593";
@@ -290,7 +278,11 @@
 		}
 	</script>
 
-
+<style>
+	.phpdebugbar-restore-btn{
+		display: none !important;
+	}
+</style>
 
 
 
