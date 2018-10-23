@@ -25,7 +25,7 @@ class CategoryRequest extends Request
     public function rules()
     {
         return [
-            'name'    => 'required|unique:categories,name,'.$this->category_id,
+            'name'    => 'required',
             'code'  => 'required|unique:categories,code,'.$this->category_id,
         ];
     }

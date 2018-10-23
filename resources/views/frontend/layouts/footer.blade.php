@@ -16,25 +16,24 @@
 
                             </div>
                             <div class="ft-contact-desc">
-                                Suplo cam kết nỗ lực hết mình nhằm cung cấp sản phẩm và dịch vụ đúng với những giá trị
-                                mà khách hàng mong đợi.
+                                {{@Settings::get('slogan')}}
                             </div>
                             <div class="ft-contact-address">
                                 <span class="ft-contact-icon"><i class="fas fa-map-marker-alt"></i></span>
                                 <div class="ft-contact-detail">
-                                    Địa chỉ: <span>Số 1 Lương Yên, Q.Hai Bà Trưng, Hà Nội</span>
+                                    Địa chỉ: <span>{{@Settings::get('address')}}</span>
                                 </div>
                             </div>
                             <div class="ft-contact-tel">
                                 <span class="ft-contact-icon"><i class="fas fa-phone"></i></span>
                                 <div class="ft-contact-detail">
-                                    Số điện thoại: <a href="tel:(+84) 934 323 882">(+84) 934 323 882</a>
+                                    Số điện thoại: <a href="tel:{{@Settings::get('hotline')}}">{{@Settings::get('hotline')}}</a>
                                 </div>
                             </div>
                             <div class="ft-contact-email">
                                 <span class="ft-contact-icon"><i class="fas fa-envelope"></i></span>
                                 <div class="ft-contact-detail">
-                                    Email: <a href="mailto:support@suplo.vn">support@suplo.vn</a>
+                                    Email: <a href="mailto:{{@Settings::get('site_email')}}">{{@Settings::get('site_email')}}</a>
                                 </div>
                             </div>
                         </div>

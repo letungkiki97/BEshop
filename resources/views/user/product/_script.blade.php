@@ -28,7 +28,7 @@
     $("#main_sku").autocomplete({
         source: function(request, response) {
             $.ajax({
-                url: '{{ url('product/suggest') }}',
+                url: '{{ url('quantri/product/suggest') }}',
                 type: 'post',
                 data: {
                     _token : '{{ csrf_token() }}',
@@ -52,7 +52,7 @@
         });
         if (combine.length) {
             $.ajax({
-                url : '{{ url('product/generate-variantions') }}',
+                url : '{{ url('quantri/product/generate-variantions') }}',
                 type : 'POST',
                 data : {
                     _token : '{{ csrf_token() }}',
@@ -120,7 +120,7 @@
                 return false;
             }
             $.ajax({
-                url : '{{ url('product/save-variantions') }}',
+                url : '{{ url('quantri/product/save-variantions') }}',
                 type : 'POST',
                 data : {
                     _token : '{{ csrf_token() }}',
@@ -141,7 +141,7 @@
     @endif
     $('#category_id').change(function () {
         $.ajax({
-            url : '{{ url('product/sku') }}',
+            url : '{{ url('quantri/product/sku') }}',
             type : 'POST',
             data : {
                 _token : '{{ csrf_token() }}',
@@ -164,7 +164,7 @@
     $('body').on("click", ".showclass", function (e) {
         var eye = $(this);
         $.ajax({
-            url : '{{ url('product/update-status') }}',
+            url : '{{ url('quantri/product/update-status') }}',
             data : {
                 _token : '{{ csrf_token() }}',
                 id : $(this).data('id'),
@@ -232,13 +232,13 @@
         });
     }
 
-    var galleryObj = upFile("#fileuploader", "{{ url('product/upload') }}", doSuccess); 
+    var galleryObj = upFile("#fileuploader", "{{ url('quantri/product/upload') }}", doSuccess);
 
     $("#gallery_close").click(function(e) {
         galleryObj.startUpload();
         if ($('#url-upload').val()) {
             $.ajax({
-                url : '{{ url('product/upload-from-url') }}',
+                url : '{{ url('quantri/product/upload-from-url') }}',
                 data : {
                     _token : '{{ csrf_token() }}',
                     url : $('#url-upload').val(),

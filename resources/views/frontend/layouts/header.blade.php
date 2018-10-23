@@ -1,12 +1,15 @@
 <div class="header-desktop">
 	<div class="inner">
 		<div class="header-logo">
-
-
 			<h1>
-				<a href="index.html">
-					Suplo Car | Cửa hàng phụ kiện,đồ chơi, nội thất xe hơi chính hãng<img src="http://theme.hstatic.net/1000305059/1000394224/14/logo.png?v=3593"
+				<a href="{{url('/')}}">
+					{{@Settings::get('site_name')}}
+					@if (Settings::get('site_logo'))
+						<img src="{{asset('uploads/site'). '/' . Settings::get('site_logo')}}" style="max-height: 45px">
+					@else
+					<img src="http://theme.hstatic.net/1000305059/1000394224/14/logo.png?v=3593"
 					 alt="Suplo Car | Cửa hàng phụ kiện,đồ chơi, nội thất xe hơi chính hãng" />
+					@endif
 				</a>
 			</h1>
 		</div>
@@ -14,7 +17,7 @@
 			<div class="header-navbar text-right">
 				<ul class="no-bullets">
 					<li class="active ">
-						<a href="{{url('/trangchu')}}" class="text-center">
+						<a href="{{url('/')}}" class="text-center">
 							<span>Trang chủ</span>
 
 						</a>
@@ -27,135 +30,30 @@
 						</a>
 
 						<ul class="no-bullets megamenu-menu clearfix">
-
-							<li>
+                            @foreach($categorys as $k=>$v)
+								@if(empty($v->parent_id))
+								<li>
 								<a href="collections/all.html">
-									Phụ kiện xe hơi
-
+								   {{$v->name}}
 								</a>
-
 								<ul class="no-bullets">
-
-									<li>
-										<a href="collections/all.html"> Lamboghini</a>
-									</li>
-
-									<li>
-										<a href="collections/all.html"> Misubisi</a>
-									</li>
-
-									<li>
-										<a href="collections/all.html"> Mecsedec</a>
-									</li>
-
-									<li>
-										<a href="collections/all.html"> Toyota</a>
-									</li>
-
-									<li>
-										<a href="collections/all.html"> Honda</a>
-									</li>
-
+									@foreach($v->categories as $k1=>$v1)
+										<li>
+											<a href="collections/all.html"> {{$v1->name}}</a>
+										</li>
+									@endforeach
 								</ul>
-
-							</li>
-
-							<li>
-								<a href="collections/all.html">
-									Đồ chơi xe hơi
-
-								</a>
-
-								<ul class="no-bullets">
-
-									<li>
-										<a href="collections/all.html"> Toyota</a>
-									</li>
-
-									<li>
-										<a href="collections/all.html"> Mec-se-dec</a>
-									</li>
-
-									<li>
-										<a href="collections/all.html"> Honda</a>
-									</li>
-
-									<li>
-										<a href="collections/all.html"> Misubishi</a>
-									</li>
-
-									<li>
-										<a href="collections/all.html"> Lexus</a>
-									</li>
-
-								</ul>
-
-							</li>
-
-							<li>
-								<a href="collections/all.html">
-									Nội thất xe hơi
-
-								</a>
-
-								<ul class="no-bullets">
-
-									<li>
-										<a href="collections/all.html"> Honda</a>
-									</li>
-
-									<li>
-										<a href="collections/all.html"> Yamaha</a>
-									</li>
-
-									<li>
-										<a href="collections/all.html"> Lexus</a>
-									</li>
-
-									<li>
-										<a href="collections/all.html"> Lamboghini</a>
-									</li>
-
-									<li>
-										<a href="collections/all.html"> Mec-xe-dec</a>
-									</li>
-
-								</ul>
-
-							</li>
-
-							<li>
-								<a href="collections/all.html">
-									Các sản phẩm khác
-
-								</a>
-
-								<ul class="no-bullets">
-
-									<li>
-										<a href="collections/all.html"> Wave</a>
-									</li>
-
-									<li>
-										<a href="collections/all.html"> X- men</a>
-									</li>
-
-								</ul>
-
-							</li>
-
+								</li>
+								@endif
+                            @endforeach
 						</ul>
 
 					</li>
 					<li class=" ">
 						<a href="{{url('/contact')}}" class="text-center">
 							<span>Liên hệ</span>
-
 						</a>
-
 					</li>
-
-
 
 					<li class=" dropdown">
 						<a href="{{url('/blog')}}" class="text-center">
@@ -225,34 +123,22 @@
 
 					</li>
 
-
-
 					<li class=" ">
 						<a href="{{url('/introduce')}}" class="text-center">
 							<span>Về chúng tôi</span>
-
 						</a>
-
 					</li>
-
-
 
 					<li class=" ">
 						<a href="#" class="text-center">
 							<span>Hướng dẫn mua hàng</span>
-
 						</a>
-
 					</li>
-
-
 
 					<li class=" ">
 						<a href="#" class="text-center">
 							<span>Hệ thống cửa hàng</span>
-
 						</a>
-
 					</li>
 
 				</ul>

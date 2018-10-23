@@ -4,7 +4,13 @@ namespace App\Http\Controllers\Users;
 
 use App\Http\Controllers\UserController;
 use App\Models\Product;
+use App\Models\Category;
+use App\Models\Color;
+use App\Models\Image;
+use App\Models\ProductColor;
 use Illuminate\Http\Request;
+use App\Helpers\Functions;
+use App\Http\Requests\ProductRequest;
 use Excel;
 use DB;
 
@@ -29,7 +35,7 @@ class ProductController extends UserController
         if ($this->user->hasAccess(['product.created'])) {
             $product = $product->where(function ($q) {
                 $q->where('user_id', $this->user->id)
-                    ->orWhere('assigned_to', $this->user->id);
+                ->orWhere('assigned_to', $this->user->id);
             });
         }
         if ($this->user->hasAccess(['product.published'])) {
@@ -46,12 +52,12 @@ class ProductController extends UserController
             }
             $product = $product->where(function ($q) use ($request, $timsst) {
                 $q->where('id', 'like', '%' . $request->search . '%')
-                    ->orWhere('product_name', 'like', '%' . $request->search . '%')
-                    ->orWhere('product_sku', 'like', '%' . $request->search . '%')
-                    ->orWhereHas('category', function ($q) use ($request) {
-                        $q->where('name', 'like', '%' . $request->search . '%');
-                    })
-                    ->orWhere('main_sku', 'like', '%' . $request->search . '%');
+                ->orWhere('product_name', 'like', '%' . $request->search . '%')
+                ->orWhere('product_sku', 'like', '%' . $request->search . '%')
+                ->orWhereHas('category', function ($q) use ($request) {
+                    $q->where('name', 'like', '%' . $request->search . '%');
+                })
+                ->orWhere('main_sku', 'like', '%' . $request->search . '%');
                 if ($timsst !== null) {
                     $q->orWhere('status', $timsst);
                 }
@@ -66,5 +72,330 @@ class ProductController extends UserController
         return view('user.product.index', compact('title', 'product', 'page_info'));
     }
 
+    public function create()
+    {
+        $title = __('product.new');
+
+        $this->generateParams(0);
+
+        return view('user.product.create', compact('title'));
+    }
+
+    public function store(ProductRequest $request)
+    {
+        $i = 0;
+        $slug = $request->slug ?: str_slug($request->product_name);
+        $newSlug = $slug;
+        while (Product::where('slug', $newSlug)->first()) {
+            $i++;
+            $newSlug = $slug . '-' . $i;
+        }
+        $request->merge(['slug' => $newSlug]);
+
+        $file_array = [];
+        if ($request->hasFile('file_3d_file')) {
+            foreach ($request->file('file_3d_file') as $file_3d_file) {
+                $file_array[] = $this->uploadFile($file_3d_file, 'products');
+            }
+        }
+        $file_3d = $file_array ? implode(',', $file_array) : null;
+        $request->merge(['file_3d' => $file_3d]);
+
+        if (!$request->product_image && $request->image_gallery) {
+            $request->merge(['product_image' => $request->image_gallery[0]]);
+        }
+        $request->merge(['user_id' => $this->user->id]);
+        
+        $request->product_name = mb_strtoupper($request->product_name);
+        $request->merge(['product_name' => $request->product_name]);
+
+        if(!isset($request->hover_image)){
+            $request->merge(['hover_image' => 0]);
+        }
+        
+        $product = Product::create($request->except('file_3d_file', 'image_gallery', 'color'));
+
+        $colors = [];
+
+        if ($request->color) {
+            $colors = array_unique(array_merge($request->color, $colors));
+        }
+
+        $product->color()->sync($colors);
+
+        $product->images()->sync($request->image_gallery);
+
+        $this->changeImgInfomation($product->id);
+
+        return redirect("quantri/product/" .$product->id. "/edit" )->with('status', __('message.product_created'));
+    }
+
+    public function edit(Product $product)
+    {
+        $title = __('product.edit') . ' (' . $product->product_sku . ')';
+        $group = [];
+        $children = $product->getVariants()->get()->map(function($item) {
+            $name = $value = $code = [];
+            foreach ($item->variants as $key => $var) {
+                $name[] = $var->property->value;
+                $value[] = $var->property_id;
+                $code[] = $var->property->code;
+            }
+            return [
+                'id' => $item->id,
+                'name' => $item->product_name,
+                'code' => $item->product_sku,
+                'data-name' => implode($name, ' '),
+                'data-code' => implode($code, ''),
+                'value' => implode($value, '-'),
+                'sale_price' => number_format($item->sale_price),
+                'promotion_price' => number_format($item->promotion_price),
+                'promotion_date' => $item->promotion_from && $item->promotion_to ? $item->promotion_from . ' - ' . $item->promotion_to : '',
+                'professional_price' => number_format($item->professional_price),
+                'status' => $item->status,
+                'main_variant' => $item->main_variant,
+            ];
+        });
+        $product_feature = [];
+        $category_feature = [];
+        $property_feature = [];
+        $property_main = [];
+        $html = view('user.product._feature', compact('product_feature', 'category_feature', 'property_feature', 'property_main'))->render();
+
+        $unlink = explode(',', $product->unlink);
+
+        $this->generateParams($product->id);
+        $product_color = $product->color()->get()->pluck('id')->toArray();
+
+        return view('user.product.edit', compact('title', 'product', 'group', 'children', 'html', 'unlink', 'product_color'));
+    }
+
+    public function update(ProductRequest $request, Product $product)
+    {
+        $i = 0;
+        $slug = $request->slug ?: str_slug($request->product_name);
+        $newSlug = $slug;
+        while (Product::where('slug', $newSlug)->where('slug', '<>', $product->slug)->first()) {
+            $i++;
+            $newSlug = $slug . '-' . $i;
+        }
+        $request->merge(['slug' => $newSlug]);
+
+        $file_array = $request->old_file;
+
+        if ($request->hasFile('file_3d_file')) {
+            foreach ($request->file('file_3d_file') as $file_3d_file) {
+                $file_array[] = $this->uploadFile($file_3d_file, 'products');
+            }
+        }
+
+        $file_3d = $file_array ? implode(',', $file_array) : null;
+        $request->merge(['file_3d' => $file_3d]);
+        if (!$request->product_image) {
+            if ($request->image_gallery) {
+                $request->merge(['product_image' => $request->image_gallery[0]]);
+            } else {
+                $request->merge(['product_image' => null]);
+            }
+        }
+
+        $colors = [];
+
+        if ($product->parent && $product->parent->images) { 
+            $parent_gallery = $request->parent_gallery ?: [];
+            $parent_images = $product->parent->images->pluck('id')->toArray();
+            foreach ($parent_images as $k => $g) {
+                if (in_array($g, $parent_gallery)) {
+                    unset($parent_images[$k]);
+                }
+            }
+            if ($parent_images) {
+                $request->merge(['unlink' => implode(',', $parent_images)]);
+            }
+        } else {
+            $product_gallery = $request->image_gallery ?: [];
+            $product_images = $product->images->pluck('id')->toArray();
+            foreach ($product_images as $k => $g) {
+                if (!in_array($g, $product_gallery)) {
+                    Product::where('product_image', $g)->update(['product_image' => null]);
+                }
+            }
+        }
+
+        $request->product_name = mb_strtoupper($request->product_name);
+        $request->merge(['product_name' => $request->product_name]);
+
+        if(!isset($request->hover_image)){
+            $request->merge(['hover_image' => 0]);
+        }
+
+        $product->update($request->except('file_3d_file', 'old_file', 'image_gallery', 'parent_gallery', 'color', 'main_variant'));
+        
+        if (count($product->getVariants)) {
+            foreach ($product->getVariants as $key => $value) {
+                $value->published = $product->published;
+                $value->status = $product->status;
+                $value->category_id = $product->category_id;
+                if (count($value->variants)) {
+                    $property = [];
+                    foreach ($value->variants as $k => $v) {
+                        $property[$k][] = $v->property_id;
+                    }
+                    $code_gen = $this->getVar($property);
+                    $category = Category::find($product->category_id);
+                    $value->product_sku = $product->product_sku . $code_gen[0]['code'];
+                    $value->main_sku = $product->product_sku;
+                }
+                $value->update();
+            }
+        }
+
+        if ($request->feature) {
+            foreach ($request->feature as $id => $value) {
+                $product_feature = new ProductFeature;
+                $product_feature->product_id = $product->id;
+                $product_feature->feature_id = $id;
+                if (is_array($value)) {
+                    $product_feature->value = implode(',', $value);
+                } else {
+                    $product_feature->value = $value;
+                }
+                $product_feature->save();
+            }
+        }
+
+        ProductColor::where(['product_id' => $product->id])->delete();
+
+        if ($request->color) {
+            $colors = array_unique(array_merge($request->color, $colors));
+        }
+
+        $product->color()->sync($colors);
+        $product->images()->sync($request->image_gallery);
+
+        $this->changeImgInfomation($product->id);
+
+        return redirect($request->session()->get('redirect_product'))->with('status', __('message.product_updated'));
+    }
+
+    public function deleted(Request $request)
+    {
+        $length = $request->length ?: 50;
+        $product = Product::onlyTrashed()->orderBy('id', 'desc');
+        if ($request->search) {
+            $product = $product->where(function ($q) use ($request) {
+                $q->where('id', 'like', '%' . $request->search . '%')
+                    ->orwhere('product_name', 'like', '%' . $request->search . '%')
+                    ->orWhere('product_sku', 'like', '%' . $request->search . '%')
+                    ->orWhereHas('category', function ($q2) use ($request) {
+                        $q2->where('name', 'like', '%' . $request->search . '%');
+                    })
+                    ->orWhere('main_sku', 'like', '%' . $request->search . '%');
+            });
+        }
+        $count = $product->count();
+        $product = $product->paginate($length);
+        $page_info = $this->pageInfo($request->page, $length, $count);
+        $title = __('product.deleted');
+        return view('user.product.trash', compact('title', 'product', 'page_info'));
+    }
+    public function destroy(Product $product)
+    {
+        $count = 0;
+        if(!$count) {
+            $product->delete();
+            return 1;
+        }
+    }
+
+    private function generateParams($id = 0)
+    {
+
+        $categories = Category::orderBy("name", "asc")->get()->pluck('name','id');
+
+        $category = Category::orderBy("name", "asc")->get()->pluck('name','id')->prepend('Select a product type', '');
+
+        $toggle = [1 => 'Yes', 0 => 'No'];
+        $status = [1 => 'Active', 0 => 'Inactive'];
+
+        $colors = Color::all()->pluck('color', 'id')->prepend('Select color', '');
+        if ($id) {
+            $productGallery = Product::find($id)->images()->get();
+            
+            view()->share([
+                'productGallery' => $productGallery,
+            ]);
+        }
+
+        view()->share([
+            'categories' => $categories,
+            'category' => $category,
+            'toggle' => $toggle,
+            'status' => $status,
+            'colors' => $colors,
+        ]);
+    }
+    public function suggest(Request $request) {
+        $sku = DB::table('products')->select('product_name', 'main_sku')->where('main_sku', '<>', '')->distinct()->get()->map(function($item) {
+            return [
+                'name' => $item->product_name,
+                'value' => $item->main_sku
+            ];
+        });
+        return response()->json($sku, 200);
+    }
+    public function getSKU(Request $request) {
+        if ($request->category) {
+            return response()->json(Category::find($request->category)->getSKU($request->old_category), 200);
+        }
+    }
+    public function changeImgInfomation($id){
+        $current_img = Product::join('product_image', 'products.id', '=', 'product_image.product_id')
+        ->join('images', 'images.id', '=', 'product_image.image_id')
+        ->where('products.id', $id)
+        ->where('images.path', 'products')
+        ->select('products.product_sku', 'products.product_name', 'images.name as img_name', 'products.slug', 'images.id as img_id', 'images.alt as img_alt', 'images.title as img_title')
+        ->get();  
+
+        if(count($current_img) > 0){
+            $data_img = array(); 
+            foreach ($current_img as $item) {
+                $img_name           = $item->img_name;
+                $img_name_arr       = explode('.', $img_name);
+                $img_type           = trim($img_name_arr[count($img_name_arr) - 1]);
+                $new_img_name       = $item->product_sku.'-'.$item->slug.$item->img_id.'.'.$img_type;
+                $new_img_alt        = $item->img_alt;
+                $new_img_title      = $item->img_title;
+                if(!$item->img_alt){
+                    $new_img_alt    = $item->product_name;  
+                }
+                if(!$item->img_title){
+                    $new_img_title  = $item->product_name;
+                }
+                $data_img['name']   = $new_img_name;
+                $data_img['alt']    = $new_img_alt;
+                $data_img['title']  = $new_img_title;
+                $old_file_thumb     = $_SERVER['DOCUMENT_ROOT']."/uploads/products/thumb_".$img_name;
+                $old_file           = $_SERVER['DOCUMENT_ROOT']."/uploads/products/".$img_name;
+                if (file_exists($old_file)) {
+                    rename($old_file, $_SERVER['DOCUMENT_ROOT']."/uploads/products/".$new_img_name);
+                }
+                if (file_exists($old_file_thumb)) {
+                    rename($old_file_thumb, $_SERVER['DOCUMENT_ROOT']."/uploads/products/thumb_".$new_img_name);
+                }
+                
+                $update = Functions::insertUpdate('update', new Image, $item->img_id, $data_img);
+            }
+        }
+    }
+    public function upload(Request $request) {
+        $image      = Image::create([
+            'name'  => $this->uploadFile($request->file('gallery'), 'products'),
+            'alt'   => $request->img_alt,
+            'title' => $request->img_title,
+            'path'  => 'products',
+        ]);
+        return $image;
+    }
 
 }

@@ -71,7 +71,7 @@ class SettingsController extends UserController
             $extension = $file->getClientOriginalExtension();
             $site_logo = Str::slug(substr($filename, 0, strrpos($filename, "."))) . '_' . time() . '.' . $extension;
             if($file->move(public_path().'/uploads/site/', $site_logo) && Settings::get('site_logo')) {
-                unlink(public_path().'/uploads/site/'.Settings::get('site_logo'));
+                @unlink(public_path().'/uploads/site/'.Settings::get('site_logo'));
             }
         }
         $request->merge(['site_logo' => $site_logo]);
@@ -103,7 +103,7 @@ class SettingsController extends UserController
             Settings::set($key, $value);
         }
 
-		return redirect()->to('/setting')->with('status', __('message.setting_updated'));
+		return redirect()->to('quantri/setting')->with('status', __('message.setting_updated'));
 	}
 
 	/*
