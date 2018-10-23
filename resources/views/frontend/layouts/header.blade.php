@@ -52,7 +52,7 @@
 						</a>
 					</li>
 					<!-- <li class=" dropdown">
-						<a href="{{url('/blog')}}" class="text-center">
+						<a href="{url('/blog')}}" class="text-center">
 							<span>Blog</span>
 							<i class="fas fa-caret-down"></i>
 						</a>
@@ -449,7 +449,7 @@
 
 				</div>
 			</div>
-			<div class="header-account">
+			{{-- <div class="header-account">
 				<a href="javascript:void(0)" class="text-center" id="account-btn">
 					<i class="fas fa-user"></i>
 				</a>
@@ -461,7 +461,7 @@
 
 					</ul>
 				</div>
-			</div>
+			</div> --}}
 			<div class="desktop-cart-wrapper">
 				<a href="javascript:void(0)" class="hd-cart">
 					<i class="fas fa-shopping-cart"></i>

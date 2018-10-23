@@ -17,7 +17,7 @@
 
 	<!-- Title and description ================================================== -->
 	<title>
-		Tuấn Nguyên
+		Tuấn Nguyên | Công ty TNHH Tuấn Nguyên | Nhà cung cấp uy tín – Tất Cả Vì Xế Yêu Của Bạn
 	</title>
 
 	<meta name="description" content="tuannguyen168.vn">
@@ -82,18 +82,6 @@
 	</script>
 	<script async src='http://hstatic.net/0/0/global/haravan-analytics.min.js?v=3' type='text/javascript'></script>
 
-	<!-- /snippets/oldIE-js.liquid -->
-
-
-	<!--[if lt IE 9]>
-<script src='//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js' type='text/javascript'></script>
-<script src='//theme.hstatic.net/1000305059/1000394224/14/respond.min.js?v=3593' type='text/javascript'></script>
-<link href="//theme.hstatic.net/1000305059/1000394224/14/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
-<link href="//suplo-car-accesories.myharavan.com/search?q=4ce7df218c85347218f8038cb52b6a43" id="respond-redirect" rel="respond-redirect" />
-<script src="//suplo-car-accesories.myharavan.com/search?q=4ce7df218c85347218f8038cb52b6a43" type="text/javascript"></script>
-<![endif]-->
-
-
 	<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js' type='text/javascript'></script>
 	<script src='http://theme.hstatic.net/1000305059/1000394224/14/modernizr.min.js?v=3593' type='text/javascript'></script>
 
@@ -139,7 +127,7 @@
 			var js, fjs = d.getElementsByTagName(s)[0];
 			if (d.getElementById(id)) return;
 			js = d.createElement(s); js.id = id;
-			js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.11';
+			js.src = 'https://connect.facebook.net/vi_VN/sdk.js';
 			fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));</script>
 
@@ -167,39 +155,21 @@
 						</div>
 						<div class="popup-list">
 							<ul class="no-bullets">
-
-
-
-
 								<li>
 									Các sản phẩm khuyến mại với mức giá không thể thấp hơn.
 								</li>
-
-
-
-
 
 								<li>
 									Tin tức mới nhất về các sản phẩm mới, sản phẩm hot, flash sale, hot deal, ...
 								</li>
 
-
-
-
-
 								<li>
 									Các sản phẩm khuyến mại với mức giá không thể thấp hơn.
 								</li>
 
-
-
-
-
 								<li>
 									Tin tức mới nhất về các sản phẩm mới, sản phẩm hot, flash sale, hot deal, ...
 								</li>
-
-
 							</ul>
 						</div>
 						<div class="popup-form">
@@ -298,15 +268,9 @@
 		<!-- begin mobile-nav -->
 		<ul class="mobile-nav">
 
-
-
-
 			<li class="mobile-nav__item mobile-nav__item--active">
-				<a href="/" class="mobile-nav__link">Trang chủ</a>
+				<a href="{{url('/')}}" class="mobile-nav__link">Trang chủ</a>
 			</li>
-
-
-
 
 			<li class="mobile-nav__item" aria-haspopup="true">
 				<div class="mobile-nav__has-sublist">
@@ -323,10 +287,11 @@
 					</div>
 				</div>
 				<ul class="mobile-nav__sublist">
-
-					<li class="mobile-nav__item" aria-haspopup="true">
+					@foreach($categorys as $k=>$v)
+						@if(empty($v->parent_id))
+						<li class="mobile-nav__item" aria-haspopup="true">
 						<div class="mobile-nav__has-sublist">
-							<a href="collections/all.html" class="mobile-nav__link">Phụ kiện xe hơi</a>
+							<a href="{{url('productcategory/'.$v->slug)}}" class="mobile-nav__link">{{$v->name}}</a>
 
 							<div class="mobile-nav__toggle">
 								<button type="button" class="icon-fallback-text mobile-nav__toggle-open">
@@ -338,294 +303,38 @@
 									<span class="fallback-text">"Đóng"</span>
 								</button>
 							</div>
-
 						</div>
-
-						<ul class="mobile-nav__sublist">
-
-							<li class="mobile-nav__item ">
-								<a href="collections/all.html" class="mobile-nav__link">Lamboghini</a>
-							</li>
-
-							<li class="mobile-nav__item ">
-								<a href="collections/all.html" class="mobile-nav__link">Misubisi</a>
-							</li>
-
-							<li class="mobile-nav__item ">
-								<a href="collections/all.html" class="mobile-nav__link">Mecsedec</a>
-							</li>
-
-							<li class="mobile-nav__item ">
-								<a href="collections/all.html" class="mobile-nav__link">Toyota</a>
-							</li>
-
-							<li class="mobile-nav__item ">
-								<a href="collections/all.html" class="mobile-nav__link">Honda</a>
-							</li>
-
-						</ul>
-
-					</li>
-
-					<li class="mobile-nav__item" aria-haspopup="true">
-						<div class="mobile-nav__has-sublist">
-							<a href="collections/all.html" class="mobile-nav__link">Đồ chơi xe hơi</a>
-
-							<div class="mobile-nav__toggle">
-								<button type="button" class="icon-fallback-text mobile-nav__toggle-open">
-									<span class="icon icon-plus" aria-hidden="true"></span>
-									<span class="fallback-text">See More</span>
-								</button>
-								<button type="button" class="icon-fallback-text mobile-nav__toggle-close">
-									<span class="icon icon-minus" aria-hidden="true"></span>
-									<span class="fallback-text">"Đóng"</span>
-								</button>
-							</div>
-
-						</div>
-
-						<ul class="mobile-nav__sublist">
-
-							<li class="mobile-nav__item ">
-								<a href="collections/all.html" class="mobile-nav__link">Toyota</a>
-							</li>
-
-							<li class="mobile-nav__item ">
-								<a href="collections/all.html" class="mobile-nav__link">Mec-se-dec</a>
-							</li>
-
-							<li class="mobile-nav__item ">
-								<a href="collections/all.html" class="mobile-nav__link">Honda</a>
-							</li>
-
-							<li class="mobile-nav__item ">
-								<a href="collections/all.html" class="mobile-nav__link">Misubishi</a>
-							</li>
-
-							<li class="mobile-nav__item ">
-								<a href="collections/all.html" class="mobile-nav__link">Lexus</a>
-							</li>
-
-						</ul>
-
-					</li>
-
-					<li class="mobile-nav__item" aria-haspopup="true">
-						<div class="mobile-nav__has-sublist">
-							<a href="collections/all.html" class="mobile-nav__link">Nội thất xe hơi</a>
-
-							<div class="mobile-nav__toggle">
-								<button type="button" class="icon-fallback-text mobile-nav__toggle-open">
-									<span class="icon icon-plus" aria-hidden="true"></span>
-									<span class="fallback-text">See More</span>
-								</button>
-								<button type="button" class="icon-fallback-text mobile-nav__toggle-close">
-									<span class="icon icon-minus" aria-hidden="true"></span>
-									<span class="fallback-text">"Đóng"</span>
-								</button>
-							</div>
-
-						</div>
-
-						<ul class="mobile-nav__sublist">
-
-							<li class="mobile-nav__item ">
-								<a href="collections/all.html" class="mobile-nav__link">Honda</a>
-							</li>
-
-							<li class="mobile-nav__item ">
-								<a href="collections/all.html" class="mobile-nav__link">Yamaha</a>
-							</li>
-
-							<li class="mobile-nav__item ">
-								<a href="collections/all.html" class="mobile-nav__link">Lexus</a>
-							</li>
-
-							<li class="mobile-nav__item ">
-								<a href="collections/all.html" class="mobile-nav__link">Lamboghini</a>
-							</li>
-
-							<li class="mobile-nav__item ">
-								<a href="collections/all.html" class="mobile-nav__link">Mec-xe-dec</a>
-							</li>
-
-						</ul>
-
-					</li>
-
-					<li class="mobile-nav__item" aria-haspopup="true">
-						<div class="mobile-nav__has-sublist">
-							<a href="collections/all.html" class="mobile-nav__link">Các sản phẩm khác</a>
-
-							<div class="mobile-nav__toggle">
-								<button type="button" class="icon-fallback-text mobile-nav__toggle-open">
-									<span class="icon icon-plus" aria-hidden="true"></span>
-									<span class="fallback-text">See More</span>
-								</button>
-								<button type="button" class="icon-fallback-text mobile-nav__toggle-close">
-									<span class="icon icon-minus" aria-hidden="true"></span>
-									<span class="fallback-text">"Đóng"</span>
-								</button>
-							</div>
-
-						</div>
-
-						<ul class="mobile-nav__sublist">
-
-							<li class="mobile-nav__item ">
-								<a href="collections/all.html" class="mobile-nav__link">Wave</a>
-							</li>
-
-							<li class="mobile-nav__item ">
-								<a href="collections/all.html" class="mobile-nav__link">X- men</a>
-							</li>
-
-						</ul>
-
-					</li>
+							<ul class="mobile-nav__sublist">
+								@foreach($v->categories as $k1=>$v1)
+									<li class="mobile-nav__item ">
+										<a href="{{url('productcategory/'.$v1->slug)}}" class="mobile-nav__link"> {{$v1->name}}</a>
+									</li>
+								@endforeach
+							</ul>
+						</li>
+						@endif
+                    @endforeach
 
 				</ul>
 			</li>
-
-
-
-
 			<li class="mobile-nav__item">
-				<a href="pages/lien-he.html" class="mobile-nav__link">Liên hệ</a>
+				<a href="{{url('/gioi-thieu')}}" class="mobile-nav__link">Về chúng tôi</a>
 			</li>
-
-
-
-
-			<li class="mobile-nav__item" aria-haspopup="true">
-				<div class="mobile-nav__has-sublist">
-					<a href="pages/tat-ca-tin-tuc.html" class="mobile-nav__link">Blog</a>
-					<div class="mobile-nav__toggle">
-						<button type="button" class="icon-fallback-text mobile-nav__toggle-open">
-							<span class="icon icon-plus" aria-hidden="true"></span>
-							<span class="fallback-text">See More</span>
-						</button>
-						<button type="button" class="icon-fallback-text mobile-nav__toggle-close">
-							<span class="icon icon-minus" aria-hidden="true"></span>
-							<span class="fallback-text">"Đóng"</span>
-						</button>
-					</div>
-				</div>
-				<ul class="mobile-nav__sublist">
-
-					<li class="mobile-nav__item" aria-haspopup="true">
-						<div class="mobile-nav__has-sublist">
-							<a href="blogs/news.html" class="mobile-nav__link">Công nghệ ô tô</a>
-
-							<div class="mobile-nav__toggle">
-								<button type="button" class="icon-fallback-text mobile-nav__toggle-open">
-									<span class="icon icon-plus" aria-hidden="true"></span>
-									<span class="fallback-text">See More</span>
-								</button>
-								<button type="button" class="icon-fallback-text mobile-nav__toggle-close">
-									<span class="icon icon-minus" aria-hidden="true"></span>
-									<span class="fallback-text">"Đóng"</span>
-								</button>
-							</div>
-
-						</div>
-
-						<ul class="mobile-nav__sublist">
-
-							<li class="mobile-nav__item ">
-								<a href="blogs/news.html" class="mobile-nav__link">Thế giới si&#234;u xe</a>
-							</li>
-
-							<li class="mobile-nav__item ">
-								<a href="blogs/news.html" class="mobile-nav__link">Độ xe</a>
-							</li>
-
-						</ul>
-
-					</li>
-
-					<li class="mobile-nav__item" aria-haspopup="true">
-						<div class="mobile-nav__has-sublist">
-							<a href="blogs/tin-sieu-xe.html" class="mobile-nav__link">Siêu xe</a>
-
-						</div>
-
-					</li>
-
-					<li class="mobile-nav__item" aria-haspopup="true">
-						<div class="mobile-nav__has-sublist">
-							<a href="blogs/hoi-choi-xe.html" class="mobile-nav__link">Hội chơi xe</a>
-
-							<div class="mobile-nav__toggle">
-								<button type="button" class="icon-fallback-text mobile-nav__toggle-open">
-									<span class="icon icon-plus" aria-hidden="true"></span>
-									<span class="fallback-text">See More</span>
-								</button>
-								<button type="button" class="icon-fallback-text mobile-nav__toggle-close">
-									<span class="icon icon-minus" aria-hidden="true"></span>
-									<span class="fallback-text">"Đóng"</span>
-								</button>
-							</div>
-
-						</div>
-
-						<ul class="mobile-nav__sublist">
-
-							<li class="mobile-nav__item ">
-								<a href="blogs/hoi-choi-xe.html" class="mobile-nav__link">Hội chơi xe H&#224; Nội</a>
-							</li>
-
-							<li class="mobile-nav__item ">
-								<a href="blogs/hoi-choi-xe.html" class="mobile-nav__link">Hội chơi xe S&#224;i G&#242;n</a>
-							</li>
-
-						</ul>
-
-					</li>
-
-					<li class="mobile-nav__item" aria-haspopup="true">
-						<div class="mobile-nav__has-sublist">
-							<a href="blogs/huong-dan-bao-quan-xe.html" class="mobile-nav__link">Bảo quản ô tô</a>
-
-						</div>
-
-					</li>
-
-				</ul>
-			</li>
-
-
-
-
-			<li class="mobile-nav__item">
-				<a href="pages/about-us.html" class="mobile-nav__link">Về chúng tôi</a>
-			</li>
-
-
-
-
+{{-- 
 			<li class="mobile-nav__item">
 				<a href="#" class="mobile-nav__link">Hướng dẫn mua hàng</a>
 			</li>
 
-
-
-
 			<li class="mobile-nav__item">
 				<a href="#" class="mobile-nav__link">Hệ thống cửa hàng</a>
 			</li>
-
-
-
-
-
-
-			<li class="mobile-nav__item">
+ --}}
+			{{-- <li class="mobile-nav__item">
 				<a href="account/login.html" id="customer_login_link">Đăng nhập</a>
 			</li>
 			<li class="mobile-nav__item">
 				<a href="account/register.html" id="customer_register_link">Đăng kí</a>
-			</li>
+			</li> --}}
 
 
 		</ul>
@@ -633,11 +342,6 @@
 	</div>
 
 	<div class="cart-overlay"></div>
-
-
-
-
-
 
 	<div id="CartDrawer" class="drawer drawer--left">
 		<div class="drawer__header">
@@ -758,11 +462,6 @@
 	</section>
 
 
-
-
-
-
-
 	<div id="modalAddComplete">
 	</div>
 
@@ -789,10 +488,6 @@
 	</script>
 
 
-
-
-
-
 	<script src='http://hstatic.net/0/0/global/api.jquery.js' type='text/javascript'></script>
 
 	<script src='http://hstatic.net/0/0/global/option_selection.js' type='text/javascript'></script>
@@ -801,206 +496,13 @@
 	<script src='http://theme.hstatic.net/1000305059/1000394224/14/script.js?v=3593' type='text/javascript'></script>
 	<script src='http://theme.hstatic.net/1000305059/1000394224/14/timber.js?v=3593' type='text/javascript'></script>
 
-
-
 	<script>
 
 	</script>
 
 	<script src='http://theme.hstatic.net/1000305059/1000394224/14/handlebars.min.js?v=3593' type='text/javascript'></script>
 
-
-
-
 	<script src='http://theme.hstatic.net/1000305059/1000394224/14/ajax-cart.js?v=3593' type='text/javascript'></script>
-
-
-
-
-	<!-- Custom script -->
-
-	<!---- Lazy Load All ----->
-
-
-
-
-
-
-	<script>
-		$(document).ready(function () {
-			$('#owl-main-slider').owlCarousel({
-				smartSpeed: 1000,
-				animateOut: 'fadeOut',
-				autoplayTimeout: 7000,
-				animateIn: 'fadeIn',
-				nav: false,
-				autoplayHoverPause: true,
-				mouseDrag: false,
-				touchDrag: false,
-				dots: true,
-				rewind: true,
-				autoplay: true,
-				responsiveRefreshRate: 200,
-				navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
-				responsive: {
-					0: {
-						items: 1
-					},
-					480: {
-						items: 1
-					},
-					768: {
-						items: 1
-					},
-					1000: {
-						items: 1,
-						nav: true,
-					}
-				}
-			})
-			$('#owl-home-flash-sale').owlCarousel({
-				smartSpeed: 500,
-				nav: false,
-				dots: true,
-				loop: false,
-				rewind: true,
-				responsiveRefreshRate: 200,
-				navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
-				responsive: {
-					0: {
-						items: 2,
-						margin: 5
-					},
-					480: {
-						items: 3,
-						margin: 5
-					},
-					768: {
-						items: 3,
-						margin: 15,
-					},
-					1000: {
-						items: 3,
-						margin: 30,
-						nav: true,
-						dots: false
-					}
-				}
-			})
-
-			$('#owl-home-reviews').owlCarousel({
-				smartSpeed: 200,
-				nav: false,
-				dots: true,
-				loop: false,
-				autoplay: false,
-				rewind: true,
-				autoplayHoverPause: true,
-				responsiveRefreshRate: 200,
-				responsive: {
-					0: {
-						items: 1
-					},
-					480: {
-						items: 1
-					},
-					768: {
-						items: 1
-					},
-					1000: {
-						items: 1
-					}
-				}
-			})
-
-			$('#owl-home-articles').owlCarousel({
-				smartSpeed: 200,
-				nav: false,
-				dots: true,
-				loop: false,
-				autoplay: false,
-				rewind: true,
-				margin: 5,
-				autoplayHoverPause: true,
-				responsiveRefreshRate: 200,
-				responsive: {
-					0: {
-						items: 2,
-					},
-					480: {
-						items: 3,
-					},
-					768: {
-						items: 3,
-						margin: 15,
-					},
-					1000: {
-						items: 2,
-						margin: 30,
-					}
-				}
-			})
-			$('#owl-service').owlCarousel({
-				smartSpeed: 200,
-				nav: false,
-				dots: true,
-				loop: false,
-				autoplayHoverPause: true,
-				autoplay: true,
-				autoplayTimeout: 3000,
-				rewind: true,
-				autoplayHoverPause: true,
-				responsiveRefreshRate: 200,
-				responsive: {
-					0: {
-						items: 2
-					},
-					480: {
-						items: 2
-					},
-					768: {
-						items: 3
-					},
-					1000: {
-						items: 4
-					}
-				}
-			})
-			$('#owl-brand').owlCarousel({
-				smartSpeed: 200,
-				nav: false,
-				dots: false,
-				autoplayHoverPause: true,
-				loop: true,
-				autoplay: true,
-				autoplayTimeout: 3000,
-				margin: 5,
-				autoplayHoverPause: true,
-				responsiveRefreshRate: 200,
-				navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
-				responsive: {
-					0: {
-						items: 2
-					},
-					480: {
-						items: 4,
-					},
-					768: {
-						items: 4,
-						margin: 15,
-					},
-					1000: {
-						items: 5,
-						margin: 30,
-						nav: true,
-					}
-				}
-			})
-		});
-	</script>
-
-
-
 
 
 	<!-- Search header open-->
@@ -1157,9 +659,6 @@
 		}
 	</script>
 
-
-
-
 	<script>
 		function openProTabs(evt, cityName) {
 			var i, pro_tabcontent, pro_tablinks;
@@ -1259,24 +758,6 @@
 		});
 	</script>
 
-
-	<!-- Header Fixed ----->
-	<script>
-		jQuery(document).ready(function () {
-			window.onscroll = changePos;
-
-			function changePos() {
-				var header = $("#header");
-				var headerheight = $("#header").height() + 200;
-				if (window.pageYOffset > headerheight) {
-					header.addClass('scrolldown');
-				} else {
-					header.removeClass('scrolldown');
-				}
-			}
-		});
-	</script>
-
 	<!-- Validate quantity form & trigger zoom -->
 	<script>
 		$("document").ready(function () {
@@ -1294,10 +775,6 @@
 			};
 		});
 	</script>
-
-
-
-
 
 	<!-- popup loaded -->
 	<script>

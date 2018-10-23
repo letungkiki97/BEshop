@@ -9,8 +9,7 @@
 
                                 <a href="../index.html">
                                     <h2>
-                                        <img src="http://theme.hstatic.net/1000305059/1000394224/14/ft_logo.png?v=3593"
-                                            alt="Suplo Car | Cửa hàng phụ kiện,đồ chơi, nội thất xe hơi chính hãng" />
+                                        
                                     </h2>
                                 </a>
 
