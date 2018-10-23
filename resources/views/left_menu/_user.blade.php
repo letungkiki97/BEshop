@@ -54,7 +54,7 @@
     @endif
     {{-- Content group --}}
     @if(isset($user_data) && ($user_data->hasAccess(['content_management.list']) || $user_data->inRole('admin')))
-        <li {!! (Request::is( 'menu/*') || Request::is( 'menu') || Request::is( 'news_category/*') || Request::is( 'news_category') || Request::is( 'news/*') || Request::is( 'news') || Request::is( 'page/*') || Request::is( 'page') || Request::is( 'banner/*') || Request::is( 'banner') || Request::is( 'advice/*') || Request::is( 'advice') || Request::is( 'newsletter/*') || Request::is( 'newsletter') || Request::is( 'news_tag/*') || Request::is( 'news_tag') || Request::is( 'mail/*') || Request::is( 'mail') || Request::is( 'content_setting' || Request::is('product_filters') || Request::is( 'footer/*') || Request::is( 'footer')|| Request::is( 'image/*') || Request::is( 'image') || Request::is( 'source/*') || Request::is( 'source')) ? 'class="active"' : '') !!}>
+        <li {!! Request::is( 'quantri/image/*') || Request::is('quantri/image') ? 'class="active"' : '' !!}>
             <a>
             <span class="nav-caret pull-right">
               <i class="fa fa-fw fa-caret-down"></i>
@@ -72,33 +72,12 @@
                             <span class="nav-text">{{__('left_menu.banner')}}</span></a>
                     </li>
                 @endif
-                @if($user_data->hasAccess(['mail.list']) || $user_data->inRole('admin'))
-                    <li {!! (Request::is( 'mail/*') || Request::is( 'mail') ? 'class="active"' : '') !!}>
-                        <a href="{{url('mail')}}">
-                            <i class="fa fa-envelope-open text-primary"></i>
-                            <span class="nav-text">{{__('left_menu.mail')}}</span></a>
+                 @if($user_data->hasAccess(['image.list']) || $user_data->inRole('admin'))
+                    <li {!! (Request::is( 'quantri/image/*') || Request::is( 'quantri/image') ? 'class="active"' : '') !!}>
+                        <a href="{{url('quantri/image')}}">
+                            <i class="material-icons text-warning">camera_alt</i>
+                            <span class="nav-text">{{__('left_menu.image')}}</span></a>
                     </li>
-                @endif
-                @if($user_data->inRole('admin'))
-                    <li {!! (Request::is( 'content_setting') ? 'class="active"' : '') !!}>
-                        <a href="{{url('content_setting')}}">
-                            <i class="fa fa-wrench text-danger"></i>
-                            <span class="nav-text">{{__('left_menu.content_setting')}}</span></a>
-                    </li>
-                    @if($user_data->hasAccess(['footer.list']) || $user_data->inRole('admin'))
-                        <li {!! (Request::is( 'footer/*') || Request::is( 'footer') ? 'class="active"' : '') !!}>
-                            <a href="{{url('footer')}}">
-                                <i class="material-icons text-info">view_agenda</i>
-                                <span class="nav-text">{{__('left_menu.footer')}}</span></a>
-                        </li>
-                    @endif
-                    @if($user_data->hasAccess(['image.list']) || $user_data->inRole('admin'))
-                        <li {!! (Request::is( 'quantri/image/*') || Request::is( 'quantri/image') ? 'class="active"' : '') !!}>
-                            <a href="{{url('quantri/image')}}">
-                                <i class="material-icons text-warning">camera_alt</i>
-                                <span class="nav-text">{{__('left_menu.image')}}</span></a>
-                        </li>
-                    @endif
                 @endif
             </ul>
         </li>
