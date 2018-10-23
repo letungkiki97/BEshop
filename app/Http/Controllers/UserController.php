@@ -31,7 +31,7 @@ class UserController extends Controller {
 					Flash::error(__('auth.account_not_activated'));
 				}
 				Sentinel::logout( null, true );
-				return redirect( 'signin' )->send();
+				return redirect( 'quantri/signin' )->send();
 			}
 
 			return $next( $request );

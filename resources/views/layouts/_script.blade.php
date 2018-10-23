@@ -59,7 +59,7 @@
             var done = 0;
             $.each(rows_selected, function(){
                 $.ajax({
-                    url : '{{ url($type) }}/' + $(this).data('id'),
+                    url : '{{ url('quantri/'.$type) }}/' + $(this).data('id'),
                     type : 'post',
                     data : {
                         '_method' : 'delete',
@@ -95,7 +95,7 @@
                 return false;
             }
             $.ajax({
-                url : '{{ url($type) }}/'+$(this).data('id'),
+                url : '{{ url('quantri/'.$type) }}/'+$(this).data('id'),
                 type : 'post',
                 data : {
                     '_method' : 'delete',

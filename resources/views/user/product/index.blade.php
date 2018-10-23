@@ -59,7 +59,7 @@ $domain = (strpos(\URL::full(), 'cazacrm.yez.vn') !== FALSE)?\Config::get('app.d
                                 <td>{{ $item->category->name }}</td>
                                 <td><label class="label label-{{ $item->status ? 'success' : 'warning' }}">{{ $item->status ? 'Active' : 'Inactive' }}</label></td>
                                 <td>
-                                    <a href="{{ url('product/' . $item->id . '/edit' ) }}"  title="{{ __('table.edit') }}"><i class="fa fa-fw fa-pencil text-warning"></i> </a>
+                                    <a href="{{ url('quantri/product/' . $item->id . '/edit' ) }}"  title="{{ __('table.edit') }}"><i class="fa fa-fw fa-pencil text-warning"></i> </a>
                                     @if(!$item->status && ($user_data->hasAccess([$type.'.delete']) || $user_data->inRole('admin')))
                                     <a href="javascript:void(0)" class="delete_item" data-name="{{ $item->product_sku }}" data-id="{{$item->id}}" title="{{ __('table.delete') }}"><i class="fa fa-fw fa-times text-danger"></i></a>
                                     @endif

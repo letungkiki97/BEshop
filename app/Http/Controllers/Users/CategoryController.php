@@ -75,15 +75,9 @@ class CategoryController extends UserController
         }
         $request->merge(['slug' => $newSlug]);
 
-        $image = '';
-        if ($request->hasFile('image_file')) {
-            $image = $this->uploadFile($request->image_file, 'product_category');
-        }
-        $request->merge(['image' => $image]);
+        Category::create($request->all());
 
-        $category = Category::create($request->except('feature', 'image_file'));
-
-        return redirect("category");
+        return redirect("quantri/category");
     }
 
     public function show(Category $category)
@@ -109,13 +103,7 @@ class CategoryController extends UserController
         }
         $request->merge(['slug' => $newSlug]);
 
-        $image = $request->image ?: $category->image;
-        if ($request->hasFile('image_file')) {
-            $image = $this->uploadFile($request->image_file, 'product_category');
-        }
-        $request->merge(['image' => $image]);
-
-        $category->update($request->except('category_id', 'feature', 'image_file'));
+        $category->update($request->except('category_id'));
         
         return redirect($request->session()->get('redirect_category'));
     }

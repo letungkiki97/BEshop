@@ -45,7 +45,7 @@
                                 <td>{{ $item->parent_id ? $item->parent->name : 'Root Category' }}</td>
                                 <td>{{ $item->code }}</td>
                                 <td>
-                                    <a href="{{ url('category/' . $item->id . '/edit' ) }}"  title="{{ __('table.edit') }}"><i class="fa fa-fw fa-pencil text-warning"></i> </a>
+                                    <a href="{{ url('quantri/category/' . $item->id . '/edit' ) }}"  title="{{ __('table.edit') }}"><i class="fa fa-fw fa-pencil text-warning"></i> </a>
                                     @if($user_data->hasAccess([$type.'.delete']) || $user_data->inRole('admin'))
                                     <a href="javascript:void(0)" class="delete_item" data-id="{{$item->id}}" title="{{ __('table.delete') }}"><i class="fa fa-fw fa-times text-danger"></i></a>
                                     @endif

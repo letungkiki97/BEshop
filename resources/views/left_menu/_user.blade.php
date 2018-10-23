@@ -17,7 +17,7 @@
 <ul class="navigation">
     {{-- Product group --}}
     @if(isset($user_data) && ($user_data->hasAccess(['product_management.list']) || $user_data->inRole('admin')))
-    <li {!! (Request::is( 'product/*') || Request::is( 'product') || Request::is( 'category/*') || Request::is( 'category') || Request::is( 'tag/*') || Request::is( 'tag') || Request::is( 'color/*') || Request::is( 'color') || Request::is( 'delivery_category/*') || Request::is( 'delivery_category') || Request::is( 'property/*') || Request::is( 'property') || Request::is( 'property_type/*') || Request::is( 'property_type') || Request::is( 'feature/*') || Request::is( 'feature') || Request::is( 'catalog/*') || Request::is( 'catalog') || Request::is( 'deleted_product/*') || Request::is( 'deleted_product') ? 'class="active"' : '') !!}>
+    <li {!! (Request::is( 'quantri/product/*') || Request::is( 'quantri/product') || Request::is( 'quantri/category/*') || Request::is( 'quantri/category') || Request::is( 'quantri/color/*') || Request::is( 'quantri/color') || Request::is( 'quantri/deleted_product/*') || Request::is( 'quantri/deleted_product') ? 'class="active"' : '') !!}>
         <a>
             <span class="nav-caret pull-right">
           <i class="fa fa-fw fa-caret-down"></i>
@@ -29,22 +29,22 @@
         </a>
         <ul class="nav-sub">
             @if($user_data->hasAccess(['product.list']) || $user_data->inRole('admin'))
-            <li {!! (Request::is( 'product/*') || Request::is( 'product') ? 'class="active"' : '') !!}>
-                <a href="{{url('product')}}">
+            <li {!! (Request::is( 'quantri/product/*') || Request::is( 'quantri/product') ? 'class="active"' : '') !!}>
+                <a href="{{url('quantri/product')}}">
                     <i class="material-icons text-danger">event_seat</i>
                     <span class="nav-text">{{__('left_menu.product')}}</span></a>
             </li>
             @endif
             @if($user_data->hasAccess(['deleted_product.list']) || $user_data->inRole('admin'))
-            <li {!! Request::is('deleted_product') ? 'class="active"' : '' !!}>
-                <a href="{{url('deleted_product')}}">
+            <li {!! Request::is('quantri/deleted_product') ? 'class="active"' : '' !!}>
+                <a href="{{url('quantri/deleted_product')}}">
                     <i class="material-icons text-warning">delete</i>
                     <span class="nav-text">{{__('left_menu.deleted_product')}}</span></a>
             </li>
             @endif
             @if($user_data->hasAccess(['category.list']) || $user_data->inRole('admin'))
-            <li {!! (Request::is( 'category/*') || Request::is( 'category') ? 'class="active"' : '') !!}>
-                <a href="{{url('category')}}">
+            <li {!! (Request::is( 'quantri/category/*') || Request::is( 'quantri/category') ? 'class="active"' : '') !!}>
+                <a href="{{url('quantri/category')}}">
                     <i class="material-icons">web</i>
                     <span class="nav-text">{{__('left_menu.category')}}</span></a>
             </li>
@@ -54,8 +54,8 @@
     @endif
     {{-- Setting --}}
     @if(isset($user_data) && $user_data->inRole('admin'))
-    <li {!! (Request::is( 'setting/*') || Request::is( 'setting') ? 'class="active"' : '') !!}>
-        <a href="{{url('setting')}}">
+    <li {!! (Request::is( 'quantri/setting/*') || Request::is( 'quantri/setting') ? 'class="active"' : '') !!}>
+        <a href="{{url('quantri/setting')}}">
             <span class="nav-icon">
      <i class="material-icons text-success">settings</i>
     </span>

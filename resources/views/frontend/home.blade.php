@@ -838,724 +838,94 @@
 								Cùng tham quan các sản phẩm nỏi bật mới nhất của chúng tôi
 							</div>
 							<div class="tab clearfix text-center">
-
-
-
-
-
-
-								<button class="pro-tablinks" onclick="openProTabs(event, 'collection1')" id="defaultOpenProTabs">
-									Các sản phẩm khác
+                                @foreach($categoryparents as $k=>$v)
+								<button class="pro-tablinks" onclick="openProTabs(event, 'collection{{$k}}')" id="defaultOpenProTabs">
+									{{strtoupper($v->name)}}
 								</button>
-
-
-
-
-
-
-
-
-								<button class="pro-tablinks rophi" onclick="openProTabs(event, 'collection2')">
-									Phụ kiện xe hơi
-								</button>
-
-
-
-
-
-
-
-
-								<button class="pro-tablinks rophi" onclick="openProTabs(event, 'collection3')">
-									Đồ chơi xe hơi
-								</button>
-
-
-
-
-
-
-
-
-								<button class="pro-tablinks rophi" onclick="openProTabs(event, 'collection4')">
-									Nội thất xe hơi
-								</button>
-
-
-
-
-
-
-
-
-								<button class="pro-tablinks rophi" onclick="openProTabs(event, 'collection5')">
-									Sản phẩm mới về
-								</button>
-
-
-
+                                @endforeach
 							</div>
-							<div id="collection1" class="pro-tabcontent">
-
-								<div class="grid-uniform md-mg-left-15">
-
-									<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
-
-
-
-
-
-
-										<div class="product-item">
-											<div class="product-img">
-												<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-7.html">
-
-													<img id="1016605819" class="only-one lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-010a-01_9c5acf2a9eea4973bc832b421847d665_large.jpg"
-													 alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
-
-												</a>
-												<div class="product-actions medium--hide small--hide">
-													<div>
-														<button type="button" class="btnQuickView quick-view medium--hide small--hide" data-handle="/products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-7"><span><i
-																 class="fa fa-search-plus" aria-hidden="true"></i></span></button>
+                            @foreach($categoryparents as $k=>$v)
+								<div id="collection{{$k}}" class="pro-tabcontent">
+									<div class="grid-uniform md-mg-left-15">
+										@foreach($v->products as $k3=>$v3)
+											<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
+												<div class="product-item">
+													<div class="product-img">
+														<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-7.html">
+															<img id="1016605819" class="only-one lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
+																 data-src="http://product.hstatic.net/1000305059/product/suplo-010a-01_9c5acf2a9eea4973bc832b421847d665_large.jpg"
+																 alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
+														</a>
+														<div class="product-actions medium--hide small--hide">
+															<div>
+																<button type="button" class="btnQuickView quick-view medium--hide small--hide" data-handle="/products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-7"><span>
+																			<i class="fa fa-search-plus" aria-hidden="true"></i></span></button>
+															</div>
+														</div>
+													</div>
+													<div class="product-item-info">
+														<div class="product-title">
+															<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-7.html">SUPLO
+																{{$v3->product_name}}</a>
+														</div>
+														<div class="product-desc">
+															Bọc vô lăng Sparco chính hãng SPC1111RS lấy cảm hứng thể thao từ các dòng xe đua kết hợp với công nghệ sản
+															xuất tiên tiến. Các mẫu bọc vô lăng SPARCO đều có kích thước đường kín...
+														</div>
+														<div class="product-price clearfix">
+															<span class="current-price">{{$v3->sale_price}}₫</span>
+														</div>
+													</div>
+													<div class="product-buynow">
+														<button type="button" disabled class="btnAddToCart  medium--hide small--hide" data-id=""><span>Hết hàng</span></button>
 													</div>
 												</div>
-
 											</div>
-											<div class="product-item-info">
-												<div class="product-title">
-													<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-7.html">SUPLO
-														Smart Gravity Holder Cute Mount 1...</a>
-												</div>
-												<div class="product-desc">
-													Bọc vô lăng Sparco chính hãng SPC1111RS lấy cảm hứng thể thao từ các dòng xe đua kết hợp với công nghệ sản
-													xuất tiên tiến. Các mẫu bọc vô lăng SPARCO đều có kích thước đường kín...
-												</div>
-												<div class="product-price clearfix">
-													<span class="current-price">500,000₫</span>
-
-												</div>
-											</div>
-											<div class="product-buynow">
-												<button type="button" disabled class="btnAddToCart  medium--hide small--hide" data-id=""><span>Hết hàng</span></button>
-											</div>
-										</div>
-
-									</div>
-
-									<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
-
-
-
-
-
-
-
-
-
-
-										<div class="product-item">
-											<div class="product-img">
-												<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-6.html">
-
-
-
-
-
-													<img id="1090799919" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-009a-01_large.jpg" alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
-
-
-
-
-
-
-													<img id="1090799920" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-010a-01_large.jpg" alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-												</a>
-												<div class="product-actions medium--hide small--hide">
-													<div>
-														<button type="button" class="btnQuickView quick-view medium--hide small--hide" data-handle="/products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-6"><span><i
-																 class="fa fa-search-plus" aria-hidden="true"></i></span></button>
+										@endforeach
+										@foreach($v->categories as $k1=>$v1)
+											@foreach($v1->products as $k2=>$v2)
+												<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
+													<div class="product-item">
+														<div class="product-img">
+															<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-7.html">
+																<img id="1016605819" class="only-one lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
+																	 data-src="http://product.hstatic.net/1000305059/product/suplo-010a-01_9c5acf2a9eea4973bc832b421847d665_large.jpg"
+																	 alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
+															</a>
+															<div class="product-actions medium--hide small--hide">
+																<div>
+																	<button type="button" class="btnQuickView quick-view medium--hide small--hide" data-handle="/products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-7"><span>
+																			<i class="fa fa-search-plus" aria-hidden="true"></i></span></button>
+																</div>
+															</div>
+														</div>
+														<div class="product-item-info">
+															<div class="product-title">
+																<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-7.html">SUPLO
+																	{{$v2->product_name}}</a>
+															</div>
+															<div class="product-desc">
+																Bọc vô lăng Sparco chính hãng SPC1111RS lấy cảm hứng thể thao từ các dòng xe đua kết hợp với công nghệ sản
+																xuất tiên tiến. Các mẫu bọc vô lăng SPARCO đều có kích thước đường kín...
+															</div>
+															<div class="product-price clearfix">
+																<span class="current-price">{{$v2->sale_price}}₫</span>
+															</div>
+														</div>
+														<div class="product-buynow">
+															<button type="button" disabled class="btnAddToCart  medium--hide small--hide" data-id=""><span>Hết hàng</span></button>
+														</div>
 													</div>
 												</div>
-
-												<div class="tag-saleoff-img text-center">
-													-19%
-												</div>
-
-											</div>
-											<div class="product-item-info">
-												<div class="product-title">
-													<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-6.html">SUPLO
-														Smart Gravity Holder Cute Mount 1...</a>
-												</div>
-												<div class="product-desc">
-													Bọc vô lăng Sparco chính hãng SPC1111RS lấy cảm hứng thể thao từ các dòng xe đua kết hợp với công nghệ sản
-													xuất tiên tiến. Các mẫu bọc vô lăng SPARCO đều có kích thước đường kín...
-												</div>
-												<div class="product-price clearfix">
-													<span class="current-price">1,210,000₫</span>
-
-													<span class="original-price"><s>1,500,000₫</s></span>
-
-												</div>
-											</div>
-											<div class="product-buynow">
-												<button type="button" class="btnAddToCart add-to-cart  medium--hide small--hide" data-id="1031663692"><span><i
-														 class="fa fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</span></button>
-											</div>
-										</div>
-
+											@endforeach
+										@endforeach
 									</div>
 
-								</div>
-								<div class="collection-btn">
-									<a href="collections/cac-san-pham-khac.html" class="btn btnViewMore">Xem tất cả</a>
-								</div>
-
-							</div>
-							<div id="collection2" class="pro-tabcontent">
-
-								<div class="grid-uniform md-mg-left-15">
-
-									
-									<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
-
-
-
-
-
-
-
-
-
-
-										<div class="product-item">
-											<div class="product-img">
-												<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-2.html">
-
-
-
-
-
-													<img id="1090048406" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-004a-01_large.jpg" alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
-
-
-
-
-
-
-													<img id="1090048407" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-004a-02_large.jpg" alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-												</a>
-												<div class="product-actions medium--hide small--hide">
-													<div>
-														<button type="button" class="btnQuickView quick-view medium--hide small--hide" data-handle="/products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-2"><span><i
-																 class="fa fa-search-plus" aria-hidden="true"></i></span></button>
-													</div>
-												</div>
-
-												<div class="tag-saleoff-img text-center">
-													-4%
-												</div>
-
-											</div>
-											<div class="product-item-info">
-												<div class="product-title">
-													<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-2.html">SUPLO
-														Smart Gravity Holder Cute Mount 1...</a>
-												</div>
-												<div class="product-desc">
-													Bọc vô lăng Sparco chính hãng SPC1111RS lấy cảm hứng thể thao từ các dòng xe đua kết hợp với công nghệ sản
-													xuất tiên tiến. Các mẫu bọc vô lăng SPARCO đều có kích thước đường kín...
-												</div>
-												<div class="product-price clearfix">
-													<span class="current-price">12,500,000₫</span>
-
-													<span class="original-price"><s>13,000,000₫</s></span>
-
-												</div>
-											</div>
-											<div class="product-buynow">
-												<button type="button" class="btnAddToCart add-to-cart  medium--hide small--hide" data-id="1031417567"><span><i
-														 class="fa fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</span></button>
-											</div>
-										</div>
-
+									<div class="collection-btn">
+										<a href="{{url('categorys/'.$v->slug)}}" class="btn btnViewMore">Xem tất cả</a>
 									</div>
-
-									<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
-
-
-
-
-
-
-
-
-										<div class="product-item">
-											<div class="product-img">
-												<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-1.html">
-
-
-
-
-
-													<img id="1090048345" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-003a-01_large.jpg" alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
-
-
-
-
-
-
-													<img id="1090048346" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-003a-02_large.jpg" alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-												</a>
-												<div class="product-actions medium--hide small--hide">
-													<div>
-														<button type="button" class="btnQuickView quick-view medium--hide small--hide" data-handle="/products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-1"><span><i
-																 class="fa fa-search-plus" aria-hidden="true"></i></span></button>
-													</div>
-												</div>
-
-											</div>
-											<div class="product-item-info">
-												<div class="product-title">
-													<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-1.html">SUPLO
-														Smart Gravity Holder Cute Mount 1...</a>
-												</div>
-												<div class="product-desc">
-													Bọc vô lăng Sparco chính hãng SPC1111RS lấy cảm hứng thể thao từ các dòng xe đua kết hợp với công nghệ sản
-													xuất tiên tiến. Các mẫu bọc vô lăng SPARCO đều có kích thước đường kín...
-												</div>
-												<div class="product-price clearfix">
-													<span class="current-price">10,000,000₫</span>
-
-												</div>
-											</div>
-											<div class="product-buynow">
-												<button type="button" class="btnAddToCart add-to-cart  medium--hide small--hide" data-id="1031417546"><span><i
-														 class="fa fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</span></button>
-											</div>
-										</div>
-
-									</div>
-
-
 								</div>
-								<div class="collection-btn">
-									<a href="collections/phu-kien-xe-hoi.html" class="btn btnViewMore">Xem tất cả</a>
-								</div>
-
-							</div>
-							<div id="collection3" class="pro-tabcontent">
-
-								<div class="grid-uniform md-mg-left-15">
-
-									<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
-
-
-
-
-
-
-
-
-
-
-										<div class="product-item">
-											<div class="product-img">
-												<a href="products/suplo-gas-gasoline-petrol-fuel-filter-oe-23300-31100-186100-4730-replacement-parts-for-toyota-prado-4700-2700-3400-land-cruiser-1.html">
-
-
-
-
-
-													<img id="1090710553" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-002a-04_3c78db8101a649d98079d01e7522c8e2_large.jpg"
-													 alt="SUPLO Gas Gasoline Petrol Fuel Filter OE 23300-31100, 186100-4730 Replacement Parts for Toyota Prado 4700/2700/3400 Land Cruiser" />
-
-
-
-
-
-
-													<img id="1090710554" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-006a-01_2b0ee81db92549da876c4774883ae536_large.jpg"
-													 alt="SUPLO Gas Gasoline Petrol Fuel Filter OE 23300-31100, 186100-4730 Replacement Parts for Toyota Prado 4700/2700/3400 Land Cruiser" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-												</a>
-												<div class="product-actions medium--hide small--hide">
-													<div>
-														<button type="button" class="btnQuickView quick-view medium--hide small--hide" data-handle="/products/suplo-gas-gasoline-petrol-fuel-filter-oe-23300-31100-186100-4730-replacement-parts-for-toyota-prado-4700-2700-3400-land-cruiser-1"><span><i
-																 class="fa fa-search-plus" aria-hidden="true"></i></span></button>
-													</div>
-												</div>
-
-												<div class="tag-saleoff-img text-center">
-													-15%
-												</div>
-
-											</div>
-											<div class="product-item-info">
-												<div class="product-title">
-													<a href="products/suplo-gas-gasoline-petrol-fuel-filter-oe-23300-31100-186100-4730-replacement-parts-for-toyota-prado-4700-2700-3400-land-cruiser-1.html">SUPLO
-														Gas Gasoline Petrol Fuel Filter O...</a>
-												</div>
-												<div class="product-desc">
-													Bọc vô lăng Sparco chính hãng SPC1111RS lấy cảm hứng thể thao từ các dòng xe đua kết hợp với công nghệ sản
-													xuất tiên tiến. Các mẫu bọc vô lăng SPARCO đều có kích thước đường kín...
-												</div>
-												<div class="product-price clearfix">
-													<span class="current-price">50,000,000₫</span>
-
-													<span class="original-price"><s>59,000,000₫</s></span>
-
-												</div>
-											</div>
-											<div class="product-buynow">
-												<button type="button" class="btnAddToCart add-to-cart  medium--hide small--hide" data-id="1031637468"><span><i
-														 class="fa fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</span></button>
-											</div>
-										</div>
-
-									</div>
-
-									<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
-
-
-
-
-
-
-
-
-										<div class="product-item">
-											<div class="product-img">
-												<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-3.html">
-
-
-
-
-
-													<img id="1090716010" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-005a-02_5d3b786d8a17438f928a3c84ee7e71fa_large.jpg"
-													 alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
-
-
-
-
-
-
-													<img id="1090716011" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-003a-01_f494c194a73f4f8fa6d9787d29d3ff27_large.jpg"
-													 alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
-
-												</a>
-												<div class="product-actions medium--hide small--hide">
-													<div>
-														<button type="button" class="btnQuickView quick-view medium--hide small--hide" data-handle="/products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-3"><span><i
-																 class="fa fa-search-plus" aria-hidden="true"></i></span></button>
-													</div>
-												</div>
-
-											</div>
-											<div class="product-item-info">
-												<div class="product-title">
-													<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-3.html">SUPLO
-														Smart Gravity Holder Cute Mount 1...</a>
-												</div>
-												<div class="product-desc">
-													Bọc vô lăng Sparco chính hãng SPC1111RS lấy cảm hứng thể thao từ các dòng xe đua kết hợp với công nghệ sản
-													xuất tiên tiến. Các mẫu bọc vô lăng SPARCO đều có kích thước đường kín...
-												</div>
-												<div class="product-price clearfix">
-													<span class="current-price">21,000,000₫</span>
-
-												</div>
-											</div>
-											<div class="product-buynow">
-												<button type="button" class="btnAddToCart add-to-cart  medium--hide small--hide" data-id="1031639038"><span><i
-														 class="fa fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</span></button>
-											</div>
-										</div>
-
-									</div>
-
-								</div>
-								<div class="collection-btn">
-									<a href="collections/do-choi-xe-hoi.html" class="btn btnViewMore">Xem tất cả</a>
-								</div>
-
-							</div>
-							<div id="collection4" class="pro-tabcontent">
-
-								<div class="grid-uniform md-mg-left-15">
-
-
-									<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
-
-
-
-
-
-
-										<div class="product-item">
-											<div class="product-img">
-												<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-7.html">
-
-													<img id="1016605819" class="only-one lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-010a-01_9c5acf2a9eea4973bc832b421847d665_large.jpg"
-													 alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
-
-												</a>
-												<div class="product-actions medium--hide small--hide">
-													<div>
-														<button type="button" class="btnQuickView quick-view medium--hide small--hide" data-handle="/products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-7"><span><i
-																 class="fa fa-search-plus" aria-hidden="true"></i></span></button>
-													</div>
-												</div>
-
-											</div>
-											<div class="product-item-info">
-												<div class="product-title">
-													<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-7.html">SUPLO
-														Smart Gravity Holder Cute Mount 1...</a>
-												</div>
-												<div class="product-desc">
-													Bọc vô lăng Sparco chính hãng SPC1111RS lấy cảm hứng thể thao từ các dòng xe đua kết hợp với công nghệ sản
-													xuất tiên tiến. Các mẫu bọc vô lăng SPARCO đều có kích thước đường kín...
-												</div>
-												<div class="product-price clearfix">
-													<span class="current-price">500,000₫</span>
-
-												</div>
-											</div>
-											<div class="product-buynow">
-												<button type="button" disabled class="btnAddToCart  medium--hide small--hide" data-id=""><span>Hết hàng</span></button>
-											</div>
-										</div>
-
-									</div>
-
-									<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
-
-
-
-
-
-
-
-
-
-
-										<div class="product-item">
-											<div class="product-img">
-												<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-6.html">
-
-
-
-
-
-													<img id="1090799919" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-009a-01_large.jpg" alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
-
-
-
-
-
-
-													<img id="1090799920" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-010a-01_large.jpg" alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-												</a>
-												<div class="product-actions medium--hide small--hide">
-													<div>
-														<button type="button" class="btnQuickView quick-view medium--hide small--hide" data-handle="/products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-6"><span><i
-																 class="fa fa-search-plus" aria-hidden="true"></i></span></button>
-													</div>
-												</div>
-
-												<div class="tag-saleoff-img text-center">
-													-19%
-												</div>
-
-											</div>
-											<div class="product-item-info">
-												<div class="product-title">
-													<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-6.html">SUPLO
-														Smart Gravity Holder Cute Mount 1...</a>
-												</div>
-												<div class="product-desc">
-													Bọc vô lăng Sparco chính hãng SPC1111RS lấy cảm hứng thể thao từ các dòng xe đua kết hợp với công nghệ sản
-													xuất tiên tiến. Các mẫu bọc vô lăng SPARCO đều có kích thước đường kín...
-												</div>
-												<div class="product-price clearfix">
-													<span class="current-price">1,210,000₫</span>
-
-													<span class="original-price"><s>1,500,000₫</s></span>
-
-												</div>
-											</div>
-											<div class="product-buynow">
-												<button type="button" class="btnAddToCart add-to-cart  medium--hide small--hide" data-id="1031663692"><span><i
-														 class="fa fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</span></button>
-											</div>
-										</div>
-
-									</div>
-
-							
-
-								</div>
-								<div class="collection-btn">
-									<a href="collections/noi-that-xe-hoi.html" class="btn btnViewMore">Xem tất cả</a>
-								</div>
-
-							</div>
-							<div id="collection5" class="pro-tabcontent">
-
-								<p class="text-center">
-									Chưa có sản phẩm nào trong nhóm sản phẩm này.
-								</p>
-
-							</div>
+                            @endforeach
 						</div>
 					</div>
 				</div>

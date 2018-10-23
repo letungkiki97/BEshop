@@ -1,17 +1,10 @@
-@section('styles')
-    <style>
-    #sortable div:hover, #sortable div.ui-sortable-helper {
-        cursor: move;
-    }
-    </style>
-@endsection
 <div class="panel panel-primary">
     <div class="panel-body">
         @if (isset($category))
-            {!! Form::model($category, array('url' => $type . '/' . $category->id, 'method' => 'put', 'files'=> true)) !!}
+            {!! Form::model($category, array('url' => 'quantri/'.$type . '/' . $category->id, 'method' => 'put', 'files'=> true)) !!}
             <input type="hidden" name="category_id" value={{$category->id}}>
         @else
-            {!! Form::open(array('url' => $type, 'method' => 'post', 'files'=> true)) !!}
+            {!! Form::open(array('url' => 'quantri/'.$type, 'method' => 'post', 'files'=> true)) !!}
         @endif
         <div class="form-group col-xs-6 required {{ $errors->has('parent_id') ? 'has-error' : '' }}">
             {!! Form::label('parent_id', __('category.parent'), array('class' => 'control-label')) !!}
@@ -59,27 +52,6 @@
         </div>
         <div class="clear"></div>
 
-        <!-- upload IMG -->
-        <div class="form-group fileinput col-xs-6 fileinput-{{isset($category) && $category->image ? 'exists' : 'new' }}" data-provides="fileinput">
-            <input type="hidden" id="image" name="image" value="{{isset($category) && $category->image ? $category->image : ''}}">
-            {!! Form::label('image', __('news.image'), array('class' => 'control-label')) !!}
-            <div class="controls">
-                <div class="fileinput-preview fileinput-exists thumbnail" style="width: 200px">
-                    @if (isset($category) && $category->image)
-                        <img src="{{asset('uploads/product_category'). '/' . $category->image}}" width="200">
-                    @endif
-                </div>
-
-                <div>
-                    <span class="btn btn-default btn-file">
-                        <span class="fileinput-new">{{ __('form.select_image') }}</span>
-                        <span class="fileinput-exists">{{ __('form.change_image') }}</span>
-                        <input type="file" name="image_file" {{ isset($category) ? '' : 'required' }}>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="clear"></div>
         <!-- Form Actions -->
         <div class="form-group col-xs-12">
             <div class="controls">
@@ -94,27 +66,4 @@
 </div>
 
 @section('scripts')
-    <script>
-        $( "#sortable" ).sortable();
-        $( "#sortable" ).disableSelection();
-        $('#add-feature').click(function() {
-            $.ajax({
-                url: '{{url('feature/add-feature')}}',
-                type: 'GET',
-                data: {
-                    _token: '{{ csrf_token() }}',
-                },
-                success: function(data) {
-                    $('#sortable').append(data);
-                    $('.feature').select2(ajaxData('{{ url('ajax/feature') }}', 'Select product feature'));
-                }
-            });
-        });
-        $('body').on('click', '.remove-item', function() {
-            $(this).closest('.ui-state-default').remove();
-        })
-        $(document).ready(function() { 
-            $('.feature').select2(ajaxData('{{ url('ajax/feature') }}', 'Select product feature'));
-        })
-    </script>
 @endsection

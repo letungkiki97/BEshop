@@ -87,6 +87,8 @@ class AppServiceProvider extends ServiceProvider
     {
     	Schema::defaultStringLength(191);
         $this->setDbConfigurations();
+        $categorys = Category::get();
+        view()->share( 'categorys', $categorys );
     }
 
     /**

@@ -18,9 +18,9 @@
 <div class="panel panel-primary">
     <div class="panel-body">
         @if (isset($product))
-            {!! Form::model($product, array('url' => $type . '/' . $product->id, 'method' => 'put', 'files'=> true)) !!}
+            {!! Form::model($product, array('url' => 'quantri/'.$type . '/' . $product->id, 'method' => 'put', 'files'=> true)) !!}
         @else
-            {!! Form::open(array('url' => $type, 'method' => 'post', 'files'=> true)) !!}
+            {!! Form::open(array('url' => 'quantri/'.$type, 'method' => 'post', 'files'=> true)) !!}
         @endif
         <div class="nav-tabs-custom" id="setting_tabs">
             <ul class="nav nav-tabs" style="display:list-item;">

@@ -127,7 +127,7 @@ class ProductController extends UserController
 
         $this->changeImgInfomation($product->id);
 
-        return redirect("product/" .$product->id. "/edit" )->with('status', __('message.product_created'));
+        return redirect("quantri/product/" .$product->id. "/edit" )->with('status', __('message.product_created'));
     }
 
     public function edit(Product $product)
@@ -278,6 +278,27 @@ class ProductController extends UserController
         return redirect($request->session()->get('redirect_product'))->with('status', __('message.product_updated'));
     }
 
+    public function deleted(Request $request)
+    {
+        $length = $request->length ?: 50;
+        $product = Product::onlyTrashed()->orderBy('id', 'desc');
+        if ($request->search) {
+            $product = $product->where(function ($q) use ($request) {
+                $q->where('id', 'like', '%' . $request->search . '%')
+                    ->orwhere('product_name', 'like', '%' . $request->search . '%')
+                    ->orWhere('product_sku', 'like', '%' . $request->search . '%')
+                    ->orWhereHas('category', function ($q2) use ($request) {
+                        $q2->where('name', 'like', '%' . $request->search . '%');
+                    })
+                    ->orWhere('main_sku', 'like', '%' . $request->search . '%');
+            });
+        }
+        $count = $product->count();
+        $product = $product->paginate($length);
+        $page_info = $this->pageInfo($request->page, $length, $count);
+        $title = __('product.deleted');
+        return view('user.product.trash', compact('title', 'product', 'page_info'));
+    }
     public function destroy(Product $product)
     {
         $count = 0;
@@ -342,14 +363,14 @@ class ProductController extends UserController
                 $img_name           = $item->img_name;
                 $img_name_arr       = explode('.', $img_name);
                 $img_type           = trim($img_name_arr[count($img_name_arr) - 1]);
-                $new_img_name       = $item->product_sku.'-'.$item->slug.'-cazavn-'.$item->img_id.'.'.$img_type;
+                $new_img_name       = $item->product_sku.'-'.$item->slug.$item->img_id.'.'.$img_type;
                 $new_img_alt        = $item->img_alt;
                 $new_img_title      = $item->img_title;
                 if(!$item->img_alt){
                     $new_img_alt    = $item->product_name;  
                 }
                 if(!$item->img_title){
-                    $new_img_title  = $item->product_name.' cazavn';
+                    $new_img_title  = $item->product_name;
                 }
                 $data_img['name']   = $new_img_name;
                 $data_img['alt']    = $new_img_alt;
