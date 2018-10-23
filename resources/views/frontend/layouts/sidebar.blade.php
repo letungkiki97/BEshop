@@ -1,3 +1,6 @@
+<style>
+	.grid__item.large--one-whole.medium--one-half.small--one-whole.pd-left10 ul li a{color: #000000;}
+</style>
 <div class="grid__item large--one-quarter medium--one-whole small--one-whole">
 					<div class="collection-sidebar-wrapper">
 	<div class="grid-uniform mg-left-10">
@@ -8,7 +11,7 @@
 				<button class="accordion cs-title col-sb-trigger">
 					<span>Danh mục</span>
 				</button>
-				<div class="panel">
+				<div class="">
 					<ul class="no-bullets">
 						
 						
