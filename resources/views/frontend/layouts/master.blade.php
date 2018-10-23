@@ -17,7 +17,7 @@
 
 	<!-- Title and description ================================================== -->
 	<title>
-		Suplo Car | Cửa hàng phụ kiện,đồ chơi, nội thất xe hơi chính hãng
+		Tuấn Nguyên
 	</title>
 
 	<meta name="description" content="tuannguyen168.vn">
@@ -310,7 +310,7 @@
 
 
 			<li class="mobile-nav__item mobile-nav__item--active">
-				<a href="index.html" class="mobile-nav__link">Trang chủ</a>
+				<a href="/" class="mobile-nav__link">Trang chủ</a>
 			</li>
 
 
@@ -318,7 +318,7 @@
 
 			<li class="mobile-nav__item" aria-haspopup="true">
 				<div class="mobile-nav__has-sublist">
-					<a href="collections/all.html" class="mobile-nav__link">Sản phẩm của chúng tôi</a>
+					<a href="" class="mobile-nav__link">Sản phẩm của chúng tôi</a>
 					<div class="mobile-nav__toggle">
 						<button type="button" class="icon-fallback-text mobile-nav__toggle-open">
 							<span class="icon icon-plus" aria-hidden="true"></span>
@@ -710,9 +710,9 @@
 
 
 
-			<div class="grid__item medium--two-tenths small--two-tenths pd-left0">
+			<!-- <div class="grid__item medium--two-tenths small--two-tenths pd-left0">
 				<div class="mobile-nav-item">
-					<a href="collections/all.html">
+					<a href="productcategory/o-to">
 						<i class="fas fa-tag"></i><br />Hàng mới
 					</a>
 				</div>
@@ -723,7 +723,7 @@
 
 			<div class="grid__item medium--two-tenths small--two-tenths pd-left0">
 				<div class="mobile-nav-item">
-					<a href="collections/all.html">
+					<a href="#">
 						<i class="fas fa-gift"></i><br />Khuyến mãi
 					</a>
 				</div>
@@ -734,7 +734,7 @@
 
 			<div class="grid__item medium--two-tenths small--two-tenths pd-left0">
 				<div class="mobile-nav-item">
-					<a href="account/login.html">
+					<a href="#">
 						<i class="fas fa-user"></i><br />Tài khoản
 					</a>
 				</div>
@@ -745,7 +745,7 @@
 
 			<div class="grid__item medium--two-tenths small--two-tenths pd-left0">
 				<div class="mobile-nav-item">
-					<a href="pages/lien-he.html">
+					<a href="lien-he">
 						<i class="fas fa-phone"></i><br />Liên hệ
 					</a>
 				</div>
@@ -754,14 +754,14 @@
 
 			<div class="grid__item medium--two-tenths small--two-tenths pd-left0">
 				<div class="mobile-nav-item">
-					<a href="cart.html">
+					<a href="#">
 						<i class="fas fa-shopping-cart"></i><br />Giỏ hàng
 						<span class="number">
 							0
 						</span>
 					</a>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</section>
 

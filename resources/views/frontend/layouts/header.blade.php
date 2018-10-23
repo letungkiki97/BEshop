@@ -22,7 +22,7 @@
 						</a>
 					</li>
 					<li class=" megamenu">
-						<a href="{{url('/san-pham')}}" class="text-center">
+						<a href="" class="text-center">
 							<span>Sản phẩm của chúng tôi</span>
 							<i class="fas fa-caret-down"></i>
 						</a>
@@ -493,7 +493,7 @@
 					<div class="hd-logo text-left">
 
 						<a href="index.html">
-							<img src="http://theme.hstatic.net/1000305059/1000394224/14/mb_logo.png?v=3593" alt="Suplo Car | Cửa hàng phụ kiện,đồ chơi, nội thất xe hơi chính hãng" />
+							<img src="{{asset('uploads/site'). '/' . Settings::get('site_logo')}}" alt="Tuấn Nguyên" />
 						</a>
 
 					</div>
