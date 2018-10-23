@@ -66,8 +66,8 @@
             </a>
             <ul class="nav-sub">
                 @if($user_data->hasAccess(['banner.list']) || $user_data->inRole('admin'))
-                    <li {!! (Request::is( 'banner/*') || Request::is( 'banner') ? 'class="active"' : '') !!}>
-                        <a href="{{url('banner')}}">
+                    <li {!! (Request::is( 'quantri/banner/*') || Request::is( 'quantri/banner') ? 'class="active"' : '') !!}>
+                        <a href="{{url('quantri/banner')}}">
                             <i class="fa fa-image text-danger"></i>
                             <span class="nav-text">{{__('left_menu.banner')}}</span></a>
                     </li>

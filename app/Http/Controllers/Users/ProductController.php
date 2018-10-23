@@ -188,7 +188,6 @@ class ProductController extends UserController
                 $file_array[] = $this->uploadFile($file_3d_file, 'products');
             }
         }
-
         $file_3d = $file_array ? implode(',', $file_array) : null;
         $request->merge(['file_3d' => $file_3d]);
         if (!$request->product_image) {
@@ -201,27 +200,6 @@ class ProductController extends UserController
 
         $colors = [];
 
-        if ($product->parent && $product->parent->images) { 
-            $parent_gallery = $request->parent_gallery ?: [];
-            $parent_images = $product->parent->images->pluck('id')->toArray();
-            foreach ($parent_images as $k => $g) {
-                if (in_array($g, $parent_gallery)) {
-                    unset($parent_images[$k]);
-                }
-            }
-            if ($parent_images) {
-                $request->merge(['unlink' => implode(',', $parent_images)]);
-            }
-        } else {
-            $product_gallery = $request->image_gallery ?: [];
-            $product_images = $product->images->pluck('id')->toArray();
-            foreach ($product_images as $k => $g) {
-                if (!in_array($g, $product_gallery)) {
-                    Product::where('product_image', $g)->update(['product_image' => null]);
-                }
-            }
-        }
-
         $request->product_name = mb_strtoupper($request->product_name);
         $request->merge(['product_name' => $request->product_name]);
 
@@ -230,39 +208,6 @@ class ProductController extends UserController
         }
 
         $product->update($request->except('file_3d_file', 'old_file', 'image_gallery', 'parent_gallery', 'color', 'main_variant'));
-        
-        if (count($product->getVariants)) {
-            foreach ($product->getVariants as $key => $value) {
-                $value->published = $product->published;
-                $value->status = $product->status;
-                $value->category_id = $product->category_id;
-                if (count($value->variants)) {
-                    $property = [];
-                    foreach ($value->variants as $k => $v) {
-                        $property[$k][] = $v->property_id;
-                    }
-                    $code_gen = $this->getVar($property);
-                    $category = Category::find($product->category_id);
-                    $value->product_sku = $product->product_sku . $code_gen[0]['code'];
-                    $value->main_sku = $product->product_sku;
-                }
-                $value->update();
-            }
-        }
-
-        if ($request->feature) {
-            foreach ($request->feature as $id => $value) {
-                $product_feature = new ProductFeature;
-                $product_feature->product_id = $product->id;
-                $product_feature->feature_id = $id;
-                if (is_array($value)) {
-                    $product_feature->value = implode(',', $value);
-                } else {
-                    $product_feature->value = $value;
-                }
-                $product_feature->save();
-            }
-        }
 
         ProductColor::where(['product_id' => $product->id])->delete();
 
@@ -356,7 +301,6 @@ class ProductController extends UserController
         ->where('images.path', 'products')
         ->select('products.product_sku', 'products.product_name', 'images.name as img_name', 'products.slug', 'images.id as img_id', 'images.alt as img_alt', 'images.title as img_title')
         ->get();  
-
         if(count($current_img) > 0){
             $data_img = array(); 
             foreach ($current_img as $item) {
@@ -375,13 +319,14 @@ class ProductController extends UserController
                 $data_img['name']   = $new_img_name;
                 $data_img['alt']    = $new_img_alt;
                 $data_img['title']  = $new_img_title;
-                $old_file_thumb     = $_SERVER['DOCUMENT_ROOT']."/uploads/products/thumb_".$img_name;
-                $old_file           = $_SERVER['DOCUMENT_ROOT']."/uploads/products/".$img_name;
+                $old_file_thumb     = "uploads/products/thumb_".$img_name;
+                $old_file           = "uploads/products/".$img_name;
+
                 if (file_exists($old_file)) {
-                    rename($old_file, $_SERVER['DOCUMENT_ROOT']."/uploads/products/".$new_img_name);
+                    rename($old_file, "uploads/products/".$new_img_name);
                 }
                 if (file_exists($old_file_thumb)) {
-                    rename($old_file_thumb, $_SERVER['DOCUMENT_ROOT']."/uploads/products/thumb_".$new_img_name);
+                    rename($old_file_thumb, "uploads/products/thumb_".$new_img_name);
                 }
                 
                 $update = Functions::insertUpdate('update', new Image, $item->img_id, $data_img);

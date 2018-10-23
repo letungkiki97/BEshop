@@ -1,8 +1,4 @@
-
 <?php
-include_once 'tien.php';
-include_once 'quang.php';
-include_once 'tung.php';
 
 Route::pattern('slug', '[a-z0-9-]+');
 Route::pattern('slug2', '[a-z_]+');
@@ -19,7 +15,7 @@ Route::group(array(), function () {
 
     /******************   san pham  ********************************/
     Route::get('/productcategory','FrontendController@productcategory');
-    Route::get('/productdetail','FrontendController@productdetail');
+    Route::get('/productdetail/{id}','ProductController@show');
 });
 
 
@@ -54,6 +50,14 @@ Route::group(array('prefix'=>'quantri','middleware' => ['sentinel', 'admin', 'xs
     Route::get('content_setting', 'SettingsController@getContent');
     Route::post('content_setting', 'SettingsController@postContent');
 
+    Route::resource('image', 'ImageController');
+
+    Route::group(['prefix' => 'banner'], function () {
+        Route::post('upload', 'BannerController@upload');
+        Route::post('upload-from-url', 'BannerController@uploadFromUrl');
+    });
+    Route::resource('banner', 'BannerController');
+
 });
 
 Route::group(array('prefix'=>'quantri','middleware' => ['sentinel', 'authorized', 'xss_protection'], 'namespace' => 'Users'), function () {
@@ -79,3 +83,7 @@ Route::group(array('prefix'=>'quantri','middleware' => ['sentinel', 'authorized'
     Route::resource('category', 'CategoryController');
 
 });
+
+include_once 'tien.php';
+include_once 'quang.php';
+include_once 'tung.php';

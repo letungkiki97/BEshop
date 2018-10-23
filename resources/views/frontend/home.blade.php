@@ -847,37 +847,38 @@
                             @foreach($categoryparents as $k=>$v)
 								<div id="collection{{$k}}" class="pro-tabcontent">
 									<div class="grid-uniform md-mg-left-15">
-										@foreach($v->products as $k3=>$v3)
+										@foreach($v->products as $k2=>$v2)
 											<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
 												<div class="product-item">
 													<div class="product-img">
-														<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-7.html">
-															<img id="1016605819" class="only-one lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-																 data-src="http://product.hstatic.net/1000305059/product/suplo-010a-01_9c5acf2a9eea4973bc832b421847d665_large.jpg"
-																 alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
+														<a href="{{url('productdetail/'.@$v2->id)}}">
+															<img id="{{@$v2->image->id}}" class="only-one lazyload" src="{{url('uploads/products/'.@$v2->image->name)}}"
+																 data-src="{{url('uploads/products/'.@$v2->image->name)}}"
+																 title="{{@$v2->image->title}}" alt="{{@$v2->image->alt}}" />
 														</a>
 														<div class="product-actions medium--hide small--hide">
 															<div>
-																<button type="button" class="btnQuickView quick-view medium--hide small--hide" data-handle="/products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-7"><span>
-																			<i class="fa fa-search-plus" aria-hidden="true"></i></span></button>
+																<button type="button" class="btnQuickView quick-view medium--hide small--hide"
+																		data-handle="/products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-7">
+																	<span> <i class="fa fa-search-plus" aria-hidden="true"></i></span>
+																</button>
 															</div>
 														</div>
 													</div>
 													<div class="product-item-info">
 														<div class="product-title">
-															<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-7.html">SUPLO
-																{{$v3->product_name}}</a>
+															<a href="{{url('productdetail/'.@$v2->id)}}">
+																{{$v2->product_name}}</a>
 														</div>
-														<div class="product-desc">
-															Bọc vô lăng Sparco chính hãng SPC1111RS lấy cảm hứng thể thao từ các dòng xe đua kết hợp với công nghệ sản
-															xuất tiên tiến. Các mẫu bọc vô lăng SPARCO đều có kích thước đường kín...
+														<div class="product-desc" style="display: block">
+															{{str_limit(@$v2->description, $limit = 100, $end = '...')}}
 														</div>
 														<div class="product-price clearfix">
-															<span class="current-price">{{$v3->sale_price}}₫</span>
+															<span class="current-price">{{$v2->sale_price}}₫</span>
 														</div>
 													</div>
 													<div class="product-buynow">
-														<button type="button" disabled class="btnAddToCart  medium--hide small--hide" data-id=""><span>Hết hàng</span></button>
+														<button type="button" {{$v2->made_to_order?"":"disabled"}}  class="btnAddToCart  medium--hide small--hide" data-id=""><span>{{$v2->made_to_order?"Còn hàng":"Hết hàng"}}</span></button>
 													</div>
 												</div>
 											</div>
@@ -887,33 +888,34 @@
 												<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
 													<div class="product-item">
 														<div class="product-img">
-															<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-7.html">
-																<img id="1016605819" class="only-one lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-																	 data-src="http://product.hstatic.net/1000305059/product/suplo-010a-01_9c5acf2a9eea4973bc832b421847d665_large.jpg"
-																	 alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
+															<a href="{{url('productdetail/'.@$v2->id)}}">
+																<img id="{{@$v2->image->id}}" class="only-one lazyload" src="{{url('uploads/products/'.@$v2->image->name)}}"
+																	 data-src="{{url('uploads/products/'.@$v2->image->name)}}"
+																	 title="{{@$v2->image->title}}" alt="{{@$v2->image->alt}}" />
 															</a>
 															<div class="product-actions medium--hide small--hide">
 																<div>
-																	<button type="button" class="btnQuickView quick-view medium--hide small--hide" data-handle="/products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-7"><span>
-																			<i class="fa fa-search-plus" aria-hidden="true"></i></span></button>
+																	<button type="button" class="btnQuickView quick-view medium--hide small--hide"
+																			data-handle="/products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-7">
+																		<span> <i class="fa fa-search-plus" aria-hidden="true"></i></span>
+																	</button>
 																</div>
 															</div>
 														</div>
 														<div class="product-item-info">
 															<div class="product-title">
-																<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-7.html">SUPLO
+																<a href="{{url('productdetail/'.@$v2->id)}}">
 																	{{$v2->product_name}}</a>
 															</div>
-															<div class="product-desc">
-																Bọc vô lăng Sparco chính hãng SPC1111RS lấy cảm hứng thể thao từ các dòng xe đua kết hợp với công nghệ sản
-																xuất tiên tiến. Các mẫu bọc vô lăng SPARCO đều có kích thước đường kín...
+															<div class="product-desc" style="display: block">
+																{{str_limit(@$v2->description, $limit = 100, $end = '...')}}
 															</div>
 															<div class="product-price clearfix">
 																<span class="current-price">{{$v2->sale_price}}₫</span>
 															</div>
 														</div>
 														<div class="product-buynow">
-															<button type="button" disabled class="btnAddToCart  medium--hide small--hide" data-id=""><span>Hết hàng</span></button>
+                                                            <button type="button" {{$v2->made_to_order?"":"disabled"}}  class="btnAddToCart  medium--hide small--hide" data-id=""><span>{{$v2->made_to_order?"Còn hàng":"Hết hàng"}}</span></button>
 														</div>
 													</div>
 												</div>

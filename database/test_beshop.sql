@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 23, 2018 at 11:28 AM
+-- Generation Time: Oct 23, 2018 at 04:14 PM
 -- Server version: 5.7.23-0ubuntu0.16.04.1
 -- PHP Version: 7.2.11-2+ubuntu16.04.1+deb.sury.org+1
 
@@ -42,6 +42,69 @@ CREATE TABLE `activations` (
 
 INSERT INTO `activations` (`id`, `user_id`, `code`, `completed`, `completed_at`, `created_at`, `updated_at`) VALUES
 (1, 1, 'UW9ZXdFcvbhKTvvR0rgm2hFP81EPI0bd', 1, '2018-10-17 17:00:00', '2018-10-17 17:00:00', '2018-10-17 17:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `banner`
+--
+
+CREATE TABLE `banner` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `time` int(11) NOT NULL,
+  `size` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `banner`
+--
+
+INSERT INTO `banner` (`id`, `name`, `image`, `time`, `size`, `created_at`, `updated_at`) VALUES
+(1, 'Administrator2', '', 0, 0, '2018-10-23 09:11:41', '2018-10-23 09:13:05');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `banner_image`
+--
+
+CREATE TABLE `banner_image` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `image_id` int(11) NOT NULL,
+  `banner_id` int(11) NOT NULL,
+  `position` int(11) NOT NULL,
+  `link` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `text_text` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `text_color` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `text_font` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `text_size` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `text_left` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `text_right` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `text_top` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `text_bottom` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `button_background` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `button_text` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `button_color` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `button_font` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `button_size` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `button_left` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `button_right` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `button_top` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `button_bottom` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `banner_image`
+--
+
+INSERT INTO `banner_image` (`id`, `image_id`, `banner_id`, `position`, `link`, `text_text`, `text_color`, `text_font`, `text_size`, `text_left`, `text_right`, `text_top`, `text_bottom`, `button_background`, `button_text`, `button_color`, `button_font`, `button_size`, `button_left`, `button_right`, `button_top`, `button_bottom`, `created_at`, `updated_at`) VALUES
+(1, 7, 1, 1, '', '', 'FFFFFF', 'Arial', '', '', '', '', '', 'FFFFFF', '', 'FFFFFF', 'Arial', '', '', '', '', '', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -122,6 +185,17 @@ CREATE TABLE `images` (
   `status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `images`
+--
+
+INSERT INTO `images` (`id`, `name`, `title`, `alt`, `path`, `created_at`, `updated_at`, `status`) VALUES
+(1, 'AUDI1-abc1.jpg', 'ABC', 'ABC', 'products', '2018-10-23 08:33:41', '2018-10-23 09:02:22', 0),
+(4, 'AUDI1-abc4.jpg', 'ABC', 'ABC', 'products', '2018-10-23 08:58:16', '2018-10-23 09:02:22', 0),
+(5, 'AUDI1-abc5.jpg', 'ABC', 'ABC', 'products', '2018-10-23 08:58:16', '2018-10-23 09:02:22', 0),
+(6, '40796538-2097213610530959-4694928604952264704-n_1540285798.jpg', '', '', 'banner', '2018-10-23 09:09:58', '2018-10-23 09:09:58', 0),
+(7, '40778872-2097288607190126-6662591172088692736-n_1540285868.jpg', '', '', 'banner', '2018-10-23 09:11:08', '2018-10-23 09:11:08', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -194,6 +268,13 @@ CREATE TABLE `products` (
   `main_variant` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `product_name`, `product_image`, `category_id`, `status`, `sale_price`, `description`, `long_description`, `user_id`, `main_sku`, `product_sku`, `made_to_order`, `product_gallery`, `file_3d`, `product_url`, `published`, `product_weight`, `product_length`, `product_width`, `product_depth`, `delivery_category_id`, `promotion_price`, `promotion_from`, `promotion_to`, `professional_price`, `re_order_point`, `unit_value`, `total_value`, `created_at`, `updated_at`, `deleted_at`, `is_variant`, `lead_time`, `unlink`, `slug`, `meta_title`, `meta_description`, `focus_keyword`, `assigned_to`, `hover_image`, `main_variant`) VALUES
+(1, 'ABC', '5', 2, 1, 0, '1', '', 1, '', 'AUDI1', 0, NULL, NULL, '', 1, 0, 0, 0, 0, NULL, 0, NULL, NULL, 0, 0, 0, 0, '2018-10-23 06:51:49', '2018-10-23 08:59:00', NULL, 0, 0, NULL, 'abc', '', '', '', 0, 4, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -228,6 +309,15 @@ CREATE TABLE `product_image` (
   `product_id` int(11) NOT NULL,
   `image_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `product_image`
+--
+
+INSERT INTO `product_image` (`product_id`, `image_id`) VALUES
+(1, 1),
+(1, 4),
+(1, 5);
 
 -- --------------------------------------------------------
 
@@ -277,11 +367,12 @@ INSERT INTO `revisions` (`id`, `revisionable_type`, `revisionable_id`, `user_id`
 (34, 'App\\Models\\Category', 7, 1, 'created_at', NULL, '2018-10-23 10:50:26', '2018-10-23 03:50:26', '2018-10-23 03:50:26'),
 (35, 'App\\Models\\Category', 7, 1, 'parent_id', '0', '5', '2018-10-23 03:50:37', '2018-10-23 03:50:37'),
 (36, 'App\\Models\\Product', 1, 1, 'category_id', '2', '1', '2018-10-23 04:14:17', '2018-10-23 04:14:17'),
-(37, 'App\\Models\\Product', 1, 1, 'product_sku', 'AUDI1', 'OTO01', '2018-10-23 04:14:17', '2018-10-23 04:14:17'),
 (38, 'App\\Models\\Product', 2, 1, 'created_at', NULL, '2018-10-23 11:19:06', '2018-10-23 04:19:06', '2018-10-23 04:19:06'),
 (39, 'App\\Models\\Product', 2, 1, 'sale_price', '0', '1200000', '2018-10-23 04:21:33', '2018-10-23 04:21:33'),
 (40, 'App\\Models\\Product', 2, 1, 'promotion_price', '0', '1176000', '2018-10-23 04:21:33', '2018-10-23 04:21:33'),
-(42, 'App\\Models\\Product', 2, 1, 'published', '0', '1', '2018-10-23 04:23:01', '2018-10-23 04:23:01');
+(42, 'App\\Models\\Product', 2, 1, 'published', '0', '1', '2018-10-23 04:23:01', '2018-10-23 04:23:01'),
+(52, 'App\\Models\\Product', 1, 1, 'product_image', '1', '5', '2018-10-23 08:59:00', '2018-10-23 08:59:00'),
+(53, 'App\\Models\\Product', 1, 1, 'hover_image', '0', '4', '2018-10-23 08:59:00', '2018-10-23 08:59:00');
 
 -- --------------------------------------------------------
 
@@ -497,6 +588,18 @@ ALTER TABLE `activations`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `banner`
+--
+ALTER TABLE `banner`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `banner_image`
+--
+ALTER TABLE `banner_image`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
@@ -577,6 +680,16 @@ ALTER TABLE `user_login`
 ALTER TABLE `activations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
+-- AUTO_INCREMENT for table `banner`
+--
+ALTER TABLE `banner`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `banner_image`
+--
+ALTER TABLE `banner_image`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
@@ -590,7 +703,7 @@ ALTER TABLE `colors`
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `persistences`
 --
@@ -600,12 +713,12 @@ ALTER TABLE `persistences`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `revisions`
 --
 ALTER TABLE `revisions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 --
 -- AUTO_INCREMENT for table `roles`
 --
@@ -615,7 +728,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `user_login`
 --

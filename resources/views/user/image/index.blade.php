@@ -46,7 +46,7 @@
         }
         .img-box:hover .img-toolbox {
             display: block;
-            background-color: rgb(57,57,57, .55);
+            background-color: rebeccapurple;
         }
         .img-box:hover .img-caption {
             display: block;
@@ -73,10 +73,10 @@
                 <i class="material-icons">dashboard</i>
                 {{ $title }}
             </h4>
-                                <span class="pull-right">
-                                    <i class="fa fa-fw fa-chevron-up clickable"></i>
-                                    <i class="fa fa-fw fa-times removepanel clickable"></i>
-                                </span>
+            <span class="pull-right">
+                <i class="fa fa-fw fa-chevron-up clickable"></i>
+                <i class="fa fa-fw fa-times removepanel clickable"></i>
+            </span>
         </div>
         <div class="panel-body">
             @include('layouts._toolbox')
@@ -88,7 +88,7 @@
                             <div class="img-caption">{{ $item->name }}</div>
                             <div class="img-toolbox">
                                 <a href="{{ $item->full_path }}" data-fancybox="gallery" data-caption="{{ $item->name }}"><i class="fa fa-fw fa-eye text-primary"></i></a>
-                                <a class="edit-item" href="javascript:void(0)" data-url="{{ url('image/' . $item->id ) }}" title="{{ __('table.edit') }}"><i class="fa fa-fw fa-pencil text-warning"></i> </a>
+                                <a class="edit-item" href="javascript:void(0)" data-url="{{ url('quantri/image/' . $item->id ) }}" title="{{ __('table.edit') }}"><i class="fa fa-fw fa-pencil text-warning"></i> </a>
                                 <a href="javascript:void(0)" class="delete_item" data-name="{{ $item->name }}" data-id="{{$item->id}}" title="{{ __('table.delete') }}"><i class="fa fa-fw fa-times text-danger"></i></a>
                             </div>
                         </div>
@@ -165,7 +165,7 @@
 
 <script src="{{ url('js/jquery.fancybox.min.js') }}"></script>
 <script>
-    var galleryObj = upFile("#fileuploader", "{{ url('image') }}", function (files,data,xhr,pd) {
+    var galleryObj = upFile("#fileuploader", "{{ url('quantri/image') }}", function (files,data,xhr,pd) {
         location.reload();
     }, false);
     $("#gallery_close").click(function(e) {
