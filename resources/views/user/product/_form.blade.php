@@ -18,9 +18,9 @@
 <div class="panel panel-primary">
     <div class="panel-body">
         @if (isset($product))
-            {!! Form::model($product, array('url' => $type . '/' . $product->id, 'method' => 'put', 'files'=> true)) !!}
+            {!! Form::model($product, array('url' => 'quantri/'.$type . '/' . $product->id, 'method' => 'put', 'files'=> true)) !!}
         @else
-            {!! Form::open(array('url' => $type, 'method' => 'post', 'files'=> true)) !!}
+            {!! Form::open(array('url' => 'quantri/'.$type, 'method' => 'post', 'files'=> true)) !!}
         @endif
         <div class="nav-tabs-custom" id="setting_tabs">
             <ul class="nav nav-tabs" style="display:list-item;">
@@ -41,18 +41,6 @@
                     </a>
                 </li>
                 @endif
-                @if(isset($user_data) && ($user_data->hasAccess(['product.stock']) || $user_data->inRole('admin')))
-                <li id="tab_stock">
-                    <a href="#stock" data-toggle="tab" title="{{ __('tab.stock') }}">
-                        <i class="material-icons md-24">account_balance</i>
-                    </a>
-                </li>
-                @endif
-                <li id="tab_attribute">
-                    <a href="#attribute" data-toggle="tab" title="{{ __('tab.attribute') }}">
-                        <i class="material-icons md-24">extension</i>
-                    </a>
-                </li>
                 <li id="tab_file">
                     <a href="#file" data-toggle="tab" title="{{ __('tab.file') }}">
                         <i class="material-icons md-24">attach_file</i>
@@ -101,12 +89,8 @@
                             @endif
                         </h4>
                     </div>
-                    <div class="form-group col-xs-12 {{ $errors->has('product_color') ? 'has-error' : '' }}">
+                    <div class="form-group col-xs-6 {{ $errors->has('product_color') ? 'has-error' : '' }}">
                         {!! Form::label('product_color', __('product.product_color'), array('class' => 'control-label')) !!}
-                        {{-- <div class="controls">
-                            {!! Form::text('product_color', null, array('class' => 'form-control number')) !!}
-                            <span class="help-block">{{ $errors->first('product_color', ':message') }}</span>
-                        </div> --}}
                         <select name="color[]" class="form-control select2 feature" multiple="true">
                             @foreach ($colors as $k => $v)
                                 <option value="{{$k}}" {{ isset($product_color) && in_array($k, $product_color) ? 'selected' : '' }}>{{$v}}</option>
@@ -114,6 +98,7 @@
                         </select>
                         <span class="help-block">{{ $errors->first('color_id', ':message') }}</span>
                     </div>
+
                     <div class="clear"></div>
                     <div class="form-group col-xs-3 {{ $errors->has('product_weight') ? 'has-error' : '' }}">
                         {!! Form::label('product_weight', __('product.product_weight'), array('class' => 'control-label')) !!}
@@ -153,20 +138,6 @@
                         <div class="controls">
                             {!! Form::textarea('long_description', null, array('class' => 'form-control', 'id' => 'editor')) !!}
                             <span class="help-block">{{ $errors->first('long_description', ':message') }}</span>
-                        </div>
-                    </div>
-                    <div class="form-group col-xs-6 {{ $errors->has('categories') ? 'has-error' : '' }}">
-                        {!! Form::label('categories', __('product.product_category'), array('class' => 'control-label')) !!}
-                        <div class="controls">
-                            {!! Form::select('categories[]', $categories, (isset($productCategory)?$productCategory:null), array('id'=>'categories','multiple'=>true, 'class' => 'form-control select2')) !!}
-                            <span class="help-block">{{ $errors->first('categories', ':message') }}</span>
-                        </div>
-                    </div>
-                    <div class="form-group col-xs-6 {{ $errors->has('tag') ? 'has-error' : '' }}">
-                        {!! Form::label('tag', __('common.tag'), array('class' => 'control-label')) !!}
-                        <div class="controls">
-                            {!! Form::select('tag[]', $tags, (isset($productTag)?$productTag:null), array('id'=>'tag','multiple'=>true, 'class' => 'form-control select2')) !!}
-                            <span class="help-block">{{ $errors->first('tag', ':message') }}</span>
                         </div>
                     </div>
                     <div class="clear"></div>
@@ -251,13 +222,6 @@
                         </div>
                     </div>
                     <div class="clear"></div>
-                    <div class="form-group col-xs-6 {{ $errors->has('delivery_category_id') ? 'has-error' : '' }}">
-                        {!! Form::label('delivery_category_id', __('common.delivery_category'), array('class' => 'control-label')) !!}
-                         <div class="controls">
-                            {!! Form::select('delivery_category_id', $delivery_category, null, array('id'=>'delivery_category_id','class' => 'form-control select2')) !!}
-                            <span class="help-block">{{ $errors->first('delivery_category_id', ':message') }}</span>
-                        </div>
-                    </div>
                     <div class="form-group col-xs-6 required {{ $errors->has('made_to_order') ? 'has-error' : '' }}">
                         {!! Form::label('made_to_order', __('product.made_to_order'), array('class' => 'control-label required')) !!}
                         <div class="controls">
@@ -322,136 +286,6 @@
                     <div class="clear"></div>
                 </div>
                 @endif
-                @if(isset($user_data) && ($user_data->hasAccess(['product.stock']) || $user_data->inRole('admin')))
-                <div class="tab-pane" id="stock">
-                    <div class="form-group col-xs-6 {{ $errors->has('unit_value') ? 'has-error' : '' }}">
-                        {!! Form::label('unit_value', __('product.unit_value'), array('class' => 'control-label')) !!}
-                        <div class="controls">
-                            {!! Form::text('unit_value', null, array('class' => 'form-control number')) !!}
-                            <span class="help-block">{{ $errors->first('unit_value', ':message') }}</span>
-                        </div>
-                    </div>
-                    <div class="form-group col-xs-6 {{ $errors->has('total_value') ? 'has-error' : '' }}">
-                        {!! Form::label('total_value', __('product.total_value'), array('class' => 'control-label')) !!}
-                        <div class="controls">
-                            {!! Form::text('total_value', null, array('class' => 'form-control number')) !!}
-                            <span class="help-block">{{ $errors->first('total_value', ':message') }}</span>
-                        </div>
-                    </div>
-                    <div class="clear"></div>
-                    <div class="form-group col-xs-6 {{ $errors->has('re_order_point') ? 'has-error' : '' }}">
-                        {!! Form::label('re_order_point', __('product.re_order_point'), array('class' => 'control-label')) !!}
-                        <div class="controls">
-                            {!! Form::number('re_order_point', null, array('class' => 'form-control', 'min' => 0)) !!}
-                            <span class="help-block">{{ $errors->first('re_order_point', ':message') }}</span>
-                        </div>
-                    </div>
-                    <div class="form-group col-xs-6 {{ $errors->has('lead_time') ? 'has-error' : '' }}">
-                        {!! Form::label('lead_time', __('product.lead_time'), array('class' => 'control-label')) !!}
-                        <div class="controls">
-                            {!! Form::number('lead_time', null, array('class' => 'form-control', 'min' => 0)) !!}
-                            <span class="help-block">{{ $errors->first('lead_time', ':message') }}</span>
-                        </div>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-                @endif
-                <div class="tab-pane" id="attribute">
-                    <div class="form-group col-xs-12">
-                        <label class="control-label">{{__('common.property')}}</label>
-                        <div class="panel-content">
-                            <table class="table table-bordered">
-                                <thead>
-                                <tr>
-                                    <th style="width: 45%">{{__('common.property_type')}}</th>
-                                    <th style="width: 45%">{{__('common.property')}}</th>
-                                    <th></th>
-                                </tr>
-                                </thead>
-                                <tbody id="InputsWrapper">
-                                    @if(isset($group))
-                                        @foreach($group as $property_type => $value)
-                                            <tr>
-                                                <td>
-                                                    <select class="attr_name form-control" onchange="getAttr(this)">
-                                                        <option value="{{ $property_type }}">{{ $value['name'] }}</option>
-                                                    </select>
-                                                </td>
-                                                <td>
-                                                    @php
-                                                        $select = '';
-                                                        foreach($value['item'] as $key => $item) {
-                                                            $select .= $key . ',';
-                                                        }
-                                                    @endphp
-                                                    <select name="property[]" data-select="{{ rtrim($select, ',') }}" class="attr_value form-control select2" id="property_{{$property_type}}" multiple>
-                                                    </select>
-                                                </td>
-                                                <td>
-                                                    <a href="javascript:void(0)" class="delete removeclass"><i class="fa fa-fw fa-times text-danger"></i></a>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                    @endif
-                                </tbody>
-                            </table>
-                            <button id="AddMoreFileBox" class="btn btn-sm btn-primary" type="button"><i class="fa fa-plus"></i> {{__('form.add_property')}}</button>
-                        </div>
-                    </div>
-                    @if(isset($product) && !$product->is_variant)
-                    <div class="form-group col-xs-12">
-                        <label class="control-label">{{__('product.variants')}}</label>
-                        <div class="clear"></div>
-                        <button id="gen_var" type="button" class="btn btn-primary" style="margin: 10px 0 30px">{{__('form.generate_variations')}}</button>
-                        <div class="clear"></div>
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>{{__('product.product_sku')}}</th>
-                                    <th>{{__('common.property')}}</th>
-                                    <th>{{__('product.main')}}</th>
-                                    <th>{{__('product.sales_price')}}</th>
-                                    <th>{{__('product.promotion_price')}}</th>
-                                    <th>{{__('product.promotion_date')}}</th>
-                                    <th>{{__('product.professional_price')}}</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody id="variant-detail">
-                                @if ($children)
-                                    @foreach ($children as $var)
-                                        <tr>
-                                            <input type="hidden" data-id="{{ $var['id'] }}" value="{{ $var['value'] }}" class="property_item" data-code="{{ $var['data-code'] }}" data-name="{{ $var['data-name'] }}" />
-                                            <td>{{ $var['code'] }}</td>
-                                            <td>{{ $var['name'] }}</td>
-                                            <td><input type="radio" class="main_variant" name="main_variant" {{ $var['main_variant'] ? 'checked' : '' }}><br></td>
-                                            <td>{{ $var['sale_price'] }}</td>
-                                            <td>{{ $var['promotion_price'] }}</td>
-                                            <td>{{ $var['promotion_date'] }}</td>
-                                            <td>{{ $var['professional_price'] }}</td>
-                                            <td>
-                                                <a href="javascript:void(0)" class="showclass" data-id="{{ $var['id'] }}">
-                                                    @if(isset($user_data) && ($user_data->hasAccess(['product.edit']) || $user_data->inRole('admin')))
-                                                        @if($var['status'])
-                                                        <i class="fa fa-fw fa-eye text-primary"></i>
-                                                        @else
-                                                        <i class="fa fa-fw fa-eye-slash text-primary"></i>
-                                                        @endif
-                                                    @endif
-                                                </a>
-                                                <a href="{{ url('product/'.$var['id'].'/edit') }}">
-                                                    <i class="fa fa-fw fa-pencil text-warning"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                @endif
-                            </tbody>
-                        </table>
-                        <button id="save_var" type="button" class="btn btn-primary" style="margin: 10px 0">{{__('form.save_variations')}}</button>
-                    </div>
-                    @endif
-                </div>
                 <div class="tab-pane" id="file">
                     <div class="form-group col-xs-12">
                         <label class="control-label">{{__('product.gallery')}}

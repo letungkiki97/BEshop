@@ -3,7 +3,7 @@
     <div class="box-color">
            <h4>{{trans('auth.sign_account')}}</h4>
         <br>
-        {!! Form::open(array('url' => url('signin'), 'method' => 'post', 'name' => 'form')) !!}
+        {!! Form::open(array('url' => url('quantri/signin'), 'method' => 'post', 'name' => 'form')) !!}
         <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
             {!! Form::label(trans('auth.email')) !!} :
             <span class="help-block">{{ $errors->first('email', ':message') }}</span>

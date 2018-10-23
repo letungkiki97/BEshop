@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 18, 2018 at 03:42 PM
+-- Generation Time: Oct 23, 2018 at 04:14 PM
 -- Server version: 5.7.23-0ubuntu0.16.04.1
--- PHP Version: 7.2.11-1+ubuntu16.04.1+deb.sury.org+1
+-- PHP Version: 7.2.11-2+ubuntu16.04.1+deb.sury.org+1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `caza`
+-- Database: `test_beshop`
 --
 
 -- --------------------------------------------------------
@@ -46,6 +46,159 @@ INSERT INTO `activations` (`id`, `user_id`, `code`, `completed`, `completed_at`,
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `banner`
+--
+
+CREATE TABLE `banner` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `time` int(11) NOT NULL,
+  `size` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `banner`
+--
+
+INSERT INTO `banner` (`id`, `name`, `image`, `time`, `size`, `created_at`, `updated_at`) VALUES
+(1, 'Administrator2', '', 0, 0, '2018-10-23 09:11:41', '2018-10-23 09:13:05');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `banner_image`
+--
+
+CREATE TABLE `banner_image` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `image_id` int(11) NOT NULL,
+  `banner_id` int(11) NOT NULL,
+  `position` int(11) NOT NULL,
+  `link` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `text_text` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `text_color` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `text_font` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `text_size` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `text_left` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `text_right` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `text_top` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `text_bottom` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `button_background` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `button_text` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `button_color` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `button_font` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `button_size` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `button_left` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `button_right` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `button_top` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `button_bottom` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `banner_image`
+--
+
+INSERT INTO `banner_image` (`id`, `image_id`, `banner_id`, `position`, `link`, `text_text`, `text_color`, `text_font`, `text_size`, `text_left`, `text_right`, `text_top`, `text_bottom`, `button_background`, `button_text`, `button_color`, `button_font`, `button_size`, `button_left`, `button_right`, `button_top`, `button_bottom`, `created_at`, `updated_at`) VALUES
+(1, 7, 1, 1, '', '', 'FFFFFF', 'Arial', '', '', '', '', '', 'FFFFFF', '', 'FFFFFF', 'Arial', '', '', '', '', '', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `categories`
+--
+
+CREATE TABLE `categories` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `code` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `parent_id` int(11) NOT NULL,
+  `slug` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `meta_title` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `meta_description` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`id`, `name`, `user_id`, `created_at`, `updated_at`, `deleted_at`, `code`, `parent_id`, `slug`, `meta_title`, `meta_description`) VALUES
+(1, 'Mẫu Ô TÔ', 0, '2018-10-23 02:53:30', '2018-10-23 02:56:06', NULL, 'OTO', 0, 'o-to', 'danh mục cha ô tô', 'danh sách hãng ô tô'),
+(2, 'Audi', 0, '2018-10-23 02:56:44', '2018-10-23 02:56:44', NULL, 'AUDI', 1, 'audi', '', 'audi'),
+(3, 'Lambogini', 0, '2018-10-23 03:37:28', '2018-10-23 03:37:28', NULL, 'LAMBOGINI', 1, 'Lambogini', '', 'Lambogini'),
+(4, 'NGUYÊN LIỆU VẬT TƯ', 0, '2018-10-23 03:38:02', '2018-10-23 03:49:43', NULL, 'NLVT', 0, 'nguyen-lieu-vat-tu', '', 'NGUYÊN LIỆU VẬT TƯ'),
+(5, 'May Móc', 0, '2018-10-23 03:46:11', '2018-10-23 03:47:19', NULL, 'MAYMOC', 0, 'may-moc-va-chuyen-giao-cong-nghe', '', 'May Móc Và Chuyển Giao Công Nghê'),
+(6, 'Máy cắt CNC', 0, '2018-10-23 03:46:53', '2018-10-23 03:46:53', NULL, 'MAYCATCNC', 5, 'may-cat-cnc', '', 'Máy cắt CNC'),
+(7, 'Máy ép nhiệt', 0, '2018-10-23 03:50:26', '2018-10-23 03:50:37', NULL, 'MAYEPNHIET', 5, 'may-ep-nhiet', '', 'Máy ép nhiệt');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `colors`
+--
+
+CREATE TABLE `colors` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `color` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `colors`
+--
+
+INSERT INTO `colors` (`id`, `color`, `value`, `created_at`, `updated_at`) VALUES
+(4, 'Xám', '8F8F8F', '2017-09-07 16:57:25', '2018-08-01 03:27:58'),
+(6, 'Xanh', '46B9BD', '2017-09-07 17:03:43', '2018-08-01 03:28:07'),
+(8, 'Cam', 'FFA95E', '2017-09-07 17:04:45', '2018-08-01 03:28:15'),
+(10, 'Xanh da trời', '4DC6FF', '2017-09-07 17:06:49', '2018-08-01 03:28:42'),
+(11, 'Đen', '000000', '2017-09-07 17:07:14', '2018-08-01 03:28:55'),
+(17, 'vàng', 'F8FF3B', '2017-09-10 13:57:49', '2017-09-10 13:57:49'),
+(19, 'Đỏ', 'FF2E35', '2017-09-11 18:15:14', '2017-09-11 18:15:14'),
+(27, 'Hồng', 'FFBAF8', '2017-09-20 18:34:57', '2017-09-20 18:34:57'),
+(28, 'Trắng', 'FFFFFF', '2018-02-28 13:33:40', '2018-08-01 03:26:51');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `images`
+--
+
+CREATE TABLE `images` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `alt` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `path` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `status` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `images`
+--
+
+INSERT INTO `images` (`id`, `name`, `title`, `alt`, `path`, `created_at`, `updated_at`, `status`) VALUES
+(1, 'AUDI1-abc1.jpg', 'ABC', 'ABC', 'products', '2018-10-23 08:33:41', '2018-10-23 09:02:22', 0),
+(4, 'AUDI1-abc4.jpg', 'ABC', 'ABC', 'products', '2018-10-23 08:58:16', '2018-10-23 09:02:22', 0),
+(5, 'AUDI1-abc5.jpg', 'ABC', 'ABC', 'products', '2018-10-23 08:58:16', '2018-10-23 09:02:22', 0),
+(6, '40796538-2097213610530959-4694928604952264704-n_1540285798.jpg', '', '', 'banner', '2018-10-23 09:09:58', '2018-10-23 09:09:58', 0),
+(7, '40778872-2097288607190126-6662591172088692736-n_1540285868.jpg', '', '', 'banner', '2018-10-23 09:11:08', '2018-10-23 09:11:08', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `persistences`
 --
 
@@ -62,7 +215,8 @@ CREATE TABLE `persistences` (
 --
 
 INSERT INTO `persistences` (`id`, `user_id`, `code`, `created_at`, `updated_at`) VALUES
-(1, 1, 'VQSIVIYh2BafHTek04cAW2pbmJWUq1gX', '2018-10-18 08:39:39', '2018-10-18 08:39:39');
+(3, 1, 'p64iotlFRKtAG4lDtrMcgresM00ypldY', '2018-10-23 02:12:09', '2018-10-23 02:12:09'),
+(4, 1, 'vDzYDrVpK2EBo1IGD6K4uQ6tlwePLtYO', '2018-10-23 02:20:53', '2018-10-23 02:20:53');
 
 -- --------------------------------------------------------
 
@@ -114,6 +268,57 @@ CREATE TABLE `products` (
   `main_variant` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `product_name`, `product_image`, `category_id`, `status`, `sale_price`, `description`, `long_description`, `user_id`, `main_sku`, `product_sku`, `made_to_order`, `product_gallery`, `file_3d`, `product_url`, `published`, `product_weight`, `product_length`, `product_width`, `product_depth`, `delivery_category_id`, `promotion_price`, `promotion_from`, `promotion_to`, `professional_price`, `re_order_point`, `unit_value`, `total_value`, `created_at`, `updated_at`, `deleted_at`, `is_variant`, `lead_time`, `unlink`, `slug`, `meta_title`, `meta_description`, `focus_keyword`, `assigned_to`, `hover_image`, `main_variant`) VALUES
+(1, 'ABC', '5', 2, 1, 0, '1', '', 1, '', 'AUDI1', 0, NULL, NULL, '', 1, 0, 0, 0, 0, NULL, 0, NULL, NULL, 0, 0, 0, 0, '2018-10-23 06:51:49', '2018-10-23 08:59:00', NULL, 0, 0, NULL, 'abc', '', '', '', 0, 4, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_category`
+--
+
+CREATE TABLE `product_category` (
+  `product_id` int(11) NOT NULL,
+  `category_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_color`
+--
+
+CREATE TABLE `product_color` (
+  `product_id` int(11) NOT NULL,
+  `color_id` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_image`
+--
+
+CREATE TABLE `product_image` (
+  `product_id` int(11) NOT NULL,
+  `image_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `product_image`
+--
+
+INSERT INTO `product_image` (`product_id`, `image_id`) VALUES
+(1, 1),
+(1, 4),
+(1, 5);
+
 -- --------------------------------------------------------
 
 --
@@ -137,7 +342,37 @@ CREATE TABLE `revisions` (
 --
 
 INSERT INTO `revisions` (`id`, `revisionable_type`, `revisionable_id`, `user_id`, `key`, `old_value`, `new_value`, `created_at`, `updated_at`) VALUES
-(1, 'App\\Models\\User', 1, 1, 'last_login', '2018-10-18 15:36:31', '2018-10-18 15:39:39', '2018-10-18 08:39:39', '2018-10-18 08:39:39');
+(1, 'App\\Models\\User', 1, 1, 'last_login', '2018-10-18 15:36:31', '2018-10-18 15:39:39', '2018-10-18 08:39:39', '2018-10-18 08:39:39'),
+(4, 'App\\Models\\User', 1, 1, 'last_login', '2018-10-23 09:12:09', '2018-10-23 09:20:53', '2018-10-23 02:20:53', '2018-10-23 02:20:53'),
+(5, 'App\\Models\\Product', 1, 1, 'created_at', NULL, '2018-10-23 09:30:26', '2018-10-23 02:30:26', '2018-10-23 02:30:26'),
+(6, 'App\\Models\\Product', 1, 1, 'main_sku', '', '1', '2018-10-23 02:33:28', '2018-10-23 02:33:28'),
+(7, 'App\\Models\\Product', 1, 1, 'product_url', '', '2', '2018-10-23 02:33:28', '2018-10-23 02:33:28'),
+(8, 'App\\Models\\Product', 1, 1, 'meta_title', '', '3', '2018-10-23 02:33:28', '2018-10-23 02:33:28'),
+(9, 'App\\Models\\Product', 1, 1, 'meta_description', '', '5', '2018-10-23 02:33:28', '2018-10-23 02:33:28'),
+(11, 'App\\Models\\Product', 1, 1, 'product_image', NULL, '8145', '2018-10-23 02:33:50', '2018-10-23 02:33:50'),
+(13, 'App\\Models\\Category', 69, 1, 'name', 'Tranh treo tường', 'Tranh treo tường1', '2018-10-23 02:43:02', '2018-10-23 02:43:02'),
+(16, 'App\\Models\\Category', 69, 1, 'code', 'A1', 'A11', '2018-10-23 02:44:39', '2018-10-23 02:44:39'),
+(17, 'App\\Models\\Category', 1, 1, 'created_at', NULL, '2018-10-23 09:53:30', '2018-10-23 02:53:30', '2018-10-23 02:53:30'),
+(18, 'App\\Models\\Category', 1, 1, 'name', 'Mẫu ô tô', 'Mẫu Ô TÔ', '2018-10-23 02:56:06', '2018-10-23 02:56:06'),
+(19, 'App\\Models\\Category', 2, 1, 'created_at', NULL, '2018-10-23 09:56:44', '2018-10-23 02:56:44', '2018-10-23 02:56:44'),
+(25, 'App\\Models\\Category', 3, 1, 'created_at', NULL, '2018-10-23 10:37:28', '2018-10-23 03:37:28', '2018-10-23 03:37:28'),
+(26, 'App\\Models\\Category', 4, 1, 'created_at', NULL, '2018-10-23 10:38:02', '2018-10-23 03:38:02', '2018-10-23 03:38:02'),
+(27, 'App\\Models\\Category', 5, 1, 'created_at', NULL, '2018-10-23 10:46:11', '2018-10-23 03:46:11', '2018-10-23 03:46:11'),
+(28, 'App\\Models\\Category', 6, 1, 'created_at', NULL, '2018-10-23 10:46:53', '2018-10-23 03:46:53', '2018-10-23 03:46:53'),
+(29, 'App\\Models\\Category', 5, 1, 'name', 'May Móc Và Chuyển Giao Công Nghê', 'May Móc', '2018-10-23 03:47:19', '2018-10-23 03:47:19'),
+(30, 'App\\Models\\Category', 4, 1, 'name', 'PHỤ KIỆN XE', 'NGUYÊN LIỆU VẬT TƯ', '2018-10-23 03:49:43', '2018-10-23 03:49:43'),
+(31, 'App\\Models\\Category', 4, 1, 'code', 'PKX', 'NLVT', '2018-10-23 03:49:43', '2018-10-23 03:49:43'),
+(32, 'App\\Models\\Category', 4, 1, 'slug', 'phu-kien-xe', 'nguyen-lieu-vat-tu', '2018-10-23 03:49:43', '2018-10-23 03:49:43'),
+(33, 'App\\Models\\Category', 4, 1, 'meta_description', 'PHỤ KIỆN XE', 'NGUYÊN LIỆU VẬT TƯ', '2018-10-23 03:49:43', '2018-10-23 03:49:43'),
+(34, 'App\\Models\\Category', 7, 1, 'created_at', NULL, '2018-10-23 10:50:26', '2018-10-23 03:50:26', '2018-10-23 03:50:26'),
+(35, 'App\\Models\\Category', 7, 1, 'parent_id', '0', '5', '2018-10-23 03:50:37', '2018-10-23 03:50:37'),
+(36, 'App\\Models\\Product', 1, 1, 'category_id', '2', '1', '2018-10-23 04:14:17', '2018-10-23 04:14:17'),
+(38, 'App\\Models\\Product', 2, 1, 'created_at', NULL, '2018-10-23 11:19:06', '2018-10-23 04:19:06', '2018-10-23 04:19:06'),
+(39, 'App\\Models\\Product', 2, 1, 'sale_price', '0', '1200000', '2018-10-23 04:21:33', '2018-10-23 04:21:33'),
+(40, 'App\\Models\\Product', 2, 1, 'promotion_price', '0', '1176000', '2018-10-23 04:21:33', '2018-10-23 04:21:33'),
+(42, 'App\\Models\\Product', 2, 1, 'published', '0', '1', '2018-10-23 04:23:01', '2018-10-23 04:23:01'),
+(52, 'App\\Models\\Product', 1, 1, 'product_image', '1', '5', '2018-10-23 08:59:00', '2018-10-23 08:59:00'),
+(53, 'App\\Models\\Product', 1, 1, 'hover_image', '0', '4', '2018-10-23 08:59:00', '2018-10-23 08:59:00');
 
 -- --------------------------------------------------------
 
@@ -220,14 +455,15 @@ CREATE TABLE `settings` (
 INSERT INTO `settings` (`setting_key`, `setting_value`) VALUES
 ('_token', 's:40:"mtHrxadP61g5MWzh2ZV4zrC4e52jeH1Pdhjrcrf5";'),
 ('add_movement', 's:2:"14";'),
+('address', 's:49:"Số 11 Lương Yên, Q.Hai Bà Trưng, Hà Nội";'),
 ('allowed_extensions', 's:24:"gif,jpg,jpeg,png,pdf,txt";'),
 ('api_token', 's:32:"6yD0nzFlkYCtbNchnUKkz8glysCYDoqi";'),
 ('backup_type', 's:5:"local";'),
 ('category_image', 's:21:"banner_1536043476.png";'),
 ('category_middle', 's:42:"gorgeous-bright-living-room_1536070635.jpg";'),
 ('category_top', 's:42:"gorgeous-bright-living-room_1536070635.jpg";'),
-('consumer_key', 's:43:"ck_cc7c2bb459eb8da805abb1bb7def2094af7562c7";'),
-('consumer_secret', 's:43:"cs_9f37474dc66f5b5ac13b985389b721fde199c249";'),
+('consumer_key', 's:0:"";'),
+('consumer_secret', 's:0:"";'),
 ('content_1', 's:574:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";'),
 ('content_2', 's:574:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";'),
 ('content_3', 's:141:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since";'),
@@ -240,15 +476,15 @@ INSERT INTO `settings` (`setting_key`, `setting_value`) VALUES
 ('deposit', 's:2:"35";'),
 ('email_driver', 's:9:"sparkpost";'),
 ('email_host', 's:22:"smtp.sparkpostmail.com";'),
-('email_list', 'a:2:{s:18:"accounting@caza.vn";s:16:"CazAdminIst201T!";s:13:"hello@caza.vn";s:15:"HiThereitsC5za!";}'),
-('email_password', 's:16:"CazAdminIst201T!";'),
+('email_list', 'a:2:{s:20:"accounting@admin.com";s:1:"1";s:15:"hello@admin.com";s:1:"2";}'),
+('email_password', 's:1:"1";'),
 ('email_port', 's:3:"587";'),
-('email_username', 's:18:"accounting@caza.vn";'),
-('endpoint_url', 's:14:"http://caza.vn";'),
+('email_username', 's:15:"admin@admin.com";'),
+('endpoint_url', 's:12:"http://local";'),
 ('facebook', 's:31:"https://www.facebook.com/cazavn";'),
-('ga_code', 's:14:"UA-126658743-1";'),
+('ga_code', 's:0:"";'),
 ('gtm_code', 's:11:"GTM-MN8TT4M";'),
-('hotline', 's:11:"02473028882";'),
+('hotline', 's:7:"1234567";'),
 ('individual_customer', 's:2:"17";'),
 ('instagram', 's:36:"https://www.instagram.com/caza.vn59/";'),
 ('international_transport_rate_kg', 'd:30000;'),
@@ -274,11 +510,12 @@ INSERT INTO `settings` (`setting_key`, `setting_value`) VALUES
 ('pusher_key', 's:0:"";'),
 ('pusher_secret', 's:0:"";'),
 ('remove_movement', 's:2:"20";'),
-('sales_person', 'i:60;'),
+('sales_person', 'i:0;'),
 ('shipping_return', 's:574:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";'),
-('site_email', 's:13:"admin@caza.vn";'),
-('site_logo', 's:24:"caza-logo_1532593104.png";'),
-('site_name', 's:19:"Caza Backend System";'),
+('site_email', 's:15:"admin@admin.com";'),
+('site_logo', 's:61:"40460826-2094945324091121-680097926608846848-o_1540262892.jpg";'),
+('site_name', 's:3:"CRM";'),
+('slogan', 's:146:"Care Cam kết nỗ lực hết mình nhằm cung cấp sản phẩm và dịch vụ đúng với những giá trị mà khách hàng mong đợi.";'),
 ('stripe_publishable', 's:0:"";'),
 ('stripe_secret', 's:0:"";'),
 ('time_format', 's:3:"H:i";'),
@@ -286,7 +523,7 @@ INSERT INTO `settings` (`setting_key`, `setting_value`) VALUES
 ('title_2', 's:24:"Địa chỉ thanh toán";'),
 ('title_3', 's:24:"Quy định đổi trả";'),
 ('title_4', 's:23:"Giao hàng toàn quốc";'),
-('tracking_number', 'i:481;'),
+('tracking_number', 's:3:"481";'),
 ('why_buy', 's:21:"WHY BUY FROM ARTICLE?";'),
 ('youtube', 's:0:"";'),
 ('zalo', 's:0:"";');
@@ -323,7 +560,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `permissions`, `last_login`, `first_name`, `last_name`, `phone_number`, `user_avatar`, `user_id`, `created_at`, `updated_at`, `deleted_at`, `lang`, `status`, `storage_id`, `to_storage`, `description`) VALUES
-(1, 'admin@admin.com', '$2y$10$TRbYufe1k.IGtPjHsQZWAu7lcpUijLw6tnvAQ.hzTI0o2a90aFSdi', NULL, '2018-10-18 08:39:39', 'Admin', 'Admin', '0123456789', 'admin_1533717148.png', 1, '2017-08-14 18:20:22', '2018-10-18 08:39:39', NULL, 'en', 1, 1, 42, NULL);
+(1, 'admin@admin.com', '$2y$10$TRbYufe1k.IGtPjHsQZWAu7lcpUijLw6tnvAQ.hzTI0o2a90aFSdi', NULL, '2018-10-23 02:20:53', 'Admin', 'Admin', '0123456789', 'admin_1533717148.png', 1, '2017-08-14 18:20:22', '2018-10-23 02:20:53', NULL, 'en', 1, 1, 42, NULL);
 
 -- --------------------------------------------------------
 
@@ -341,13 +578,6 @@ CREATE TABLE `user_login` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `user_login`
---
-
-INSERT INTO `user_login` (`id`, `user_id`, `ip_address`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 1, '::1', '2018-10-18 08:39:39', '2018-10-18 08:39:39', NULL);
-
---
 -- Indexes for dumped tables
 --
 
@@ -355,6 +585,36 @@ INSERT INTO `user_login` (`id`, `user_id`, `ip_address`, `created_at`, `updated_
 -- Indexes for table `activations`
 --
 ALTER TABLE `activations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `banner`
+--
+ALTER TABLE `banner`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `banner_image`
+--
+ALTER TABLE `banner_image`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `colors`
+--
+ALTER TABLE `colors`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `images`
+--
+ALTER TABLE `images`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -420,20 +680,45 @@ ALTER TABLE `user_login`
 ALTER TABLE `activations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
+-- AUTO_INCREMENT for table `banner`
+--
+ALTER TABLE `banner`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `banner_image`
+--
+ALTER TABLE `banner_image`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `colors`
+--
+ALTER TABLE `colors`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+--
+-- AUTO_INCREMENT for table `images`
+--
+ALTER TABLE `images`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
 -- AUTO_INCREMENT for table `persistences`
 --
 ALTER TABLE `persistences`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `revisions`
 --
 ALTER TABLE `revisions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 --
 -- AUTO_INCREMENT for table `roles`
 --
@@ -443,12 +728,12 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `user_login`
 --
 ALTER TABLE `user_login`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

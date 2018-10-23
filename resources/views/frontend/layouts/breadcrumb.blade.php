@@ -5,7 +5,7 @@
 				<div class="breadcrum-big">
 					
 					
-					<span>Tất cả sản phẩm</span>
+					<span>@yield('title')</span>
 					
 
 					

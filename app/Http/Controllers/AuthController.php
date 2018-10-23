@@ -85,7 +85,7 @@ class AuthController extends Controller
                 $userLogin->ip_address = $request->ip();
                 $userLogin->save();
 
-                return redirect("/");
+                return redirect('quantri');
 
                 //redirect depending on logged in user role
                 // if ($user->inRole('admin') || $user->inRole('staff')) {
@@ -226,7 +226,7 @@ class AuthController extends Controller
     {
         Sentinel::logout(null, true);
         Flash::success(trans('auth.successfully_logout'));
-        return redirect('signin');
+        return redirect('quantri/signin');
     }
 
     /**

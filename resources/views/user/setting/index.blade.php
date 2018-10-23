@@ -19,14 +19,14 @@
     @if (session('status'))
         <div class="alert alert-success">{{ session('status') }} <a href="#" class="close" data-dismiss="alert">&times;</a></div>
     @endif
-    <div class="panel panel-primary" xmlns:v-bind="http://symfony.com/schema/routing">
+    <div class="panel panel-primary">
         <div class="panel-body">
             <span class="pull-right">
                 <a href="#" class="text-muted">
                     <i class="fa fa-gear"></i>
                 </a>
             </span>
-            {!! Form::open(array('url' => '/setting', 'method' => 'post', 'files'=> true)) !!}
+            {!! Form::open(array('url' => 'quantri/setting', 'method' => 'post', 'files'=> true)) !!}
             <div class="nav-tabs-custom" id="setting_tabs">
                 @if($errors->any())
                     <div class="form-group has-error">
@@ -100,13 +100,20 @@
                                 <span class="help-block">{{ $errors->first('hotline', ':message') }}</span>
                             </div>
                         </div>
-                        {{-- <div class="form-group required {{ $errors->has('max_upload_file_size') ? 'has-error' : '' }}">
-                            {!! Form::label('max_upload_file_size', __('setting.max_upload_file_size'), array('class' => 'control-label')) !!}
+                        <div class="form-group required {{ $errors->has('address') ? 'has-error' : '' }}">
+                            {!! Form::label('address', __('setting.address'), array('class' => 'control-label')) !!}
                             <div class="controls">
-                                {!! Form::select('max_upload_file_size', $max_upload_file_size, old('max_upload_file_size', Settings::get('max_upload_file_size')), array('id'=>'max_upload_file_size','class' => 'form-control select2')) !!}
-                                <span class="help-block">{{ $errors->first('max_upload_file_size', ':message') }}</span>
+                                {!! Form::text('address', old('address', Settings::get('address')), array('class' => 'form-control')) !!}
+                                <span class="help-block">{{ $errors->first('address', ':message') }}</span>
                             </div>
-                        </div> --}}
+                        </div>
+                        <div class="form-group required {{ $errors->has('slogan') ? 'has-error' : '' }}">
+                            {!! Form::label('slogan', __('setting.slogan'), array('class' => 'control-label')) !!}
+                            <div class="controls">
+                                {!! Form::text('slogan', old('slogan', Settings::get('slogan')), array('class' => 'form-control')) !!}
+                                <span class="help-block">{{ $errors->first('slogan', ':message') }}</span>
+                            </div>
+                        </div>
                         <div class="form-group fileinput fileinput-{{ Settings::get('site_logo') ? 'exists' : 'new' }}" data-provides="fileinput">
                             <input type="hidden" id="site_logo" name="site_logo" value="{{ Settings::get('site_logo') ?: '' }}">
                             {!! Form::label('site_logo_file', __('setting.site_logo'), array('class' => 'control-label')) !!}
