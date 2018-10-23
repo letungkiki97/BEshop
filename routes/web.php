@@ -1,5 +1,8 @@
 
 <?php
+include_once 'tien.php';
+include_once 'quang.php';
+include_once 'tung.php';
 
 Route::pattern('slug', '[a-z0-9-]+');
 Route::pattern('slug2', '[a-z_]+');
