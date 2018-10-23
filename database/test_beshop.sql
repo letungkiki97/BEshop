@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 23, 2018 at 04:14 PM
+-- Generation Time: Oct 23, 2018 at 05:40 PM
 -- Server version: 5.7.23-0ubuntu0.16.04.1
 -- PHP Version: 7.2.11-2+ubuntu16.04.1+deb.sury.org+1
 
@@ -137,7 +137,20 @@ INSERT INTO `categories` (`id`, `name`, `user_id`, `created_at`, `updated_at`, `
 (4, 'NGUYÊN LIỆU VẬT TƯ', 0, '2018-10-23 03:38:02', '2018-10-23 03:49:43', NULL, 'NLVT', 0, 'nguyen-lieu-vat-tu', '', 'NGUYÊN LIỆU VẬT TƯ'),
 (5, 'May Móc', 0, '2018-10-23 03:46:11', '2018-10-23 03:47:19', NULL, 'MAYMOC', 0, 'may-moc-va-chuyen-giao-cong-nghe', '', 'May Móc Và Chuyển Giao Công Nghê'),
 (6, 'Máy cắt CNC', 0, '2018-10-23 03:46:53', '2018-10-23 03:46:53', NULL, 'MAYCATCNC', 5, 'may-cat-cnc', '', 'Máy cắt CNC'),
-(7, 'Máy ép nhiệt', 0, '2018-10-23 03:50:26', '2018-10-23 03:50:37', NULL, 'MAYEPNHIET', 5, 'may-ep-nhiet', '', 'Máy ép nhiệt');
+(7, 'Máy ép nhiệt', 0, '2018-10-23 03:50:26', '2018-10-23 03:50:37', NULL, 'MAYEPNHIET', 5, 'may-ep-nhiet', '', 'Máy ép nhiệt'),
+(8, 'Chevrolet', 0, '2018-10-23 10:05:24', '2018-10-23 10:05:36', NULL, 'Chevrolet', 1, 'chevrolet', 'Chevrolet', 'Chevrolet'),
+(9, 'Ford', 0, '2018-10-23 10:06:14', '2018-10-23 10:06:36', NULL, 'Ford', 1, 'ford', 'Ford', 'Ford'),
+(10, 'Honda', 0, '2018-10-23 10:07:16', '2018-10-23 10:07:16', NULL, 'Honda', 1, 'honda', 'Honda', 'Honda'),
+(11, 'KIA', 0, '2018-10-23 10:07:55', '2018-10-23 10:07:55', NULL, 'KIA', 1, 'kia', 'KIA', 'KIA'),
+(12, 'Mazda', 0, '2018-10-23 10:08:21', '2018-10-23 10:08:30', NULL, 'Mazda', 1, 'mazda', 'Mazda', 'Mazda'),
+(13, 'Mercedes-Benz', 0, '2018-10-23 10:09:10', '2018-10-23 10:09:10', NULL, 'Mercedes-Benz', 1, 'mercedes-benz', 'Mercedes-Benz', 'Mercedes-Benz'),
+(14, 'Land Rover', 0, '2018-10-23 10:10:34', '2018-10-23 10:10:34', NULL, 'Land Rover', 1, 'land-rover', 'Land Rover', 'Land Rover'),
+(15, 'Lexus', 0, '2018-10-23 10:11:06', '2018-10-23 10:11:06', NULL, 'Lexus', 1, 'lexus', 'Lexus', 'Lexus'),
+(16, 'Toyota', 0, '2018-10-23 10:12:07', '2018-10-23 10:12:07', NULL, 'Toyota', 1, 'toyota', 'Toyota', 'Toyota'),
+(17, 'Peugeot', 0, '2018-10-23 10:12:52', '2018-10-23 10:12:52', NULL, 'Peugeot', 1, 'peugeot', 'Peugeot', 'Peugeot'),
+(18, 'Porsche', 0, '2018-10-23 10:13:18', '2018-10-23 10:13:18', NULL, 'Porsche', 1, 'porsche', 'Porsche', 'Porsche'),
+(19, 'Volkswagen', 0, '2018-10-23 10:14:15', '2018-10-23 10:14:15', NULL, 'Volkswagen', 1, 'volkswagen', 'Volkswagen', 'Volkswagen'),
+(20, 'Suzuki', 0, '2018-10-23 10:14:51', '2018-10-23 10:14:51', NULL, 'Suzuki', 1, 'suzuki', 'Suzuki', 'Suzuki');
 
 -- --------------------------------------------------------
 
@@ -194,7 +207,11 @@ INSERT INTO `images` (`id`, `name`, `title`, `alt`, `path`, `created_at`, `updat
 (4, 'AUDI1-abc4.jpg', 'ABC', 'ABC', 'products', '2018-10-23 08:58:16', '2018-10-23 09:02:22', 0),
 (5, 'AUDI1-abc5.jpg', 'ABC', 'ABC', 'products', '2018-10-23 08:58:16', '2018-10-23 09:02:22', 0),
 (6, '40796538-2097213610530959-4694928604952264704-n_1540285798.jpg', '', '', 'banner', '2018-10-23 09:09:58', '2018-10-23 09:09:58', 0),
-(7, '40778872-2097288607190126-6662591172088692736-n_1540285868.jpg', '', '', 'banner', '2018-10-23 09:11:08', '2018-10-23 09:11:08', 0);
+(7, '40778872-2097288607190126-6662591172088692736-n_1540285868.jpg', '', '', 'banner', '2018-10-23 09:11:08', '2018-10-23 09:11:08', 0),
+(8, 'AUDI1-abc8.png', 'ABC', 'ABC', 'products', '2018-10-23 09:52:59', '2018-10-23 09:53:02', 0),
+(9, 'audi-q5-2016_1540290864.jpg', 'audi-q5', 'audi-q5', 'products', '2018-10-23 10:34:24', '2018-10-23 10:34:24', 0),
+(10, 'AUDI1-audi-q5-doi-2013-201610.jpg', 'AUDI Q5 ĐỜI 2013-2016', 'AUDI Q5 ĐỜI 2013-2016', 'products', '2018-10-23 10:37:18', '2018-10-23 10:37:47', 0),
+(11, 'AUDI1-audi-q5-doi-2013-201611.jpg', 'AUDI Q5 ĐỜI 2013-2016', 'AUDI Q5 ĐỜI 2013-2016', 'products', '2018-10-23 10:37:43', '2018-10-23 10:37:47', 0);
 
 -- --------------------------------------------------------
 
@@ -216,7 +233,8 @@ CREATE TABLE `persistences` (
 
 INSERT INTO `persistences` (`id`, `user_id`, `code`, `created_at`, `updated_at`) VALUES
 (3, 1, 'p64iotlFRKtAG4lDtrMcgresM00ypldY', '2018-10-23 02:12:09', '2018-10-23 02:12:09'),
-(4, 1, 'vDzYDrVpK2EBo1IGD6K4uQ6tlwePLtYO', '2018-10-23 02:20:53', '2018-10-23 02:20:53');
+(4, 1, 'vDzYDrVpK2EBo1IGD6K4uQ6tlwePLtYO', '2018-10-23 02:20:53', '2018-10-23 02:20:53'),
+(5, 1, 'vBU71jnP1fxW5CUbEadV5b5cdEEK7JGZ', '2018-10-23 09:52:40', '2018-10-23 09:52:40');
 
 -- --------------------------------------------------------
 
@@ -273,7 +291,8 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `product_name`, `product_image`, `category_id`, `status`, `sale_price`, `description`, `long_description`, `user_id`, `main_sku`, `product_sku`, `made_to_order`, `product_gallery`, `file_3d`, `product_url`, `published`, `product_weight`, `product_length`, `product_width`, `product_depth`, `delivery_category_id`, `promotion_price`, `promotion_from`, `promotion_to`, `professional_price`, `re_order_point`, `unit_value`, `total_value`, `created_at`, `updated_at`, `deleted_at`, `is_variant`, `lead_time`, `unlink`, `slug`, `meta_title`, `meta_description`, `focus_keyword`, `assigned_to`, `hover_image`, `main_variant`) VALUES
-(1, 'ABC', '5', 2, 1, 0, '1', '', 1, '', 'AUDI1', 0, NULL, NULL, '', 1, 0, 0, 0, 0, NULL, 0, NULL, NULL, 0, 0, 0, 0, '2018-10-23 06:51:49', '2018-10-23 08:59:00', NULL, 0, 0, NULL, 'abc', '', '', '', 0, 4, 0);
+(1, 'ABC', '8', 2, 1, 0, '1', '', 1, '', 'AUDI1', 0, NULL, NULL, '', 1, 0, 0, 0, 0, NULL, 0, NULL, NULL, 0, 0, 0, 0, '2018-10-23 06:51:49', '2018-10-23 10:32:02', '2018-10-23 10:32:02', 0, 0, NULL, 'abc', '', '', '', 0, 0, 0),
+(2, 'AUDI Q5 ĐỜI 2013-2016', '10', 2, 1, 0, 'Sản phẩm được đo chuẩn xác và thiết kế nhờ đội ngũ có tay nghề và kinh nghiệm trong ngành.\r\nĐã được kiểm nghiệm lắp đặt trên thực tế và chuẩn khuôn không cần chỉnh sửa thêm\r\nBảo trì form nếu khách hàng thấy không vừa và không đúng với thực tế xe.', '<h2>M&ocirc; tả</h2>\r\n\r\n<h1><strong>Form S&agrave;n Audi Q5 đời 2013-2016</strong><br />\r\n<img alt="" src="https://tuannguyen168.vn/wp-content/uploads/2018/10/Audi-Q5-ok-1.jpg" style="height:720px; width:580px" /></h1>\r\n\r\n<h3><strong>Form S&agrave;n Audi Q5 đời 2013-2016</strong></h3>\r\n\r\n<p>Form mẫu s&agrave;n của chiếc Audi Q5 được đo chuẩn từ cm. cho ra những sản phẩm thảm s&agrave;n vừa vặn v&agrave; kh&ocirc;ng c&ograve;n lo nghĩ về vấn đề sai form khi đo bằng tay nữa</p>', 1, '', 'AUDI1', 0, NULL, NULL, '', 1, 0, 0, 0, 0, NULL, 0, NULL, NULL, 0, 0, 0, 0, '2018-10-23 10:33:30', '2018-10-23 10:37:47', NULL, 0, 0, NULL, 'audi-q5-doi-2013-2016', '', '', '', 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -315,9 +334,9 @@ CREATE TABLE `product_image` (
 --
 
 INSERT INTO `product_image` (`product_id`, `image_id`) VALUES
-(1, 1),
-(1, 4),
-(1, 5);
+(1, 8),
+(2, 10),
+(2, 11);
 
 -- --------------------------------------------------------
 
@@ -343,7 +362,6 @@ CREATE TABLE `revisions` (
 
 INSERT INTO `revisions` (`id`, `revisionable_type`, `revisionable_id`, `user_id`, `key`, `old_value`, `new_value`, `created_at`, `updated_at`) VALUES
 (1, 'App\\Models\\User', 1, 1, 'last_login', '2018-10-18 15:36:31', '2018-10-18 15:39:39', '2018-10-18 08:39:39', '2018-10-18 08:39:39'),
-(4, 'App\\Models\\User', 1, 1, 'last_login', '2018-10-23 09:12:09', '2018-10-23 09:20:53', '2018-10-23 02:20:53', '2018-10-23 02:20:53'),
 (5, 'App\\Models\\Product', 1, 1, 'created_at', NULL, '2018-10-23 09:30:26', '2018-10-23 02:30:26', '2018-10-23 02:30:26'),
 (6, 'App\\Models\\Product', 1, 1, 'main_sku', '', '1', '2018-10-23 02:33:28', '2018-10-23 02:33:28'),
 (7, 'App\\Models\\Product', 1, 1, 'product_url', '', '2', '2018-10-23 02:33:28', '2018-10-23 02:33:28'),
@@ -371,8 +389,27 @@ INSERT INTO `revisions` (`id`, `revisionable_type`, `revisionable_id`, `user_id`
 (39, 'App\\Models\\Product', 2, 1, 'sale_price', '0', '1200000', '2018-10-23 04:21:33', '2018-10-23 04:21:33'),
 (40, 'App\\Models\\Product', 2, 1, 'promotion_price', '0', '1176000', '2018-10-23 04:21:33', '2018-10-23 04:21:33'),
 (42, 'App\\Models\\Product', 2, 1, 'published', '0', '1', '2018-10-23 04:23:01', '2018-10-23 04:23:01'),
-(52, 'App\\Models\\Product', 1, 1, 'product_image', '1', '5', '2018-10-23 08:59:00', '2018-10-23 08:59:00'),
-(53, 'App\\Models\\Product', 1, 1, 'hover_image', '0', '4', '2018-10-23 08:59:00', '2018-10-23 08:59:00');
+(54, 'App\\Models\\User', 1, 1, 'last_login', '2018-10-23 09:20:53', '2018-10-23 16:52:40', '2018-10-23 09:52:40', '2018-10-23 09:52:40'),
+(55, 'App\\Models\\Product', 1, 1, 'product_image', '5', '8', '2018-10-23 09:53:02', '2018-10-23 09:53:02'),
+(56, 'App\\Models\\Product', 1, 1, 'hover_image', '4', '0', '2018-10-23 09:53:02', '2018-10-23 09:53:02'),
+(57, 'App\\Models\\Category', 8, 1, 'created_at', NULL, '2018-10-23 17:05:24', '2018-10-23 10:05:24', '2018-10-23 10:05:24'),
+(58, 'App\\Models\\Category', 8, 1, 'code', '3', 'Chevrolet', '2018-10-23 10:05:36', '2018-10-23 10:05:36'),
+(59, 'App\\Models\\Category', 9, 1, 'created_at', NULL, '2018-10-23 17:06:14', '2018-10-23 10:06:14', '2018-10-23 10:06:14'),
+(60, 'App\\Models\\Category', 9, 1, 'slug', 'Ford', 'ford', '2018-10-23 10:06:36', '2018-10-23 10:06:36'),
+(61, 'App\\Models\\Category', 10, 1, 'created_at', NULL, '2018-10-23 17:07:16', '2018-10-23 10:07:16', '2018-10-23 10:07:16'),
+(62, 'App\\Models\\Category', 11, 1, 'created_at', NULL, '2018-10-23 17:07:55', '2018-10-23 10:07:55', '2018-10-23 10:07:55'),
+(63, 'App\\Models\\Category', 12, 1, 'created_at', NULL, '2018-10-23 17:08:21', '2018-10-23 10:08:21', '2018-10-23 10:08:21'),
+(64, 'App\\Models\\Category', 12, 1, 'parent_id', '0', '1', '2018-10-23 10:08:30', '2018-10-23 10:08:30'),
+(65, 'App\\Models\\Category', 13, 1, 'created_at', NULL, '2018-10-23 17:09:10', '2018-10-23 10:09:10', '2018-10-23 10:09:10'),
+(66, 'App\\Models\\Category', 14, 1, 'created_at', NULL, '2018-10-23 17:10:34', '2018-10-23 10:10:34', '2018-10-23 10:10:34'),
+(67, 'App\\Models\\Category', 15, 1, 'created_at', NULL, '2018-10-23 17:11:06', '2018-10-23 10:11:06', '2018-10-23 10:11:06'),
+(68, 'App\\Models\\Category', 16, 1, 'created_at', NULL, '2018-10-23 17:12:07', '2018-10-23 10:12:07', '2018-10-23 10:12:07'),
+(69, 'App\\Models\\Category', 17, 1, 'created_at', NULL, '2018-10-23 17:12:52', '2018-10-23 10:12:52', '2018-10-23 10:12:52'),
+(70, 'App\\Models\\Category', 18, 1, 'created_at', NULL, '2018-10-23 17:13:18', '2018-10-23 10:13:18', '2018-10-23 10:13:18'),
+(71, 'App\\Models\\Category', 19, 1, 'created_at', NULL, '2018-10-23 17:14:15', '2018-10-23 10:14:15', '2018-10-23 10:14:15'),
+(72, 'App\\Models\\Category', 20, 1, 'created_at', NULL, '2018-10-23 17:14:51', '2018-10-23 10:14:51', '2018-10-23 10:14:51'),
+(73, 'App\\Models\\Product', 1, 1, 'deleted_at', NULL, '2018-10-23 17:32:02', '2018-10-23 10:32:02', '2018-10-23 10:32:02'),
+(76, 'App\\Models\\Product', 2, 1, 'file_3d', 'audi-q5-2016_1540290810.jpg', NULL, '2018-10-23 10:37:47', '2018-10-23 10:37:47');
 
 -- --------------------------------------------------------
 
@@ -560,7 +597,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `permissions`, `last_login`, `first_name`, `last_name`, `phone_number`, `user_avatar`, `user_id`, `created_at`, `updated_at`, `deleted_at`, `lang`, `status`, `storage_id`, `to_storage`, `description`) VALUES
-(1, 'admin@admin.com', '$2y$10$TRbYufe1k.IGtPjHsQZWAu7lcpUijLw6tnvAQ.hzTI0o2a90aFSdi', NULL, '2018-10-23 02:20:53', 'Admin', 'Admin', '0123456789', 'admin_1533717148.png', 1, '2017-08-14 18:20:22', '2018-10-23 02:20:53', NULL, 'en', 1, 1, 42, NULL);
+(1, 'admin@admin.com', '$2y$10$TRbYufe1k.IGtPjHsQZWAu7lcpUijLw6tnvAQ.hzTI0o2a90aFSdi', NULL, '2018-10-23 09:52:40', 'Admin', 'Admin', '0123456789', 'admin_1533717148.png', 1, '2017-08-14 18:20:22', '2018-10-23 09:52:40', NULL, 'en', 1, 1, 42, NULL);
 
 -- --------------------------------------------------------
 
@@ -576,6 +613,13 @@ CREATE TABLE `user_login` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `user_login`
+--
+
+INSERT INTO `user_login` (`id`, `user_id`, `ip_address`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 1, '127.0.0.1', '2018-10-23 09:52:40', '2018-10-23 09:52:40', NULL);
 
 --
 -- Indexes for dumped tables
@@ -693,7 +737,7 @@ ALTER TABLE `banner_image`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `colors`
 --
@@ -703,22 +747,22 @@ ALTER TABLE `colors`
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `persistences`
 --
 ALTER TABLE `persistences`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `revisions`
 --
 ALTER TABLE `revisions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 --
 -- AUTO_INCREMENT for table `roles`
 --
@@ -733,7 +777,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `user_login`
 --
 ALTER TABLE `user_login`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
