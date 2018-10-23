@@ -13,49 +13,41 @@
 				</button>
 				<div class="">
 					<ul class="no-bullets">
-						
-						
 						<li>
-							<a href="../index.html">Trang chủ</a>
-							
+							<a href="{{url('/')}}">Trang chủ</a>
 						</li>
 						
 						<li>
-							<a href="all.html">Sản phẩm của chúng tôi</a>
+							<a href="#">Sản phẩm của chúng tôi</a>
 							
 							<ul class="no-bullets">
-								
-								
-								<li>
-									<a href="all.html">- Phụ kiện xe hơi</a>
-								</li>
-								
-								
-								<li>
-									<a href="all.html">- Đồ chơi xe hơi</a>
-								</li>
-								
-								
-								<li>
-									<a href="all.html">- Nội thất xe hơi</a>
-								</li>
-								
-								
-								<li>
-									<a href="all.html">- Các sản phẩm khác</a>
-								</li>
-								
+								@foreach($categorys as $k=>$v)
+								@if(empty($v->parent_id))
+									<li>
+									<a href="{{url('productcategory/'.$v->slug)}}">
+									   - {{$v->name}}
+									</a>
+									<ul class="no-bullets">
+										@foreach($v->categories as $k1=>$v1)
+											<li>
+												+<a href="{{url('productcategory/'.$v1->slug)}}"> {{$v1->name}}</a>
+											</li>
+										@endforeach
+									</ul>
+									</li>
+								@endif
+                            @endforeach
 							</ul>
 							
 						</li>
 						
 						<li>
-							<a href="../pages/lien-he.html">Liên hệ</a>
+							<a href="{{url('/lien-he')}}">Liên hệ</a>
 							
 						</li>
 						
 						<li>
-							<a href="../pages/tat-ca-tin-tuc.html">Blog</a>
+							<a href="{{url('/lien-he')}}">Blog</a>
 							
 							<ul class="no-bullets">
 								
@@ -84,7 +76,7 @@
 						</li>
 						
 						<li>
-							<a href="../pages/about-us.html">Về chúng tôi</a>
+							<a href="{{url('gioi-thieu')}}">Về chúng tôi</a>
 							
 						</li>
 						

@@ -33,202 +33,53 @@
                                                         <option value="created-ascending">Cũ nhất</option>
                                                     </select>
                                                 </div>
-                                                <script>
-                                                    /*============================================================================
-                                                        Inline JS because collection liquid object is only available
-                                                        on collection pages and not external JS files
-                                                      ==============================================================================*/
-                                                    Haravan.queryParams = {};
-                                                    if (location.search.length) {
-                                                        for (var aKeyValue, i = 0, aCouples = location.search.substr(1).split('&'); i < aCouples.length; i++) {
-                                                            aKeyValue = aCouples[i].split('=');
-                                                            if (aKeyValue.length > 1) {
-                                                                Haravan.queryParams[decodeURIComponent(aKeyValue[0])] = decodeURIComponent(aKeyValue[1]);
-                                                            }
-                                                        }
-                                                    }
-                                                    $(function () {
-                                                        $('#SortBy')
-                                                            .val('created-descending')
-                                                            .bind('change', function () {
-                                                                Haravan.queryParams.sort_by = jQuery(this).val();
-                                                                location.search = jQuery.param(Haravan.queryParams);
-                                                            }
-                                                            );
-                                                    });
-                                                </script>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="collection-body">
                                     <div class="grid-uniform product-list md-mg-left-5">
-
-
-
+                                        @foreach($product as $k2=>$v2)
                                         <div class="grid__item large--one-third medium--one-third small--one-half md-pd-left5">
-
-
-
-
-
-
-
-
                                             <div class="product-item">
                                                 <div class="product-img">
-                                                    <a href="../products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-9.html">
-
-
-
-
-
-                                                        <img id="1090801495" src="http://product.hstatic.net/1000305059/product/suplo-012a-01_b4073d98b6534c619a361549e0b2f118_large.jpg"
-                                                            alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
-
-
-
-
-
-
-                                                        <img id="1090801496" src="http://product.hstatic.net/1000305059/product/suplo-007a-01_0f20da25349d4464bcb9e87104b92602_large.jpg"
-                                                            alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
-
-
-
-
-
-
+                                                    <a href="{{url('san-pham/'.@$v2->id)}}">
+                                                        <img id="{{@$v2->image->id}}" src="{{url('uploads/products/'.@$v2->image->name)}}"
+                                                            title="{{@$v2->image->title}}" alt="{{@$v2->image->alt}}" />
+                                                        <img id="{{@$v2->image->id}}" src="{{url('uploads/products/'.@$v2->image->name)}}"
+                                                            title="{{@$v2->image->title}}" alt="{{@$v2->image->alt}}" />
                                                     </a>
                                                     <div class="product-actions medium--hide small--hide">
                                                         <div>
                                                             <button type="button" class="btnQuickView quick-view medium--hide small--hide"
-                                                                data-handle="/products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-9"><span><i
-                                                                        class="fa fa-search-plus" aria-hidden="true"></i></span></button>
+                                                                data-handle="{{url('san-pham/'.@$v2->id)}}">
+                                                                <span>
+                                                                    <i class="fa fa-search-plus" aria-hidden="true"></i>
+                                                                </span>
+                                                            </button>
                                                         </div>
                                                     </div>
 
                                                 </div>
                                                 <div class="product-item-info">
                                                     <div class="product-title">
-                                                        <a href="../products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-9.html">SUPLO
-                                                            Smart Gravity Holder Cute Mount 1...</a>
+                                                        <a href="{{url('san-pham/'.@$v2->id)}}">
+                                                                {{$v2->product_name}}</a>
                                                     </div>
-                                                    <div class="product-desc">
-                                                        Bọc vô lăng Sparco chính hãng SPC1111RS lấy cảm hứng thể thao
-                                                        từ các dòng xe đua kết hợp với công nghệ sản xuất tiên tiến.
-                                                        Các mẫu bọc vô lăng SPARCO đều có kích thước đường kín...
+                                                    <div class="product-desc" style="display: block">
+                                                            {{str_limit(@$v2->description, $limit = 150, $end = '...')}}
                                                     </div>
-                                                    <div class="product-price clearfix">
-                                                        <span class="current-price">150,000₫</span>
-
+                                                    <div class="product-buynow">
+                                                        <button type="button" class="btnAddToCart add-to-cart  medium--hide small--hide"
+                                                        data-id="1031663692">
+                                                        <span><i class="fa fa-cart-plus"
+                                                                aria-hidden="true"></i> Thêm vào giỏ</span>
+                                                            </button>
                                                     </div>
-                                                </div>
-                                                <div class="product-buynow">
-                                                    <button type="button" class="btnAddToCart add-to-cart  medium--hide small--hide"
-                                                        data-id="1031664345"><span><i class="fa fa-cart-plus"
-                                                                aria-hidden="true"></i> Thêm vào giỏ</span></button>
                                                 </div>
                                             </div>
-
                                         </div>
-                                        <div class="grid__item large--one-third medium--one-third small--one-half md-pd-left5">
-
-
-
-
-
-
-
-
-
-
-                                            <div class="product-item">
-                                                <div class="product-img">
-                                                    <a href="../products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-6.html">
-
-
-
-
-
-                                                        <img id="1090799919" src="http://product.hstatic.net/1000305059/product/suplo-009a-01_large.jpg"
-                                                            alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
-
-
-
-
-
-
-                                                        <img id="1090799920" src="http://product.hstatic.net/1000305059/product/suplo-010a-01_large.jpg"
-                                                            alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                    </a>
-                                                    <div class="product-actions medium--hide small--hide">
-                                                        <div>
-                                                            <button type="button" class="btnQuickView quick-view medium--hide small--hide"
-                                                                data-handle="/products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-6"><span><i
-                                                                        class="fa fa-search-plus" aria-hidden="true"></i></span></button>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="tag-saleoff-img text-center">
-                                                        -19%
-                                                    </div>
-
-                                                </div>
-                                                <div class="product-item-info">
-                                                    <div class="product-title">
-                                                        <a href="../products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-6.html">SUPLO
-                                                            Smart Gravity Holder Cute Mount 1...</a>
-                                                    </div>
-                                                    <div class="product-desc">
-                                                        Bọc vô lăng Sparco chính hãng SPC1111RS lấy cảm hứng thể thao
-                                                        từ các dòng xe đua kết hợp với công nghệ sản xuất tiên tiến.
-                                                        Các mẫu bọc vô lăng SPARCO đều có kích thước đường kín...
-                                                    </div>
-                                                    <div class="product-price clearfix">
-                                                        <span class="current-price">1,210,000₫</span>
-
-                                                        <span class="original-price"><s>1,500,000₫</s></span>
-
-                                                    </div>
-                                                </div>
-                                                <div class="product-buynow">
-                                                    <button type="button" class="btnAddToCart add-to-cart  medium--hide small--hide"
-                                                        data-id="1031663692"><span><i class="fa fa-cart-plus"
-                                                                aria-hidden="true"></i> Thêm vào giỏ</span></button>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-
-
+                                        @endforeach
                                     </div>
                                     <div class="pagination not-filter">
                                         <div id="pagination-" class="text-center clear-left">

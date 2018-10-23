@@ -1,6 +1,6 @@
 <?php
 
-Route::pattern('slug', '[a-z0-9-]+');
+Route::pattern('slug', '[a-zA-Z0-9-]+');
 Route::pattern('slug2', '[a-z_]+');
 Route::pattern('slug3', '[a-z0-9-_]+');
 Route::pattern('id', '[0-9]+');
@@ -16,7 +16,7 @@ Route::group(array(), function () {
 
 
     /******************   san pham  ********************************/
-    Route::get('/productcategory','FrontendController@productcategory');
+    Route::get('/productcategory/{slug}','FrontendController@productcategory');
     Route::get('/san-pham/{id}','ProductController@show');
 });
 
