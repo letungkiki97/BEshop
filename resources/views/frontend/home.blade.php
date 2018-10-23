@@ -2,7 +2,7 @@
 @section('title', 'Trang chủ')
 @section('Content')
 @include('frontend.layouts.slide')
-<div id="PageContainer" class="is-moved-by-drawer">
+<div id="PageContainer" class="is-moved-by-drawer template-index" >
 		<main class="main-content" role="main">
 			<section id="home-aboutus">
 				<div class="inner">
@@ -46,11 +46,6 @@
 					</div>
 				</div>
 			</section>
-
-
-
-
-
 			<section id="home-banner">
 				<div class="wrapper">
 					<div class="inner">
@@ -670,62 +665,16 @@
 									</div>
 
 									<div class="item">
-
-
-
-
-
-
-
-
-
-
 										<div class="product-item">
 											<div class="product-img">
 												<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-2.html">
-
-
-
-
 
 													<img id="1090048406" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
 													 data-src="//product.hstatic.net/1000305059/product/suplo-004a-01_large.jpg" alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
 
 
-
-
-
-
 													<img id="1090048407" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
 													 data-src="//product.hstatic.net/1000305059/product/suplo-004a-02_large.jpg" alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 												</a>
@@ -767,58 +716,16 @@
 
 									<div class="item">
 
-
-
-
-
-
-
-
-
-
 										<div class="product-item">
 											<div class="product-img">
 												<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories.html">
 
 
-
-
-
 													<img id="1090047867" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
 													 data-src="//product.hstatic.net/1000305059/product/suplo-002a-03_large.jpg" alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
 
-
-
-
-
-
 													<img id="1090047902" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
 													 data-src="//product.hstatic.net/1000305059/product/suplo-002a-04_large.jpg" alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 												</a>
 												<div class="product-actions medium--hide small--hide">
@@ -864,11 +771,6 @@
 					</div>
 				</div>
 			</section>
-
-
-
-
-
 			<section id="home-reviews">
 				<div class="wrapper">
 					<div class="inner">
@@ -923,11 +825,6 @@
 					</div>
 				</div>
 			</section>
-
-
-
-
-
 			<section id="home-product" class="home-product">
 				<div class="wrapper">
 					<div class="inner">
@@ -998,528 +895,9 @@
 
 
 							</div>
-
-
-
-
-
 							<div id="collection1" class="pro-tabcontent">
 
 								<div class="grid-uniform md-mg-left-15">
-
-									<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
-
-
-
-
-
-
-
-
-
-
-										<div class="product-item">
-											<div class="product-img">
-												<a href="products/suplo-gas-gasoline-petrol-fuel-filter-oe-23300-31100-186100-4730-replacement-parts-for-toyota-prado-4700-2700-3400-land-cruiser-3.html">
-
-
-
-
-
-													<img id="1090714311" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-006a-02_023bb50277a7493d8d7a7b3bd226f9ee_large.jpg"
-													 alt="SUPLO Gas Gasoline Petrol Fuel Filter OE 23300-31100, 186100-4730 Replacement Parts for Toyota Prado 4700/2700/3400 Land Cruiser" />
-
-
-
-
-
-
-													<img id="1090714312" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-005a-02_d08e539ec50b44adaef7e55024a0b666_large.jpg"
-													 alt="SUPLO Gas Gasoline Petrol Fuel Filter OE 23300-31100, 186100-4730 Replacement Parts for Toyota Prado 4700/2700/3400 Land Cruiser" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-												</a>
-												<div class="product-actions medium--hide small--hide">
-													<div>
-														<button type="button" class="btnQuickView quick-view medium--hide small--hide" data-handle="/products/suplo-gas-gasoline-petrol-fuel-filter-oe-23300-31100-186100-4730-replacement-parts-for-toyota-prado-4700-2700-3400-land-cruiser-3"><span><i
-																 class="fa fa-search-plus" aria-hidden="true"></i></span></button>
-													</div>
-												</div>
-
-												<div class="tag-saleoff-img text-center">
-													-9%
-												</div>
-
-											</div>
-											<div class="product-item-info">
-												<div class="product-title">
-													<a href="products/suplo-gas-gasoline-petrol-fuel-filter-oe-23300-31100-186100-4730-replacement-parts-for-toyota-prado-4700-2700-3400-land-cruiser-3.html">SUPLO
-														Gas Gasoline Petrol Fuel Filter O...</a>
-												</div>
-												<div class="product-desc">
-													Bọc vô lăng Sparco chính hãng SPC1111RS lấy cảm hứng thể thao từ các dòng xe đua kết hợp với công nghệ sản
-													xuất tiên tiến. Các mẫu bọc vô lăng SPARCO đều có kích thước đường kín...
-												</div>
-												<div class="product-price clearfix">
-													<span class="current-price">10,500,000₫</span>
-
-													<span class="original-price"><s>11,500,000₫</s></span>
-
-												</div>
-											</div>
-											<div class="product-buynow">
-												<button type="button" class="btnAddToCart add-to-cart  medium--hide small--hide" data-id="1031638556"><span><i
-														 class="fa fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</span></button>
-											</div>
-										</div>
-
-									</div>
-
-									<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
-
-
-
-
-
-
-
-
-
-
-										<div class="product-item">
-											<div class="product-img">
-												<a href="products/suplo-gas-gasoline-petrol-fuel-filter-oe-23300-31100-186100-4730-replacement-parts-for-toyota-prado-4700-2700-3400-land-cruiser-2.html">
-
-
-
-
-
-													<img id="1090712683" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-004a-02_1e327fc3290e43e9a6b5e36bdf11678a_large.jpg"
-													 alt="SUPLO Gas Gasoline Petrol Fuel Filter OE 23300-31100, 186100-4730 Replacement Parts for Toyota Prado 4700/2700/3400 Land Cruiser" />
-
-
-
-
-
-
-													<img id="1090712684" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-006a-01_0f6f585791194a5b8e7a2577bdc1b466_large.jpg"
-													 alt="SUPLO Gas Gasoline Petrol Fuel Filter OE 23300-31100, 186100-4730 Replacement Parts for Toyota Prado 4700/2700/3400 Land Cruiser" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-												</a>
-												<div class="product-actions medium--hide small--hide">
-													<div>
-														<button type="button" class="btnQuickView quick-view medium--hide small--hide" data-handle="/products/suplo-gas-gasoline-petrol-fuel-filter-oe-23300-31100-186100-4730-replacement-parts-for-toyota-prado-4700-2700-3400-land-cruiser-2"><span><i
-																 class="fa fa-search-plus" aria-hidden="true"></i></span></button>
-													</div>
-												</div>
-
-												<div class="tag-saleoff-img text-center">
-													-28%
-												</div>
-
-											</div>
-											<div class="product-item-info">
-												<div class="product-title">
-													<a href="products/suplo-gas-gasoline-petrol-fuel-filter-oe-23300-31100-186100-4730-replacement-parts-for-toyota-prado-4700-2700-3400-land-cruiser-2.html">SUPLO
-														Gas Gasoline Petrol Fuel Filter O...</a>
-												</div>
-												<div class="product-desc">
-													Bọc vô lăng Sparco chính hãng SPC1111RS lấy cảm hứng thể thao từ các dòng xe đua kết hợp với công nghệ sản
-													xuất tiên tiến. Các mẫu bọc vô lăng SPARCO đều có kích thước đường kín...
-												</div>
-												<div class="product-price clearfix">
-													<span class="current-price">30,000,000₫</span>
-
-													<span class="original-price"><s>41,500,000₫</s></span>
-
-												</div>
-											</div>
-											<div class="product-buynow">
-												<button type="button" class="btnAddToCart add-to-cart  medium--hide small--hide" data-id="1031637974"><span><i
-														 class="fa fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</span></button>
-											</div>
-										</div>
-
-									</div>
-
-									<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
-
-
-
-
-
-
-
-
-
-
-										<div class="product-item">
-											<div class="product-img">
-												<a href="products/suplo-gas-gasoline-petrol-fuel-filter-oe-23300-31100-186100-4730-replacement-parts-for-toyota-prado-4700-2700-3400-land-cruiser-1.html">
-
-
-
-
-
-													<img id="1090710553" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-002a-04_3c78db8101a649d98079d01e7522c8e2_large.jpg"
-													 alt="SUPLO Gas Gasoline Petrol Fuel Filter OE 23300-31100, 186100-4730 Replacement Parts for Toyota Prado 4700/2700/3400 Land Cruiser" />
-
-
-
-
-
-
-													<img id="1090710554" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-006a-01_2b0ee81db92549da876c4774883ae536_large.jpg"
-													 alt="SUPLO Gas Gasoline Petrol Fuel Filter OE 23300-31100, 186100-4730 Replacement Parts for Toyota Prado 4700/2700/3400 Land Cruiser" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-												</a>
-												<div class="product-actions medium--hide small--hide">
-													<div>
-														<button type="button" class="btnQuickView quick-view medium--hide small--hide" data-handle="/products/suplo-gas-gasoline-petrol-fuel-filter-oe-23300-31100-186100-4730-replacement-parts-for-toyota-prado-4700-2700-3400-land-cruiser-1"><span><i
-																 class="fa fa-search-plus" aria-hidden="true"></i></span></button>
-													</div>
-												</div>
-
-												<div class="tag-saleoff-img text-center">
-													-15%
-												</div>
-
-											</div>
-											<div class="product-item-info">
-												<div class="product-title">
-													<a href="products/suplo-gas-gasoline-petrol-fuel-filter-oe-23300-31100-186100-4730-replacement-parts-for-toyota-prado-4700-2700-3400-land-cruiser-1.html">SUPLO
-														Gas Gasoline Petrol Fuel Filter O...</a>
-												</div>
-												<div class="product-desc">
-													Bọc vô lăng Sparco chính hãng SPC1111RS lấy cảm hứng thể thao từ các dòng xe đua kết hợp với công nghệ sản
-													xuất tiên tiến. Các mẫu bọc vô lăng SPARCO đều có kích thước đường kín...
-												</div>
-												<div class="product-price clearfix">
-													<span class="current-price">50,000,000₫</span>
-
-													<span class="original-price"><s>59,000,000₫</s></span>
-
-												</div>
-											</div>
-											<div class="product-buynow">
-												<button type="button" class="btnAddToCart add-to-cart  medium--hide small--hide" data-id="1031637468"><span><i
-														 class="fa fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</span></button>
-											</div>
-										</div>
-
-									</div>
-
-									<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
-
-
-
-
-
-
-
-
-
-
-										<div class="product-item">
-											<div class="product-img">
-												<a href="products/suplo-gas-gasoline-petrol-fuel-filter-oe-23300-31100-186100-4730-replacement-parts-for-toyota-prado-4700-2700-3400-land-cruiser.html">
-
-
-
-
-
-													<img id="1090047797" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-001a-03_large.jpg" alt="SUPLO Gas Gasoline Petrol Fuel Filter OE 23300-31100, 186100-4730 Replacement Parts for Toyota Prado 4700/2700/3400 Land Cruiser" />
-
-
-
-
-
-
-													<img id="1090047815" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-001a-04_large.jpg" alt="SUPLO Gas Gasoline Petrol Fuel Filter OE 23300-31100, 186100-4730 Replacement Parts for Toyota Prado 4700/2700/3400 Land Cruiser" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-												</a>
-												<div class="product-actions medium--hide small--hide">
-													<div>
-														<button type="button" class="btnQuickView quick-view medium--hide small--hide" data-handle="/products/suplo-gas-gasoline-petrol-fuel-filter-oe-23300-31100-186100-4730-replacement-parts-for-toyota-prado-4700-2700-3400-land-cruiser"><span><i
-																 class="fa fa-search-plus" aria-hidden="true"></i></span></button>
-													</div>
-												</div>
-
-												<div class="tag-saleoff-img text-center">
-													-2%
-												</div>
-
-											</div>
-											<div class="product-item-info">
-												<div class="product-title">
-													<a href="products/suplo-gas-gasoline-petrol-fuel-filter-oe-23300-31100-186100-4730-replacement-parts-for-toyota-prado-4700-2700-3400-land-cruiser.html">SUPLO
-														Gas Gasoline Petrol Fuel Filter O...</a>
-												</div>
-												<div class="product-desc">
-													Bọc vô lăng Sparco chính hãng SPC1111RS lấy cảm hứng thể thao từ các dòng xe đua kết hợp với công nghệ sản
-													xuất tiên tiến. Các mẫu bọc vô lăng SPARCO đều có kích thước đường kín...
-												</div>
-												<div class="product-price clearfix">
-													<span class="current-price">5,300,000₫</span>
-
-													<span class="original-price"><s>5,400,000₫</s></span>
-
-												</div>
-											</div>
-											<div class="product-buynow">
-												<button type="button" class="btnAddToCart add-to-cart  medium--hide small--hide" data-id="1031634559"><span><i
-														 class="fa fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</span></button>
-											</div>
-										</div>
-
-									</div>
-
-									<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
-
-
-
-
-
-
-
-
-										<div class="product-item">
-											<div class="product-img">
-												<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-9.html">
-
-
-
-
-
-													<img id="1090801495" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-012a-01_b4073d98b6534c619a361549e0b2f118_large.jpg"
-													 alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
-
-
-
-
-
-
-													<img id="1090801496" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-007a-01_0f20da25349d4464bcb9e87104b92602_large.jpg"
-													 alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
-
-
-
-
-
-
-												</a>
-												<div class="product-actions medium--hide small--hide">
-													<div>
-														<button type="button" class="btnQuickView quick-view medium--hide small--hide" data-handle="/products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-9"><span><i
-																 class="fa fa-search-plus" aria-hidden="true"></i></span></button>
-													</div>
-												</div>
-
-											</div>
-											<div class="product-item-info">
-												<div class="product-title">
-													<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-9.html">SUPLO
-														Smart Gravity Holder Cute Mount 1...</a>
-												</div>
-												<div class="product-desc">
-													Bọc vô lăng Sparco chính hãng SPC1111RS lấy cảm hứng thể thao từ các dòng xe đua kết hợp với công nghệ sản
-													xuất tiên tiến. Các mẫu bọc vô lăng SPARCO đều có kích thước đường kín...
-												</div>
-												<div class="product-price clearfix">
-													<span class="current-price">150,000₫</span>
-
-												</div>
-											</div>
-											<div class="product-buynow">
-												<button type="button" class="btnAddToCart add-to-cart  medium--hide small--hide" data-id="1031664345"><span><i
-														 class="fa fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</span></button>
-											</div>
-										</div>
-
-									</div>
-
-									<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
-
-
-
-
-
-
-
-
-										<div class="product-item">
-											<div class="product-img">
-												<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-8.html">
-
-
-
-
-
-													<img id="1090800284" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-011a-01_2985b98a85c64d96b1825f3943fa1b94_large.jpg"
-													 alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
-
-
-
-
-
-
-													<img id="1090800285" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-008a-01_55e427e3130944029c0b03adcb2aa347_large.jpg"
-													 alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-												</a>
-												<div class="product-actions medium--hide small--hide">
-													<div>
-														<button type="button" class="btnQuickView quick-view medium--hide small--hide" data-handle="/products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-8"><span><i
-																 class="fa fa-search-plus" aria-hidden="true"></i></span></button>
-													</div>
-												</div>
-
-											</div>
-											<div class="product-item-info">
-												<div class="product-title">
-													<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-8.html">SUPLO
-														Smart Gravity Holder Cute Mount 1...</a>
-												</div>
-												<div class="product-desc">
-													Bọc vô lăng Sparco chính hãng SPC1111RS lấy cảm hứng thể thao từ các dòng xe đua kết hợp với công nghệ sản
-													xuất tiên tiến. Các mẫu bọc vô lăng SPARCO đều có kích thước đường kín...
-												</div>
-												<div class="product-price clearfix">
-													<span class="current-price">1,750,000₫</span>
-
-												</div>
-											</div>
-											<div class="product-buynow">
-												<button type="button" class="btnAddToCart add-to-cart  medium--hide small--hide" data-id="1031664184"><span><i
-														 class="fa fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</span></button>
-											</div>
-										</div>
-
-									</div>
 
 									<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
 
@@ -1664,108 +1042,11 @@
 								</div>
 
 							</div>
-
-
-
-
-
-
 							<div id="collection2" class="pro-tabcontent">
 
 								<div class="grid-uniform md-mg-left-15">
 
-									<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
-
-
-
-
-
-
-
-
-
-
-										<div class="product-item">
-											<div class="product-img">
-												<a href="products/suplo-gas-gasoline-petrol-fuel-filter-oe-23300-31100-186100-4730-replacement-parts-for-toyota-prado-4700-2700-3400-land-cruiser.html">
-
-
-
-
-
-													<img id="1090047797" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-001a-03_large.jpg" alt="SUPLO Gas Gasoline Petrol Fuel Filter OE 23300-31100, 186100-4730 Replacement Parts for Toyota Prado 4700/2700/3400 Land Cruiser" />
-
-
-
-
-
-
-													<img id="1090047815" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-001a-04_large.jpg" alt="SUPLO Gas Gasoline Petrol Fuel Filter OE 23300-31100, 186100-4730 Replacement Parts for Toyota Prado 4700/2700/3400 Land Cruiser" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-												</a>
-												<div class="product-actions medium--hide small--hide">
-													<div>
-														<button type="button" class="btnQuickView quick-view medium--hide small--hide" data-handle="/products/suplo-gas-gasoline-petrol-fuel-filter-oe-23300-31100-186100-4730-replacement-parts-for-toyota-prado-4700-2700-3400-land-cruiser"><span><i
-																 class="fa fa-search-plus" aria-hidden="true"></i></span></button>
-													</div>
-												</div>
-
-												<div class="tag-saleoff-img text-center">
-													-2%
-												</div>
-
-											</div>
-											<div class="product-item-info">
-												<div class="product-title">
-													<a href="products/suplo-gas-gasoline-petrol-fuel-filter-oe-23300-31100-186100-4730-replacement-parts-for-toyota-prado-4700-2700-3400-land-cruiser.html">SUPLO
-														Gas Gasoline Petrol Fuel Filter O...</a>
-												</div>
-												<div class="product-desc">
-													Bọc vô lăng Sparco chính hãng SPC1111RS lấy cảm hứng thể thao từ các dòng xe đua kết hợp với công nghệ sản
-													xuất tiên tiến. Các mẫu bọc vô lăng SPARCO đều có kích thước đường kín...
-												</div>
-												<div class="product-price clearfix">
-													<span class="current-price">5,300,000₫</span>
-
-													<span class="original-price"><s>5,400,000₫</s></span>
-
-												</div>
-											</div>
-											<div class="product-buynow">
-												<button type="button" class="btnAddToCart add-to-cart  medium--hide small--hide" data-id="1031634559"><span><i
-														 class="fa fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</span></button>
-											</div>
-										</div>
-
-									</div>
-
+									
 									<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
 
 
@@ -1946,97 +1227,6 @@
 
 									</div>
 
-									<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
-
-
-
-
-
-
-
-
-
-
-										<div class="product-item">
-											<div class="product-img">
-												<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories.html">
-
-
-
-
-
-													<img id="1090047867" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-002a-03_large.jpg" alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
-
-
-
-
-
-
-													<img id="1090047902" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-002a-04_large.jpg" alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-												</a>
-												<div class="product-actions medium--hide small--hide">
-													<div>
-														<button type="button" class="btnQuickView quick-view medium--hide small--hide" data-handle="/products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories"><span><i
-																 class="fa fa-search-plus" aria-hidden="true"></i></span></button>
-													</div>
-												</div>
-
-												<div class="tag-saleoff-img text-center">
-													-9%
-												</div>
-
-											</div>
-											<div class="product-item-info">
-												<div class="product-title">
-													<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories.html">SUPLO
-														Smart Gravity Holder Cute Mount 1...</a>
-												</div>
-												<div class="product-desc">
-													Bọc vô lăng Sparco chính hãng SPC1111RS lấy cảm hứng thể thao từ các dòng xe đua kết hợp với công nghệ sản
-													xuất tiên tiến. Các mẫu bọc vô lăng SPARCO đều có kích thước đường kín...
-												</div>
-												<div class="product-price clearfix">
-													<span class="current-price">10,000,000₫</span>
-
-													<span class="original-price"><s>11,000,000₫</s></span>
-
-												</div>
-											</div>
-											<div class="product-buynow">
-												<button type="button" class="btnAddToCart add-to-cart  medium--hide small--hide" data-id="1031373304"><span><i
-														 class="fa fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</span></button>
-											</div>
-										</div>
-
-									</div>
 
 								</div>
 								<div class="collection-btn">
@@ -2044,203 +1234,9 @@
 								</div>
 
 							</div>
-
-
-
-
-
-
 							<div id="collection3" class="pro-tabcontent">
 
 								<div class="grid-uniform md-mg-left-15">
-
-									<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
-
-
-
-
-
-
-
-
-
-
-										<div class="product-item">
-											<div class="product-img">
-												<a href="products/suplo-gas-gasoline-petrol-fuel-filter-oe-23300-31100-186100-4730-replacement-parts-for-toyota-prado-4700-2700-3400-land-cruiser-3.html">
-
-
-
-
-
-													<img id="1090714311" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-006a-02_023bb50277a7493d8d7a7b3bd226f9ee_large.jpg"
-													 alt="SUPLO Gas Gasoline Petrol Fuel Filter OE 23300-31100, 186100-4730 Replacement Parts for Toyota Prado 4700/2700/3400 Land Cruiser" />
-
-
-
-
-
-
-													<img id="1090714312" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-005a-02_d08e539ec50b44adaef7e55024a0b666_large.jpg"
-													 alt="SUPLO Gas Gasoline Petrol Fuel Filter OE 23300-31100, 186100-4730 Replacement Parts for Toyota Prado 4700/2700/3400 Land Cruiser" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-												</a>
-												<div class="product-actions medium--hide small--hide">
-													<div>
-														<button type="button" class="btnQuickView quick-view medium--hide small--hide" data-handle="/products/suplo-gas-gasoline-petrol-fuel-filter-oe-23300-31100-186100-4730-replacement-parts-for-toyota-prado-4700-2700-3400-land-cruiser-3"><span><i
-																 class="fa fa-search-plus" aria-hidden="true"></i></span></button>
-													</div>
-												</div>
-
-												<div class="tag-saleoff-img text-center">
-													-9%
-												</div>
-
-											</div>
-											<div class="product-item-info">
-												<div class="product-title">
-													<a href="products/suplo-gas-gasoline-petrol-fuel-filter-oe-23300-31100-186100-4730-replacement-parts-for-toyota-prado-4700-2700-3400-land-cruiser-3.html">SUPLO
-														Gas Gasoline Petrol Fuel Filter O...</a>
-												</div>
-												<div class="product-desc">
-													Bọc vô lăng Sparco chính hãng SPC1111RS lấy cảm hứng thể thao từ các dòng xe đua kết hợp với công nghệ sản
-													xuất tiên tiến. Các mẫu bọc vô lăng SPARCO đều có kích thước đường kín...
-												</div>
-												<div class="product-price clearfix">
-													<span class="current-price">10,500,000₫</span>
-
-													<span class="original-price"><s>11,500,000₫</s></span>
-
-												</div>
-											</div>
-											<div class="product-buynow">
-												<button type="button" class="btnAddToCart add-to-cart  medium--hide small--hide" data-id="1031638556"><span><i
-														 class="fa fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</span></button>
-											</div>
-										</div>
-
-									</div>
-
-									<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
-
-
-
-
-
-
-
-
-
-
-										<div class="product-item">
-											<div class="product-img">
-												<a href="products/suplo-gas-gasoline-petrol-fuel-filter-oe-23300-31100-186100-4730-replacement-parts-for-toyota-prado-4700-2700-3400-land-cruiser-2.html">
-
-
-
-
-
-													<img id="1090712683" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-004a-02_1e327fc3290e43e9a6b5e36bdf11678a_large.jpg"
-													 alt="SUPLO Gas Gasoline Petrol Fuel Filter OE 23300-31100, 186100-4730 Replacement Parts for Toyota Prado 4700/2700/3400 Land Cruiser" />
-
-
-
-
-
-
-													<img id="1090712684" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-006a-01_0f6f585791194a5b8e7a2577bdc1b466_large.jpg"
-													 alt="SUPLO Gas Gasoline Petrol Fuel Filter OE 23300-31100, 186100-4730 Replacement Parts for Toyota Prado 4700/2700/3400 Land Cruiser" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-												</a>
-												<div class="product-actions medium--hide small--hide">
-													<div>
-														<button type="button" class="btnQuickView quick-view medium--hide small--hide" data-handle="/products/suplo-gas-gasoline-petrol-fuel-filter-oe-23300-31100-186100-4730-replacement-parts-for-toyota-prado-4700-2700-3400-land-cruiser-2"><span><i
-																 class="fa fa-search-plus" aria-hidden="true"></i></span></button>
-													</div>
-												</div>
-
-												<div class="tag-saleoff-img text-center">
-													-28%
-												</div>
-
-											</div>
-											<div class="product-item-info">
-												<div class="product-title">
-													<a href="products/suplo-gas-gasoline-petrol-fuel-filter-oe-23300-31100-186100-4730-replacement-parts-for-toyota-prado-4700-2700-3400-land-cruiser-2.html">SUPLO
-														Gas Gasoline Petrol Fuel Filter O...</a>
-												</div>
-												<div class="product-desc">
-													Bọc vô lăng Sparco chính hãng SPC1111RS lấy cảm hứng thể thao từ các dòng xe đua kết hợp với công nghệ sản
-													xuất tiên tiến. Các mẫu bọc vô lăng SPARCO đều có kích thước đường kín...
-												</div>
-												<div class="product-price clearfix">
-													<span class="current-price">30,000,000₫</span>
-
-													<span class="original-price"><s>41,500,000₫</s></span>
-
-												</div>
-											</div>
-											<div class="product-buynow">
-												<button type="button" class="btnAddToCart add-to-cart  medium--hide small--hide" data-id="1031637974"><span><i
-														 class="fa fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</span></button>
-											</div>
-										</div>
-
-									</div>
 
 									<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
 
@@ -2366,31 +1362,6 @@
 													 data-src="http://product.hstatic.net/1000305059/product/suplo-003a-01_f494c194a73f4f8fa6d9787d29d3ff27_large.jpg"
 													 alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 												</a>
 												<div class="product-actions medium--hide small--hide">
 													<div>
@@ -2428,155 +1399,10 @@
 								</div>
 
 							</div>
-
-
-
-
-
-
 							<div id="collection4" class="pro-tabcontent">
 
 								<div class="grid-uniform md-mg-left-15">
 
-									<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
-
-
-
-
-
-
-
-
-										<div class="product-item">
-											<div class="product-img">
-												<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-9.html">
-
-
-
-
-
-													<img id="1090801495" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-012a-01_b4073d98b6534c619a361549e0b2f118_large.jpg"
-													 alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
-
-
-
-
-
-
-													<img id="1090801496" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-007a-01_0f20da25349d4464bcb9e87104b92602_large.jpg"
-													 alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
-
-
-
-
-
-
-												</a>
-												<div class="product-actions medium--hide small--hide">
-													<div>
-														<button type="button" class="btnQuickView quick-view medium--hide small--hide" data-handle="/products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-9"><span><i
-																 class="fa fa-search-plus" aria-hidden="true"></i></span></button>
-													</div>
-												</div>
-
-											</div>
-											<div class="product-item-info">
-												<div class="product-title">
-													<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-9.html">SUPLO
-														Smart Gravity Holder Cute Mount 1...</a>
-												</div>
-												<div class="product-desc">
-													Bọc vô lăng Sparco chính hãng SPC1111RS lấy cảm hứng thể thao từ các dòng xe đua kết hợp với công nghệ sản
-													xuất tiên tiến. Các mẫu bọc vô lăng SPARCO đều có kích thước đường kín...
-												</div>
-												<div class="product-price clearfix">
-													<span class="current-price">150,000₫</span>
-
-												</div>
-											</div>
-											<div class="product-buynow">
-												<button type="button" class="btnAddToCart add-to-cart  medium--hide small--hide" data-id="1031664345"><span><i
-														 class="fa fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</span></button>
-											</div>
-										</div>
-
-									</div>
-
-									<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
-
-
-
-
-
-
-
-
-										<div class="product-item">
-											<div class="product-img">
-												<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-8.html">
-
-
-
-
-
-													<img id="1090800284" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-011a-01_2985b98a85c64d96b1825f3943fa1b94_large.jpg"
-													 alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
-
-
-
-
-
-
-													<img id="1090800285" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-008a-01_55e427e3130944029c0b03adcb2aa347_large.jpg"
-													 alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-												</a>
-												<div class="product-actions medium--hide small--hide">
-													<div>
-														<button type="button" class="btnQuickView quick-view medium--hide small--hide" data-handle="/products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-8"><span><i
-																 class="fa fa-search-plus" aria-hidden="true"></i></span></button>
-													</div>
-												</div>
-
-											</div>
-											<div class="product-item-info">
-												<div class="product-title">
-													<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-8.html">SUPLO
-														Smart Gravity Holder Cute Mount 1...</a>
-												</div>
-												<div class="product-desc">
-													Bọc vô lăng Sparco chính hãng SPC1111RS lấy cảm hứng thể thao từ các dòng xe đua kết hợp với công nghệ sản
-													xuất tiên tiến. Các mẫu bọc vô lăng SPARCO đều có kích thước đường kín...
-												</div>
-												<div class="product-price clearfix">
-													<span class="current-price">1,750,000₫</span>
-
-												</div>
-											</div>
-											<div class="product-buynow">
-												<button type="button" class="btnAddToCart add-to-cart  medium--hide small--hide" data-id="1031664184"><span><i
-														 class="fa fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</span></button>
-											</div>
-										</div>
-
-									</div>
 
 									<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
 
@@ -2715,191 +1541,7 @@
 
 									</div>
 
-									<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
-
-
-
-
-
-
-
-
-
-
-										<div class="product-item">
-											<div class="product-img">
-												<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-5.html">
-
-
-
-
-
-													<img id="1090719996" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-007a-01_0a2ce72402ab45bcb8bdd8d35730ca32_large.jpg"
-													 alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
-
-
-
-
-
-
-													<img id="1090719997" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-008a-01_0db9335e7eb54e86bca4916efccda559_large.jpg"
-													 alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-												</a>
-												<div class="product-actions medium--hide small--hide">
-													<div>
-														<button type="button" class="btnQuickView quick-view medium--hide small--hide" data-handle="/products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-5"><span><i
-																 class="fa fa-search-plus" aria-hidden="true"></i></span></button>
-													</div>
-												</div>
-
-												<div class="tag-saleoff-img text-center">
-													-2%
-												</div>
-
-											</div>
-											<div class="product-item-info">
-												<div class="product-title">
-													<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-5.html">SUPLO
-														Smart Gravity Holder Cute Mount 1...</a>
-												</div>
-												<div class="product-desc">
-													Bọc vô lăng Sparco chính hãng SPC1111RS lấy cảm hứng thể thao từ các dòng xe đua kết hợp với công nghệ sản
-													xuất tiên tiến. Các mẫu bọc vô lăng SPARCO đều có kích thước đường kín...
-												</div>
-												<div class="product-price clearfix">
-													<span class="current-price">31,500,000₫</span>
-
-													<span class="original-price"><s>32,000,000₫</s></span>
-
-												</div>
-											</div>
-											<div class="product-buynow">
-												<button type="button" class="btnAddToCart add-to-cart  medium--hide small--hide" data-id="1031640086"><span><i
-														 class="fa fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</span></button>
-											</div>
-										</div>
-
-									</div>
-
-									<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
-
-
-
-
-
-
-
-
-
-
-										<div class="product-item">
-											<div class="product-img">
-												<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-4.html">
-
-
-
-
-
-													<img id="1090718647" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-008a-01_large.jpg" alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
-
-
-
-
-
-
-													<img id="1090718648" class="lazyload" src="http://theme.hstatic.net/1000305059/1000394224/14/lazyload.jpg?v=3593"
-													 data-src="http://product.hstatic.net/1000305059/product/suplo-007a-01_large.jpg" alt="SUPLO Smart Gravity Holder Cute Mount 10W Fast Wireless Car Charger Bracket Car Accessories" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-												</a>
-												<div class="product-actions medium--hide small--hide">
-													<div>
-														<button type="button" class="btnQuickView quick-view medium--hide small--hide" data-handle="/products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-4"><span><i
-																 class="fa fa-search-plus" aria-hidden="true"></i></span></button>
-													</div>
-												</div>
-
-												<div class="tag-saleoff-img text-center">
-													-4%
-												</div>
-
-											</div>
-											<div class="product-item-info">
-												<div class="product-title">
-													<a href="products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-4.html">SUPLO
-														Smart Gravity Holder Cute Mount 1...</a>
-												</div>
-												<div class="product-desc">
-													Bọc vô lăng Sparco chính hãng SPC1111RS lấy cảm hứng thể thao từ các dòng xe đua kết hợp với công nghệ sản
-													xuất tiên tiến. Các mẫu bọc vô lăng SPARCO đều có kích thước đường kín...
-												</div>
-												<div class="product-price clearfix">
-													<span class="current-price">51,000,000₫</span>
-
-													<span class="original-price"><s>53,000,000₫</s></span>
-
-												</div>
-											</div>
-											<div class="product-buynow">
-												<button type="button" class="btnAddToCart add-to-cart  medium--hide small--hide" data-id="1031639469"><span><i
-														 class="fa fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</span></button>
-											</div>
-										</div>
-
-									</div>
+							
 
 								</div>
 								<div class="collection-btn">
@@ -2907,12 +1549,6 @@
 								</div>
 
 							</div>
-
-
-
-
-
-
 							<div id="collection5" class="pro-tabcontent">
 
 								<p class="text-center">
@@ -2920,29 +1556,12 @@
 								</p>
 
 							</div>
-
-
 						</div>
 					</div>
 				</div>
 			</section>
-
-
-
-
-
-
 			<section id="home-collection">
 				<div class="grid mg-left-0">
-
-
-
-
-
-
-
-
-
 					<div class="grid__item large--one-half medium--one-half small--one-whole pd-left0">
 						<div class="collection-item">
 							<a href="collections/all.html">
@@ -2967,16 +1586,6 @@
 							</a>
 						</div>
 					</div>
-
-
-
-
-
-
-
-
-
-
 					<div class="grid__item large--one-half medium--one-half small--one-whole pd-left0">
 						<div class="collection-item">
 							<a href="collections/all.html">
@@ -3001,42 +1610,12 @@
 							</a>
 						</div>
 					</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 				</div>
 			</section>
-
-
-
-
-
 			<section id="home-policy">
 				<div class="wrapper">
 					<div class="inner">
 						<div class="grid-uniform">
-
-
-
-
-
 							<div class="grid__item large--one-third medium--one-third small--one-whole">
 								<div class="policy-item">
 									<div class="policy-content">
@@ -3052,11 +1631,6 @@
 									</div>
 								</div>
 							</div>
-
-
-
-
-
 							<div class="grid__item large--one-third medium--one-third small--one-whole">
 								<div class="policy-item">
 									<div class="policy-content">
@@ -3072,11 +1646,6 @@
 									</div>
 								</div>
 							</div>
-
-
-
-
-
 							<div class="grid__item large--one-third medium--one-third small--one-whole">
 								<div class="policy-item">
 									<div class="policy-content">
@@ -3097,13 +1666,6 @@
 					</div>
 				</div>
 			</section>
-
-
-
-
-
-
-
 			<section id="home-articles">
 				<div class="wrapper">
 					<div class="inner">
@@ -3435,13 +1997,7 @@
 						</div>
 					</div>
 				</div>
-			</section>
-
-
-
-
-
-
+			</section> 
 			<section id="home-service">
 				<div class="home-section-head">
 					<div class="wrapper">
@@ -3468,14 +2024,6 @@
 					<div class="wrapper">
 						<div class="inner">
 							<div id="owl-service" class="owl-carousel owl-theme">
-
-
-
-
-
-
-
-
 								<div class="item">
 									<div class="service-item">
 										<div class="service-img">
@@ -3495,15 +2043,6 @@
 										</div>
 									</div>
 								</div>
-
-
-
-
-
-
-
-
-
 								<div class="item">
 									<div class="service-item">
 										<div class="service-img">
@@ -3523,15 +2062,6 @@
 										</div>
 									</div>
 								</div>
-
-
-
-
-
-
-
-
-
 								<div class="item">
 									<div class="service-item">
 										<div class="service-img">
@@ -3551,15 +2081,6 @@
 										</div>
 									</div>
 								</div>
-
-
-
-
-
-
-
-
-
 								<div class="item">
 									<div class="service-item">
 										<div class="service-img">
@@ -3579,15 +2100,6 @@
 										</div>
 									</div>
 								</div>
-
-
-
-
-
-
-
-
-
 								<div class="item">
 									<div class="service-item">
 										<div class="service-img">
@@ -3607,43 +2119,11 @@
 										</div>
 									</div>
 								</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
-
-
-
-
-
-
 			<section id="home-brand">
 				<div class="wrapper">
 					<div class="inner">
@@ -3657,114 +2137,41 @@
 								Các thương hiệu mà cửa hàng chúng tôi đang cung cấp
 							</div>
 							<div id="owl-brand" class="owl-carousel owl-theme">
-
-
-
-
-
-
 								<div class="item">
 									<a href="pages/about-us.html" class="brand-item">
 										<img src="http://theme.hstatic.net/1000305059/1000394224/14/brand_img1.png?v=3593" alt="Brand 1">
 									</a>
 								</div>
-
-
-
-
-
-
-
 								<div class="item">
 									<a href="pages/about-us.html" class="brand-item">
 										<img src="http://theme.hstatic.net/1000305059/1000394224/14/brand_img2.png?v=3593" alt="Brand 2">
 									</a>
 								</div>
-
-
-
-
-
-
-
 								<div class="item">
 									<a href="pages/about-us.html" class="brand-item">
 										<img src="http://theme.hstatic.net/1000305059/1000394224/14/brand_img3.png?v=3593" alt="Brand 3">
 									</a>
 								</div>
-
-
-
-
-
-
-
 								<div class="item">
 									<a href="pages/about-us.html" class="brand-item">
 										<img src="http://theme.hstatic.net/1000305059/1000394224/14/brand_img4.png?v=3593" alt="Brand 4">
 									</a>
 								</div>
-
-
-
-
-
-
-
 								<div class="item">
 									<a href="pages/about-us.html" class="brand-item">
 										<img src="http://theme.hstatic.net/1000305059/1000394224/14/brand_img5.png?v=3593" alt="Brand 5">
 									</a>
 								</div>
-
-
-
-
-
-
-
 								<div class="item">
 									<a href="pages/about-us.html" class="brand-item">
 										<img src="http://theme.hstatic.net/1000305059/1000394224/14/brand_img6.png?v=3593" alt="Brand 6">
 									</a>
 								</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
-
-
-
-
-
-
 			<section id="home-newsletters">
 				<div class="wrapper">
 					<div class="inner">
@@ -3801,10 +2208,6 @@
 					</div>
 				</div>
 			</section>
-
-
-
-
 		</main>
         </div>
 @endsection 

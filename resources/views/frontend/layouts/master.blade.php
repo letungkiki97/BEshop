@@ -143,7 +143,7 @@
 
 </head>
 
-<body id="suplo-car-cua-hang-phu-kien-do-choi-noi-that-xe-hoi-chinh-hang" class=" template-index">
+<body id="suplo-car-cua-hang-phu-kien-do-choi-noi-that-xe-hoi-chinh-hang" >
 
 
 	<div id="fb-root"></div>

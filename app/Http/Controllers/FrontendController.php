@@ -36,6 +36,17 @@ class FrontendController extends Controller
         //
         return view('frontend.blog');
     }
+    public function productcategory()
+    {
+        //
+        return view('frontend.productcategory');
+    }
+    public function productdetail()
+    {
+        //
+        return view('frontend.productdetail');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
