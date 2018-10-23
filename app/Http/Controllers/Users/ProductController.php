@@ -10,6 +10,7 @@ use App\Models\Image;
 use App\Models\ProductColor;
 use Illuminate\Http\Request;
 use App\Helpers\Functions;
+use App\Helpers\Thumbnail;
 use App\Http\Requests\ProductRequest;
 use Excel;
 use DB;
@@ -26,6 +27,50 @@ class ProductController extends UserController
         parent::__construct();
 
         view()->share('type', 'product');
+    }
+
+     public function search(Request $request)
+    {
+        $length = $request->length ?: 50;
+        $product = Product::orderBy('id', 'desc');
+        if ($this->user->hasAccess(['product.created'])) {
+            $product = $product->where(function ($q) {
+                $q->where('user_id', $this->user->id)
+                ->orWhere('assigned_to', $this->user->id);
+            });
+        }
+        if ($this->user->hasAccess(['product.published'])) {
+            $product = $product->where('published', 0);
+        }
+        if ($request->search) {
+            $stt = @strtolower($request->search);
+            if ($stt == 'active') {
+                $timsst = 1;
+            } else if ($stt == 'inactive') {
+                $timsst = 0;
+            } else {
+                $timsst = null;
+            }
+            $product = $product->where(function ($q) use ($request, $timsst) {
+                $q->where('id', 'like', '%' . $request->search . '%')
+                ->orWhere('product_name', 'like', '%' . $request->search . '%')
+                ->orWhere('product_sku', 'like', '%' . $request->search . '%')
+                ->orWhereHas('category', function ($q) use ($request) {
+                    $q->where('name', 'like', '%' . $request->search . '%');
+                })
+                ->orWhere('main_sku', 'like', '%' . $request->search . '%');
+                if ($timsst !== null) {
+                    $q->orWhere('status', $timsst);
+                }
+
+            });
+        }
+        $count = $product->count();
+        $product = $product->paginate($length);
+        $page_info = $this->pageInfo($request->page, $length, $count);
+        $title = __('product.title');
+        $request->session()->put('redirect_product', $request->fullUrl());
+        return view('product.search', compact('title', 'product', 'page_info'));
     }
 
     public function index(Request $request)
@@ -188,7 +233,6 @@ class ProductController extends UserController
                 $file_array[] = $this->uploadFile($file_3d_file, 'products');
             }
         }
-
         $file_3d = $file_array ? implode(',', $file_array) : null;
         $request->merge(['file_3d' => $file_3d]);
         if (!$request->product_image) {
@@ -201,27 +245,6 @@ class ProductController extends UserController
 
         $colors = [];
 
-        if ($product->parent && $product->parent->images) { 
-            $parent_gallery = $request->parent_gallery ?: [];
-            $parent_images = $product->parent->images->pluck('id')->toArray();
-            foreach ($parent_images as $k => $g) {
-                if (in_array($g, $parent_gallery)) {
-                    unset($parent_images[$k]);
-                }
-            }
-            if ($parent_images) {
-                $request->merge(['unlink' => implode(',', $parent_images)]);
-            }
-        } else {
-            $product_gallery = $request->image_gallery ?: [];
-            $product_images = $product->images->pluck('id')->toArray();
-            foreach ($product_images as $k => $g) {
-                if (!in_array($g, $product_gallery)) {
-                    Product::where('product_image', $g)->update(['product_image' => null]);
-                }
-            }
-        }
-
         $request->product_name = mb_strtoupper($request->product_name);
         $request->merge(['product_name' => $request->product_name]);
 
@@ -230,39 +253,6 @@ class ProductController extends UserController
         }
 
         $product->update($request->except('file_3d_file', 'old_file', 'image_gallery', 'parent_gallery', 'color', 'main_variant'));
-        
-        if (count($product->getVariants)) {
-            foreach ($product->getVariants as $key => $value) {
-                $value->published = $product->published;
-                $value->status = $product->status;
-                $value->category_id = $product->category_id;
-                if (count($value->variants)) {
-                    $property = [];
-                    foreach ($value->variants as $k => $v) {
-                        $property[$k][] = $v->property_id;
-                    }
-                    $code_gen = $this->getVar($property);
-                    $category = Category::find($product->category_id);
-                    $value->product_sku = $product->product_sku . $code_gen[0]['code'];
-                    $value->main_sku = $product->product_sku;
-                }
-                $value->update();
-            }
-        }
-
-        if ($request->feature) {
-            foreach ($request->feature as $id => $value) {
-                $product_feature = new ProductFeature;
-                $product_feature->product_id = $product->id;
-                $product_feature->feature_id = $id;
-                if (is_array($value)) {
-                    $product_feature->value = implode(',', $value);
-                } else {
-                    $product_feature->value = $value;
-                }
-                $product_feature->save();
-            }
-        }
 
         ProductColor::where(['product_id' => $product->id])->delete();
 
@@ -317,8 +307,9 @@ class ProductController extends UserController
 
         $toggle = [1 => 'Yes', 0 => 'No'];
         $status = [1 => 'Active', 0 => 'Inactive'];
+        $catego = [1 => 'From mẫu ô tô', 2 => 'Máy móc công nghệ', 3 => 'Nguyên liệu vật tư'];
 
-        $colors = Color::all()->pluck('color', 'id')->prepend('Select color', '');
+        $colors = Color::all()->pluck('color', 'id');
         if ($id) {
             $productGallery = Product::find($id)->images()->get();
             
@@ -333,6 +324,7 @@ class ProductController extends UserController
             'toggle' => $toggle,
             'status' => $status,
             'colors' => $colors,
+            'catego' => $catego,
         ]);
     }
     public function suggest(Request $request) {
@@ -343,6 +335,40 @@ class ProductController extends UserController
             ];
         });
         return response()->json($sku, 200);
+    }
+    public function uploadFromUrl(Request $request) {
+        $pathInfo = pathinfo($request->url);
+        $name = $pathInfo['basename'];
+        $ext = $pathInfo['extension'];
+        if($name && $ext && in_array($ext, ['jpg', 'png', 'jpeg', 'gif'])) {
+            $name = str_replace('.'.$ext, '', $name);
+            $name = str_slug($name) . '.' . $ext;
+            $to = 'uploads/products/' . $name;
+            if ($this->saveImage($request->url, $to)) {
+                $image = Image::create([
+                    'name' => $name,
+                    'title' => $request->title,
+                    'alt' => $request->alt,
+                    'path' => 'products'
+                ]);
+                if(Thumbnail::generate_image_thumbnail($to,'uploads/products/thumb_' . $name)) {
+                    return $image;
+                }
+            }
+        }
+        return null;
+    }
+     public function saveImage($url, $saveTo) {
+        $fp = fopen($saveTo, 'w+');
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_FILE, $fp);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 20);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_exec($ch);
+        $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        return $code == 200 ? true : false;
     }
     public function getSKU(Request $request) {
         if ($request->category) {
@@ -356,7 +382,6 @@ class ProductController extends UserController
         ->where('images.path', 'products')
         ->select('products.product_sku', 'products.product_name', 'images.name as img_name', 'products.slug', 'images.id as img_id', 'images.alt as img_alt', 'images.title as img_title')
         ->get();  
-
         if(count($current_img) > 0){
             $data_img = array(); 
             foreach ($current_img as $item) {
@@ -375,13 +400,14 @@ class ProductController extends UserController
                 $data_img['name']   = $new_img_name;
                 $data_img['alt']    = $new_img_alt;
                 $data_img['title']  = $new_img_title;
-                $old_file_thumb     = $_SERVER['DOCUMENT_ROOT']."/uploads/products/thumb_".$img_name;
-                $old_file           = $_SERVER['DOCUMENT_ROOT']."/uploads/products/".$img_name;
+                $old_file_thumb     = "uploads/products/thumb_".$img_name;
+                $old_file           = "uploads/products/".$img_name;
+
                 if (file_exists($old_file)) {
-                    rename($old_file, $_SERVER['DOCUMENT_ROOT']."/uploads/products/".$new_img_name);
+                    rename($old_file, "uploads/products/".$new_img_name);
                 }
                 if (file_exists($old_file_thumb)) {
-                    rename($old_file_thumb, $_SERVER['DOCUMENT_ROOT']."/uploads/products/thumb_".$new_img_name);
+                    rename($old_file_thumb, "uploads/products/thumb_".$new_img_name);
                 }
                 
                 $update = Functions::insertUpdate('update', new Image, $item->img_id, $data_img);

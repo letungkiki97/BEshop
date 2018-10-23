@@ -53,7 +53,7 @@ $domain = (strpos(\URL::full(), 'cazacrm.yez.vn') !== FALSE)?\Config::get('app.d
                                 <td>{{ $item->product_name }}</td>
                                 <td>
                                     @if($item->product_image && isset($item->image->name) && $item->image->name)
-                                        <img width="100" src="uploads/products/{{$item->image->name}}" />
+                                        <img width="100" src="{{url('uploads/products/'.$item->image->name)}}" />
                                     @endif
                                 </td>
                                 <td>{{ $item->category->name }}</td>

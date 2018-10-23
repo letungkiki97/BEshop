@@ -14,7 +14,7 @@
 			<section id="product-wrapper">
 				<div class="wrapper">
 					<div class="inner">
-						<div itemscope itemtype="http://schema.org/Product">
+						<div itemscope >
 							<meta itemprop="url" content="https://suplo-car-accesories.myharavan.com/products/suplo-gas-gasoline-petrol-fuel-filter-oe-23300-31100-186100-4730-replacement-parts-for-toyota-prado-4700-2700-3400-land-cruiser-1">
 							<meta itemprop="image" content="//product.hstatic.net/1000305059/product/suplo-002a-04_3c78db8101a649d98079d01e7522c8e2_grande.jpg">
 
@@ -26,8 +26,8 @@
 											<div id="surround" class="clearfix">
 												<div class="product-images text-center" id="ProductPhoto">
 
-													<img class="product-image-feature" src="http://product.hstatic.net/1000305059/product/suplo-002a-04_3c78db8101a649d98079d01e7522c8e2_master.jpg"
-													 alt="SUPLO Gas Gasoline Petrol Fuel Filter OE 23300-31100, 186100-4730 Replacement Parts for Toyota Prado 4700/2700/3400 Land Cruiser">
+													<img class="product-image-feature" src="{{url('uploads/products/'.@$product->image->name)}}"
+													 alt="{{url('uploads/products/'.@$product->image->alt)}}">
 
 													<div id="sliderproduct" style="display: none !important;">
 														<ul class="slides">
@@ -204,133 +204,60 @@
 
 									<div class="grid__item large--seven-twelfths medium--seven-twelfths small--one-whole">
 										<div class="product-content">
-											<h1 itemprop="name">SUPLO Gas Gasoline Petrol Fuel Filter OE 23300-31100, 186100-4730 Replacement Parts for
-												Toyota Prado 4700/2700/3400 Land Cruiser</h1>
+											<h1 itemprop="name">{{$product->product_name}}</h1>
 
 
 											<div class="pro-sku ProductSku">
-												<span class="title">Mã SP: </span> <span class="sku-number">SUPLO-005A</span>
+												<span class="title">Mã SP: </span> <span class="sku-number">{{$product->product_sku}}</span>
 											</div>
 
 											<div class="pro-brand">
-												<span class="title">Thương hiệu: </span> <a href="../collections/vendorsf45c.html?q=lexus&amp;view=vendor-alt">Lexus</a>
+												<span class="title">Thương hiệu: </span> <a>{{$product->category->name}}</a>
 											</div>
 											<div class="pro-stock">
-												<span class="title">Tình trạng: </span> <span>Còn hàng</span>
+												<span class="title">Tình trạng: </span> <span>{{$product->made_to_order?"Còn hàng":"Hết hàng"}}</span>
 											</div>
 
 											<div class="pro-price clearfix">
-												<span class="current-price ProductPrice">50,000,000₫</span>
+												<span class="current-price ProductPrice">{{number_format($product->sale_price)}}₫</span>
 
-												<span class="original-price ComparePrice"><s>59,000,000₫</s></span>
+												<span class="original-price ComparePrice"><s>{{number_format($product->	professional_price)}}₫</s></span>
 												<div class="sale-percentage"><span class="PriceSaving"></span></div>
 
 											</div>
 
 											<div class="pro-short-desc">
-												<p style="text-align: justify;" data-mce-style="text-align: justify;">Bọc vô lăng Sparco chính hãng
-													SPC1111RS lấy cảm hứng thể thao từ các dòng xe đua kết hợp với công nghệ sản xuất tiên tiến. Các mẫu bọc
-													vô lăng SPARCO đều có kích thước đường kính 38cm lắp vừa cho hầu hết xe ô tô con tại thị trường Việt Nam.
-													Ưu điểm của bọc vô lăng Sparco Corsa chính hãng: Thương hiệu phụ kiện hàng đầu từ Italia. Vật liệu PU cao
-													cấp, căng bền.</p>
-												<p style="text-align: justify;" data-mce-style="text-align: justify;"><span style="color: #000000;"
-													 data-mce-style="color: #000000;">
+												<p style="text-align: justify;" data-mce-style="text-align: justify;">{{$product->description}}</p>
+												<p style="text-align: justify;" data-mce-style="text-align: justify;">
+                                                    <span style="color: #000000;" data-mce-style="color: #000000;"></span>
+                                                </p>
 											</div>
 											<form action="https://suplo-car-accesories.myharavan.com/cart/add" method="post" enctype="multipart/form-data"
 											 id="AddToCartForm" class="form-vertical">
 												<div class="product-variants-wrapper">
 													<select name="id" id="productSelect" class="product-single__variants">
 
-
 														<option selected="selected" data-sku="SUPLO-005A" value="1031637468">Đỏ / Nhựa / 7 chỗ - 50,000,000 VND</option>
-
-
-
 														<option data-sku="SUPLO-005B" value="1031637469">Đỏ / Inox / 4 chỗ - 49,000,000 VND</option>
-
-
-
 														<option data-sku="SUPLO-005C" value="1031637470">Đen / Nhựa / 7 chỗ - 50,000,000 VND</option>
-
-
-
 														<option data-sku="SUPLO-005D" value="1031637471">Đen / Inox / 4 chỗ - 50,000,000 VND</option>
-
 
 													</select>
 													<div id="product-select-watch" class="select-swatch">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 														<div id="variant-swatch-0" class="swatch swatch-product-single clearfix" data-option="option1"
 														 data-option-index="0">
 															<div class="header">Màu sắc</div>
 															<div class="select-swap">
-
-
-
-
-
-
-
-																<div data-value="Đỏ" class="n-sd swatch-element color do ">
-																	<input class="variant-0 input-product" id="swatch-0-do" type="radio" name="option1" value="Đỏ" checked
-																	 data-img-src="http://product.hstatic.net/1000305059/product/suplo-002a-03_bb84bfed09d14801a36ca1faf577a8dc_master.jpg" />
-
-
-																	<label class="do has-thumb" for="swatch-0-do" style="background: url(http://product.hstatic.net/1000305059/product/suplo-002a-03_bb84bfed09d14801a36ca1faf577a8dc_compact.jpg) top left no-repeat ">
-																		<span>Đỏ</span>
-																		<img class="crossed-out" src="http://theme.hstatic.net/1000305059/1000394224/14/soldout.png?v=3593" />
-																		<img class="img-check" src="http://theme.hstatic.net/1000305059/1000394224/14/select-pro.png?v=3593" />
+																@foreach($product->color as $k=>$v)
+																<div data-value="{{$v->color}}" class="n-sd swatch-element color do ">
+																	<input class="variant-{{$k}} input-product" type="radio" name="option1" value="{{$v->color}}"
+																	 data-img-src="{{url('uploads/products/'.@$product->image->name)}}" />
+																	<label class="do has-thumb" for="swatch-{{$k}}-do" style="background: url({{url('uploads/products/'.@$product->image->name)}}) top left no-repeat ">
+																		<span>{{$v->color}}</span>
 																	</label>
-
 																</div>
-
-
-
-
-
-
-
-
-
-
-																<div data-value="Đen" class="n-sd swatch-element color den ">
-																	<input class="variant-0 input-product" id="swatch-0-den" type="radio" name="option1" value="Đen"
-																	 data-img-src="//product.hstatic.net/1000305059/product/suplo-006a-01_2b0ee81db92549da876c4774883ae536_master.jpg" />
-
-
-																	<label class="den has-thumb" for="swatch-0-den" style="background: url(http://product.hstatic.net/1000305059/product/suplo-006a-01_2b0ee81db92549da876c4774883ae536_compact.jpg) top left no-repeat ">
-																		<span>Đen</span>
-																		<img class="crossed-out" src="http://theme.hstatic.net/1000305059/1000394224/14/soldout.png?v=3593" />
-																		<img class="img-check" src="http://theme.hstatic.net/1000305059/1000394224/14/select-pro.png?v=3593" />
-																	</label>
-
-																</div>
-
-
-
-
+                                                                @endforeach
 
 															</div>
 														</div>
@@ -396,11 +323,11 @@
 													</div>
 													<div class="product-size-hotline">
 														<div class="product-hotline">
-															Hotline hỗ trợ bán hàng 24/7: <a href="tel:(+84) 934 323 882">(+84) 934 323 882</a>
+															Hotline hỗ trợ bán hàng 24/7: <a href="tel:{{@Settings::get('hotline')}}">{{@Settings::get('hotline')}}</a>
 														</div>
 														<span>|</span>
 														<div class="social-network-actions text-left">
-															<div class="fb-like" data-href="https://suplo-car-accesories.myharavan.com/products/suplo-gas-gasoline-petrol-fuel-filter-oe-23300-31100-186100-4730-replacement-parts-for-toyota-prado-4700-2700-3400-land-cruiser-1"
+															<div class="fb-like" data-href="{{url('productdetail/'.@$product->id)}}"
 															 data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
 														</div>
 													</div>
