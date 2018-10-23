@@ -142,7 +142,7 @@
 				</a>
 				<div class="dropdown-menu" id="search-dropdown">
 					<div class="search-form-wrapper">
-						<form method="get" action="{{url('product/search')}}" class="searchform-categoris ultimate-search">
+						<form method="get" action="{{url('search')}}" class="searchform-categoris ultimate-search">
 							<div class="wpo-search">
 								<div class="wpo-search-inner">
 									<select class="select-collection" id="select-collection" name="product_type">
@@ -152,8 +152,7 @@
 										@endforeach
 									</select>
 									<div class="input-group">
-										<input type="hidden" name="type" value="product" />
-										<input id="searchtext" name="q" id="s" maxlength="40" class="form-control input-search" type="text" size="20"
+										<input id="searchtext" name="q" maxlength="40" class="form-control input-search" type="text" size="20"
 										 placeholder="Tìm kiếm ...">
 										<span class="input-group-btn">
 											<button type="submit"><i class="fas fa-search"></i></button>

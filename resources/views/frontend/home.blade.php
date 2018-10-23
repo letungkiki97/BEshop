@@ -174,13 +174,7 @@
 													<a href="products/suplo-gas-gasoline-petrol-fuel-filter-oe-23300-31100-186100-4730-replacement-parts-for-toyota-prado-4700-2700-3400-land-cruiser-3.html">{{@$v->product_name}}</a>
 												</div>
 												<div class="product-desc">
-													{{str_limit(@$v->description, $limit = 100, $end = '...')}}
-												</div>
-												<div class="product-price clearfix">
-													<span class="current-price">{{$v->sale_price}}₫</span>
-
-													<span class="original-price"><s>{{$v->promotion_price}}₫</s></span>
-
+													{{str_limit(@$v->description, $limit = 150, $end = '...')}}
 												</div>
 											</div>
 											<div class="product-buynow">
@@ -285,7 +279,7 @@
 														<div class="product-actions medium--hide small--hide">
 															<div>
 																<button type="button" class="btnQuickView quick-view medium--hide small--hide"
-																		data-handle="/products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-7">
+																		data-handle="{{url('productdetail/'.@$v2->id)}}">
 																	<span> <i class="fa fa-search-plus" aria-hidden="true"></i></span>
 																</button>
 															</div>
@@ -297,10 +291,7 @@
 																{{$v2->product_name}}</a>
 														</div>
 														<div class="product-desc" style="display: block">
-															{{str_limit(@$v2->description, $limit = 100, $end = '...')}}
-														</div>
-														<div class="product-price clearfix">
-															<span class="current-price">{{$v2->sale_price}}₫</span>
+															{{str_limit(@$v2->description, $limit = 150, $end = '...')}}
 														</div>
 													</div>
 													<div class="product-buynow">
@@ -334,10 +325,7 @@
 																	{{$v2->product_name}}</a>
 															</div>
 															<div class="product-desc" style="display: block">
-																{{str_limit(@$v2->description, $limit = 100, $end = '...')}}
-															</div>
-															<div class="product-price clearfix">
-																<span class="current-price">{{$v2->sale_price}}₫</span>
+																{{str_limit(@$v2->description, $limit = 150, $end = '...')}}
 															</div>
 														</div>
 														<div class="product-buynow">

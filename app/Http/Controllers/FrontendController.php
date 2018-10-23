@@ -13,6 +13,16 @@ class FrontendController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function pageInfo($page, $length, $count) {
+        $page = $page ?: 1;
+        $from = ($page-1) * $length + 1;
+        $to = ($page) * $length;
+        $to = $to > $count ? $count : $to;
+        $from = $from > $to ? $to : $from;
+        return 'Showing ' . $from . ' to ' . $to . ' of ' . $count . ' entries';
+    }
+
     public function index()
     {
         //
@@ -57,10 +67,25 @@ class FrontendController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function search()
+    public function search(Request $request)
     {
         //
-        return view('frontend.search');
+        $tim = $request->q;
+        $length = $request->length ?: 20;
+        $product = Product::orderBy('id', 'desc');
+         if (!empty($tim)) {
+            $product = $product->where(function ($q) use ($request) {
+                $q->where('product_name', 'like', '%' . $request->q . '%');
+                if(!empty($request->product_type)){
+                $q->where('catego', 'like', '%' . $request->product_type. '%');   
+                }
+            });
+        }
+        $count = $product->count();
+        $product = $product->paginate($length);
+        $page_info = $this->pageInfo($request->page, $length, $count);
+
+        return view('frontend.search',compact('title', 'product', 'page_info','tim'));
     }
 
     /**
