@@ -51,7 +51,7 @@
 							<span>Liên hệ</span>
 						</a>
 					</li>
-					<li class=" dropdown">
+					<!-- <li class=" dropdown">
 						<a href="{{url('/blog')}}" class="text-center">
 							<span>Blog</span>
 							<i class="fas fa-caret-down"></i>
@@ -116,22 +116,22 @@
 							</li>
 
 						</ul>
-					</li>
+					</li> -->
 					<li class=" ">
 						<a href="{{url('/gioi-thieu')}}" class="text-center">
 							<span>Về chúng tôi</span>
 						</a>
 					</li>
-					<li class=" ">
+					<!-- <li class=" ">
 						<a href="#" class="text-center">
 							<span>Hướng dẫn mua hàng</span>
 						</a>
-					</li>
-					<li class=" ">
+					</li> -->
+					<!-- <li class=" ">
 						<a href="#" class="text-center">
 							<span>Hệ thống cửa hàng</span>
 						</a>
-					</li>
+					</li> -->
 				</ul>
 			</div>
 		</div>
