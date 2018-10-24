@@ -375,41 +375,42 @@ class ProductController extends UserController
             return response()->json(Category::find($request->category)->getSKU($request->old_category), 200);
         }
     }
-    public function changeImgInfomation($id){
+    public function changeImgInfomation($id)
+    {
         $current_img = Product::join('product_image', 'products.id', '=', 'product_image.product_id')
-        ->join('images', 'images.id', '=', 'product_image.image_id')
-        ->where('products.id', $id)
-        ->where('images.path', 'products')
-        ->select('products.product_sku', 'products.product_name', 'images.name as img_name', 'products.slug', 'images.id as img_id', 'images.alt as img_alt', 'images.title as img_title')
-        ->get();  
-        if(count($current_img) > 0){
-            $data_img = array(); 
-            foreach ($current_img as $item) {
-                $img_name           = $item->img_name;
-                $img_name_arr       = explode('.', $img_name);
-                $img_type           = trim($img_name_arr[count($img_name_arr) - 1]);
-                $new_img_name       = $item->product_sku.'-'.$item->slug.$item->img_id.'.'.$img_type;
-                $new_img_alt        = $item->img_alt;
-                $new_img_title      = $item->img_title;
-                if(!$item->img_alt){
-                    $new_img_alt    = $item->product_name;  
-                }
-                if(!$item->img_title){
-                    $new_img_title  = $item->product_name;
-                }
-                $data_img['name']   = $new_img_name;
-                $data_img['alt']    = $new_img_alt;
-                $data_img['title']  = $new_img_title;
-                $old_file_thumb     = "uploads/products/thumb_".$img_name;
-                $old_file           = "uploads/products/".$img_name;
+            ->join('images', 'images.id', '=', 'product_image.image_id')
+            ->where('products.id', $id)
+            ->where('images.path', 'products')
+            ->select('products.product_sku', 'products.product_name', 'images.name as img_name', 'products.slug', 'images.id as img_id', 'images.alt as img_alt', 'images.title as img_title')
+            ->get();
 
+        if (count($current_img) > 0) {
+            $data_img = array();
+            foreach ($current_img as $item) {
+                $img_name = $item->img_name;
+                $img_name_arr = explode('.', $img_name);
+                $img_type = trim($img_name_arr[count($img_name_arr) - 1]);
+                $new_img_name = $item->product_sku . '-' . $item->slug . '-cazavn-' . $item->img_id . '.' . $img_type;
+                $new_img_alt = $item->img_alt;
+                $new_img_title = $item->img_title;
+                if (!$item->img_alt) {
+                    $new_img_alt = $item->product_name;
+                }
+                if (!$item->img_title) {
+                    $new_img_title = $item->product_name . ' cazavn';
+                }
+                $data_img['name'] = $new_img_name;
+                $data_img['alt'] = $new_img_alt;
+                $data_img['title'] = $new_img_title;
+                $old_file_thumb = public_path() . "/uploads/products/thumb_" . $img_name;
+                $old_file = public_path() . "/uploads/products/" . $img_name;
                 if (file_exists($old_file)) {
-                    rename($old_file, "uploads/products/".$new_img_name);
+                    rename($old_file, public_path() . "/uploads/products/" . $new_img_name);
                 }
                 if (file_exists($old_file_thumb)) {
-                    rename($old_file_thumb, "uploads/products/thumb_".$new_img_name);
+                    rename($old_file_thumb, public_path() . "/uploads/products/thumb_" . $new_img_name);
                 }
-                
+
                 $update = Functions::insertUpdate('update', new Image, $item->img_id, $data_img);
             }
         }
