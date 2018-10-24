@@ -1,7 +1,7 @@
 <?php 
 return array (
   'catalog' => 'Danh mục sản phẩm',
-  'category' => 'Product Category',
+  'category' => 'Danh mục',
   'city' => 'City',
   'color' => 'Colors',
   'country' => 'Quốc gia',
@@ -62,4 +62,7 @@ return array (
   'user_management' => 'User Management',
   'warehouse' => 'Kho hàng',
   'warehouse_management' => 'Quản lý kho',
+  'content_management' => 'Quản lý nội dung',
+  'banner'=>'Banner',
+  'image'=>'Hình ảnh',
 );
