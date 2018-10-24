@@ -2,6 +2,13 @@
 @section('title', 'Trang chủ')
 @section('Content')
 @include('frontend.layouts.slide')
+<style>
+	@media (min-width: 992px){
+
+	.sale-img img{width:376px;height:376px}
+	.sanpham-img img{width:273px;height:273px}
+	}
+</style>
 <div id="PageContainer" class="is-moved-by-drawer template-index">
 	<main class="main-content" role="main">
 		<section id="home-aboutus">
@@ -144,7 +151,8 @@
 								@foreach($productmaymocs as $k=>$v)
 								<div class="item">
 									<div class="product-item">
-										<div class="product-img">
+										<div class="product-img sale-img">
+
 											<a href="{{url('san-pham/'.@$v->id)}}">
 												<img class="lazyload" src="{{url('uploads/products/'.@$v->image->name)}}" data-src="{{url('uploads/products/'.@$v->image->name)}}"
 												 title="{{@$v->image->title}}" alt="{{@$v->image->alt}}" />
@@ -265,8 +273,9 @@
 								@foreach($v->products as $k2=>$v2)
 								<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
 									<div class="product-item">
-										<div class="product-img">
+										<div class="product-img ">
 											<a href="{{url('san-pham/'.@$v2->id)}}">
+											
 												<img id="{{@$v2->image->id}}" class="only-one lazyload" src="{{url('uploads/products/'.@$v2->image->name)}}"
 												 data-src="{{url('uploads/products/'.@$v2->image->name)}}" title="{{@$v2->image->title}}" alt="{{@$v2->image->alt}}" />
 											</a>
@@ -298,8 +307,9 @@
 								@foreach($v1->products as $k2=>$v2)
 								<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
 									<div class="product-item">
-										<div class="product-img">
+										<div class="product-img  sanpham-img">
 											<a href="{{url('san-pham/'.@$v2->id)}}">
+											
 												<img id="{{@$v2->image->id}}" class="only-one lazyload" src="{{url('uploads/products/'.@$v2->image->name)}}"
 												 data-src="{{url('uploads/products/'.@$v2->image->name)}}" title="{{@$v2->image->title}}" alt="{{@$v2->image->alt}}" />
 											</a>
