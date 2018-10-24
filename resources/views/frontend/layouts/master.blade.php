@@ -17,7 +17,7 @@
 
 	<!-- Title and description ================================================== -->
 	<title>
-		Suplo Car | Cửa hàng phụ kiện,đồ chơi, nội thất xe hơi chính hãng
+		Tuấn Nguyên | Công ty TNHH Tuấn Nguyên | Nhà cung cấp uy tín – Tất Cả Vì Xế Yêu Của Bạn
 	</title>
 
 	<meta name="description" content="tuannguyen168.vn">
@@ -52,9 +52,9 @@
 	<meta name="theme-color" content="#e51515">
 	<!-- CSS ================================================== -->
 	<link href='http://theme.hstatic.net/1000305059/1000394224/14/timber.scss.css?v=3593' rel='stylesheet' type='text/css'
-	 media='all' />
+	media='all' />
 	<link href='http://theme.hstatic.net/1000305059/1000394224/14/suplo-style.scss.css?v=3593' rel='stylesheet' type='text/css'
-	 media='all' />
+	media='all' />
 
 	<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.3/assets/owl.carousel.min.css'>
 	<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.3/assets/owl.theme.default.min.css'>
@@ -70,76 +70,52 @@
 		Haravan.theme = { "name": "suplo_car_accessories update 5/9/2018", "id": 1000394224, "role": "main" };
 		Haravan.domain = 'suplo-car-accesories.myharavan.com';
 //]]>
-	</script>
-	<script type='text/javascript'>
-		window.HaravanAnalytics = window.HaravanAnalytics || {};
-		window.HaravanAnalytics.meta = window.HaravanAnalytics.meta || {};
-		window.HaravanAnalytics.meta.currency = 'VND';
-		var meta = { "page": { "pageType": "home" } };
-		for (var attr in meta) {
-			window.HaravanAnalytics.meta[attr] = meta[attr];
-		}
-	</script>
-	<script async src='http://hstatic.net/0/0/global/haravan-analytics.min.js?v=3' type='text/javascript'></script>
+</script>
+<script type='text/javascript'>
+	window.HaravanAnalytics = window.HaravanAnalytics || {};
+	window.HaravanAnalytics.meta = window.HaravanAnalytics.meta || {};
+	window.HaravanAnalytics.meta.currency = 'VND';
+	var meta = { "page": { "pageType": "home" } };
+	for (var attr in meta) {
+		window.HaravanAnalytics.meta[attr] = meta[attr];
+	}
+</script>
+<script async src='http://hstatic.net/0/0/global/haravan-analytics.min.js?v=3' type='text/javascript'></script>
 
-	<!-- /snippets/oldIE-js.liquid -->
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js' type='text/javascript'></script>
+<script src='http://theme.hstatic.net/1000305059/1000394224/14/modernizr.min.js?v=3593' type='text/javascript'></script>
 
-
-	<!--[if lt IE 9]>
-<script src='//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js' type='text/javascript'></script>
-<script src='//theme.hstatic.net/1000305059/1000394224/14/respond.min.js?v=3593' type='text/javascript'></script>
-<link href="//theme.hstatic.net/1000305059/1000394224/14/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
-<link href="//suplo-car-accesories.myharavan.com/search?q=4ce7df218c85347218f8038cb52b6a43" id="respond-redirect" rel="respond-redirect" />
-<script src="//suplo-car-accesories.myharavan.com/search?q=4ce7df218c85347218f8038cb52b6a43" type="text/javascript"></script>
-<![endif]-->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.3/owl.carousel.min.js'></script>
 
 
-	<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js' type='text/javascript'></script>
-	<script src='http://theme.hstatic.net/1000305059/1000394224/14/modernizr.min.js?v=3593' type='text/javascript'></script>
-
-	<script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.3/owl.carousel.min.js'></script>
-
-
-	<script src="https://cdn.rawgit.com/tuupola/jquery_lazyload/0a5e0785a90eb41a6411d67a2f2e56d55bbecbd3/lazyload.js"></script>
-	<script type="text/javascript" charset="utf-8">
-		window.addEventListener("load", function (event) {
-			lazyload();
-		});
-	</script>
+<script src="https://cdn.rawgit.com/tuupola/jquery_lazyload/0a5e0785a90eb41a6411d67a2f2e56d55bbecbd3/lazyload.js"></script>
+<script type="text/javascript" charset="utf-8">
+	window.addEventListener("load", function (event) {
+		lazyload();
+	});
+</script>
 
 
-	<!--- Animation ---->
-	<link rel='stylesheet' href='https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css'>
-	<script src='https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js'></script>
+<!--- Animation ---->
+<link rel='stylesheet' href='https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css'>
+<script src='https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js'></script>
 
 
 
-	<!-- Font Aweseome -->
-	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<!-- Font Aweseome -->
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
-	<link href="https://fonts.googleapis.com/css?family=Muli:400,700,900&amp;subset=vietnamese" rel="stylesheet">
-
-
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,900&amp;subset=vietnamese" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Muli:400,700,900&amp;subset=vietnamese" rel="stylesheet">
 
 
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,900&amp;subset=vietnamese" rel="stylesheet">
 
-
-
-
-
-
-
-
-
-
-
-	<script>
-		window.file_url = "http://file.hstatic.net/1000305059/file/";
-		window.asset_url = "http://theme.hstatic.net/1000305059/1000394224/14/?v=3593";
-		var check_variant = true;
-		var check_variant_quickview = true;
-	</script>
+<script>
+	window.file_url = "http://file.hstatic.net/1000305059/file/";
+	window.asset_url = "http://theme.hstatic.net/1000305059/1000394224/14/?v=3593";
+	var check_variant = true;
+	var check_variant_quickview = true;
+</script>
 
 </head>
 
@@ -148,12 +124,12 @@
 
 	<div id="fb-root"></div>
 	<script>(function (d, s, id) {
-			var js, fjs = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id)) return;
-			js = d.createElement(s); js.id = id;
-			js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.11';
-			fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));</script>
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = 'https://connect.facebook.net/vi_VN/sdk.js';
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
 
 
 
@@ -179,39 +155,21 @@
 						</div>
 						<div class="popup-list">
 							<ul class="no-bullets">
-
-
-
-
 								<li>
 									Các sản phẩm khuyến mại với mức giá không thể thấp hơn.
 								</li>
-
-
-
-
 
 								<li>
 									Tin tức mới nhất về các sản phẩm mới, sản phẩm hot, flash sale, hot deal, ...
 								</li>
 
-
-
-
-
 								<li>
 									Các sản phẩm khuyến mại với mức giá không thể thấp hơn.
 								</li>
 
-
-
-
-
 								<li>
 									Tin tức mới nhất về các sản phẩm mới, sản phẩm hot, flash sale, hot deal, ...
 								</li>
-
-
 							</ul>
 						</div>
 						<div class="popup-form">
@@ -221,419 +179,335 @@
 
 
 							<form accept-charset='UTF-8' action='https://suplo-car-accesories.myharavan.com/account/contact' class='contact-form'
-							 method='post'>
-								<input name='form_type' type='hidden' value='customer'>
-								<input name='utf8' type='hidden' value='✓'>
+							method='post'>
+							<input name='form_type' type='hidden' value='customer'>
+							<input name='utf8' type='hidden' value='✓'>
 
 
 
-								<div class="input-group">
-									<input type="email" value="" placeholder="Nhập email của bạn..." name="contact[email]" id="Email" class="input-group-field"
-									 aria-label="email@example.com">
-									<input type="hidden" name="contact[tags]" value="newsletter">
-									<button type="submit" name="subscribe" id="subscribe" value="GỬI"><i class="fab fa-telegram-plane"></i></button>
-									<div>
+							<div class="input-group">
+								<input type="email" value="" placeholder="Nhập email của bạn..." name="contact[email]" id="Email" class="input-group-field"
+								aria-label="email@example.com">
+								<input type="hidden" name="contact[tags]" value="newsletter">
+								<button type="submit" name="subscribe" id="subscribe" value="GỬI"><i class="fab fa-telegram-plane"></i></button>
+								<div>
 
-										<a href="https://www.facebook.com/SuploTeam/" class="popup-social-network" target="_blank"><i class="fab fa-facebook-f"></i></a>
-
-
-										<a href="https://plus.google.com/" class="popup-social-network" target="_blank"><i class="fab fa-google-plus-g"></i></a>
+									<a href="https://www.facebook.com/SuploTeam/" class="popup-social-network" target="_blank"><i class="fab fa-facebook-f"></i></a>
 
 
-										<a href="https://www.instagram.com/" class="popup-social-network" target="_blank"><i class="fab fa-instagram"></i></a>
+									<a href="https://plus.google.com/" class="popup-social-network" target="_blank"><i class="fab fa-google-plus-g"></i></a>
 
 
-										<a href="https://twitter.com/" class="popup-social-network" target="_blank"><i class="fab fa-twitter"></i></a>
+									<a href="https://www.instagram.com/" class="popup-social-network" target="_blank"><i class="fab fa-instagram"></i></a>
 
 
-										<a href="https://www.youtube.com/" class="popup-social-network" target="_blank"><i class="fab fa-youtube"></i></a>
+									<a href="https://twitter.com/" class="popup-social-network" target="_blank"><i class="fab fa-twitter"></i></a>
 
 
-										<a href="https://vn.linkedin.com/" class="popup-social-network" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+									<a href="https://www.youtube.com/" class="popup-social-network" target="_blank"><i class="fab fa-youtube"></i></a>
 
-									</div>
+
+									<a href="https://vn.linkedin.com/" class="popup-social-network" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+
 								</div>
+							</div>
 
-							</form>
+						</form>
 
-						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<script>
-		var modal = document.getElementById('popup-subscribe');
-		var span = document.getElementsByClassName("close-popup")[0];
+</div>
+<script>
+	var modal = document.getElementById('popup-subscribe');
+	var span = document.getElementsByClassName("close-popup")[0];
 
-		var btn = document.getElementById("popup-btn");
-		btn.onclick = function () {
-			modal.style.display = "block";
-			setTimeout(function () {
-				$('#popup-modal').addClass('show');
-			}, 500)
-		}
-		span.onclick = function () {
+	var btn = document.getElementById("popup-btn");
+	btn.onclick = function () {
+		modal.style.display = "block";
+		setTimeout(function () {
+			$('#popup-modal').addClass('show');
+		}, 500)
+	}
+	span.onclick = function () {
+		hidePopupSub(modal)
+	}
+
+	window.onclick = function (event) {
+		if (event.target == modal) {
 			hidePopupSub(modal)
 		}
-
-		window.onclick = function (event) {
-			if (event.target == modal) {
-				hidePopupSub(modal)
+	}
+	function hidePopupSub(modal) {
+		$('#popup-modal').removeClass('show');
+		setTimeout(function () {
+			modal.style.display = "none";
+		}, 500)
+	}
+</script>
+<script>
+	$(document).ready(function () {
+		$('#owl-main-slider').owlCarousel({
+			smartSpeed: 1000,
+			animateOut: 'fadeOut',
+			autoplayTimeout: 7000,
+			animateIn: 'fadeIn',
+			nav: false,
+			autoplayHoverPause: true,
+			mouseDrag: false,
+			touchDrag: false,
+			dots: true,
+			rewind: true,
+			autoplay: true,
+			responsiveRefreshRate: 200,
+			navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+			responsive: {
+				0: {
+					items: 1
+				},
+				480: {
+					items: 1
+				},
+				768: {
+					items: 1
+				},
+				1000: {
+					items: 1,
+					nav: true,
+				}
 			}
-		}
-		function hidePopupSub(modal) {
-			$('#popup-modal').removeClass('show');
-			setTimeout(function () {
-				modal.style.display = "none";
-			}, 500)
-		}
-	</script>
+		})
+		$('#owl-home-flash-sale').owlCarousel({
+			smartSpeed: 500,
+			nav: false,
+			dots: true,
+			loop: false,
+			rewind: true,
+			responsiveRefreshRate: 200,
+			navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+			responsive: {
+				0: {
+					items: 2,
+					margin: 5
+				},
+				480: {
+					items: 3,
+					margin: 5
+				},
+				768: {
+					items: 3,
+					margin: 15,
+				},
+				1000: {
+					items: 3,
+					margin: 30,
+					nav: true,
+					dots: false
+				}
+			}
+		})
+
+		$('#owl-home-reviews').owlCarousel({
+			smartSpeed: 200,
+			nav: false,
+			dots: true,
+			loop: false,
+			autoplay: false,
+			rewind: true,
+			autoplayHoverPause: true,
+			responsiveRefreshRate: 200,
+			responsive: {
+				0: {
+					items: 1
+				},
+				480: {
+					items: 1
+				},
+				768: {
+					items: 1
+				},
+				1000: {
+					items: 1
+				}
+			}
+		})
+
+		$('#owl-home-articles').owlCarousel({
+			smartSpeed: 200,
+			nav: false,
+			dots: true,
+			loop: false,
+			autoplay: false,
+			rewind: true,
+			margin: 5,
+			autoplayHoverPause: true,
+			responsiveRefreshRate: 200,
+			responsive: {
+				0: {
+					items: 2,
+				},
+				480: {
+					items: 3,
+				},
+				768: {
+					items: 3,
+					margin: 15,
+				},
+				1000: {
+					items: 2,
+					margin: 30,
+				}
+			}
+		})
+		$('#owl-service').owlCarousel({
+			smartSpeed: 200,
+			nav: false,
+			dots: true,
+			loop: false,
+			autoplayHoverPause: true,
+			autoplay: true,
+			autoplayTimeout: 3000,
+			rewind: true,
+			autoplayHoverPause: true,
+			responsiveRefreshRate: 200,
+			responsive: {
+				0: {
+					items: 2
+				},
+				480: {
+					items: 2
+				},
+				768: {
+					items: 3
+				},
+				1000: {
+					items: 4
+				}
+			}
+		})
+		$('#owl-brand').owlCarousel({
+			smartSpeed: 200,
+			nav: false,
+			dots: false,
+			autoplayHoverPause: true,
+			loop: true,
+			autoplay: true,
+			autoplayTimeout: 3000,
+			margin: 5,
+			autoplayHoverPause: true,
+			responsiveRefreshRate: 200,
+			navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+			responsive: {
+				0: {
+					items: 2
+				},
+				480: {
+					items: 4,
+				},
+				768: {
+					items: 4,
+					margin: 15,
+				},
+				1000: {
+					items: 5,
+					margin: 30,
+					nav: true,
+				}
+			}
+		})
+	});
+</script>
+
+
+<style>
+.phpdebugbar-restore-btn{
+	display: none !important;
+}
+</style>
 
 
 
-
-
-	<div id="NavDrawer" class="drawer drawer--right">
-		<div class="drawer__header">
-			<div class="drawer__close js-drawer-close clearfix">
-				Menu
-				<button type="button" class="icon-fallback-text">
-					<i class="fas fa-times"></i>
-				</button>
-			</div>
+<div id="NavDrawer" class="drawer drawer--right">
+	<div class="drawer__header">
+		<div class="drawer__close js-drawer-close clearfix">
+			Menu
+			<button type="button" class="icon-fallback-text">
+				<i class="fas fa-times"></i>
+			</button>
 		</div>
-		<!-- begin mobile-nav -->
-		<ul class="mobile-nav">
+	</div>
+	<!-- begin mobile-nav -->
+	<ul class="mobile-nav">
 
+		<li class="mobile-nav__item mobile-nav__item--active">
+			<a href="{{url('/')}}" class="mobile-nav__link">Trang chủ</a>
+		</li>
 
-
-
-			<li class="mobile-nav__item mobile-nav__item--active">
-				<a href="index.html" class="mobile-nav__link">Trang chủ</a>
-			</li>
-
-
-
-
-			<li class="mobile-nav__item" aria-haspopup="true">
-				<div class="mobile-nav__has-sublist">
-					<a href="collections/all.html" class="mobile-nav__link">Sản phẩm của chúng tôi</a>
-					<div class="mobile-nav__toggle">
-						<button type="button" class="icon-fallback-text mobile-nav__toggle-open">
-							<span class="icon icon-plus" aria-hidden="true"></span>
-							<span class="fallback-text">See More</span>
-						</button>
-						<button type="button" class="icon-fallback-text mobile-nav__toggle-close">
-							<span class="icon icon-minus" aria-hidden="true"></span>
-							<span class="fallback-text">"Đóng"</span>
-						</button>
-					</div>
+		<li class="mobile-nav__item" aria-haspopup="true">
+			<div class="mobile-nav__has-sublist">
+				<a href="" class="mobile-nav__link">Sản phẩm của chúng tôi</a>
+				<div class="mobile-nav__toggle">
+					<button type="button" class="icon-fallback-text mobile-nav__toggle-open">
+						<span class="icon icon-plus" aria-hidden="true"></span>
+						<span class="fallback-text">See More</span>
+					</button>
+					<button type="button" class="icon-fallback-text mobile-nav__toggle-close">
+						<span class="icon icon-minus" aria-hidden="true"></span>
+						<span class="fallback-text">"Đóng"</span>
+					</button>
 				</div>
-				<ul class="mobile-nav__sublist">
+			</div>
+			<ul class="mobile-nav__sublist">
+				@foreach($categorys as $k=>$v)
+				@if(empty($v->parent_id))
+				<li class="mobile-nav__item" aria-haspopup="true">
+					<div class="mobile-nav__has-sublist">
+						<a href="{{url('productcategory/'.$v->slug)}}" class="mobile-nav__link">{{$v->name}}</a>
 
-					<li class="mobile-nav__item" aria-haspopup="true">
-						<div class="mobile-nav__has-sublist">
-							<a href="collections/all.html" class="mobile-nav__link">Phụ kiện xe hơi</a>
-
-							<div class="mobile-nav__toggle">
-								<button type="button" class="icon-fallback-text mobile-nav__toggle-open">
-									<span class="icon icon-plus" aria-hidden="true"></span>
-									<span class="fallback-text">See More</span>
-								</button>
-								<button type="button" class="icon-fallback-text mobile-nav__toggle-close">
-									<span class="icon icon-minus" aria-hidden="true"></span>
-									<span class="fallback-text">"Đóng"</span>
-								</button>
-							</div>
-
+						<div class="mobile-nav__toggle">
+							<button type="button" class="icon-fallback-text mobile-nav__toggle-open">
+								<span class="icon icon-plus" aria-hidden="true"></span>
+								<span class="fallback-text">See More</span>
+							</button>
+							<button type="button" class="icon-fallback-text mobile-nav__toggle-close">
+								<span class="icon icon-minus" aria-hidden="true"></span>
+								<span class="fallback-text">"Đóng"</span>
+							</button>
 						</div>
-
-						<ul class="mobile-nav__sublist">
-
-							<li class="mobile-nav__item ">
-								<a href="collections/all.html" class="mobile-nav__link">Lamboghini</a>
-							</li>
-
-							<li class="mobile-nav__item ">
-								<a href="collections/all.html" class="mobile-nav__link">Misubisi</a>
-							</li>
-
-							<li class="mobile-nav__item ">
-								<a href="collections/all.html" class="mobile-nav__link">Mecsedec</a>
-							</li>
-
-							<li class="mobile-nav__item ">
-								<a href="collections/all.html" class="mobile-nav__link">Toyota</a>
-							</li>
-
-							<li class="mobile-nav__item ">
-								<a href="collections/all.html" class="mobile-nav__link">Honda</a>
-							</li>
-
-						</ul>
-
-					</li>
-
-					<li class="mobile-nav__item" aria-haspopup="true">
-						<div class="mobile-nav__has-sublist">
-							<a href="collections/all.html" class="mobile-nav__link">Đồ chơi xe hơi</a>
-
-							<div class="mobile-nav__toggle">
-								<button type="button" class="icon-fallback-text mobile-nav__toggle-open">
-									<span class="icon icon-plus" aria-hidden="true"></span>
-									<span class="fallback-text">See More</span>
-								</button>
-								<button type="button" class="icon-fallback-text mobile-nav__toggle-close">
-									<span class="icon icon-minus" aria-hidden="true"></span>
-									<span class="fallback-text">"Đóng"</span>
-								</button>
-							</div>
-
-						</div>
-
-						<ul class="mobile-nav__sublist">
-
-							<li class="mobile-nav__item ">
-								<a href="collections/all.html" class="mobile-nav__link">Toyota</a>
-							</li>
-
-							<li class="mobile-nav__item ">
-								<a href="collections/all.html" class="mobile-nav__link">Mec-se-dec</a>
-							</li>
-
-							<li class="mobile-nav__item ">
-								<a href="collections/all.html" class="mobile-nav__link">Honda</a>
-							</li>
-
-							<li class="mobile-nav__item ">
-								<a href="collections/all.html" class="mobile-nav__link">Misubishi</a>
-							</li>
-
-							<li class="mobile-nav__item ">
-								<a href="collections/all.html" class="mobile-nav__link">Lexus</a>
-							</li>
-
-						</ul>
-
-					</li>
-
-					<li class="mobile-nav__item" aria-haspopup="true">
-						<div class="mobile-nav__has-sublist">
-							<a href="collections/all.html" class="mobile-nav__link">Nội thất xe hơi</a>
-
-							<div class="mobile-nav__toggle">
-								<button type="button" class="icon-fallback-text mobile-nav__toggle-open">
-									<span class="icon icon-plus" aria-hidden="true"></span>
-									<span class="fallback-text">See More</span>
-								</button>
-								<button type="button" class="icon-fallback-text mobile-nav__toggle-close">
-									<span class="icon icon-minus" aria-hidden="true"></span>
-									<span class="fallback-text">"Đóng"</span>
-								</button>
-							</div>
-
-						</div>
-
-						<ul class="mobile-nav__sublist">
-
-							<li class="mobile-nav__item ">
-								<a href="collections/all.html" class="mobile-nav__link">Honda</a>
-							</li>
-
-							<li class="mobile-nav__item ">
-								<a href="collections/all.html" class="mobile-nav__link">Yamaha</a>
-							</li>
-
-							<li class="mobile-nav__item ">
-								<a href="collections/all.html" class="mobile-nav__link">Lexus</a>
-							</li>
-
-							<li class="mobile-nav__item ">
-								<a href="collections/all.html" class="mobile-nav__link">Lamboghini</a>
-							</li>
-
-							<li class="mobile-nav__item ">
-								<a href="collections/all.html" class="mobile-nav__link">Mec-xe-dec</a>
-							</li>
-
-						</ul>
-
-					</li>
-
-					<li class="mobile-nav__item" aria-haspopup="true">
-						<div class="mobile-nav__has-sublist">
-							<a href="collections/all.html" class="mobile-nav__link">Các sản phẩm khác</a>
-
-							<div class="mobile-nav__toggle">
-								<button type="button" class="icon-fallback-text mobile-nav__toggle-open">
-									<span class="icon icon-plus" aria-hidden="true"></span>
-									<span class="fallback-text">See More</span>
-								</button>
-								<button type="button" class="icon-fallback-text mobile-nav__toggle-close">
-									<span class="icon icon-minus" aria-hidden="true"></span>
-									<span class="fallback-text">"Đóng"</span>
-								</button>
-							</div>
-
-						</div>
-
-						<ul class="mobile-nav__sublist">
-
-							<li class="mobile-nav__item ">
-								<a href="collections/all.html" class="mobile-nav__link">Wave</a>
-							</li>
-
-							<li class="mobile-nav__item ">
-								<a href="collections/all.html" class="mobile-nav__link">X- men</a>
-							</li>
-
-						</ul>
-
-					</li>
-
-				</ul>
-			</li>
-
-
-
-
-			<li class="mobile-nav__item">
-				<a href="pages/lien-he.html" class="mobile-nav__link">Liên hệ</a>
-			</li>
-
-
-
-
-			<li class="mobile-nav__item" aria-haspopup="true">
-				<div class="mobile-nav__has-sublist">
-					<a href="pages/tat-ca-tin-tuc.html" class="mobile-nav__link">Blog</a>
-					<div class="mobile-nav__toggle">
-						<button type="button" class="icon-fallback-text mobile-nav__toggle-open">
-							<span class="icon icon-plus" aria-hidden="true"></span>
-							<span class="fallback-text">See More</span>
-						</button>
-						<button type="button" class="icon-fallback-text mobile-nav__toggle-close">
-							<span class="icon icon-minus" aria-hidden="true"></span>
-							<span class="fallback-text">"Đóng"</span>
-						</button>
 					</div>
-				</div>
-				<ul class="mobile-nav__sublist">
+					<ul class="mobile-nav__sublist">
+						@foreach($v->categories as $k1=>$v1)
+						<li class="mobile-nav__item ">
+							<a href="{{url('productcategory/'.$v1->slug)}}" class="mobile-nav__link"> {{$v1->name}}</a>
+						</li>
+						@endforeach
+					</ul>
+				</li>
+				@endif
+				@endforeach
 
-					<li class="mobile-nav__item" aria-haspopup="true">
-						<div class="mobile-nav__has-sublist">
-							<a href="blogs/news.html" class="mobile-nav__link">Công nghệ ô tô</a>
-
-							<div class="mobile-nav__toggle">
-								<button type="button" class="icon-fallback-text mobile-nav__toggle-open">
-									<span class="icon icon-plus" aria-hidden="true"></span>
-									<span class="fallback-text">See More</span>
-								</button>
-								<button type="button" class="icon-fallback-text mobile-nav__toggle-close">
-									<span class="icon icon-minus" aria-hidden="true"></span>
-									<span class="fallback-text">"Đóng"</span>
-								</button>
-							</div>
-
-						</div>
-
-						<ul class="mobile-nav__sublist">
-
-							<li class="mobile-nav__item ">
-								<a href="blogs/news.html" class="mobile-nav__link">Thế giới si&#234;u xe</a>
-							</li>
-
-							<li class="mobile-nav__item ">
-								<a href="blogs/news.html" class="mobile-nav__link">Độ xe</a>
-							</li>
-
-						</ul>
-
-					</li>
-
-					<li class="mobile-nav__item" aria-haspopup="true">
-						<div class="mobile-nav__has-sublist">
-							<a href="blogs/tin-sieu-xe.html" class="mobile-nav__link">Siêu xe</a>
-
-						</div>
-
-					</li>
-
-					<li class="mobile-nav__item" aria-haspopup="true">
-						<div class="mobile-nav__has-sublist">
-							<a href="blogs/hoi-choi-xe.html" class="mobile-nav__link">Hội chơi xe</a>
-
-							<div class="mobile-nav__toggle">
-								<button type="button" class="icon-fallback-text mobile-nav__toggle-open">
-									<span class="icon icon-plus" aria-hidden="true"></span>
-									<span class="fallback-text">See More</span>
-								</button>
-								<button type="button" class="icon-fallback-text mobile-nav__toggle-close">
-									<span class="icon icon-minus" aria-hidden="true"></span>
-									<span class="fallback-text">"Đóng"</span>
-								</button>
-							</div>
-
-						</div>
-
-						<ul class="mobile-nav__sublist">
-
-							<li class="mobile-nav__item ">
-								<a href="blogs/hoi-choi-xe.html" class="mobile-nav__link">Hội chơi xe H&#224; Nội</a>
-							</li>
-
-							<li class="mobile-nav__item ">
-								<a href="blogs/hoi-choi-xe.html" class="mobile-nav__link">Hội chơi xe S&#224;i G&#242;n</a>
-							</li>
-
-						</ul>
-
-					</li>
-
-					<li class="mobile-nav__item" aria-haspopup="true">
-						<div class="mobile-nav__has-sublist">
-							<a href="blogs/huong-dan-bao-quan-xe.html" class="mobile-nav__link">Bảo quản ô tô</a>
-
-						</div>
-
-					</li>
-
-				</ul>
-			</li>
-
-
-
-
-			<li class="mobile-nav__item">
-				<a href="pages/about-us.html" class="mobile-nav__link">Về chúng tôi</a>
-			</li>
-
-
-
-
+			</ul>
+		</li>
+		<li class="mobile-nav__item">
+			<a href="{{url('/gioi-thieu')}}" class="mobile-nav__link">Về chúng tôi</a>
+		</li>
+{{-- 
 			<li class="mobile-nav__item">
 				<a href="#" class="mobile-nav__link">Hướng dẫn mua hàng</a>
 			</li>
 
-
-
-
 			<li class="mobile-nav__item">
 				<a href="#" class="mobile-nav__link">Hệ thống cửa hàng</a>
 			</li>
-
-
-
-
-
-
-			<li class="mobile-nav__item">
+			--}}
+			{{-- <li class="mobile-nav__item">
 				<a href="account/login.html" id="customer_login_link">Đăng nhập</a>
 			</li>
 			<li class="mobile-nav__item">
 				<a href="account/register.html" id="customer_register_link">Đăng kí</a>
-			</li>
+			</li> --}}
 
 
 		</ul>
@@ -641,11 +515,6 @@
 	</div>
 
 	<div class="cart-overlay"></div>
-
-
-
-
-
 
 	<div id="CartDrawer" class="drawer drawer--left">
 		<div class="drawer__header">
@@ -710,9 +579,9 @@
 
 
 
-			<div class="grid__item medium--two-tenths small--two-tenths pd-left0">
+			<!-- <div class="grid__item medium--two-tenths small--two-tenths pd-left0">
 				<div class="mobile-nav-item">
-					<a href="collections/all.html">
+					<a href="productcategory/o-to">
 						<i class="fas fa-tag"></i><br />Hàng mới
 					</a>
 				</div>
@@ -723,7 +592,7 @@
 
 			<div class="grid__item medium--two-tenths small--two-tenths pd-left0">
 				<div class="mobile-nav-item">
-					<a href="collections/all.html">
+					<a href="#">
 						<i class="fas fa-gift"></i><br />Khuyến mãi
 					</a>
 				</div>
@@ -734,7 +603,7 @@
 
 			<div class="grid__item medium--two-tenths small--two-tenths pd-left0">
 				<div class="mobile-nav-item">
-					<a href="account/login.html">
+					<a href="#">
 						<i class="fas fa-user"></i><br />Tài khoản
 					</a>
 				</div>
@@ -745,7 +614,7 @@
 
 			<div class="grid__item medium--two-tenths small--two-tenths pd-left0">
 				<div class="mobile-nav-item">
-					<a href="pages/lien-he.html">
+					<a href="lien-he">
 						<i class="fas fa-phone"></i><br />Liên hệ
 					</a>
 				</div>
@@ -754,21 +623,16 @@
 
 			<div class="grid__item medium--two-tenths small--two-tenths pd-left0">
 				<div class="mobile-nav-item">
-					<a href="cart.html">
+					<a href="#">
 						<i class="fas fa-shopping-cart"></i><br />Giỏ hàng
 						<span class="number">
 							0
 						</span>
 					</a>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</section>
-
-
-
-
-
 
 
 	<div id="modalAddComplete">
@@ -797,10 +661,6 @@
 	</script>
 
 
-
-
-
-
 	<script src='http://hstatic.net/0/0/global/api.jquery.js' type='text/javascript'></script>
 
 	<script src='http://hstatic.net/0/0/global/option_selection.js' type='text/javascript'></script>
@@ -809,206 +669,13 @@
 	<script src='http://theme.hstatic.net/1000305059/1000394224/14/script.js?v=3593' type='text/javascript'></script>
 	<script src='http://theme.hstatic.net/1000305059/1000394224/14/timber.js?v=3593' type='text/javascript'></script>
 
-
-
 	<script>
 
 	</script>
 
 	<script src='http://theme.hstatic.net/1000305059/1000394224/14/handlebars.min.js?v=3593' type='text/javascript'></script>
 
-
-
-
 	<script src='http://theme.hstatic.net/1000305059/1000394224/14/ajax-cart.js?v=3593' type='text/javascript'></script>
-
-
-
-
-	<!-- Custom script -->
-
-	<!---- Lazy Load All ----->
-
-
-
-
-
-
-	<script>
-		$(document).ready(function () {
-			$('#owl-main-slider').owlCarousel({
-				smartSpeed: 1000,
-				animateOut: 'fadeOut',
-				autoplayTimeout: 7000,
-				animateIn: 'fadeIn',
-				nav: false,
-				autoplayHoverPause: true,
-				mouseDrag: false,
-				touchDrag: false,
-				dots: true,
-				rewind: true,
-				autoplay: true,
-				responsiveRefreshRate: 200,
-				navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
-				responsive: {
-					0: {
-						items: 1
-					},
-					480: {
-						items: 1
-					},
-					768: {
-						items: 1
-					},
-					1000: {
-						items: 1,
-						nav: true,
-					}
-				}
-			})
-			$('#owl-home-flash-sale').owlCarousel({
-				smartSpeed: 500,
-				nav: false,
-				dots: true,
-				loop: false,
-				rewind: true,
-				responsiveRefreshRate: 200,
-				navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
-				responsive: {
-					0: {
-						items: 2,
-						margin: 5
-					},
-					480: {
-						items: 3,
-						margin: 5
-					},
-					768: {
-						items: 3,
-						margin: 15,
-					},
-					1000: {
-						items: 3,
-						margin: 30,
-						nav: true,
-						dots: false
-					}
-				}
-			})
-
-			$('#owl-home-reviews').owlCarousel({
-				smartSpeed: 200,
-				nav: false,
-				dots: true,
-				loop: false,
-				autoplay: false,
-				rewind: true,
-				autoplayHoverPause: true,
-				responsiveRefreshRate: 200,
-				responsive: {
-					0: {
-						items: 1
-					},
-					480: {
-						items: 1
-					},
-					768: {
-						items: 1
-					},
-					1000: {
-						items: 1
-					}
-				}
-			})
-
-			$('#owl-home-articles').owlCarousel({
-				smartSpeed: 200,
-				nav: false,
-				dots: true,
-				loop: false,
-				autoplay: false,
-				rewind: true,
-				margin: 5,
-				autoplayHoverPause: true,
-				responsiveRefreshRate: 200,
-				responsive: {
-					0: {
-						items: 2,
-					},
-					480: {
-						items: 3,
-					},
-					768: {
-						items: 3,
-						margin: 15,
-					},
-					1000: {
-						items: 2,
-						margin: 30,
-					}
-				}
-			})
-			$('#owl-service').owlCarousel({
-				smartSpeed: 200,
-				nav: false,
-				dots: true,
-				loop: false,
-				autoplayHoverPause: true,
-				autoplay: true,
-				autoplayTimeout: 3000,
-				rewind: true,
-				autoplayHoverPause: true,
-				responsiveRefreshRate: 200,
-				responsive: {
-					0: {
-						items: 2
-					},
-					480: {
-						items: 2
-					},
-					768: {
-						items: 3
-					},
-					1000: {
-						items: 4
-					}
-				}
-			})
-			$('#owl-brand').owlCarousel({
-				smartSpeed: 200,
-				nav: false,
-				dots: false,
-				autoplayHoverPause: true,
-				loop: true,
-				autoplay: true,
-				autoplayTimeout: 3000,
-				margin: 5,
-				autoplayHoverPause: true,
-				responsiveRefreshRate: 200,
-				navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
-				responsive: {
-					0: {
-						items: 2
-					},
-					480: {
-						items: 4,
-					},
-					768: {
-						items: 4,
-						margin: 15,
-					},
-					1000: {
-						items: 5,
-						margin: 30,
-						nav: true,
-					}
-				}
-			})
-		});
-	</script>
-
-
-
 
 
 	<!-- Search header open-->
@@ -1165,9 +832,6 @@
 		}
 	</script>
 
-
-
-
 	<script>
 		function openProTabs(evt, cityName) {
 			var i, pro_tabcontent, pro_tablinks;
@@ -1267,24 +931,6 @@
 		});
 	</script>
 
-
-	<!-- Header Fixed ----->
-	<script>
-		jQuery(document).ready(function () {
-			window.onscroll = changePos;
-
-			function changePos() {
-				var header = $("#header");
-				var headerheight = $("#header").height() + 200;
-				if (window.pageYOffset > headerheight) {
-					header.addClass('scrolldown');
-				} else {
-					header.removeClass('scrolldown');
-				}
-			}
-		});
-	</script>
-
 	<!-- Validate quantity form & trigger zoom -->
 	<script>
 		$("document").ready(function () {
@@ -1302,10 +948,6 @@
 			};
 		});
 	</script>
-
-
-
-
 
 	<!-- popup loaded -->
 	<script>
@@ -1328,100 +970,100 @@
 
 	<!-- quick view -->
 	<style>
-		.modal {
-	display: none;
-	position: fixed;
-	z-index: 99999;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	overflow: hidden; 
-	background-color: rgb(0,0,0);
-	background-color: rgba(0,0,0,0.4);
-	transtion: all .5s;
+	.modal {
+		display: none;
+		position: fixed;
+		z-index: 99999;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden; 
+		background-color: rgb(0,0,0);
+		background-color: rgba(0,0,0,0.4);
+		transtion: all .5s;
 	}
 
 	.modal-content {
-	background-color: #fefefe;
-	margin: 5% auto; 
-	padding: 20px;
-	border: 1px solid #888;
-	width: 80%;
-	max-width: 780px;
-	transform: translatey(-30px);
-	transition: all .5s;
+		background-color: #fefefe;
+		margin: 5% auto; 
+		padding: 20px;
+		border: 1px solid #888;
+		width: 80%;
+		max-width: 780px;
+		transform: translatey(-30px);
+		transition: all .5s;
 	}
 
 	.close {
-	color: #aaa;
-	font-size: 28px;
-	font-weight: bold;
-	position: absolute;
-	right: 0;
-	top: 0;
-	width: 40px;
-	text-align: center;
+		color: #aaa;
+		font-size: 28px;
+		font-weight: bold;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 40px;
+		text-align: center;
 	}
 
 	.close:hover,
 	.close:focus {
-	color: black;
-	text-decoration: none;
-	cursor: pointer;
+		color: black;
+		text-decoration: none;
+		cursor: pointer;
 	}
 </style>
-	<div class="modal" id="productQuickView">
-		<div class="modal-content">
-			<span id="close" class="close">&times;</span>
-			<form class="grid" id="form-quick-view">
-				<div class="grid__item large--five-tenths">
-					<div class="image-zoom">
-						<img id="p-product-image-feature" class="p-product-image-feature" src="#">
-						<div id="p-sliderproduct" class="flexslider">
-							<ul class="slides"></ul>
-						</div>
+<div class="modal" id="productQuickView">
+	<div class="modal-content">
+		<span id="close" class="close">&times;</span>
+		<form class="grid" id="form-quick-view">
+			<div class="grid__item large--five-tenths">
+				<div class="image-zoom">
+					<img id="p-product-image-feature" class="p-product-image-feature" src="#">
+					<div id="p-sliderproduct" class="flexslider">
+						<ul class="slides"></ul>
 					</div>
 				</div>
-				<div class="grid__item large--five-tenths pull-right">
-					<h4 class="p-title   modal-title " id="">Tên sản phẩm</h4>
-					<p class="product-more-info">
-						<span class="product-sku">
-							Mã sản phẩm: <span id="ProductSku">01923123</span>
-						</span>
-					</p>
-					<div class="form-input product-price-wrapper">
-						<div class="product-price">
-							<span class="p-price "></span>
-							<del></del>
-						</div>
-						<em id="PriceSaving"></em>
+			</div>
+			<div class="grid__item large--five-tenths pull-right">
+				<h4 class="p-title   modal-title " id="">Tên sản phẩm</h4>
+				<p class="product-more-info">
+					<span class="product-sku">
+						Mã sản phẩm: <span id="ProductSku">01923123</span>
+					</span>
+				</p>
+				<div class="form-input product-price-wrapper">
+					<div class="product-price">
+						<span class="p-price "></span>
+						<del></del>
 					</div>
-					<div class="p-option-wrapper">
-						<select name="id" class="" id="p-select-quickview"></select>
-					</div>
-					<div id="swatch-quick-view" class="select-swatch">
+					<em id="PriceSaving"></em>
+				</div>
+				<div class="p-option-wrapper">
+					<select name="id" class="" id="p-select-quickview"></select>
+				</div>
+				<div id="swatch-quick-view" class="select-swatch">
 
-					</div>
-					<div class="form-input hidden">
-						<label>Số lượng</label>
-						<input name="quantity" type="number" min="1" value="1" />
-					</div>
+				</div>
+				<div class="form-input hidden">
+					<label>Số lượng</label>
+					<input name="quantity" type="number" min="1" value="1" />
+				</div>
 
-					<div class="form-input" style="width: 100%;margin-top: 10px;">
-						<button type="submit" class="btn btn-addcart" id="AddToCardQuickView">Thêm vào giỏ</button>
-						<button disabled class="btn btn-soldout">Hết hàng</button>
-						<div class="qv-readmore">
-							<span> hoặc </span><a class="read-more p-url" href="#" role="button">Xem chi tiết</a>
-						</div>
+				<div class="form-input" style="width: 100%;margin-top: 10px;">
+					<button type="submit" class="btn btn-addcart" id="AddToCardQuickView">Thêm vào giỏ</button>
+					<button disabled class="btn btn-soldout">Hết hàng</button>
+					<div class="qv-readmore">
+						<span> hoặc </span><a class="read-more p-url" href="#" role="button">Xem chi tiết</a>
 					</div>
 				</div>
-			</form>
-		</div>
-		<div id="loading">
-			<div></div>
-		</div>
+			</div>
+		</form>
 	</div>
+	<div id="loading">
+		<div></div>
+	</div>
+</div>
 
 
 </body>

@@ -13,17 +13,33 @@ class FrontendController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function pageInfo($page, $length, $count) {
+        $page = $page ?: 1;
+        $from = ($page-1) * $length + 1;
+        $to = ($page) * $length;
+        $to = $to > $count ? $count : $to;
+        $from = $from > $to ? $to : $from;
+        return 'Showing ' . $from . ' to ' . $to . ' of ' . $count . ' entries';
+    }
+
     public function index()
     {
         //
-        $product = Product::get();
+        $product = Product::where('published',1)->get();
         $categoryparents = Category::where('parent_id',0)->get();
-        return view('frontend.home',compact('product','categoryparents'));
+        $productmaymocs = Product::where('catego',2)->get();
+        return view('frontend.home',compact('product','categoryparents','productmaymocs'));
     }
-    public function productall()
+    public function productall(Request $request)
     {
-        //
-        return view('frontend.productall');
+        $length = $request->length ?: 20;
+        $product = Product::where(' published',1)->orderBy('id', 'desc');
+        $count = $product->count();
+        $product = $product->paginate($length);
+        $page_info = $this->pageInfo($request->page, $length, $count);
+
+        return view('frontend.productall',compact('title', 'product', 'page_info'));
     }
     public function contact()
     {
@@ -40,10 +56,30 @@ class FrontendController extends Controller
         //
         return view('frontend.blog');
     }
-    public function productcategory()
+    public function productcategory(Request $request,$slug)
     {
-        //
-        return view('frontend.productcategory');
+        $length = $request->length ?: 20;
+        $product = Product::where('published',1)->orderBy('id', 'desc');
+        if(!empty($slug)){
+            $categry = Category::where('slug',$slug)->first();
+            if(!empty($categry)){
+                if($categry->parent_id == 0){
+                   $categrys = Category::where('parent_id',$categry->id)->pluck('slug')->toArray();;
+                   $product = $product->whereHas('category',function($q2) use ($categrys){
+                        $q2->whereIn('slug',$categrys);
+                    });
+                }else{
+                    $product = $product->whereHas('category',function($q2) use ($slug){
+                        $q2->where('slug',$slug);
+                    });
+                }
+            }
+        }
+        $count = $product->count();
+        $product = $product->paginate($length);
+        $page_info = $this->pageInfo($request->page, $length, $count);
+
+        return view('frontend.productcategory',compact('title', 'product', 'page_info','slug'));
     }
     public function productdetail()
     {
@@ -56,9 +92,25 @@ class FrontendController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function search(Request $request)
     {
         //
+        $tim = $request->q;
+        $length = $request->length ?: 20;
+        $product = Product::where('published',1)->orderBy('id', 'desc');
+         if (!empty($tim)) {
+            $product = $product->where(function ($q) use ($request) {
+                $q->where('product_name', 'like', '%' . $request->q . '%');
+                if(!empty($request->product_type)){
+                $q->where('catego', 'like', '%' . $request->product_type. '%');   
+                }
+            });
+        }
+        $count = $product->count();
+        $product = $product->paginate($length);
+        $page_info = $this->pageInfo($request->page, $length, $count);
+
+        return view('frontend.search',compact('title', 'product', 'page_info','tim'));
     }
 
     /**

@@ -19,12 +19,10 @@
 					<li class="active ">
 						<a href="{{url('/')}}" class="text-center">
 							<span>Trang chủ</span>
-
 						</a>
-
 					</li>
 					<li class=" megamenu">
-						<a href="{{url('/productall')}}" class="text-center">
+						<a href="" class="text-center">
 							<span>Sản phẩm của chúng tôi</span>
 							<i class="fas fa-caret-down"></i>
 						</a>
@@ -33,30 +31,28 @@
                             @foreach($categorys as $k=>$v)
 								@if(empty($v->parent_id))
 								<li>
-								<a href="collections/all.html">
+								<a href="{{url('productcategory/'.$v->slug)}}">
 								   {{$v->name}}
 								</a>
-								<ul class="no-bullets">
-									@foreach($v->categories as $k1=>$v1)
-										<li>
-											<a href="collections/all.html"> {{$v1->name}}</a>
-										</li>
-									@endforeach
-								</ul>
+									<ul class="no-bullets">
+										@foreach($v->categories as $k1=>$v1)
+											<li>
+												<a href="{{url('productcategory/'.$v1->slug)}}"> {{$v1->name}}</a>
+											</li>
+										@endforeach
+									</ul>
 								</li>
 								@endif
                             @endforeach
 						</ul>
-
 					</li>
 					<li class=" ">
-						<a href="{{url('/contact')}}" class="text-center">
+						<a href="{{url('/lien-he')}}" class="text-center">
 							<span>Liên hệ</span>
 						</a>
 					</li>
-
-					<li class=" dropdown">
-						<a href="{{url('/blog')}}" class="text-center">
+					<!-- <li class=" dropdown">
+						<a href="{url('/blog')}}" class="text-center">
 							<span>Blog</span>
 							<i class="fas fa-caret-down"></i>
 						</a>
@@ -120,27 +116,22 @@
 							</li>
 
 						</ul>
-
-					</li>
-
+					</li> -->
 					<li class=" ">
-						<a href="{{url('/introduce')}}" class="text-center">
+						<a href="{{url('/gioi-thieu')}}" class="text-center">
 							<span>Về chúng tôi</span>
 						</a>
 					</li>
-
-					<li class=" ">
+					<!-- <li class=" ">
 						<a href="#" class="text-center">
 							<span>Hướng dẫn mua hàng</span>
 						</a>
-					</li>
-
-					<li class=" ">
+					</li> -->
+					<!-- <li class=" ">
 						<a href="#" class="text-center">
 							<span>Hệ thống cửa hàng</span>
 						</a>
-					</li>
-
+					</li> -->
 				</ul>
 			</div>
 		</div>
@@ -151,71 +142,26 @@
 				</a>
 				<div class="dropdown-menu" id="search-dropdown">
 					<div class="search-form-wrapper">
-						<form id="searchauto" action="https://suplo-car-accesories.myharavan.com/search" class="searchform-categoris ultimate-search">
-
+						<form method="get" action="{{url('search')}}" class="searchform-categoris ultimate-search">
 							<div class="wpo-search">
-
 								<div class="wpo-search-inner">
-
-									<select class="select-collection" id="select-collection">
+									<select class="select-collection" id="select-collection" name="product_type">
 										<option value="0">Tất cả</option>
-
-
-
-										<option value="1001373418">Phụ kiện xe hơi</option>
-
-
-										<option value="1001373419">Đồ chơi xe hơi</option>
-
-
-										<option value="1001373421">Nội thất xe hơi</option>
-
-
-										<option value="1001373422">Các sản phẩm khác</option>
-
-
-										<option value="1001358763">Sản phẩm khuyến mãi</option>
-
-
-										<option value="1001365286">Sản phẩm mới về</option>
-
+										@foreach($categotype as $k=>$v)
+										<option value="{{$k}}">{{$v}}</option>
+										@endforeach
 									</select>
-
 									<div class="input-group">
-
-										<input type="hidden" name="type" value="product" />
-
-										<input id="searchtext" name="q" id="s" maxlength="40" class="form-control input-search" type="text" size="20"
+										<input id="searchtext" name="q" maxlength="40" class="form-control input-search" type="text" size="20"
 										 placeholder="Tìm kiếm ...">
-
 										<span class="input-group-btn">
-											<button type="submit" id="searchsubmit"><i class="fas fa-search"></i></button>
+											<button type="submit"><i class="fas fa-search"></i></button>
 										</span>
 									</div>
-
 								</div>
-
-								<input type="hidden" class="collection_id" value="(collectionid:product>=0)" />
-
-								<input type="hidden" class="collection_handle" value="all" />
-
-								<input type="hidden" class="collection_name" value="all" />
-
 							</div>
-
 						</form>
 					</div>
-
-					<script>
-						$('#searchauto').submit(function (e) {
-							e.preventDefault();
-							if ($('.select-collection').val() == 0) {
-								window.location = '/search?q=filter=(' + '(collectionid:product>=' + $('.select-collection').val() + ')' + '&&(title:product**' + $(this).find('input[name="q"]').val() + '))';
-							} else {
-								window.location = '/search?q=filter=(' + '(collectionid:product=' + $('.select-collection').val() + ')' + '&&(title:product**' + $(this).find('input[name="q"]').val() + '))';
-							}
-						})
-					</script>
 
 					<script>
 
@@ -503,7 +449,7 @@
 
 				</div>
 			</div>
-			<div class="header-account">
+			{{-- <div class="header-account">
 				<a href="javascript:void(0)" class="text-center" id="account-btn">
 					<i class="fas fa-user"></i>
 				</a>
@@ -515,7 +461,7 @@
 
 					</ul>
 				</div>
-			</div>
+			</div> --}}
 			<div class="desktop-cart-wrapper">
 				<a href="javascript:void(0)" class="hd-cart">
 					<i class="fas fa-shopping-cart"></i>
@@ -547,7 +493,7 @@
 					<div class="hd-logo text-left">
 
 						<a href="index.html">
-							<img src="http://theme.hstatic.net/1000305059/1000394224/14/mb_logo.png?v=3593" alt="Suplo Car | Cửa hàng phụ kiện,đồ chơi, nội thất xe hơi chính hãng" />
+							<img src="{{asset('uploads/site'). '/' . Settings::get('site_logo')}}" alt="Tuấn Nguyên" />
 						</a>
 
 					</div>
