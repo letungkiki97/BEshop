@@ -16,10 +16,10 @@
                 <i class="material-icons">dashboard</i>
                 {{ $title }}
             </h4>
-                                <span class="pull-right">
-                                    <i class="fa fa-fw fa-chevron-up clickable"></i>
-                                    <i class="fa fa-fw fa-times removepanel clickable"></i>
-                                </span>
+            <span class="pull-right">
+                <i class="fa fa-fw fa-chevron-up clickable"></i>
+                <i class="fa fa-fw fa-times removepanel clickable"></i>
+            </span>
         </div>
         <div class="panel-body">
             @include('layouts._toolbox')
@@ -46,7 +46,7 @@
                                 <td>{{ $item->product_name }}</td>
                                 <td>
                                     @if($item->image)
-                                        <img src="uploads/products/thumb_{{$item->image->name}}" />
+                                        <img src="{{url('uploads/products/thumb_'.$item->image->name)}}" />
                                     @endif
                                 </td>
                                 <td>{{ $item->category->name }}</td>
@@ -79,7 +79,7 @@
             }
             var id = $(this).data('id');
             $.ajax({
-                url: '{{ url('product/restore') }}',
+                url: '{{ url('quantri/product/restore') }}',
                 type: 'POST',
                 data: {
                     id: id,

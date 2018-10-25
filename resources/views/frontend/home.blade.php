@@ -147,7 +147,7 @@
 									<div class="product-item">
 										<div class="product-img sale-img">
 
-											<a href="{{url('san-pham/'.@$v->id)}}">
+											<a href="{{url('san-pham/'.@$v->slug)}}">
 												<img class="lazyload" src="{{url('uploads/products/'.@$v->image->name)}}" data-src="{{url('uploads/products/'.@$v->image->name)}}"
 												 title="{{@$v->image->title}}" alt="{{@$v->image->alt}}" />
 
@@ -156,7 +156,7 @@
 											</a>
 											<div class="product-actions medium--hide small--hide">
 												<div>
-													<button type="button" class="btnQuickView quick-view medium--hide small--hide" data-handle="{{url('san-pham/'.@$v->id)}}">
+													<button type="button" class="btnQuickView quick-view medium--hide small--hide" data-handle="{{url('san-pham/'.@$v->slug)}}">
 														<span>
 															<i class="fa fa-search-plus" aria-hidden="true"></i></span>
 													</button>
@@ -170,7 +170,7 @@
 										</div>
 										<div class="product-item-info">
 											<div class="product-title">
-												<a href="{{url('san-pham/'.@$v->id)}}">{{@$v->product_name}}</a>
+												<a href="{{url('san-pham/'.@$v->slug)}}">{{@$v->product_name}}</a>
 											</div>
 											<div class="product-desc">
 												{{str_limit(@$v->description, $limit = 150, $end = '...')}}
@@ -257,7 +257,7 @@
 						<div class="tab clearfix text-center">
 							@foreach($categoryparents as $k=>$v)
 							<button class="pro-tablinks" onclick="openProTabs(event, 'collection{{$k}}')" id="defaultOpenProTabs">
-								{{strtoupper($v->name)}}
+								{{@$v->name}}
 							</button>
 							@endforeach
 						</div>
@@ -267,9 +267,8 @@
 								@foreach($v->products as $k2=>$v2)
 								<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
 									<div class="product-item">
-										<div class="product-img ">
+										<div class="product-img">
 											<a href="{{url('san-pham/'.@$v2->id)}}">
-											
 												<img id="{{@$v2->image->id}}" class="only-one lazyload" src="{{url('uploads/products/'.@$v2->image->name)}}"
 												 data-src="{{url('uploads/products/'.@$v2->image->name)}}" title="{{@$v2->image->title}}" alt="{{@$v2->image->alt}}" />
 											</a>
@@ -301,15 +300,14 @@
 								@foreach($v1->products as $k2=>$v2)
 								<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
 									<div class="product-item">
-										<div class="product-img  sanpham-img">
+										<div class="product-img">
 											<a href="{{url('san-pham/'.@$v2->id)}}">
-											
 												<img id="{{@$v2->image->id}}" class="only-one lazyload" src="{{url('uploads/products/'.@$v2->image->name)}}"
 												 data-src="{{url('uploads/products/'.@$v2->image->name)}}" title="{{@$v2->image->title}}" alt="{{@$v2->image->alt}}" />
 											</a>
 											<div class="product-actions medium--hide small--hide">
 												<div>
-													<button type="button" class="btnQuickView quick-view medium--hide small--hide" data-handle="{{url('san-pham/'.@$v2->id)}}">
+													<button type="button" class="btnQuickView quick-view medium--hide small--hide" data-handle="/products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-7">
 														<span> <i class="fa fa-search-plus" aria-hidden="true"></i></span>
 													</button>
 												</div>
@@ -973,17 +971,13 @@
 					</div>
 					<div class="sub-wrapper">
 
-						<form accept-charset='UTF-8' action='https://suplo-car-accesories.myharavan.com/account/contact' class='contact-form'
+						<form accept-charset='UTF-8' action='' class='contact-form'
 						 method='post'>
 							<input name='form_type' type='hidden' value='customer'>
 							<input name='utf8' type='hidden' value='✓'>
-
-
-
 							<input type="email" value="" placeholder="Nhập email..." name="contact[email]" id="Email" aria-label="email@example.com">
 							<input type="hidden" name="contact[tags]" value="newsletter">
 							<button type="submit" name="subscribe" id="subscribe" value="GỬI"><i class="fa fa-angle-right"></i></button>
-
 
 						</form>
 

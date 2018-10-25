@@ -289,6 +289,7 @@ class ProductController extends UserController
         $title = __('product.deleted');
         return view('user.product.trash', compact('title', 'product', 'page_info'));
     }
+
     public function destroy(Product $product)
     {
         $count = 0;
@@ -296,6 +297,11 @@ class ProductController extends UserController
             $product->delete();
             return 1;
         }
+    }
+
+    public function restore(Request $request) {
+        Product::withTrashed()->find(@$request->id)->restore();
+        return 1;
     }
 
     private function generateParams($id = 0)

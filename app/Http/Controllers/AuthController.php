@@ -250,7 +250,7 @@ class AuthController extends Controller
         if (!Sentinel::check()) {
             return redirect("/");
         }
-        $title = trans('auth.edit_profile');
+        $title = __('auth.edit_profile');
         $user_data = User::find(Sentinel::getUser()->id);
         $lang = ['en' => 'English', 'vi' => 'Vietnamese'];
 

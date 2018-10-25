@@ -25,7 +25,7 @@
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="{{@Settings::get('site_name')}} | Cửa hàng phụ kiện,đồ chơi, nội thất xe hơi chính hãng">
 	<meta property="og:description" content="Hãy đến với cửa hàng phụ kiện ô tô SUPLO CAR để tìm kiếm những sản phẩm phụ kiện,đồ chơi, nội thất cho chiếc xe ô tô xinh xắn của bạn. Suplo. Theme Suplo. Haravan.">
-	<meta property="og:image" content="http://theme.hstatic.net/1000305059/1000394224/14/share_fb_home.png?v=3593" />
+	<meta property="og:image" content="https://theme.hstatic.net/1000305059/1000394224/14/share_fb_home.png?v=3593" />
 	<meta property="og:image:secure_url" content="https://theme.hstatic.net/1000305059/1000394224/14/share_fb_home.png?v=3593" />
 
 	<meta property="og:url" content="index.html">
@@ -75,7 +75,7 @@
 
 </head>
 
-<body id="suplo-car-cua-hang-phu-kien-do-choi-noi-that-xe-hoi-chinh-hang">
+<body>
 
 
 	<div id="fb-root"></div>

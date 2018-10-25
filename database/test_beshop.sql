@@ -1,14 +1,16 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2.1
--- http://www.phpmyadmin.net
+-- version 4.8.2
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Oct 25, 2018 at 05:37 PM
--- Server version: 5.7.24-0ubuntu0.16.04.1
--- PHP Version: 7.2.11-2+ubuntu16.04.1+deb.sury.org+1
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th10 25, 2018 lúc 05:34 PM
+-- Phiên bản máy phục vụ: 10.1.34-MariaDB
+-- Phiên bản PHP: 7.1.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+07:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -17,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `test_beshop`
+-- Cơ sở dữ liệu: `test_beshop`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `activations`
+-- Cấu trúc bảng cho bảng `activations`
 --
 
 CREATE TABLE `activations` (
@@ -37,7 +39,7 @@ CREATE TABLE `activations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `activations`
+-- Đang đổ dữ liệu cho bảng `activations`
 --
 
 INSERT INTO `activations` (`id`, `user_id`, `code`, `completed`, `completed_at`, `created_at`, `updated_at`) VALUES
@@ -46,7 +48,7 @@ INSERT INTO `activations` (`id`, `user_id`, `code`, `completed`, `completed_at`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `banner`
+-- Cấu trúc bảng cho bảng `banner`
 --
 
 CREATE TABLE `banner` (
@@ -58,18 +60,10 @@ CREATE TABLE `banner` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `banner`
---
-
-INSERT INTO `banner` (`id`, `name`, `image`, `size`, `created_at`, `updated_at`) VALUES
-(2, 'bannerrrrr', '', 820, '2018-10-25 08:46:31', '2018-10-25 09:34:24'),
-(3, 'ccccc', '', 222, '2018-10-25 09:38:58', '2018-10-25 09:38:58');
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `banner_image`
+-- Cấu trúc bảng cho bảng `banner_image`
 --
 
 CREATE TABLE `banner_image` (
@@ -99,20 +93,10 @@ CREATE TABLE `banner_image` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `banner_image`
---
-
-INSERT INTO `banner_image` (`id`, `image_id`, `banner_id`, `position`, `link`, `text_text`, `text_color`, `text_font`, `text_size`, `text_left`, `text_right`, `text_top`, `text_bottom`, `button_background`, `button_text`, `button_color`, `button_font`, `button_size`, `button_left`, `button_right`, `button_top`, `button_bottom`, `created_at`, `updated_at`) VALUES
-(4, 15, 1, 1, '', '', 'FFFFFF', 'Arial', '', '', '', '', '', 'FFFFFF', '', 'FFFFFF', 'Arial', '', '', '', '', '', NULL, NULL),
-(5, 16, 2, 1, 'aaaaaaaaaaddddddddddddd', 'aaaa', 'FF389C', 'Arial', '', '', '', '', '', 'FFFFFF', 'bb', 'FFFFFF', 'Arial', '', '', '', '', '', NULL, NULL),
-(6, 17, 2, 2, 'gdfgfdgfgf', 'cccccccc', 'FFFFFF', 'Arial', '', '', '', '', '', 'FFFFFF', 'tt', 'FFFFFF', 'Arial', '', '', '', '', '', NULL, NULL),
-(7, 18, 3, 1, '', '', 'FFFFFF', 'Arial', '', '', '', '', '', 'FFFFFF', '', 'FFFFFF', 'Arial', '', '', '', '', '', NULL, NULL);
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Cấu trúc bảng cho bảng `categories`
 --
 
 CREATE TABLE `categories` (
@@ -130,7 +114,7 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `categories`
+-- Đang đổ dữ liệu cho bảng `categories`
 --
 
 INSERT INTO `categories` (`id`, `name`, `user_id`, `created_at`, `updated_at`, `deleted_at`, `code`, `parent_id`, `slug`, `meta_title`, `meta_description`) VALUES
@@ -145,7 +129,7 @@ INSERT INTO `categories` (`id`, `name`, `user_id`, `created_at`, `updated_at`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `colors`
+-- Cấu trúc bảng cho bảng `colors`
 --
 
 CREATE TABLE `colors` (
@@ -157,7 +141,7 @@ CREATE TABLE `colors` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `colors`
+-- Đang đổ dữ liệu cho bảng `colors`
 --
 
 INSERT INTO `colors` (`id`, `color`, `value`, `created_at`, `updated_at`) VALUES
@@ -174,7 +158,7 @@ INSERT INTO `colors` (`id`, `color`, `value`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `images`
+-- Cấu trúc bảng cho bảng `images`
 --
 
 CREATE TABLE `images` (
@@ -188,32 +172,10 @@ CREATE TABLE `images` (
   `status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `images`
---
-
-INSERT INTO `images` (`id`, `name`, `title`, `alt`, `path`, `created_at`, `updated_at`, `status`) VALUES
-(1, 'AUDI1-abc1.jpg', 'ABC', 'ABC', 'products', '2018-10-23 08:33:41', '2018-10-23 14:22:54', 0),
-(4, 'AUDI1-abc4.jpg', 'ABC', 'ABC', 'products', '2018-10-23 08:58:16', '2018-10-23 14:22:54', 0),
-(5, 'AUDI1-abc5.jpg', 'ABC', 'ABC', 'products', '2018-10-23 08:58:16', '2018-10-23 14:22:54', 0),
-(6, '40796538-2097213610530959-4694928604952264704-n_1540285798.jpg', '', '', 'banner', '2018-10-23 09:09:58', '2018-10-23 09:09:58', 0),
-(7, '40778872-2097288607190126-6662591172088692736-n_1540285868.jpg', '', '', 'banner', '2018-10-23 09:11:08', '2018-10-23 09:11:08', 0),
-(8, 'AUDI1-abc8.jpg', 'ABC', 'ABC', 'products', '2018-10-23 14:34:48', '2018-10-23 15:16:00', 0),
-(9, 'chevrolet-cruze-2015-2016-1.jpg', '', '', 'products', '2018-10-23 14:36:18', '2018-10-23 14:36:18', 0),
-(10, 'AUDI1-abc10.jpg', 'ABC', 'ABC', 'products', '2018-10-23 14:37:26', '2018-10-23 15:16:00', 0),
-(11, 'AUDI1-abc-cazavn-11.jpg', 'ABC cazavn', 'ABC', 'products', '2018-10-24 08:14:15', '2018-10-25 07:15:00', 0),
-(12, 'AUDI1-abc-cazavn-12.jpg', 'ABC cazavn', 'ABC', 'products', '2018-10-24 08:14:58', '2018-10-25 07:15:00', 0),
-(13, '40796538-2097213610530959-4694928604952264704-n_1540453973.jpg', '', '', 'banner', '2018-10-25 07:52:53', '2018-10-25 07:52:53', 0),
-(14, '40460826-2094945324091121-680097926608846848-o_1540457189.jpg', '', '', 'banner', '2018-10-25 08:46:30', '2018-10-25 08:46:30', 0),
-(15, 'ms-banner-img1_1540458549.jpg', '', '', 'banner', '2018-10-25 09:09:09', '2018-10-25 09:09:09', 0),
-(16, 'ms-banner-img1_1540458963.jpg', '', '', 'banner', '2018-10-25 09:16:03', '2018-10-25 09:16:03', 0),
-(17, '40969238-2096818383903815-8563801910732128256-o_1540459173.jpg', '', '', 'banner', '2018-10-25 09:19:33', '2018-10-25 09:19:33', 0),
-(18, '40778872-2097288607190126-6662591172088692736-n_1540460675.jpg', '', '', 'banner', '2018-10-25 09:44:35', '2018-10-25 09:44:35', 0);
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `persistences`
+-- Cấu trúc bảng cho bảng `persistences`
 --
 
 CREATE TABLE `persistences` (
@@ -225,7 +187,7 @@ CREATE TABLE `persistences` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `persistences`
+-- Đang đổ dữ liệu cho bảng `persistences`
 --
 
 INSERT INTO `persistences` (`id`, `user_id`, `code`, `created_at`, `updated_at`) VALUES
@@ -236,7 +198,7 @@ INSERT INTO `persistences` (`id`, `user_id`, `code`, `created_at`, `updated_at`)
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Cấu trúc bảng cho bảng `products`
 --
 
 CREATE TABLE `products` (
@@ -284,17 +246,10 @@ CREATE TABLE `products` (
   `main_variant` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `products`
---
-
-INSERT INTO `products` (`id`, `catego`, `product_name`, `product_image`, `category_id`, `status`, `sale_price`, `description`, `long_description`, `user_id`, `main_sku`, `product_sku`, `made_to_order`, `product_gallery`, `file_3d`, `product_url`, `published`, `product_weight`, `product_length`, `product_width`, `product_depth`, `delivery_category_id`, `promotion_price`, `promotion_from`, `promotion_to`, `professional_price`, `re_order_point`, `unit_value`, `total_value`, `created_at`, `updated_at`, `deleted_at`, `is_variant`, `lead_time`, `unlink`, `slug`, `meta_title`, `meta_description`, `focus_keyword`, `assigned_to`, `hover_image`, `main_variant`) VALUES
-(1, 2, 'ABC', '12', 2, 1, 0, '1', '', 1, '', 'AUDI1', 0, NULL, NULL, '', 1, 0, 0, 0, 0, NULL, 0, NULL, NULL, 0, 0, 0, 0, '2018-10-23 06:51:49', '2018-10-25 07:15:00', NULL, 0, 0, NULL, 'abc', '', '', '', 0, 0, 0);
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product_category`
+-- Cấu trúc bảng cho bảng `product_category`
 --
 
 CREATE TABLE `product_category` (
@@ -305,7 +260,7 @@ CREATE TABLE `product_category` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product_color`
+-- Cấu trúc bảng cho bảng `product_color`
 --
 
 CREATE TABLE `product_color` (
@@ -318,7 +273,7 @@ CREATE TABLE `product_color` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product_image`
+-- Cấu trúc bảng cho bảng `product_image`
 --
 
 CREATE TABLE `product_image` (
@@ -326,18 +281,10 @@ CREATE TABLE `product_image` (
   `image_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `product_image`
---
-
-INSERT INTO `product_image` (`product_id`, `image_id`) VALUES
-(1, 11),
-(1, 12);
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `revisions`
+-- Cấu trúc bảng cho bảng `revisions`
 --
 
 CREATE TABLE `revisions` (
@@ -353,11 +300,10 @@ CREATE TABLE `revisions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `revisions`
+-- Đang đổ dữ liệu cho bảng `revisions`
 --
 
 INSERT INTO `revisions` (`id`, `revisionable_type`, `revisionable_id`, `user_id`, `key`, `old_value`, `new_value`, `created_at`, `updated_at`) VALUES
-(1, 'App\\Models\\User', 1, 1, 'last_login', '2018-10-18 15:36:31', '2018-10-18 15:39:39', '2018-10-18 08:39:39', '2018-10-18 08:39:39'),
 (5, 'App\\Models\\Product', 1, 1, 'created_at', NULL, '2018-10-23 09:30:26', '2018-10-23 02:30:26', '2018-10-23 02:30:26'),
 (6, 'App\\Models\\Product', 1, 1, 'main_sku', '', '1', '2018-10-23 02:33:28', '2018-10-23 02:33:28'),
 (7, 'App\\Models\\Product', 1, 1, 'product_url', '', '2', '2018-10-23 02:33:28', '2018-10-23 02:33:28'),
@@ -385,14 +331,20 @@ INSERT INTO `revisions` (`id`, `revisionable_type`, `revisionable_id`, `user_id`
 (39, 'App\\Models\\Product', 2, 1, 'sale_price', '0', '1200000', '2018-10-23 04:21:33', '2018-10-23 04:21:33'),
 (40, 'App\\Models\\Product', 2, 1, 'promotion_price', '0', '1176000', '2018-10-23 04:21:33', '2018-10-23 04:21:33'),
 (42, 'App\\Models\\Product', 2, 1, 'published', '0', '1', '2018-10-23 04:23:01', '2018-10-23 04:23:01'),
-(54, 'App\\Models\\User', 1, 1, 'last_login', '2018-10-23 09:20:53', '2018-10-23 21:08:43', '2018-10-23 14:08:44', '2018-10-23 14:08:44'),
 (56, 'App\\Models\\Product', 1, 1, 'product_image', '5', '8', '2018-10-23 14:34:50', '2018-10-23 14:34:50'),
-(60, 'App\\Models\\Product', 1, 1, 'product_image', '11', '12', '2018-10-25 07:15:00', '2018-10-25 07:15:00');
+(60, 'App\\Models\\Product', 1, 1, 'product_image', '11', '12', '2018-10-25 07:15:00', '2018-10-25 07:15:00'),
+(61, 'App\\Models\\User', 1, 1, 'first_name', 'Admin', 'Adminaaaa', '2018-10-25 15:08:05', '2018-10-25 15:08:05'),
+(65, 'App\\Models\\Product', 1, 1, 'deleted_at', '2018-10-25 22:09:17', NULL, '2018-10-25 15:17:13', '2018-10-25 15:17:13'),
+(66, 'App\\Models\\User', 1, 1, 'first_name', 'Adminaaaa', 'Admin', '2018-10-25 15:22:01', '2018-10-25 15:22:01'),
+(67, 'App\\Models\\User', 1, 1, 'last_name', 'Admin', 'CRM', '2018-10-25 15:22:01', '2018-10-25 15:22:01'),
+(68, 'App\\Models\\Product', 2, 1, 'created_at', NULL, '2018-10-25 22:26:24', '2018-10-25 15:26:24', '2018-10-25 15:26:24'),
+(71, 'App\\Models\\Product', 2, 1, 'published', '0', '1', '2018-10-25 15:30:04', '2018-10-25 15:30:04'),
+(72, 'App\\Models\\Product', 2, 1, 'deleted_at', NULL, '2018-10-25 22:30:14', '2018-10-25 15:30:14', '2018-10-25 15:30:14');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `roles`
+-- Cấu trúc bảng cho bảng `roles`
 --
 
 CREATE TABLE `roles` (
@@ -405,26 +357,26 @@ CREATE TABLE `roles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `roles`
+-- Đang đổ dữ liệu cho bảng `roles`
 --
 
 INSERT INTO `roles` (`id`, `slug`, `name`, `permissions`, `created_at`, `updated_at`) VALUES
 (1, 'admin', 'Admin', NULL, '2017-08-14 18:19:34', '2017-08-14 18:19:34'),
-(4, 'sales_staff', 'Sales staff', '{"product_management.list":true,"product.list":true,"customer_management.list":true,"customer.list":true,"customer.edit":true,"customer.add":true,"sales_management.list":true,"sales_order.list":true,"sales_order.edit":true,"sales_order.add":true,"sales_order.delete":true,"delivery_management.list":true,"delivery.list":true,"delivery.edit":true,"delivery.add":true,"delivery.delete":true,"delivery_agency.list":true,"delivery_agency.edit":true,"delivery_agency.add":true,"warehouse_management.list":true,"stock_report.list":true,"stock_report.edit":true,"stock_report.add":true,"stock_report.delete":true,"stock_movement.list":true,"supplier_management.list":true,"supplier.list":true,"supplier.edit":true,"supplier.add":true,"supplier.delete":true,"supplier_price.list":true,"supplier_price.edit":true,"supplier_price.add":true,"supplier_price.delete":true,"production_management.list":true,"production_order.list":true,"user.restricted":true,"dashboard.basic":true}', NULL, '2018-09-17 07:23:41'),
-(5, 'sales_manager', 'Sales manager', '{"report.list":true,"revenue_report.list":true,"product_management.list":true,"product.list":true,"product.edit":true,"category.list":true,"sales_management.list":true,"sales_order.edit":true,"sales_order.add":true,"sales_order.pending":true,"sales_order.waiting":true,"sales_order.delivered":true,"sales_order.cancelled":true,"delivery_management.list":true,"delivery.list":true,"delivery.edit":true,"delivery.add":true,"warehouse_management.list":true,"warehouse.list":true,"storage.list":true,"dashboard.basic":true}', NULL, '2018-05-13 06:08:43'),
-(6, 'purchasing_staff', 'Purchasing staff', '{"supplier_management.list":true,"supplier_price.list":true,"supplier_price.edit":true,"supplier_price.add":true,"dashboard.basic":true}', NULL, '2018-05-18 05:52:20'),
-(7, 'purchasing_manager', 'Purchasing manager', '{"product_management.list":true,"product.list":true,"product.edit":true,"product.add":true,"catalog.list":true,"category.list":true,"category.edit":true,"category.add":true,"customer_management.list":true,"customer.list":true,"customer.edit":true,"customer.add":true,"sales_management.list":true,"sales_order.list":true,"sales_order.edit":true,"sales_order.add":true,"delivery_management.list":true,"delivery.list":true,"delivery.edit":true,"delivery.add":true,"warehouse_management.list":true,"stock_report.list":true,"stock_report.edit":true,"stock_report.add":true,"stock_movement.list":true,"stock_movement.edit":true,"stock_movement.add":true,"supplier_management.list":true,"supplier.list":true,"supplier.edit":true,"supplier.add":true,"supplier_price.list":true,"supplier_price.edit":true,"supplier_price.add":true,"supplier_contact.list":true,"supplier_contact.edit":true,"supplier_contact.add":true,"purchase_management.list":true,"purchase.list":true,"purchase.edit":true,"purchase.add":true,"purchase.active":true,"purchase.received":true,"purchase.paid":true,"purchase.cancelled":true,"production_management.list":true,"production_order.list":true,"production_order.edit":true,"production_order.add":true,"dashboard.basic":true}', NULL, '2018-09-15 07:12:38'),
-(8, 'warehouse_staff', 'Warehouse staff', '{"dashboard.basic":true}', NULL, '2018-05-04 03:10:28'),
-(9, 'warehouse_manager', 'Warehouse manager', '{"product_management.list":true,"product.list":true,"product.edit":true,"product.add":true,"product.delete":true,"customer_management.list":true,"customer.list":true,"customer.edit":true,"customer.add":true,"customer.delete":true,"sales_management.list":true,"sales_order.list":true,"sales_order.edit":true,"sales_order.add":true,"sales_order.delete":true,"warehouse_management.list":true,"stock_report.list":true,"stock_report.edit":true,"stock_report.add":true,"stock_report.delete":true,"supplier_management.list":true,"supplier.list":true,"supplier.edit":true,"supplier.add":true,"supplier.delete":true,"supplier_price.list":true,"supplier_price.edit":true,"supplier_price.add":true,"supplier_price.delete":true,"purchase.list":true,"purchase.edit":true,"purchase.add":true,"purchase.delete":true,"purchase.active":true,"purchase.received":true,"purchase.paid":true,"purchase.cancelled":true,"dashboard.basic":true}', NULL, '2018-05-21 04:16:46'),
-(10, 'tester', 'Tester', '{"report.list":true,"revenue_report.list":true,"revenue_report.edit":true,"revenue_report.add":true,"purchase_report.list":true,"purchase_report.edit":true,"purchase_report.add":true,"product_management.list":true,"product.list":true,"product.edit":true,"product.add":true,"product.delete":true,"catalog.list":true,"catalog.edit":true,"catalog.add":true,"deleted_product.list":true,"deleted_product.edit":true,"deleted_product.add":true,"category.list":true,"category.edit":true,"category.add":true,"tag.list":true,"tag.edit":true,"tag.add":true,"color.list":true,"color.edit":true,"color.add":true,"delivery_category.list":true,"delivery_category.edit":true,"delivery_category.add":true,"property.list":true,"property.edit":true,"property.add":true,"property_type.list":true,"property_type.edit":true,"property_type.add":true,"feature.list":true,"feature.edit":true,"feature.add":true,"customer_management.list":true,"customer.list":true,"customer.edit":true,"customer.add":true,"customer_type.list":true,"customer_type.edit":true,"customer_type.add":true,"sales_management.list":true,"sales_order.list":true,"sales_order.edit":true,"sales_order.add":true,"sales_order.delete":true,"sales_order.pending":true,"sales_order.waiting":true,"sales_order.delivered":true,"sales_order.cancelled":true,"sales_order.done":true,"sales_channel.list":true,"sales_channel.edit":true,"sales_channel.add":true,"sale_price.list":true,"sale_price.edit":true,"sale_price.add":true,"reject.list":true,"reject.edit":true,"reject.add":true,"delivery_management.list":true,"delivery.list":true,"delivery.edit":true,"delivery.add":true,"delivery.pending":true,"delivery.delivered":true,"delivery_agency.list":true,"delivery_agency.edit":true,"delivery_agency.add":true,"return_delivery.list":true,"return_delivery.edit":true,"return_delivery.add":true,"reason.list":true,"reason.edit":true,"reason.add":true,"warehouse_management.list":true,"stock_report.list":true,"stock_report.edit":true,"stock_report.add":true,"stock_report.delete":true,"stock_movement.list":true,"stock_movement.edit":true,"stock_movement.add":true,"stock_movement.delete":true,"warehouse.list":true,"warehouse.edit":true,"warehouse.add":true,"warehouse.delete":true,"storage.list":true,"storage.edit":true,"storage.add":true,"storage.delete":true,"movement_type.list":true,"movement_type.edit":true,"movement_type.add":true,"movement_type.delete":true,"supplier_management.list":true,"supplier.list":true,"supplier.edit":true,"supplier.add":true,"supplier_price.list":true,"supplier_price.edit":true,"supplier_price.add":true,"supplier_contact.list":true,"supplier_contact.edit":true,"supplier_contact.add":true,"supplier_rating.list":true,"supplier_rating.edit":true,"supplier_rating.add":true,"purchase_management.list":true,"requirement.list":true,"requirement.edit":true,"requirement.add":true,"purchase.list":true,"purchase.edit":true,"purchase.add":true,"purchase.draft":true,"purchase.active":true,"purchase.received":true,"purchase.paid":true,"purchase.cancelled":true,"currency.list":true,"currency.edit":true,"currency.add":true,"production_management.list":true,"production_order.list":true,"production_order.edit":true,"production_order.add":true,"fabric.list":true,"fabric.edit":true,"fabric.add":true,"fabric_book.list":true,"fabric_book.edit":true,"fabric_book.add":true,"foam.list":true,"foam.edit":true,"foam.add":true,"material.list":true,"material.edit":true,"material.add":true,"material_color.list":true,"material_color.edit":true,"material_color.add":true,"leg.list":true,"leg.edit":true,"leg.add":true,"location_management.list":true,"country.list":true,"country.edit":true,"country.add":true,"city.list":true,"city.edit":true,"city.add":true,"district.list":true,"district.edit":true,"district.add":true,"location.list":true,"location.edit":true,"location.add":true,"content_management.list":true,"news_category.list":true,"news_category.edit":true,"news_category.add":true,"news.list":true,"news.edit":true,"news.add":true,"news.delete":true,"menu.list":true,"menu.edit":true,"menu.add":true,"product.stock":true,"product.price":true,"product.created":true,"product.change_publish":true,"product.change_status":true,"dashboard.admin":true}', '2017-11-30 16:56:59', '2018-09-20 07:32:11'),
-(11, 'product_editor', 'Product editor', '{"product_management.list":true,"product.list":true,"product.edit":true,"product.add":true,"catalog.list":true,"tag.list":true,"content_management.list":true,"news_category.list":true,"news_category.edit":true,"news_category.add":true,"news.list":true,"news.edit":true,"news.add":true,"news.delete":true,"product.price":true,"product.created":true,"product.published":true,"dashboard.basic":true}', '2018-09-19 11:26:52', '2018-09-25 07:46:40'),
-(12, 'marketing_m', 'Marketing M', '{"content_management.list":true,"news_category.list":true,"news_category.edit":true,"news_category.add":true,"news_category.delete":true,"news.list":true,"news.edit":true,"news.add":true,"news.delete":true,"page.list":true,"page.edit":true,"page.add":true,"page.delete":true,"banner.list":true,"banner.edit":true,"banner.add":true,"banner.delete":true,"menu.list":true,"menu.edit":true,"menu.add":true,"menu.delete":true,"advice.list":true,"newsletter.list":true,"newsletter.edit":true,"newsletter.add":true,"newsletter.delete":true,"news_tag.list":true,"news_tag.edit":true,"news_tag.add":true,"news_tag.delete":true,"dashboard.basic":true}', '2018-10-03 02:46:43', '2018-10-03 02:46:43'),
-(13, 'quan_tri_tin_tuc', 'Quản trị tin tức', '{"content_management.list":true,"news_category.list":true,"news_category.edit":true,"news_category.add":true,"news_category.delete":true,"news.list":true,"news.edit":true,"news.add":true,"news.delete":true,"page.list":true,"page.edit":true,"page.add":true,"page.delete":true,"banner.list":true,"banner.edit":true,"banner.add":true,"banner.delete":true,"menu.list":true,"menu.edit":true,"menu.add":true,"menu.delete":true,"advice.list":true,"advice.edit":true,"advice.add":true,"advice.delete":true,"newsletter.list":true,"newsletter.edit":true,"newsletter.add":true,"newsletter.delete":true,"news_tag.list":true,"news_tag.edit":true,"news_tag.add":true,"news_tag.delete":true,"news.assign_to":true,"dashboard.basic":true}', '2018-10-03 08:30:21', '2018-10-03 09:36:52');
+(4, 'sales_staff', 'Sales staff', '{\"product_management.list\":true,\"product.list\":true,\"customer_management.list\":true,\"customer.list\":true,\"customer.edit\":true,\"customer.add\":true,\"sales_management.list\":true,\"sales_order.list\":true,\"sales_order.edit\":true,\"sales_order.add\":true,\"sales_order.delete\":true,\"delivery_management.list\":true,\"delivery.list\":true,\"delivery.edit\":true,\"delivery.add\":true,\"delivery.delete\":true,\"delivery_agency.list\":true,\"delivery_agency.edit\":true,\"delivery_agency.add\":true,\"warehouse_management.list\":true,\"stock_report.list\":true,\"stock_report.edit\":true,\"stock_report.add\":true,\"stock_report.delete\":true,\"stock_movement.list\":true,\"supplier_management.list\":true,\"supplier.list\":true,\"supplier.edit\":true,\"supplier.add\":true,\"supplier.delete\":true,\"supplier_price.list\":true,\"supplier_price.edit\":true,\"supplier_price.add\":true,\"supplier_price.delete\":true,\"production_management.list\":true,\"production_order.list\":true,\"user.restricted\":true,\"dashboard.basic\":true}', NULL, '2018-09-17 07:23:41'),
+(5, 'sales_manager', 'Sales manager', '{\"report.list\":true,\"revenue_report.list\":true,\"product_management.list\":true,\"product.list\":true,\"product.edit\":true,\"category.list\":true,\"sales_management.list\":true,\"sales_order.edit\":true,\"sales_order.add\":true,\"sales_order.pending\":true,\"sales_order.waiting\":true,\"sales_order.delivered\":true,\"sales_order.cancelled\":true,\"delivery_management.list\":true,\"delivery.list\":true,\"delivery.edit\":true,\"delivery.add\":true,\"warehouse_management.list\":true,\"warehouse.list\":true,\"storage.list\":true,\"dashboard.basic\":true}', NULL, '2018-05-13 06:08:43'),
+(6, 'purchasing_staff', 'Purchasing staff', '{\"supplier_management.list\":true,\"supplier_price.list\":true,\"supplier_price.edit\":true,\"supplier_price.add\":true,\"dashboard.basic\":true}', NULL, '2018-05-18 05:52:20'),
+(7, 'purchasing_manager', 'Purchasing manager', '{\"product_management.list\":true,\"product.list\":true,\"product.edit\":true,\"product.add\":true,\"catalog.list\":true,\"category.list\":true,\"category.edit\":true,\"category.add\":true,\"customer_management.list\":true,\"customer.list\":true,\"customer.edit\":true,\"customer.add\":true,\"sales_management.list\":true,\"sales_order.list\":true,\"sales_order.edit\":true,\"sales_order.add\":true,\"delivery_management.list\":true,\"delivery.list\":true,\"delivery.edit\":true,\"delivery.add\":true,\"warehouse_management.list\":true,\"stock_report.list\":true,\"stock_report.edit\":true,\"stock_report.add\":true,\"stock_movement.list\":true,\"stock_movement.edit\":true,\"stock_movement.add\":true,\"supplier_management.list\":true,\"supplier.list\":true,\"supplier.edit\":true,\"supplier.add\":true,\"supplier_price.list\":true,\"supplier_price.edit\":true,\"supplier_price.add\":true,\"supplier_contact.list\":true,\"supplier_contact.edit\":true,\"supplier_contact.add\":true,\"purchase_management.list\":true,\"purchase.list\":true,\"purchase.edit\":true,\"purchase.add\":true,\"purchase.active\":true,\"purchase.received\":true,\"purchase.paid\":true,\"purchase.cancelled\":true,\"production_management.list\":true,\"production_order.list\":true,\"production_order.edit\":true,\"production_order.add\":true,\"dashboard.basic\":true}', NULL, '2018-09-15 07:12:38'),
+(8, 'warehouse_staff', 'Warehouse staff', '{\"dashboard.basic\":true}', NULL, '2018-05-04 03:10:28'),
+(9, 'warehouse_manager', 'Warehouse manager', '{\"product_management.list\":true,\"product.list\":true,\"product.edit\":true,\"product.add\":true,\"product.delete\":true,\"customer_management.list\":true,\"customer.list\":true,\"customer.edit\":true,\"customer.add\":true,\"customer.delete\":true,\"sales_management.list\":true,\"sales_order.list\":true,\"sales_order.edit\":true,\"sales_order.add\":true,\"sales_order.delete\":true,\"warehouse_management.list\":true,\"stock_report.list\":true,\"stock_report.edit\":true,\"stock_report.add\":true,\"stock_report.delete\":true,\"supplier_management.list\":true,\"supplier.list\":true,\"supplier.edit\":true,\"supplier.add\":true,\"supplier.delete\":true,\"supplier_price.list\":true,\"supplier_price.edit\":true,\"supplier_price.add\":true,\"supplier_price.delete\":true,\"purchase.list\":true,\"purchase.edit\":true,\"purchase.add\":true,\"purchase.delete\":true,\"purchase.active\":true,\"purchase.received\":true,\"purchase.paid\":true,\"purchase.cancelled\":true,\"dashboard.basic\":true}', NULL, '2018-05-21 04:16:46'),
+(10, 'tester', 'Tester', '{\"report.list\":true,\"revenue_report.list\":true,\"revenue_report.edit\":true,\"revenue_report.add\":true,\"purchase_report.list\":true,\"purchase_report.edit\":true,\"purchase_report.add\":true,\"product_management.list\":true,\"product.list\":true,\"product.edit\":true,\"product.add\":true,\"product.delete\":true,\"catalog.list\":true,\"catalog.edit\":true,\"catalog.add\":true,\"deleted_product.list\":true,\"deleted_product.edit\":true,\"deleted_product.add\":true,\"category.list\":true,\"category.edit\":true,\"category.add\":true,\"tag.list\":true,\"tag.edit\":true,\"tag.add\":true,\"color.list\":true,\"color.edit\":true,\"color.add\":true,\"delivery_category.list\":true,\"delivery_category.edit\":true,\"delivery_category.add\":true,\"property.list\":true,\"property.edit\":true,\"property.add\":true,\"property_type.list\":true,\"property_type.edit\":true,\"property_type.add\":true,\"feature.list\":true,\"feature.edit\":true,\"feature.add\":true,\"customer_management.list\":true,\"customer.list\":true,\"customer.edit\":true,\"customer.add\":true,\"customer_type.list\":true,\"customer_type.edit\":true,\"customer_type.add\":true,\"sales_management.list\":true,\"sales_order.list\":true,\"sales_order.edit\":true,\"sales_order.add\":true,\"sales_order.delete\":true,\"sales_order.pending\":true,\"sales_order.waiting\":true,\"sales_order.delivered\":true,\"sales_order.cancelled\":true,\"sales_order.done\":true,\"sales_channel.list\":true,\"sales_channel.edit\":true,\"sales_channel.add\":true,\"sale_price.list\":true,\"sale_price.edit\":true,\"sale_price.add\":true,\"reject.list\":true,\"reject.edit\":true,\"reject.add\":true,\"delivery_management.list\":true,\"delivery.list\":true,\"delivery.edit\":true,\"delivery.add\":true,\"delivery.pending\":true,\"delivery.delivered\":true,\"delivery_agency.list\":true,\"delivery_agency.edit\":true,\"delivery_agency.add\":true,\"return_delivery.list\":true,\"return_delivery.edit\":true,\"return_delivery.add\":true,\"reason.list\":true,\"reason.edit\":true,\"reason.add\":true,\"warehouse_management.list\":true,\"stock_report.list\":true,\"stock_report.edit\":true,\"stock_report.add\":true,\"stock_report.delete\":true,\"stock_movement.list\":true,\"stock_movement.edit\":true,\"stock_movement.add\":true,\"stock_movement.delete\":true,\"warehouse.list\":true,\"warehouse.edit\":true,\"warehouse.add\":true,\"warehouse.delete\":true,\"storage.list\":true,\"storage.edit\":true,\"storage.add\":true,\"storage.delete\":true,\"movement_type.list\":true,\"movement_type.edit\":true,\"movement_type.add\":true,\"movement_type.delete\":true,\"supplier_management.list\":true,\"supplier.list\":true,\"supplier.edit\":true,\"supplier.add\":true,\"supplier_price.list\":true,\"supplier_price.edit\":true,\"supplier_price.add\":true,\"supplier_contact.list\":true,\"supplier_contact.edit\":true,\"supplier_contact.add\":true,\"supplier_rating.list\":true,\"supplier_rating.edit\":true,\"supplier_rating.add\":true,\"purchase_management.list\":true,\"requirement.list\":true,\"requirement.edit\":true,\"requirement.add\":true,\"purchase.list\":true,\"purchase.edit\":true,\"purchase.add\":true,\"purchase.draft\":true,\"purchase.active\":true,\"purchase.received\":true,\"purchase.paid\":true,\"purchase.cancelled\":true,\"currency.list\":true,\"currency.edit\":true,\"currency.add\":true,\"production_management.list\":true,\"production_order.list\":true,\"production_order.edit\":true,\"production_order.add\":true,\"fabric.list\":true,\"fabric.edit\":true,\"fabric.add\":true,\"fabric_book.list\":true,\"fabric_book.edit\":true,\"fabric_book.add\":true,\"foam.list\":true,\"foam.edit\":true,\"foam.add\":true,\"material.list\":true,\"material.edit\":true,\"material.add\":true,\"material_color.list\":true,\"material_color.edit\":true,\"material_color.add\":true,\"leg.list\":true,\"leg.edit\":true,\"leg.add\":true,\"location_management.list\":true,\"country.list\":true,\"country.edit\":true,\"country.add\":true,\"city.list\":true,\"city.edit\":true,\"city.add\":true,\"district.list\":true,\"district.edit\":true,\"district.add\":true,\"location.list\":true,\"location.edit\":true,\"location.add\":true,\"content_management.list\":true,\"news_category.list\":true,\"news_category.edit\":true,\"news_category.add\":true,\"news.list\":true,\"news.edit\":true,\"news.add\":true,\"news.delete\":true,\"menu.list\":true,\"menu.edit\":true,\"menu.add\":true,\"product.stock\":true,\"product.price\":true,\"product.created\":true,\"product.change_publish\":true,\"product.change_status\":true,\"dashboard.admin\":true}', '2017-11-30 16:56:59', '2018-09-20 07:32:11'),
+(11, 'product_editor', 'Product editor', '{\"product_management.list\":true,\"product.list\":true,\"product.edit\":true,\"product.add\":true,\"catalog.list\":true,\"tag.list\":true,\"content_management.list\":true,\"news_category.list\":true,\"news_category.edit\":true,\"news_category.add\":true,\"news.list\":true,\"news.edit\":true,\"news.add\":true,\"news.delete\":true,\"product.price\":true,\"product.created\":true,\"product.published\":true,\"dashboard.basic\":true}', '2018-09-19 11:26:52', '2018-09-25 07:46:40'),
+(12, 'marketing_m', 'Marketing M', '{\"content_management.list\":true,\"news_category.list\":true,\"news_category.edit\":true,\"news_category.add\":true,\"news_category.delete\":true,\"news.list\":true,\"news.edit\":true,\"news.add\":true,\"news.delete\":true,\"page.list\":true,\"page.edit\":true,\"page.add\":true,\"page.delete\":true,\"banner.list\":true,\"banner.edit\":true,\"banner.add\":true,\"banner.delete\":true,\"menu.list\":true,\"menu.edit\":true,\"menu.add\":true,\"menu.delete\":true,\"advice.list\":true,\"newsletter.list\":true,\"newsletter.edit\":true,\"newsletter.add\":true,\"newsletter.delete\":true,\"news_tag.list\":true,\"news_tag.edit\":true,\"news_tag.add\":true,\"news_tag.delete\":true,\"dashboard.basic\":true}', '2018-10-03 02:46:43', '2018-10-03 02:46:43'),
+(13, 'quan_tri_tin_tuc', 'Quản trị tin tức', '{\"content_management.list\":true,\"news_category.list\":true,\"news_category.edit\":true,\"news_category.add\":true,\"news_category.delete\":true,\"news.list\":true,\"news.edit\":true,\"news.add\":true,\"news.delete\":true,\"page.list\":true,\"page.edit\":true,\"page.add\":true,\"page.delete\":true,\"banner.list\":true,\"banner.edit\":true,\"banner.add\":true,\"banner.delete\":true,\"menu.list\":true,\"menu.edit\":true,\"menu.add\":true,\"menu.delete\":true,\"advice.list\":true,\"advice.edit\":true,\"advice.add\":true,\"advice.delete\":true,\"newsletter.list\":true,\"newsletter.edit\":true,\"newsletter.add\":true,\"newsletter.delete\":true,\"news_tag.list\":true,\"news_tag.edit\":true,\"news_tag.add\":true,\"news_tag.delete\":true,\"news.assign_to\":true,\"dashboard.basic\":true}', '2018-10-03 08:30:21', '2018-10-03 09:36:52');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `role_users`
+-- Cấu trúc bảng cho bảng `role_users`
 --
 
 CREATE TABLE `role_users` (
@@ -435,7 +387,7 @@ CREATE TABLE `role_users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `role_users`
+-- Đang đổ dữ liệu cho bảng `role_users`
 --
 
 INSERT INTO `role_users` (`user_id`, `role_id`, `created_at`, `updated_at`) VALUES
@@ -455,7 +407,7 @@ INSERT INTO `role_users` (`user_id`, `role_id`, `created_at`, `updated_at`) VALU
 -- --------------------------------------------------------
 
 --
--- Table structure for table `settings`
+-- Cấu trúc bảng cho bảng `settings`
 --
 
 CREATE TABLE `settings` (
@@ -464,89 +416,91 @@ CREATE TABLE `settings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `settings`
+-- Đang đổ dữ liệu cho bảng `settings`
 --
 
 INSERT INTO `settings` (`setting_key`, `setting_value`) VALUES
-('_token', 's:40:"mtHrxadP61g5MWzh2ZV4zrC4e52jeH1Pdhjrcrf5";'),
-('add_movement', 's:2:"14";'),
-('address', 's:49:"Số 11 Lương Yên, Q.Hai Bà Trưng, Hà Nội";'),
-('allowed_extensions', 's:24:"gif,jpg,jpeg,png,pdf,txt";'),
-('api_token', 's:32:"6yD0nzFlkYCtbNchnUKkz8glysCYDoqi";'),
-('backup_type', 's:5:"local";'),
-('category_image', 's:21:"banner_1536043476.png";'),
-('category_middle', 's:42:"gorgeous-bright-living-room_1536070635.jpg";'),
-('category_top', 's:42:"gorgeous-bright-living-room_1536070635.jpg";'),
-('consumer_key', 's:0:"";'),
-('consumer_secret', 's:0:"";'),
-('content_1', 's:574:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";'),
-('content_2', 's:574:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";'),
-('content_3', 's:141:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since";'),
-('content_4', 's:574:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";'),
-('currency', 's:3:"USD";'),
-('currency_position', 's:4:"left";'),
-('date_format', 's:5:"d/m/Y";'),
-('default_filter', 's:1:"6";'),
-('default_lead_time', 's:2:"15";'),
-('deposit', 's:2:"35";'),
-('email_driver', 's:9:"sparkpost";'),
-('email_host', 's:22:"smtp.sparkpostmail.com";'),
-('email_list', 'a:2:{s:20:"accounting@admin.com";s:1:"1";s:15:"hello@admin.com";s:1:"2";}'),
-('email_password', 's:1:"1";'),
-('email_port', 's:3:"587";'),
-('email_username', 's:15:"admin@admin.com";'),
-('endpoint_url', 's:12:"http://local";'),
-('facebook', 's:31:"https://www.facebook.com/cazavn";'),
-('ga_code', 's:0:"";'),
-('gtm_code', 's:11:"GTM-MN8TT4M";'),
-('hotline', 's:7:"1234567";'),
-('individual_customer', 's:2:"17";'),
-('instagram', 's:36:"https://www.instagram.com/caza.vn59/";'),
+('_token', 's:40:\"mtHrxadP61g5MWzh2ZV4zrC4e52jeH1Pdhjrcrf5\";'),
+('add_movement', 's:2:\"14\";'),
+('address', 's:49:\"Số 11 Lương Yên, Q.Hai Bà Trưng, Hà Nội\";'),
+('allowed_extensions', 's:24:\"gif,jpg,jpeg,png,pdf,txt\";'),
+('api_token', 's:32:\"6yD0nzFlkYCtbNchnUKkz8glysCYDoqi\";'),
+('backup_type', 's:5:\"local\";'),
+('category_image', 's:21:\"banner_1536043476.png\";'),
+('category_middle', 's:42:\"gorgeous-bright-living-room_1536070635.jpg\";'),
+('category_top', 's:42:\"gorgeous-bright-living-room_1536070635.jpg\";'),
+('consumer_key', 's:43:\"ck_cc7c2bb459eb8da805abb1bb7def2094af7562c7\";'),
+('consumer_secret', 's:43:\"cs_9f37474dc66f5b5ac13b985389b721fde199c249\";'),
+('content_1', 's:574:\"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\";'),
+('content_2', 's:574:\"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\";'),
+('content_3', 's:141:\"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since\";'),
+('content_4', 's:574:\"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\";'),
+('currency', 's:3:\"USD\";'),
+('currency_position', 's:4:\"left\";'),
+('date_format', 's:5:\"d/m/Y\";'),
+('default_filter', 's:1:\"6\";'),
+('default_lead_time', 's:2:\"15\";'),
+('deposit', 's:2:\"35\";'),
+('email_driver', 's:9:\"sparkpost\";'),
+('email_host', 's:22:\"smtp.sparkpostmail.com\";'),
+('email_list', 'a:2:{s:15:\"admin@admin.com\";s:6:\"123456\";s:16:\"admin2@admin.com\";s:6:\"123456\";}'),
+('email_password', 's:6:\"123456\";'),
+('email_port', 's:3:\"587\";'),
+('email_username', 's:15:\"admin@admin.com\";'),
+('endpoint_url', 's:16:\"http://admin.com\";'),
+('facebook', 's:31:\"https://www.facebook.com/cazavn\";'),
+('ga_code', 's:14:\"UA-126658743-1\";'),
+('gtm_code', 's:11:\"GTM-MN8TT4M\";'),
+('hotline', 's:11:\"02473028882\";'),
+('individual_customer', 's:2:\"17\";'),
+('instagram', 's:36:\"https://www.instagram.com/caza.vn59/\";'),
 ('international_transport_rate_kg', 'd:30000;'),
 ('international_transport_rate_volume', 'd:50000;'),
-('jquery_date', 's:10:"DD/MM/YYYY";'),
-('jquery_date_time', 's:16:"DD/MM/YYYY HH:mm";'),
-('link_1', 's:26:"http://newcaza.yez.vn/shop";'),
-('link_2', 's:30:"http://newcaza.yez.vn/magazine";'),
-('link_3', 's:39:"http://newcaza.yez.vn/shop/category/ghe";'),
-('link_4', 's:21:"http://newcaza.yez.vn";'),
+('jquery_date', 's:10:\"DD/MM/YYYY\";'),
+('jquery_date_time', 's:16:\"DD/MM/YYYY HH:mm\";'),
+('link_1', 's:26:\"http://newcaza.yez.vn/shop\";'),
+('link_2', 's:30:\"http://newcaza.yez.vn/magazine\";'),
+('link_3', 's:39:\"http://newcaza.yez.vn/shop/category/ghe\";'),
+('link_4', 's:21:\"http://newcaza.yez.vn\";'),
+('long_description1', 's:0:\"\";'),
+('long_description2', 's:0:\"\";'),
 ('mapping', 'a:0:{}'),
-('max_upload_file_size', 's:5:"10000";'),
+('max_upload_file_size', 's:5:\"10000\";'),
 ('minimum_characters', 'i:3;'),
 ('modules', 'a:0:{}'),
-('mrp_hour', 's:1:"3";'),
-('ordering_fee', 's:3:"4.5";'),
-('payment', 's:681:"Thanh toán khi nhận hàng: Bạn có thể thanh toán bằng tiền mặt khi nhận hàng tại nhà\r\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";'),
-('pdf_logo', 's:40:"photo-2017-09-13-08-59-32_1505268716.jpg";'),
-('picking_lead_time', 's:1:"5";'),
-('pinterest', 's:33:"https://www.pinterest.com/cazavn/";'),
-('professional_customer', 's:2:"19";'),
-('pusher_app_id', 's:0:"";'),
-('pusher_key', 's:0:"";'),
-('pusher_secret', 's:0:"";'),
-('remove_movement', 's:2:"20";'),
+('mrp_hour', 's:1:\"3\";'),
+('ordering_fee', 's:3:\"4.5\";'),
+('payment', 's:681:\"Thanh toán khi nhận hàng: Bạn có thể thanh toán bằng tiền mặt khi nhận hàng tại nhà\r\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\";'),
+('pdf_logo', 's:40:\"photo-2017-09-13-08-59-32_1505268716.jpg\";'),
+('picking_lead_time', 's:1:\"5\";'),
+('pinterest', 's:33:\"https://www.pinterest.com/cazavn/\";'),
+('professional_customer', 's:2:\"19\";'),
+('pusher_app_id', 's:0:\"\";'),
+('pusher_key', 's:0:\"\";'),
+('pusher_secret', 's:0:\"\";'),
+('remove_movement', 's:2:\"20\";'),
 ('sales_person', 'i:0;'),
-('shipping_return', 's:574:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";'),
-('site_email', 's:15:"admin@admin.com";'),
-('site_logo', 's:61:"40460826-2094945324091121-680097926608846848-o_1540262892.jpg";'),
-('site_name', 's:3:"CRM";'),
-('slogan', 's:146:"Care Cam kết nỗ lực hết mình nhằm cung cấp sản phẩm và dịch vụ đúng với những giá trị mà khách hàng mong đợi.";'),
-('stripe_publishable', 's:0:"";'),
-('stripe_secret', 's:0:"";'),
-('time_format', 's:3:"H:i";'),
-('title_1', 's:26:"Phương thức giao hàng";'),
-('title_2', 's:24:"Địa chỉ thanh toán";'),
-('title_3', 's:24:"Quy định đổi trả";'),
-('title_4', 's:23:"Giao hàng toàn quốc";'),
-('tracking_number', 's:3:"481";'),
-('why_buy', 's:21:"WHY BUY FROM ARTICLE?";'),
-('youtube', 's:0:"";'),
-('zalo', 's:0:"";');
+('shipping_return', 's:574:\"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\";'),
+('site_email', 's:15:\"admin@admin.com\";'),
+('site_logo', 's:16:\"b_1540480942.jpg\";'),
+('site_name', 's:3:\"CRM\";'),
+('slogan', 's:146:\"Care Cam kết nỗ lực hết mình nhằm cung cấp sản phẩm và dịch vụ đúng với những giá trị mà khách hàng mong đợi.\";'),
+('stripe_publishable', 's:0:\"\";'),
+('stripe_secret', 's:0:\"\";'),
+('time_format', 's:3:\"H:i\";'),
+('title_1', 's:26:\"Phương thức giao hàng\";'),
+('title_2', 's:24:\"Địa chỉ thanh toán\";'),
+('title_3', 's:24:\"Quy định đổi trả\";'),
+('title_4', 's:23:\"Giao hàng toàn quốc\";'),
+('tracking_number', 's:3:\"481\";'),
+('why_buy', 's:21:\"WHY BUY FROM ARTICLE?\";'),
+('youtube', 's:0:\"\";'),
+('zalo', 's:0:\"\";');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Cấu trúc bảng cho bảng `users`
 --
 
 CREATE TABLE `users` (
@@ -571,16 +525,16 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `users`
+-- Đang đổ dữ liệu cho bảng `users`
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `permissions`, `last_login`, `first_name`, `last_name`, `phone_number`, `user_avatar`, `user_id`, `created_at`, `updated_at`, `deleted_at`, `lang`, `status`, `storage_id`, `to_storage`, `description`) VALUES
-(1, 'admin@admin.com', '$2y$10$TRbYufe1k.IGtPjHsQZWAu7lcpUijLw6tnvAQ.hzTI0o2a90aFSdi', NULL, '2018-10-23 14:08:43', 'Admin', 'Admin', '0123456789', 'admin_1533717148.png', 1, '2017-08-14 18:20:22', '2018-10-23 14:08:43', NULL, 'vi', 1, 1, 42, NULL);
+(1, 'admin@admin.com', '$2y$10$TRbYufe1k.IGtPjHsQZWAu7lcpUijLw6tnvAQ.hzTI0o2a90aFSdi', NULL, '2018-10-23 14:08:43', 'Admin', 'CRM', '0123456789', '44079040-1174639989342005-5520548119562944512-n_1540480084.jpg', 1, '2017-08-14 18:20:22', '2018-10-25 15:22:01', NULL, 'en', 1, 1, 42, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_login`
+-- Cấu trúc bảng cho bảng `user_login`
 --
 
 CREATE TABLE `user_login` (
@@ -593,93 +547,93 @@ CREATE TABLE `user_login` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `user_login`
+-- Đang đổ dữ liệu cho bảng `user_login`
 --
 
 INSERT INTO `user_login` (`id`, `user_id`, `ip_address`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 1, '::1', '2018-10-23 14:08:44', '2018-10-23 14:08:44', NULL);
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `activations`
+-- Chỉ mục cho bảng `activations`
 --
 ALTER TABLE `activations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `banner`
+-- Chỉ mục cho bảng `banner`
 --
 ALTER TABLE `banner`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `banner_image`
+-- Chỉ mục cho bảng `banner_image`
 --
 ALTER TABLE `banner_image`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `categories`
+-- Chỉ mục cho bảng `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `colors`
+-- Chỉ mục cho bảng `colors`
 --
 ALTER TABLE `colors`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `images`
+-- Chỉ mục cho bảng `images`
 --
 ALTER TABLE `images`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `persistences`
+-- Chỉ mục cho bảng `persistences`
 --
 ALTER TABLE `persistences`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `persistences_code_unique` (`code`);
 
 --
--- Indexes for table `products`
+-- Chỉ mục cho bảng `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `revisions`
+-- Chỉ mục cho bảng `revisions`
 --
 ALTER TABLE `revisions`
   ADD PRIMARY KEY (`id`),
   ADD KEY `revisions_revisionable_id_revisionable_type_index` (`revisionable_id`,`revisionable_type`);
 
 --
--- Indexes for table `roles`
+-- Chỉ mục cho bảng `roles`
 --
 ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `roles_slug_unique` (`slug`);
 
 --
--- Indexes for table `role_users`
+-- Chỉ mục cho bảng `role_users`
 --
 ALTER TABLE `role_users`
   ADD PRIMARY KEY (`user_id`,`role_id`);
 
 --
--- Indexes for table `settings`
+-- Chỉ mục cho bảng `settings`
 --
 ALTER TABLE `settings`
   ADD UNIQUE KEY `settings_setting_key_unique` (`setting_key`);
 
 --
--- Indexes for table `users`
+-- Chỉ mục cho bảng `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
@@ -687,75 +641,88 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- Indexes for table `user_login`
+-- Chỉ mục cho bảng `user_login`
 --
 ALTER TABLE `user_login`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `activations`
+-- AUTO_INCREMENT cho bảng `activations`
 --
 ALTER TABLE `activations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
--- AUTO_INCREMENT for table `banner`
+-- AUTO_INCREMENT cho bảng `banner`
 --
 ALTER TABLE `banner`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `banner_image`
+-- AUTO_INCREMENT cho bảng `banner_image`
 --
 ALTER TABLE `banner_image`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `categories`
+-- AUTO_INCREMENT cho bảng `categories`
 --
 ALTER TABLE `categories`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
--- AUTO_INCREMENT for table `colors`
+-- AUTO_INCREMENT cho bảng `colors`
 --
 ALTER TABLE `colors`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
 --
--- AUTO_INCREMENT for table `images`
+-- AUTO_INCREMENT cho bảng `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `persistences`
+-- AUTO_INCREMENT cho bảng `persistences`
 --
 ALTER TABLE `persistences`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
--- AUTO_INCREMENT for table `products`
+-- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `revisions`
+-- AUTO_INCREMENT cho bảng `revisions`
 --
 ALTER TABLE `revisions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+
 --
--- AUTO_INCREMENT for table `roles`
+-- AUTO_INCREMENT cho bảng `roles`
 --
 ALTER TABLE `roles`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
--- AUTO_INCREMENT for table `user_login`
+-- AUTO_INCREMENT cho bảng `user_login`
 --
 ALTER TABLE `user_login`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

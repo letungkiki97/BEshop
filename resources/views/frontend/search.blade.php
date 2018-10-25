@@ -67,7 +67,7 @@
                                         <div class="grid__item large--one-third medium--one-third small--one-half md-pd-left5">
                                             <div class="product-item">
                                                 <div class="product-img">
-                                                    <a href="{{url('san-pham/'.@$v2->id)}}">
+                                                    <a href="{{url('san-pham/'.@$v2->slug)}}">
                                                         <img id="{{@$v2->image->id}}" src="{{url('uploads/products/'.@$v2->image->name)}}"
                                                             title="{{@$v2->image->title}}" alt="{{@$v2->image->alt}}" />
                                                         <img id="{{@$v2->image->id}}" src="{{url('uploads/products/'.@$v2->image->name)}}"
@@ -76,7 +76,7 @@
                                                     <div class="product-actions medium--hide small--hide">
                                                         <div>
                                                             <button type="button" class="btnQuickView quick-view medium--hide small--hide"
-                                                                data-handle="{{url('san-pham/'.@$v2->id)}}">
+                                                                data-handle="{{url('san-pham/'.@$v2->slug)}}">
                                                                 <span>
                                                                     <i class="fa fa-search-plus" aria-hidden="true"></i>
                                                                 </span>
@@ -87,7 +87,7 @@
                                                 </div>
                                                 <div class="product-item-info">
                                                     <div class="product-title">
-                                                        <a href="{{url('san-pham/'.@$v2->id)}}">
+                                                        <a href="{{url('san-pham/'.@$v2->slug)}}">
                                                                 {{$v2->product_name}}</a>
                                                     </div>
                                                     <div class="product-desc" style="display: block">
