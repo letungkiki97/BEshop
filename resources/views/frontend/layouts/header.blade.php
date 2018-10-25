@@ -443,25 +443,21 @@
 							top: 0px;
 						}
 					</style>
-
-
-
-
 				</div>
 			</div>
-			{{-- <div class="header-account">
+			<div class="header-account">
 				<a href="javascript:void(0)" class="text-center" id="account-btn">
 					<i class="fas fa-user"></i>
 				</a>
 				<div class="dropdown-menu" id="account-dropdown">
 					<ul class="no-bullets">
 
-						<li><a href="account/login.html">Đăng nhập</a></li>
-						<li><a href="account/register.html">Đăng kí</a></li>
+						<!-- <li><a href="account/login.html">Đăng nhập</a></li>
+						<li><a href="account/register.html">Đăng kí</a></li> -->
 
 					</ul>
 				</div>
-			</div> --}}
+			</div>
 			<div class="desktop-cart-wrapper">
 				<a href="javascript:void(0)" class="hd-cart">
 					<i class="fas fa-shopping-cart"></i>
