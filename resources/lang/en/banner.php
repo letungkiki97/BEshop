@@ -2,11 +2,13 @@
 return array (
   'description' => 'Description',
   'edit' => 'Edit banner',
-  'image' => 'Image',
-  'link' => 'Link',
-  'name' => 'Name',
+  'image' => 'Quantity',
+  'link' => 'Link to',
+  'name' => 'Name Banner',
   'new' => 'New banner',
-  'size' => 'Size',
+  'size' => 'Width Banner',
   'slide' => 'Slide',
   'title' => 'Banner',
+  'text'=>'Banner Text',
+  'button'=>'Banner Button',
 );
