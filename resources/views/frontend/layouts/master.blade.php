@@ -13,37 +13,29 @@
 	<meta name="robots" content="index,follow">
 	<meta name="google-site-verification" content="ROwDpgS8AJWcDKBObpe2qp07bj-sCkRCwiGuCHnnE58" />
 
-	<link rel="shortcut icon" href="http://theme.hstatic.net/1000305059/1000394224/14/favicon.png?v=3593" type="image/png" />
+	<link rel="shortcut icon" href="{{url('frontend/img/favicon.png')}}" type="image/png" />
 
 	<!-- Title and description ================================================== -->
 	<title>
-		Tuấn Nguyên | Công ty TNHH Tuấn Nguyên | Nhà cung cấp uy tín – Tất Cả Vì Xế Yêu Của Bạn
+		{{@Settings::get('site_name')}} | Công ty TNHH {{@Settings::get('site_name')}} | Nhà cung cấp uy tín – Tất Cả Vì Xế Yêu Của Bạn
 	</title>
 
-	<meta name="description" content="tuannguyen168.vn">
-
-	<!-- Helpers ================================================== -->
-	<!-- /snippets/social-meta-tags.liquid -->
-
+	<meta name="description" content="{{@Settings::get('site_name')}} | {{@Settings::get('slogan')}}">
 
 	<meta property="og:type" content="website">
-	<meta property="og:title" content="Suplo Car | Cửa hàng phụ kiện,đồ chơi, nội thất xe hơi chính hãng">
+	<meta property="og:title" content="{{@Settings::get('site_name')}} | Cửa hàng phụ kiện,đồ chơi, nội thất xe hơi chính hãng">
 	<meta property="og:description" content="Hãy đến với cửa hàng phụ kiện ô tô SUPLO CAR để tìm kiếm những sản phẩm phụ kiện,đồ chơi, nội thất cho chiếc xe ô tô xinh xắn của bạn. Suplo. Theme Suplo. Haravan.">
 	<meta property="og:image" content="http://theme.hstatic.net/1000305059/1000394224/14/share_fb_home.png?v=3593" />
 	<meta property="og:image:secure_url" content="https://theme.hstatic.net/1000305059/1000394224/14/share_fb_home.png?v=3593" />
 
 	<meta property="og:url" content="index.html">
-	<meta property="og:site_name" content="Suplo Car">
-
-
+	<meta property="og:site_name" content="{{@Settings::get('site_name')}}">
 
 	<meta name="twitter:site" content="@https://">
-
-
 	<meta name="twitter:card" content="summary">
 
 
-	<meta name="twitter:title" content="Suplo Car | Cửa hàng phụ kiện,đồ chơi, nội thất xe hơi chính hãng">
+	<meta name="twitter:title" content="{{@Settings::get('site_name')}} | Cửa hàng phụ kiện,đồ chơi, nội thất xe hơi chính hãng">
 	<meta name="twitter:description" content="H&#227;y đến với cửa h&#224;ng phụ kiện &#244; t&#244; SUPLO CAR để t&#236;m kiếm những sản phẩm phụ kiện,đồ chơi, nội thất cho chiếc xe &#244; t&#244; xinh xắn của bạn. Suplo. Theme Suplo. Haravan.">
 
 
@@ -57,63 +49,29 @@
 	<link rel='stylesheet prefetch' href='{{url("frontend/css/owl.carousel.min.css")}}'>
 	<link rel='stylesheet prefetch' href='{{url("frontend/css/owl.theme.default.min.css")}}'>
 
-	<!-- Header hook for plugins ================================================== -->
-	<script type='text/javascript'>
-		//<![CDATA[
-		if ((typeof Haravan) === 'undefined') {
-			Haravan = {};
-		}
-		Haravan.culture = 'vi-VN';
-		Haravan.shop = 'suplo-car-accesories.myharavan.com';
-		Haravan.theme = { "name": "suplo_car_accessories update 5/9/2018", "id": 1000394224, "role": "main" };
-		Haravan.domain = 'suplo-car-accesories.myharavan.com';
-//]]>
-	</script>
-	<script type='text/javascript'>
-		window.HaravanAnalytics = window.HaravanAnalytics || {};
-		window.HaravanAnalytics.meta = window.HaravanAnalytics.meta || {};
-		window.HaravanAnalytics.meta.currency = 'VND';
-		var meta = { "page": { "pageType": "home" } };
-		for (var attr in meta) {
-			window.HaravanAnalytics.meta[attr] = meta[attr];
-		}
-	</script>
-	<script async src='{{url("frontend/js/haravan-analytics.min.js")}}' type='text/javascript'></script>
 
 	<script src='{{url("frontend/js/jquery.min.js")}}' type='text/javascript'></script>
 	<script src='{{url("frontend/js/modernizr.min.js")}}' type='text/javascript'></script>
 
 	<script src='{{url("frontend/js/owl.carousel.min.js")}}'></script>
-
-
 	<script src='{{url("frontend/js/lazyload.js")}}'></script>
+
 	<script type="text/javascript" charset="utf-8">
 		window.addEventListener("load", function (event) {
 			lazyload();
 		});
 	</script>
 
-
 	<!--- Animation ---->
 	<link rel='stylesheet' href='{{url("frontend/css/animate.min.css")}}'>
 	<script src='{{url("frontend/js/wow.min.js")}}'></script>
-
-
 
 	<!-- Font Aweseome -->
 	<script defer src='{{url("frontend/js/all.js")}}'></script>
 
 	<link href="https://fonts.googleapis.com/css?family=Muli:400,700,900&amp;subset=vietnamese" rel="stylesheet">
-
-
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,900&amp;subset=vietnamese" rel="stylesheet">
 
-	<script>
-		window.file_url = "http://file.hstatic.net/1000305059/file/";
-		window.asset_url = "http://theme.hstatic.net/1000305059/1000394224/14/?v=3593";
-		var check_variant = true;
-		var check_variant_quickview = true;
-	</script>
 
 </head>
 
@@ -121,16 +79,13 @@
 
 
 	<div id="fb-root"></div>
-	<script>(function (d, s, id) {
-			var js, fjs = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id)) return;
-			js = d.createElement(s); js.id = id;
-			js.src = 'https://connect.facebook.net/vi_VN/sdk.js';
-			fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));</script>
-
-
-
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.2';
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
 
 
 	<!-- Trigger/Open The Modal -->
@@ -216,6 +171,7 @@
 			</div>
 		</div>
 	</div>
+
 	<script>
 		var modal = document.getElementById('popup-subscribe');
 		var span = document.getElementsByClassName("close-popup")[0];
@@ -243,6 +199,8 @@
 			}, 500)
 		}
 	</script>
+
+	<!-- js banner -->
 	<script>
 		$(document).ready(function () {
 			$('#owl-main-slider').owlCarousel({
@@ -416,12 +374,6 @@
 		});
 	</script>
 
-
-	<style>
-		.phpdebugbar-restore-btn{
-		display: none !important;
-		}
-	</style>
 	<div id="NavDrawer" class="drawer drawer--right">
 		<div class="drawer__header">
 			<div class="drawer__close js-drawer-close clearfix">
@@ -532,7 +484,7 @@
 
 	<div id="fixed-social-network" class="medium--hide small--hide">
 
-		<a href="https://www.facebook.com/SuploTeam/" class="fb-icon"><i class="fab fa-facebook-f"></i> Facebook</a>
+		<a href="https://www.facebook.com/" class="fb-icon"><i class="fab fa-facebook-f"></i> Facebook</a>
 
 
 		<a href="https://www.instagram.com/" class="ins-icon"><i class="fab fa-instagram"></i> Instagram</a>
@@ -548,29 +500,19 @@
 
 
 		<a href="https://vn.linkedin.com/" class="linkedin-icon"><i class="fab fa-linkedin-in"></i> Linkedin</a>
-
 	</div>
-
-
-
-
-
 
 	<a href="javascript:void(0)" id="back-to-top" class="small--hide">
 		<span>
-			<img src="http://theme.hstatic.net/1000305059/1000394224/14/backtotop_img.png?v=3593" alt="backtotop">
+			<img src="{{url('frontend/img/backtotop_img.png')}}" alt="backtotop">
 
-			<img class="hover" src="http://theme.hstatic.net/1000305059/1000394224/14/car-focus.png?v=3593" alt="hover">
+			<img class="hover" src="{{url('frontend/img/car-focus.png')}}" alt="hover">
 
 		</span>
 	</a>
 
-
 	<section id="mobile-bottom-navigation" class="large--hide medium--hide">
 		<div class="grid mg-left-0">
-
-
-
 
 			<!-- <div class="grid__item medium--two-tenths small--two-tenths pd-left0">
 				<div class="mobile-nav-item">
@@ -580,9 +522,6 @@
 				</div>
 			</div>
 
-
-
-
 			<div class="grid__item medium--two-tenths small--two-tenths pd-left0">
 				<div class="mobile-nav-item">
 					<a href="#">
@@ -590,9 +529,6 @@
 					</a>
 				</div>
 			</div>
-
-
-
 
 			<div class="grid__item medium--two-tenths small--two-tenths pd-left0">
 				<div class="mobile-nav-item">
@@ -602,9 +538,6 @@
 				</div>
 			</div>
 
-
-
-
 			<div class="grid__item medium--two-tenths small--two-tenths pd-left0">
 				<div class="mobile-nav-item">
 					<a href="lien-he">
@@ -612,7 +545,6 @@
 					</a>
 				</div>
 			</div>
-
 
 			<div class="grid__item medium--two-tenths small--two-tenths pd-left0">
 				<div class="mobile-nav-item">
@@ -654,21 +586,21 @@
 	</script>
 
 
-	<script src='http://hstatic.net/0/0/global/api.jquery.js' type='text/javascript'></script>
+	<script src='https://hstatic.net/0/0/global/api.jquery.js' type='text/javascript'></script>
 
-	<script src='http://hstatic.net/0/0/global/option_selection.js' type='text/javascript'></script>
+	<script src='https://hstatic.net/0/0/global/option_selection.js' type='text/javascript'></script>
 
-	<script src='http://theme.hstatic.net/1000305059/1000394224/14/fastclick.min.js?v=3593' type='text/javascript'></script>
-	<script src='http://theme.hstatic.net/1000305059/1000394224/14/script.js?v=3593' type='text/javascript'></script>
-	<script src='http://theme.hstatic.net/1000305059/1000394224/14/timber.js?v=3593' type='text/javascript'></script>
+	<script src='https://theme.hstatic.net/1000305059/1000394224/14/fastclick.min.js?v=3593' type='text/javascript'></script>
+	<script src='https://theme.hstatic.net/1000305059/1000394224/14/script.js?v=3593' type='text/javascript'></script>
+	<script src='https://theme.hstatic.net/1000305059/1000394224/14/timber.js?v=3593' type='text/javascript'></script>
 
 	<script>
 
 	</script>
 
-	<script src='http://theme.hstatic.net/1000305059/1000394224/14/handlebars.min.js?v=3593' type='text/javascript'></script>
+	<script src='https://theme.hstatic.net/1000305059/1000394224/14/handlebars.min.js?v=3593' type='text/javascript'></script>
 
-	<script src='http://theme.hstatic.net/1000305059/1000394224/14/ajax-cart.js?v=3593' type='text/javascript'></script>
+	<script src='https://theme.hstatic.net/1000305059/1000394224/14/ajax-cart.js?v=3593' type='text/javascript'></script>
 
 
 	<!-- Search header open-->
@@ -974,38 +906,39 @@
 		overflow: hidden; 
 		background-color: rgb(0,0,0);
 		background-color: rgba(0,0,0,0.4);
-		transtion: all .5s;
-	}
+			transtion: all .5s;
+		}
 
-	.modal-content {
-		background-color: #fefefe;
-		margin: 5% auto; 
-		padding: 20px;
-		border: 1px solid #888;
-		width: 80%;
-		max-width: 780px;
-		transform: translatey(-30px);
-		transition: all .5s;
-	}
+		.modal-content {
+			background-color: #fefefe;
+			margin: 5% auto; 
+			padding: 20px;
+			border: 1px solid #888;
+			width: 80%;
+			max-width: 780px;
+			transform: translatey(-30px);
+			transition: all .5s;
+		}
 
-	.close {
-		color: #aaa;
-		font-size: 28px;
-		font-weight: bold;
-		position: absolute;
-		right: 0;
-		top: 0;
-		width: 40px;
-		text-align: center;
-	}
+		.close {
+			color: #aaa;
+			font-size: 28px;
+			font-weight: bold;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 40px;
+			text-align: center;
+		}
 
-	.close:hover,
-	.close:focus {
-		color: black;
-		text-decoration: none;
-		cursor: pointer;
-	}
-</style>
+		.close:hover,
+		.close:focus {
+			color: black;
+			text-decoration: none;
+			cursor: pointer;
+		}
+	</style>
+
 	<div class="modal" id="productQuickView">
 		<div class="modal-content">
 			<span id="close" class="close">&times;</span>
@@ -1060,6 +993,4 @@
 
 
 </body>
-
-
 </html>

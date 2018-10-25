@@ -34,7 +34,7 @@ class FrontendController extends Controller
     public function productall(Request $request)
     {
         $length = $request->length ?: 20;
-        $product = Product::where(' published',1)->orderBy('id', 'desc');
+        $product = Product::where('published',1)->orderBy('id', 'desc');
         $count = $product->count();
         $product = $product->paginate($length);
         $page_info = $this->pageInfo($request->page, $length, $count);
@@ -80,6 +80,29 @@ class FrontendController extends Controller
         $page_info = $this->pageInfo($request->page, $length, $count);
 
         return view('frontend.productcategory',compact('title', 'product', 'page_info','slug'));
+    }
+    public function producttype(Request $request,$id)
+    {
+        $length = $request->length ?: 20;
+        $product = Product::where('published',1)->orderBy('id', 'desc');
+        $count = $product->count();
+        $product = $product->paginate($length);
+        $page_info = $this->pageInfo($request->page, $length, $count);
+        switch ($id) {
+            case 1:
+                $loai = 'From mẫu ô tô';
+                break;
+            case 2:
+                $loai = 'Máy móc công nghệ';
+                break;
+            case 3:
+                $loai = 'Nguyên liệu vật tư';
+                break;
+            default:
+                $loai = 'Khác';
+                break;
+        }
+        return view('frontend.producttype',compact('title', 'product', 'page_info','loai'));
     }
     public function productdetail()
     {
