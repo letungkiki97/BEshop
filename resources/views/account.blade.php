@@ -10,16 +10,6 @@
                             <i class="material-icons md-24">info</i>
                         </a>
                     </li>
-                    <li>
-                        <a href="#delivery"
-                           data-toggle="tab" title="{{ __('tab.delivery') }}"><i
-                                    class="material-icons md-24">local_shipping</i></a>
-                    </li>
-                    <li>
-                        <a href="#stock"
-                           data-toggle="tab" title="{{ __('tab.stock') }}"><i
-                                    class="material-icons md-24">account_balance</i></a>
-                    </li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="general">
@@ -97,54 +87,6 @@
                         </div>
                         <div class="clear"></div>
                     </div>
-                    <div class="tab-pane" id="delivery">
-                        <div class="form-group required col-xs-6 {{ $errors->has('warehouse') ? 'has-error' : '' }}">
-                        {!! Form::label('warehouse', __('common.warehouse'), array('class' => 'control-label required')) !!}
-                            <div class="controls">
-                                <select class="form-control" id="warehouse" name="warehouse" required>
-                                    @if(isset($user_data) && $user_data->storage_id)
-                                    <option value="{{ $user_data->storage->warehouse_id }}" selected="selected">{{ $user_data->storage->warehouse->code . ' | ' . $user_data->storage->warehouse->name }}</option>
-                                    @endif
-                                </select>
-                                <span class="help-block">{{ $errors->first('warehouse', ':message') }}</span>
-                            </div>
-                        </div>
-                        <div class="form-group required col-xs-6 {{ $errors->has('storage_id') ? 'has-error' : '' }}">
-                            {!! Form::label('storage_id', __('common.storage'), array('class' => 'control-label required')) !!}
-                            <div class="controls">
-                                <select class="form-control" name="storage_id" id="storage_id" required>
-                                    @if(isset($user_data) && $user_data->storage_id)
-                                    <option value="{{ $user_data->storage_id }}" selected="selected">{{ $user_data->storage_id . ' | ' . $user_data->storage->location }}</option>
-                                    @endif
-                                </select>
-                                <span class="help-block">{{ $errors->first('storage_id', ':message') }}</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane" id="stock">
-                        <div class="form-group required col-xs-6 {{ $errors->has('to_warehouse') ? 'has-error' : '' }}">
-                            {!! Form::label('to_warehouse', __('common.warehouse'), array('class' => 'control-label required')) !!}
-                            <div class="controls">
-                                <select class="form-control" id="to_warehouse" name="to_warehouse" required>
-                                    @if(isset($user_data) && $user_data->to_storage)
-                                    <option value="{{ $user_data->receipt->warehouse_id }}" selected="selected">{{ $user_data->receipt->warehouse->code . ' | ' . $user_data->receipt->warehouse->name }}</option>
-                                    @endif
-                                </select>
-                                <span class="help-block">{{ $errors->first('warehouse', ':message') }}</span>
-                            </div>
-                        </div>
-                        <div class="form-group required col-xs-6 {{ $errors->has('to_storage') ? 'has-error' : '' }}">
-                            {!! Form::label('to_storage', __('common.storage'), array('class' => 'control-label required')) !!}
-                            <div class="controls">
-                                <select class="form-control" name="to_storage" id="to_storage" required>
-                                    @if(isset($user_data) && $user_data->to_storage)
-                                    <option value="{{ $user_data->to_storage }}" selected="selected">{{ $user_data->to_storage . ' | ' . $user_data->receipt->location }}</option>
-                                    @endif
-                                </select>
-                                <span class="help-block">{{ $errors->first('to_storage', ':message') }}</span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div class="form-group col-xs-6">
                     <div class="controls">
@@ -167,29 +109,6 @@
             $('#user_avatar').val(null);
         }).on('clear.bs.fileinput', '.fileinput', function() {
             $('#user_avatar').val(null);
-        });
-        
-        $('#warehouse').change(function() {
-            $('#storage_id').select2(ajaxData('{{ url('ajax/storage') }}'+'/'+$(this).val(), 'Select storage')).val('').trigger('change');
-        })
-
-        $('#to_warehouse').change(function() {
-            $('#to_storage').select2(ajaxData('{{ url('ajax/storage') }}'+'/'+$(this).val(), 'Select storage')).val('').trigger('change');
-        })
-        $(document).ready(function(){
-            $('#warehouse').select2(ajaxData('{{ url('ajax/warehouse') }}', 'Select warehouse'));
-            @if(isset($user_data) && $user_data->storage_id)
-                $('#storage_id').select2(ajaxData('{{ url('ajax/storage') . '/' . $user_data->storage->warehouse_id }}', 'Select district'));
-            @else
-                $('#storage_id').select2(ajaxData('{{ url('ajax/storage') . '/0' }}', 'Select storage'));
-            @endif
-
-            $('#to_warehouse').select2(ajaxData('{{ url('ajax/warehouse') }}', 'Select warehouse'));
-            @if(isset($user_data) && $user_data->to_storage)
-                $('#to_storage').select2(ajaxData('{{ url('ajax/storage') . '/' . $user_data->receipt->warehouse_id }}', 'Select district'));
-            @else
-                $('#to_storage').select2(ajaxData('{{ url('ajax/storage') . '/0' }}', 'Select storage'));
-            @endif
         });
     </script>
 @stop

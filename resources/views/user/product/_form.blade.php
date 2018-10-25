@@ -183,9 +183,9 @@
                         </div>
                     </div>
                     <div class="form-group col-xs-6 {{ $errors->has('slug') ? 'has-error' : '' }}">
-                        {!! Form::label('slug', __('product.slug'), array('class' => 'control-label')) !!}
+                        {!! Form::label('slug', __('product.slug'), array('class' => 'control-label required')) !!}
                         <div class="controls">
-                            {!! Form::text('slug', null, array('class' => 'form-control')) !!}
+                            {!! Form::text('slug', null, array('class' => 'form-control', 'required' => true,)) !!}
                             <span class="help-block">{{ $errors->first('slug', ':message') }}</span>
                         </div>
                     </div>

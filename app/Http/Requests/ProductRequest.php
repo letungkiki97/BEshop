@@ -26,6 +26,7 @@ class ProductRequest extends Request
     {
         return [
             'product_name' => "required",
+            'slug' => "required",
             'product_sku' => "required",
             'sale_price' => "numeric",
             'promotion_price' => "numeric|max:".$this->sale_price,
