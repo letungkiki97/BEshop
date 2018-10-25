@@ -51,13 +51,11 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
 	<meta name="theme-color" content="#e51515">
 	<!-- CSS ================================================== -->
-	<link href='http://theme.hstatic.net/1000305059/1000394224/14/timber.scss.css?v=3593' rel='stylesheet' type='text/css'
-	media='all' />
-	<link href='http://theme.hstatic.net/1000305059/1000394224/14/suplo-style.scss.css?v=3593' rel='stylesheet' type='text/css'
-	media='all' />
+	<link href='{{url("frontend/css/timber.scss.css")}}' rel='stylesheet' type='text/css' media='all' />
+	<link href='{{url("frontend/css/suplo-style.scss.css")}}' rel='stylesheet' type='text/css' media='all' />
 
-	<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.3/assets/owl.carousel.min.css'>
-	<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.3/assets/owl.theme.default.min.css'>
+	<link rel='stylesheet prefetch' href='{{url("frontend/css/owl.carousel.min.css")}}'>
+	<link rel='stylesheet prefetch' href='{{url("frontend/css/owl.theme.default.min.css")}}'>
 
 	<!-- Header hook for plugins ================================================== -->
 	<script type='text/javascript'>
@@ -70,66 +68,66 @@
 		Haravan.theme = { "name": "suplo_car_accessories update 5/9/2018", "id": 1000394224, "role": "main" };
 		Haravan.domain = 'suplo-car-accesories.myharavan.com';
 //]]>
-</script>
-<script type='text/javascript'>
-	window.HaravanAnalytics = window.HaravanAnalytics || {};
-	window.HaravanAnalytics.meta = window.HaravanAnalytics.meta || {};
-	window.HaravanAnalytics.meta.currency = 'VND';
-	var meta = { "page": { "pageType": "home" } };
-	for (var attr in meta) {
-		window.HaravanAnalytics.meta[attr] = meta[attr];
-	}
-</script>
-<script async src='http://hstatic.net/0/0/global/haravan-analytics.min.js?v=3' type='text/javascript'></script>
+	</script>
+	<script type='text/javascript'>
+		window.HaravanAnalytics = window.HaravanAnalytics || {};
+		window.HaravanAnalytics.meta = window.HaravanAnalytics.meta || {};
+		window.HaravanAnalytics.meta.currency = 'VND';
+		var meta = { "page": { "pageType": "home" } };
+		for (var attr in meta) {
+			window.HaravanAnalytics.meta[attr] = meta[attr];
+		}
+	</script>
+	<script async src='{{url("frontend/js/haravan-analytics.min.js")}}' type='text/javascript'></script>
 
-<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js' type='text/javascript'></script>
-<script src='http://theme.hstatic.net/1000305059/1000394224/14/modernizr.min.js?v=3593' type='text/javascript'></script>
+	<script src='{{url("frontend/js/jquery.min.js")}}' type='text/javascript'></script>
+	<script src='{{url("frontend/js/modernizr.min.js")}}' type='text/javascript'></script>
 
-<script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.3/owl.carousel.min.js'></script>
-
-
-<script src="https://cdn.rawgit.com/tuupola/jquery_lazyload/0a5e0785a90eb41a6411d67a2f2e56d55bbecbd3/lazyload.js"></script>
-<script type="text/javascript" charset="utf-8">
-	window.addEventListener("load", function (event) {
-		lazyload();
-	});
-</script>
+	<script src='{{url("frontend/js/owl.carousel.min.js")}}'></script>
 
 
-<!--- Animation ---->
-<link rel='stylesheet' href='https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css'>
-<script src='https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js'></script>
+	<script src='{{url("frontend/js/lazyload.js")}}'></script>
+	<script type="text/javascript" charset="utf-8">
+		window.addEventListener("load", function (event) {
+			lazyload();
+		});
+	</script>
+
+
+	<!--- Animation ---->
+	<link rel='stylesheet' href='{{url("frontend/css/animate.min.css")}}'>
+	<script src='{{url("frontend/js/wow.min.js")}}'></script>
 
 
 
-<!-- Font Aweseome -->
-<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+	<!-- Font Aweseome -->
+	<script defer src='{{url("frontend/js/all.js")}}'></script>
 
-<link href="https://fonts.googleapis.com/css?family=Muli:400,700,900&amp;subset=vietnamese" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Muli:400,700,900&amp;subset=vietnamese" rel="stylesheet">
 
 
-<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,900&amp;subset=vietnamese" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,900&amp;subset=vietnamese" rel="stylesheet">
 
-<script>
-	window.file_url = "http://file.hstatic.net/1000305059/file/";
-	window.asset_url = "http://theme.hstatic.net/1000305059/1000394224/14/?v=3593";
-	var check_variant = true;
-	var check_variant_quickview = true;
-</script>
+	<script>
+		window.file_url = "http://file.hstatic.net/1000305059/file/";
+		window.asset_url = "http://theme.hstatic.net/1000305059/1000394224/14/?v=3593";
+		var check_variant = true;
+		var check_variant_quickview = true;
+	</script>
 
 </head>
 
-<body id="suplo-car-cua-hang-phu-kien-do-choi-noi-that-xe-hoi-chinh-hang" >
+<body id="suplo-car-cua-hang-phu-kien-do-choi-noi-that-xe-hoi-chinh-hang">
 
 
 	<div id="fb-root"></div>
 	<script>(function (d, s, id) {
-		var js, fjs = d.getElementsByTagName(s)[0];
-		if (d.getElementById(id)) return;
-		js = d.createElement(s); js.id = id;
-		js.src = 'https://connect.facebook.net/vi_VN/sdk.js';
-		fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = 'https://connect.facebook.net/vi_VN/sdk.js';
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
 
 
 
@@ -137,7 +135,6 @@
 
 	<!-- Trigger/Open The Modal -->
 	<button id="popup-btn"></button>
-
 	<!-- The Modal -->
 	<div id="popup-subscribe" class="popup">
 		<!-- Modal content -->
@@ -178,322 +175,318 @@
 							</div>
 
 
-							<form accept-charset='UTF-8' action='https://suplo-car-accesories.myharavan.com/account/contact' class='contact-form'
-							method='post'>
-							<input name='form_type' type='hidden' value='customer'>
-							<input name='utf8' type='hidden' value='✓'>
+							<form accept-charset='UTF-8' action='#' class='contact-form' method='post'>
+								<input name='form_type' type='hidden' value='customer'>
+								<input name='utf8' type='hidden' value='✓'>
 
 
 
-							<div class="input-group">
-								<input type="email" value="" placeholder="Nhập email của bạn..." name="contact[email]" id="Email" class="input-group-field"
-								aria-label="email@example.com">
-								<input type="hidden" name="contact[tags]" value="newsletter">
-								<button type="submit" name="subscribe" id="subscribe" value="GỬI"><i class="fab fa-telegram-plane"></i></button>
-								<div>
+								<div class="input-group">
+									<input type="email" value="" placeholder="Nhập email của bạn..." name="contact[email]" id="Email" class="input-group-field"
+									 aria-label="email@example.com">
+									<input type="hidden" name="contact[tags]" value="newsletter">
+									<button type="submit" name="subscribe" id="subscribe" value="GỬI"><i class="fab fa-telegram-plane"></i></button>
+									<div>
 
-									<a href="https://www.facebook.com/SuploTeam/" class="popup-social-network" target="_blank"><i class="fab fa-facebook-f"></i></a>
-
-
-									<a href="https://plus.google.com/" class="popup-social-network" target="_blank"><i class="fab fa-google-plus-g"></i></a>
+										<a href="https://www.facebook.com/" class="popup-social-network" target="_blank"><i class="fab fa-facebook-f"></i></a>
 
 
-									<a href="https://www.instagram.com/" class="popup-social-network" target="_blank"><i class="fab fa-instagram"></i></a>
+										<a href="https://plus.google.com/" class="popup-social-network" target="_blank"><i class="fab fa-google-plus-g"></i></a>
 
 
-									<a href="https://twitter.com/" class="popup-social-network" target="_blank"><i class="fab fa-twitter"></i></a>
+										<a href="https://www.instagram.com/" class="popup-social-network" target="_blank"><i class="fab fa-instagram"></i></a>
 
 
-									<a href="https://www.youtube.com/" class="popup-social-network" target="_blank"><i class="fab fa-youtube"></i></a>
+										<a href="https://twitter.com/" class="popup-social-network" target="_blank"><i class="fab fa-twitter"></i></a>
 
 
-									<a href="https://vn.linkedin.com/" class="popup-social-network" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+										<a href="https://www.youtube.com/" class="popup-social-network" target="_blank"><i class="fab fa-youtube"></i></a>
 
+
+										<a href="https://vn.linkedin.com/" class="popup-social-network" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+
+									</div>
 								</div>
-							</div>
 
-						</form>
+							</form>
 
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<script>
-	var modal = document.getElementById('popup-subscribe');
-	var span = document.getElementsByClassName("close-popup")[0];
-
-	var btn = document.getElementById("popup-btn");
-	btn.onclick = function () {
-		modal.style.display = "block";
-		setTimeout(function () {
-			$('#popup-modal').addClass('show');
-		}, 500)
-	}
-	span.onclick = function () {
-		hidePopupSub(modal)
-	}
-
-	window.onclick = function (event) {
-		if (event.target == modal) {
-			hidePopupSub(modal)
-		}
-	}
-	function hidePopupSub(modal) {
-		$('#popup-modal').removeClass('show');
-		setTimeout(function () {
-			modal.style.display = "none";
-		}, 500)
-	}
-</script>
-<script>
-	$(document).ready(function () {
-		$('#owl-main-slider').owlCarousel({
-			smartSpeed: 1000,
-			animateOut: 'fadeOut',
-			autoplayTimeout: 7000,
-			animateIn: 'fadeIn',
-			nav: false,
-			autoplayHoverPause: true,
-			mouseDrag: false,
-			touchDrag: false,
-			dots: true,
-			rewind: true,
-			autoplay: true,
-			responsiveRefreshRate: 200,
-			navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
-			responsive: {
-				0: {
-					items: 1
-				},
-				480: {
-					items: 1
-				},
-				768: {
-					items: 1
-				},
-				1000: {
-					items: 1,
-					nav: true,
-				}
-			}
-		})
-		$('#owl-home-flash-sale').owlCarousel({
-			smartSpeed: 500,
-			nav: false,
-			dots: true,
-			loop: false,
-			rewind: true,
-			responsiveRefreshRate: 200,
-			navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
-			responsive: {
-				0: {
-					items: 2,
-					margin: 5
-				},
-				480: {
-					items: 3,
-					margin: 5
-				},
-				768: {
-					items: 3,
-					margin: 15,
-				},
-				1000: {
-					items: 3,
-					margin: 30,
-					nav: true,
-					dots: false
-				}
-			}
-		})
-
-		$('#owl-home-reviews').owlCarousel({
-			smartSpeed: 200,
-			nav: false,
-			dots: true,
-			loop: false,
-			autoplay: false,
-			rewind: true,
-			autoplayHoverPause: true,
-			responsiveRefreshRate: 200,
-			responsive: {
-				0: {
-					items: 1
-				},
-				480: {
-					items: 1
-				},
-				768: {
-					items: 1
-				},
-				1000: {
-					items: 1
-				}
-			}
-		})
-
-		$('#owl-home-articles').owlCarousel({
-			smartSpeed: 200,
-			nav: false,
-			dots: true,
-			loop: false,
-			autoplay: false,
-			rewind: true,
-			margin: 5,
-			autoplayHoverPause: true,
-			responsiveRefreshRate: 200,
-			responsive: {
-				0: {
-					items: 2,
-				},
-				480: {
-					items: 3,
-				},
-				768: {
-					items: 3,
-					margin: 15,
-				},
-				1000: {
-					items: 2,
-					margin: 30,
-				}
-			}
-		})
-		$('#owl-service').owlCarousel({
-			smartSpeed: 200,
-			nav: false,
-			dots: true,
-			loop: false,
-			autoplayHoverPause: true,
-			autoplay: true,
-			autoplayTimeout: 3000,
-			rewind: true,
-			autoplayHoverPause: true,
-			responsiveRefreshRate: 200,
-			responsive: {
-				0: {
-					items: 2
-				},
-				480: {
-					items: 2
-				},
-				768: {
-					items: 3
-				},
-				1000: {
-					items: 4
-				}
-			}
-		})
-		$('#owl-brand').owlCarousel({
-			smartSpeed: 200,
-			nav: false,
-			dots: false,
-			autoplayHoverPause: true,
-			loop: true,
-			autoplay: true,
-			autoplayTimeout: 3000,
-			margin: 5,
-			autoplayHoverPause: true,
-			responsiveRefreshRate: 200,
-			navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
-			responsive: {
-				0: {
-					items: 2
-				},
-				480: {
-					items: 4,
-				},
-				768: {
-					items: 4,
-					margin: 15,
-				},
-				1000: {
-					items: 5,
-					margin: 30,
-					nav: true,
-				}
-			}
-		})
-	});
-</script>
-
-
-<style>
-.phpdebugbar-restore-btn{
-	display: none !important;
-}
-</style>
-
-
-
-<div id="NavDrawer" class="drawer drawer--right">
-	<div class="drawer__header">
-		<div class="drawer__close js-drawer-close clearfix">
-			Menu
-			<button type="button" class="icon-fallback-text">
-				<i class="fas fa-times"></i>
-			</button>
-		</div>
-	</div>
-	<!-- begin mobile-nav -->
-	<ul class="mobile-nav">
-
-		<li class="mobile-nav__item mobile-nav__item--active">
-			<a href="{{url('/')}}" class="mobile-nav__link">Trang chủ</a>
-		</li>
-
-		<li class="mobile-nav__item" aria-haspopup="true">
-			<div class="mobile-nav__has-sublist">
-				<a href="" class="mobile-nav__link">Sản phẩm của chúng tôi</a>
-				<div class="mobile-nav__toggle">
-					<button type="button" class="icon-fallback-text mobile-nav__toggle-open">
-						<span class="icon icon-plus" aria-hidden="true"></span>
-						<span class="fallback-text">See More</span>
-					</button>
-					<button type="button" class="icon-fallback-text mobile-nav__toggle-close">
-						<span class="icon icon-minus" aria-hidden="true"></span>
-						<span class="fallback-text">"Đóng"</span>
-					</button>
-				</div>
-			</div>
-			<ul class="mobile-nav__sublist">
-				@foreach($categorys as $k=>$v)
-				@if(empty($v->parent_id))
-				<li class="mobile-nav__item" aria-haspopup="true">
-					<div class="mobile-nav__has-sublist">
-						<a href="{{url('productcategory/'.$v->slug)}}" class="mobile-nav__link">{{$v->name}}</a>
-
-						<div class="mobile-nav__toggle">
-							<button type="button" class="icon-fallback-text mobile-nav__toggle-open">
-								<span class="icon icon-plus" aria-hidden="true"></span>
-								<span class="fallback-text">See More</span>
-							</button>
-							<button type="button" class="icon-fallback-text mobile-nav__toggle-close">
-								<span class="icon icon-minus" aria-hidden="true"></span>
-								<span class="fallback-text">"Đóng"</span>
-							</button>
 						</div>
 					</div>
-					<ul class="mobile-nav__sublist">
-						@foreach($v->categories as $k1=>$v1)
-						<li class="mobile-nav__item ">
-							<a href="{{url('productcategory/'.$v1->slug)}}" class="mobile-nav__link"> {{$v1->name}}</a>
-						</li>
-						@endforeach
-					</ul>
-				</li>
-				@endif
-				@endforeach
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		var modal = document.getElementById('popup-subscribe');
+		var span = document.getElementsByClassName("close-popup")[0];
 
-			</ul>
-		</li>
-		<li class="mobile-nav__item">
-			<a href="{{url('/gioi-thieu')}}" class="mobile-nav__link">Về chúng tôi</a>
-		</li>
-{{-- 
+		var btn = document.getElementById("popup-btn");
+		btn.onclick = function () {
+			modal.style.display = "block";
+			setTimeout(function () {
+				$('#popup-modal').addClass('show');
+			}, 500)
+		}
+		span.onclick = function () {
+			hidePopupSub(modal)
+		}
+
+		window.onclick = function (event) {
+			if (event.target == modal) {
+				hidePopupSub(modal)
+			}
+		}
+		function hidePopupSub(modal) {
+			$('#popup-modal').removeClass('show');
+			setTimeout(function () {
+				modal.style.display = "none";
+			}, 500)
+		}
+	</script>
+	<script>
+		$(document).ready(function () {
+			$('#owl-main-slider').owlCarousel({
+				smartSpeed: 1000,
+				animateOut: 'fadeOut',
+				autoplayTimeout: 7000,
+				animateIn: 'fadeIn',
+				nav: false,
+				autoplayHoverPause: true,
+				mouseDrag: false,
+				touchDrag: false,
+				dots: true,
+				rewind: true,
+				autoplay: true,
+				responsiveRefreshRate: 200,
+				navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+				responsive: {
+					0: {
+						items: 1
+					},
+					480: {
+						items: 1
+					},
+					768: {
+						items: 1
+					},
+					1000: {
+						items: 1,
+						nav: true,
+					}
+				}
+			})
+			$('#owl-home-flash-sale').owlCarousel({
+				smartSpeed: 500,
+				nav: false,
+				dots: true,
+				loop: false,
+				rewind: true,
+				responsiveRefreshRate: 200,
+				navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+				responsive: {
+					0: {
+						items: 2,
+						margin: 5
+					},
+					480: {
+						items: 3,
+						margin: 5
+					},
+					768: {
+						items: 3,
+						margin: 15,
+					},
+					1000: {
+						items: 3,
+						margin: 30,
+						nav: true,
+						dots: false
+					}
+				}
+			})
+
+			$('#owl-home-reviews').owlCarousel({
+				smartSpeed: 200,
+				nav: false,
+				dots: true,
+				loop: false,
+				autoplay: false,
+				rewind: true,
+				autoplayHoverPause: true,
+				responsiveRefreshRate: 200,
+				responsive: {
+					0: {
+						items: 1
+					},
+					480: {
+						items: 1
+					},
+					768: {
+						items: 1
+					},
+					1000: {
+						items: 1
+					}
+				}
+			})
+
+			$('#owl-home-articles').owlCarousel({
+				smartSpeed: 200,
+				nav: false,
+				dots: true,
+				loop: false,
+				autoplay: false,
+				rewind: true,
+				margin: 5,
+				autoplayHoverPause: true,
+				responsiveRefreshRate: 200,
+				responsive: {
+					0: {
+						items: 2,
+					},
+					480: {
+						items: 3,
+					},
+					768: {
+						items: 3,
+						margin: 15,
+					},
+					1000: {
+						items: 2,
+						margin: 30,
+					}
+				}
+			})
+			$('#owl-service').owlCarousel({
+				smartSpeed: 200,
+				nav: false,
+				dots: true,
+				loop: false,
+				autoplayHoverPause: true,
+				autoplay: true,
+				autoplayTimeout: 3000,
+				rewind: true,
+				autoplayHoverPause: true,
+				responsiveRefreshRate: 200,
+				responsive: {
+					0: {
+						items: 2
+					},
+					480: {
+						items: 2
+					},
+					768: {
+						items: 3
+					},
+					1000: {
+						items: 4
+					}
+				}
+			})
+			$('#owl-brand').owlCarousel({
+				smartSpeed: 200,
+				nav: false,
+				dots: false,
+				autoplayHoverPause: true,
+				loop: true,
+				autoplay: true,
+				autoplayTimeout: 3000,
+				margin: 5,
+				autoplayHoverPause: true,
+				responsiveRefreshRate: 200,
+				navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+				responsive: {
+					0: {
+						items: 2
+					},
+					480: {
+						items: 4,
+					},
+					768: {
+						items: 4,
+						margin: 15,
+					},
+					1000: {
+						items: 5,
+						margin: 30,
+						nav: true,
+					}
+				}
+			})
+		});
+	</script>
+
+
+	<style>
+		.phpdebugbar-restore-btn{
+		display: none !important;
+		}
+	</style>
+	<div id="NavDrawer" class="drawer drawer--right">
+		<div class="drawer__header">
+			<div class="drawer__close js-drawer-close clearfix">
+				Menu
+				<button type="button" class="icon-fallback-text">
+					<i class="fas fa-times"></i>
+				</button>
+			</div>
+		</div>
+		<!-- begin mobile-nav -->
+		<ul class="mobile-nav">
+
+			<li class="mobile-nav__item mobile-nav__item--active">
+				<a href="{{url('/')}}" class="mobile-nav__link">Trang chủ</a>
+			</li>
+
+			<li class="mobile-nav__item" aria-haspopup="true">
+				<div class="mobile-nav__has-sublist">
+					<a href="" class="mobile-nav__link">Sản phẩm của chúng tôi</a>
+					<div class="mobile-nav__toggle">
+						<button type="button" class="icon-fallback-text mobile-nav__toggle-open">
+							<span class="icon icon-plus" aria-hidden="true"></span>
+							<span class="fallback-text">See More</span>
+						</button>
+						<button type="button" class="icon-fallback-text mobile-nav__toggle-close">
+							<span class="icon icon-minus" aria-hidden="true"></span>
+							<span class="fallback-text">"Đóng"</span>
+						</button>
+					</div>
+				</div>
+				<ul class="mobile-nav__sublist">
+					@foreach($categorys as $k=>$v)
+					@if(empty($v->parent_id))
+					<li class="mobile-nav__item" aria-haspopup="true">
+						<div class="mobile-nav__has-sublist">
+							<a href="{{url('productcategory/'.$v->slug)}}" class="mobile-nav__link">{{$v->name}}</a>
+
+							<div class="mobile-nav__toggle">
+								<button type="button" class="icon-fallback-text mobile-nav__toggle-open">
+									<span class="icon icon-plus" aria-hidden="true"></span>
+									<span class="fallback-text">See More</span>
+								</button>
+								<button type="button" class="icon-fallback-text mobile-nav__toggle-close">
+									<span class="icon icon-minus" aria-hidden="true"></span>
+									<span class="fallback-text">"Đóng"</span>
+								</button>
+							</div>
+						</div>
+						<ul class="mobile-nav__sublist">
+							@foreach($v->categories as $k1=>$v1)
+							<li class="mobile-nav__item ">
+								<a href="{{url('productcategory/'.$v1->slug)}}" class="mobile-nav__link"> {{$v1->name}}</a>
+							</li>
+							@endforeach
+						</ul>
+					</li>
+					@endif
+					@endforeach
+
+				</ul>
+			</li>
+			<li class="mobile-nav__item">
+				<a href="{{url('/gioi-thieu')}}" class="mobile-nav__link">Về chúng tôi</a>
+			</li>
+			{{--
 			<li class="mobile-nav__item">
 				<a href="#" class="mobile-nav__link">Hướng dẫn mua hàng</a>
 			</li>
@@ -970,7 +963,7 @@
 
 	<!-- quick view -->
 	<style>
-	.modal {
+		.modal {
 		display: none;
 		position: fixed;
 		z-index: 99999;
@@ -1013,57 +1006,57 @@
 		cursor: pointer;
 	}
 </style>
-<div class="modal" id="productQuickView">
-	<div class="modal-content">
-		<span id="close" class="close">&times;</span>
-		<form class="grid" id="form-quick-view">
-			<div class="grid__item large--five-tenths">
-				<div class="image-zoom">
-					<img id="p-product-image-feature" class="p-product-image-feature" src="#">
-					<div id="p-sliderproduct" class="flexslider">
-						<ul class="slides"></ul>
+	<div class="modal" id="productQuickView">
+		<div class="modal-content">
+			<span id="close" class="close">&times;</span>
+			<form class="grid" id="form-quick-view">
+				<div class="grid__item large--five-tenths">
+					<div class="image-zoom">
+						<img id="p-product-image-feature" class="p-product-image-feature" src="#">
+						<div id="p-sliderproduct" class="flexslider">
+							<ul class="slides"></ul>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="grid__item large--five-tenths pull-right">
-				<h4 class="p-title   modal-title " id="">Tên sản phẩm</h4>
-				<p class="product-more-info">
-					<span class="product-sku">
-						Mã sản phẩm: <span id="ProductSku">01923123</span>
-					</span>
-				</p>
-				<div class="form-input product-price-wrapper">
-					<div class="product-price">
-						<span class="p-price "></span>
-						<del></del>
+				<div class="grid__item large--five-tenths pull-right">
+					<h4 class="p-title   modal-title " id="">Tên sản phẩm</h4>
+					<p class="product-more-info">
+						<span class="product-sku">
+							Mã sản phẩm: <span id="ProductSku">01923123</span>
+						</span>
+					</p>
+					<div class="form-input product-price-wrapper">
+						<div class="product-price">
+							<span class="p-price "></span>
+							<del></del>
+						</div>
+						<em id="PriceSaving"></em>
 					</div>
-					<em id="PriceSaving"></em>
-				</div>
-				<div class="p-option-wrapper">
-					<select name="id" class="" id="p-select-quickview"></select>
-				</div>
-				<div id="swatch-quick-view" class="select-swatch">
+					<div class="p-option-wrapper">
+						<select name="id" class="" id="p-select-quickview"></select>
+					</div>
+					<div id="swatch-quick-view" class="select-swatch">
 
-				</div>
-				<div class="form-input hidden">
-					<label>Số lượng</label>
-					<input name="quantity" type="number" min="1" value="1" />
-				</div>
+					</div>
+					<div class="form-input hidden">
+						<label>Số lượng</label>
+						<input name="quantity" type="number" min="1" value="1" />
+					</div>
 
-				<div class="form-input" style="width: 100%;margin-top: 10px;">
-					<button type="submit" class="btn btn-addcart" id="AddToCardQuickView">Thêm vào giỏ</button>
-					<button disabled class="btn btn-soldout">Hết hàng</button>
-					<div class="qv-readmore">
-						<span> hoặc </span><a class="read-more p-url" href="#" role="button">Xem chi tiết</a>
+					<div class="form-input" style="width: 100%;margin-top: 10px;">
+						<button type="submit" class="btn btn-addcart" id="AddToCardQuickView">Thêm vào giỏ</button>
+						<button disabled class="btn btn-soldout">Hết hàng</button>
+						<div class="qv-readmore">
+							<span> hoặc </span><a class="read-more p-url" href="#" role="button">Xem chi tiết</a>
+						</div>
 					</div>
 				</div>
-			</div>
-		</form>
+			</form>
+		</div>
+		<div id="loading">
+			<div></div>
+		</div>
 	</div>
-	<div id="loading">
-		<div></div>
-	</div>
-</div>
 
 
 </body>
