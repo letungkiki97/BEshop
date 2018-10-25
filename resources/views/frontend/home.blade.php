@@ -23,8 +23,8 @@
 				</div>
 				<div class="aboutus-body clearfix">
 					<div class="aboutus-img">
-						<a href="collections/all.html">
-							<img src="http://theme.hstatic.net/1000305059/1000394224/14/aboutus_img.jpg?v=3593" alt="Giới thiệu">
+						<a href="san-pham">
+							<img src="{{url('frontend/img/aboutus_img.jpg')}}" alt="Giới thiệu">
 						</a>
 					</div>
 					<div class="aboutus-content">
@@ -41,12 +41,6 @@
 							<p>
 								Logo Công ty TNHH sản xuất và thương mại Tuấn Nguyên với slogan “ tất cả vì xế yêu của bạn “
 							</p>
-							<!-- <div class="author">
-								<h4 class="name">
-									Phạm Ngọc Kha
-								</h4>
-								<img src="http://theme.hstatic.net/1000305059/1000394224/14/aboutus_img_author.jpg?v=3593" alt="">
-							</div> -->
 						</div>
 					</div>
 				</div>
@@ -57,9 +51,9 @@
 				<div class="inner">
 					<div class="grid md-mg-left-10">
 						<div class="grid__item large--one-third medium--one-third small--one-whole md-pd-left10">
-							<a href="productcategory/o-to" class="banner-item">
+							<a href="{{url('producttype/1')}}" class="banner-item">
 								<div class="banner-img">
-									<img src="http://theme.hstatic.net/1000305059/1000394224/14/banner_img1.jpg?v=3593" alt="Phụ kiện xe hơi 2019">
+									<img src="{{url('frontend/img/banner_img1.jpg')}}" alt="Phụ kiện xe hơi 2019">
 								</div>
 								<div class="banner-content">
 									<span class="word1">Sản phẩm mới</span>
@@ -69,9 +63,9 @@
 							</a>
 						</div>
 						<div class="grid__item large--one-third medium--one-third small--one-whole md-pd-left10">
-							<a href="productcategory/o-to" class="banner-item">
+							<a href="{{url('producttype/2')}}" class="banner-item">
 								<div class="banner-img">
-									<img src="http://theme.hstatic.net/1000305059/1000394224/14/banner_img2.jpg?v=3593" alt="Phụ kiện công suất tốt">
+									<img src="{{url('frontend/img/banner_img2.jpg')}}" alt="Phụ kiện công suất tốt">
 								</div>
 								<div class="banner-content">
 									<span class="word1">Chất Lượng</span>
@@ -81,9 +75,9 @@
 							</a>
 						</div>
 						<div class="grid__item large--one-third medium--one-third small--one-whole md-pd-left10">
-							<a href="productcategory/nguyen-lieu-vat-tu" class="banner-item">
+							<a href="{{url('producttype/3')}}" class="banner-item">
 								<div class="banner-img">
-									<img src="http://theme.hstatic.net/1000305059/1000394224/14/banner_img3.jpg?v=3593" alt="Khuyến mãi tháng 9">
+									<img src="{{url('frontend/img/banner_img3.jpg')}}" alt="Khuyến mãi tháng 9">
 								</div>
 								<div class="banner-content">
 									<span class="word1">Hoàn Hảo</span>
@@ -162,7 +156,7 @@
 											</a>
 											<div class="product-actions medium--hide small--hide">
 												<div>
-													<button type="button" class="btnQuickView quick-view medium--hide small--hide" data-handle="/products/suplo-gas-gasoline-petrol-fuel-filter-oe-23300-31100-186100-4730-replacement-parts-for-toyota-prado-4700-2700-3400-land-cruiser-3">
+													<button type="button" class="btnQuickView quick-view medium--hide small--hide" data-handle="{{url('san-pham/'.@$v->id)}}">
 														<span>
 															<i class="fa fa-search-plus" aria-hidden="true"></i></span>
 													</button>
@@ -176,7 +170,7 @@
 										</div>
 										<div class="product-item-info">
 											<div class="product-title">
-												<a href="products/suplo-gas-gasoline-petrol-fuel-filter-oe-23300-31100-186100-4730-replacement-parts-for-toyota-prado-4700-2700-3400-land-cruiser-3.html">{{@$v->product_name}}</a>
+												<a href="{{url('san-pham/'.@$v->id)}}">{{@$v->product_name}}</a>
 											</div>
 											<div class="product-desc">
 												{{str_limit(@$v->description, $limit = 150, $end = '...')}}
@@ -315,7 +309,7 @@
 											</a>
 											<div class="product-actions medium--hide small--hide">
 												<div>
-													<button type="button" class="btnQuickView quick-view medium--hide small--hide" data-handle="/products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-7">
+													<button type="button" class="btnQuickView quick-view medium--hide small--hide" data-handle="{{url('san-pham/'.@$v2->id)}}">
 														<span> <i class="fa fa-search-plus" aria-hidden="true"></i></span>
 													</button>
 												</div>
