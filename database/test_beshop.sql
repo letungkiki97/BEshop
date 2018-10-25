@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 25, 2018 lúc 06:53 PM
+-- Thời gian đã tạo: Th10 25, 2018 lúc 07:04 PM
 -- Phiên bản máy phục vụ: 10.1.34-MariaDB
 -- Phiên bản PHP: 7.1.19
 
@@ -122,7 +122,7 @@ INSERT INTO `categories` (`id`, `name`, `user_id`, `created_at`, `updated_at`, `
 (2, 'Audi', 0, '2018-10-23 02:56:44', '2018-10-23 02:56:44', NULL, 'AUDI', 1, 'audi', '', 'audi'),
 (3, 'Lambogini', 0, '2018-10-23 03:37:28', '2018-10-23 03:37:28', NULL, 'LAMBOGINI', 1, 'Lambogini', '', 'Lambogini'),
 (4, 'NGUYÊN LIỆU VẬT TƯ', 0, '2018-10-23 03:38:02', '2018-10-23 03:49:43', NULL, 'NLVT', 0, 'nguyen-lieu-vat-tu', '', 'NGUYÊN LIỆU VẬT TƯ'),
-(5, 'May Móc', 0, '2018-10-23 03:46:11', '2018-10-23 03:47:19', NULL, 'MAYMOC', 0, 'may-moc-va-chuyen-giao-cong-nghe', '', 'May Móc Và Chuyển Giao Công Nghê'),
+(5, 'Máy Móc', 0, '2018-10-23 03:46:11', '2018-10-25 17:03:52', NULL, 'MAYMOC', 0, 'may-moc-va-chuyen-giao-cong-nghe', '', 'May Móc Và Chuyển Giao Công Nghê'),
 (6, 'Máy cắt CNC', 0, '2018-10-23 03:46:53', '2018-10-23 03:46:53', NULL, 'MAYCATCNC', 5, 'may-cat-cnc', '', 'Máy cắt CNC'),
 (7, 'Máy ép nhiệt', 0, '2018-10-23 03:50:26', '2018-10-23 03:50:37', NULL, 'MAYEPNHIET', 5, 'may-ep-nhiet', '', 'Máy ép nhiệt');
 
@@ -358,7 +358,6 @@ INSERT INTO `revisions` (`id`, `revisionable_type`, `revisionable_id`, `user_id`
 (26, 'App\\Models\\Category', 4, 1, 'created_at', NULL, '2018-10-23 10:38:02', '2018-10-23 03:38:02', '2018-10-23 03:38:02'),
 (27, 'App\\Models\\Category', 5, 1, 'created_at', NULL, '2018-10-23 10:46:11', '2018-10-23 03:46:11', '2018-10-23 03:46:11'),
 (28, 'App\\Models\\Category', 6, 1, 'created_at', NULL, '2018-10-23 10:46:53', '2018-10-23 03:46:53', '2018-10-23 03:46:53'),
-(29, 'App\\Models\\Category', 5, 1, 'name', 'May Móc Và Chuyển Giao Công Nghê', 'May Móc', '2018-10-23 03:47:19', '2018-10-23 03:47:19'),
 (30, 'App\\Models\\Category', 4, 1, 'name', 'PHỤ KIỆN XE', 'NGUYÊN LIỆU VẬT TƯ', '2018-10-23 03:49:43', '2018-10-23 03:49:43'),
 (31, 'App\\Models\\Category', 4, 1, 'code', 'PKX', 'NLVT', '2018-10-23 03:49:43', '2018-10-23 03:49:43'),
 (32, 'App\\Models\\Category', 4, 1, 'slug', 'phu-kien-xe', 'nguyen-lieu-vat-tu', '2018-10-23 03:49:43', '2018-10-23 03:49:43'),
@@ -381,7 +380,8 @@ INSERT INTO `revisions` (`id`, `revisionable_type`, `revisionable_id`, `user_id`
 (75, 'App\\Models\\Product', 1, 1, 'published', '0', '1', '2018-10-25 15:59:55', '2018-10-25 15:59:55'),
 (76, 'App\\Models\\Product', 2, 1, 'created_at', NULL, '2018-10-25 23:06:42', '2018-10-25 16:06:42', '2018-10-25 16:06:42'),
 (78, 'App\\Models\\Product', 3, 1, 'created_at', NULL, '2018-10-25 23:35:57', '2018-10-25 16:35:57', '2018-10-25 16:35:57'),
-(79, 'App\\Models\\User', 1, 1, 'user_avatar', '44079040-1174639989342005-5520548119562944512-n_1540480084.jpg', 'chevrolet-cruze-2017-2018-1_1540486383.jpg', '2018-10-25 16:53:03', '2018-10-25 16:53:03');
+(79, 'App\\Models\\User', 1, 1, 'user_avatar', '44079040-1174639989342005-5520548119562944512-n_1540480084.jpg', 'chevrolet-cruze-2017-2018-1_1540486383.jpg', '2018-10-25 16:53:03', '2018-10-25 16:53:03'),
+(80, 'App\\Models\\Category', 5, 1, 'name', 'May Móc', 'Máy Móc', '2018-10-25 17:03:52', '2018-10-25 17:03:52');
 
 -- --------------------------------------------------------
 
@@ -744,7 +744,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT cho bảng `revisions`
 --
 ALTER TABLE `revisions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT cho bảng `roles`
