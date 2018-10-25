@@ -98,7 +98,13 @@
                         </select>
                         <span class="help-block">{{ $errors->first('color_id', ':message') }}</span>
                     </div>
-
+                    <div class="form-group col-xs-6 required {{ $errors->has('catego') ? 'has-error' : '' }}">
+                        {!! Form::label('catego', __('product.catego'), array('class' => 'control-label required')) !!}
+                        <div class="controls">
+                            {!! Form::select('catego', $catego, isset($product) ? $product->catego : 1, ['class' => 'form-control']) !!}
+                            <span class="help-block">{{ $errors->first('catego', ':message') }}</span>
+                        </div>
+                    </div>
                     <div class="clear"></div>
                     <div class="form-group col-xs-3 {{ $errors->has('product_weight') ? 'has-error' : '' }}">
                         {!! Form::label('product_weight', __('product.product_weight'), array('class' => 'control-label')) !!}
@@ -128,10 +134,6 @@
                             <span class="help-block">{{ $errors->first('product_depth', ':message') }}</span>
                         </div>
                     </div>
-                    <div class="clear"></div>
-                    @if(isset($html))
-                        {!! $html !!}
-                    @endif
                     <div class="clear"></div>
                     <div class="form-group col-xs-12 {{ $errors->has('long_description') ? 'has-error' : '' }}">
                         {!! Form::label('long_description', __('product.long_description'), array('class' => 'control-label')) !!}
@@ -210,18 +212,6 @@
                             <span class="help-block">{{ $errors->first('focus_keyword', ':message') }}</span>
                         </div>
                     </div>
-                    <div class="form-group col-xs-6 {{ $errors->has('assigned_to') ? 'has-error' : '' }}">
-                        {!! Form::label('product', __('product.assigned_to'), array('class' => 'control-label')) !!}
-                        <div class="controls">
-                            <select name="assigned_to" class="form-control" id="assigned_to">
-                                @if(isset($product) && $product->assigned_to)
-                                <option value="{{ $product->assigned_to }}" selected="selected">{{  $product->assigned->full_name }}</option>
-                                @endif
-                            </select>
-                            <span class="help-block">{{ $errors->first('assigned_to', ':message') }}</span>
-                        </div>
-                    </div>
-                    <div class="clear"></div>
                     <div class="form-group col-xs-6 required {{ $errors->has('made_to_order') ? 'has-error' : '' }}">
                         {!! Form::label('made_to_order', __('product.made_to_order'), array('class' => 'control-label required')) !!}
                         <div class="controls">

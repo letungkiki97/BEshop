@@ -1,6 +1,6 @@
 <?php
 
-Route::pattern('slug', '[a-z0-9-]+');
+Route::pattern('slug', '[a-zA-Z0-9-]+');
 Route::pattern('slug2', '[a-z_]+');
 Route::pattern('slug3', '[a-z0-9-_]+');
 Route::pattern('id', '[0-9]+');
@@ -8,14 +8,16 @@ Route::pattern('id', '[0-9]+');
 Route::group(array(), function () {
     /******************   APP routes  ********************************/
     Route::get('/','FrontendController@index');
-    Route::get('/productall','FrontendController@productall');
-    Route::get('/contact','FrontendController@contact');
-    Route::get('/introduce','FrontendController@introduce');
+    Route::get('/san-pham','FrontendController@productall');
+    Route::get('/lien-he','FrontendController@contact');
+    Route::get('/gioi-thieu','FrontendController@introduce');
     Route::get('/blog','FrontendController@blog');
+    Route::get('/search','FrontendController@search');
+
 
     /******************   san pham  ********************************/
-    Route::get('/productcategory','FrontendController@productcategory');
-    Route::get('/productdetail/{id}','ProductController@show');
+    Route::get('/productcategory/{slug}','FrontendController@productcategory');
+    Route::get('/san-pham/{id}','ProductController@show');
 });
 
 

@@ -1,8 +1,7 @@
 @extends('frontend.layouts.master')
-@section('title', 'Tất cả sản phẩm')
+@section('title', 'Tìm kiếm')
 @section('Content')
-@include('frontend.layouts.breadcrumb')
-<div id="PageContainer" class="is-moved-by-drawer">
+<div id="PageContainer" class="is-moved-by-drawer" style="margin-top: 20px">
     <main class="main-content" role="main">
         <section id="collection-wrapper">
             <div class="wrapper">
@@ -33,11 +32,36 @@
                                                         <option value="created-ascending">Cũ nhất</option>
                                                     </select>
                                                 </div>
+                                                <script>
+                                                    /*============================================================================
+                                                        Inline JS because collection liquid object is only available
+                                                        on collection pages and not external JS files
+                                                      ==============================================================================*/
+                                                    Haravan.queryParams = {};
+                                                    if (location.search.length) {
+                                                        for (var aKeyValue, i = 0, aCouples = location.search.substr(1).split('&'); i < aCouples.length; i++) {
+                                                            aKeyValue = aCouples[i].split('=');
+                                                            if (aKeyValue.length > 1) {
+                                                                Haravan.queryParams[decodeURIComponent(aKeyValue[0])] = decodeURIComponent(aKeyValue[1]);
+                                                            }
+                                                        }
+                                                    }
+                                                    $(function () {
+                                                        $('#SortBy')
+                                                            .val('created-descending')
+                                                            .bind('change', function () {
+                                                                Haravan.queryParams.sort_by = jQuery(this).val();
+                                                                location.search = jQuery.param(Haravan.queryParams);
+                                                            }
+                                                            );
+                                                    });
+                                                </script>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="collection-body">
+                                    <div>Kết quả tìm kiếm: {{$tim}} </div></br>
                                     <div class="grid-uniform product-list md-mg-left-5">
                                         @foreach($product as $k2=>$v2)
                                         <div class="grid__item large--one-third medium--one-third small--one-half md-pd-left5">
