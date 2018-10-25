@@ -6,9 +6,6 @@
 					{{@Settings::get('site_name')}}
 					@if (Settings::get('site_logo'))
 						<img src="{{asset('uploads/site'). '/' . Settings::get('site_logo')}}" style="max-height: 45px">
-					@else
-					<img src="http://theme.hstatic.net/1000305059/1000394224/14/logo.png?v=3593"
-					 alt="Suplo Car | Cửa hàng phụ kiện,đồ chơi, nội thất xe hơi chính hãng" />
 					@endif
 				</a>
 			</h1>
@@ -16,7 +13,7 @@
 		<div class="header-navbar-wrapper">
 			<div class="header-navbar text-right">
 				<ul class="no-bullets">
-					<li class="active ">
+					<li {!! (Request::is( '/') ? 'class="active"' : '') !!}>
 						<a href="{{url('/')}}" class="text-center">
 							<span>Trang chủ</span>
 						</a>
@@ -46,7 +43,7 @@
                             @endforeach
 						</ul>
 					</li>
-					<li class=" ">
+					<li {!! (Request::is( 'lien-he') ? 'class="active"' : '') !!}>
 						<a href="{{url('/lien-he')}}" class="text-center">
 							<span>Liên hệ</span>
 						</a>
@@ -117,21 +114,11 @@
 
 						</ul>
 					</li> -->
-					<li class=" ">
+					<li {!! (Request::is( 'gioi-thieu') ? 'class="active"' : '') !!}>
 						<a href="{{url('/gioi-thieu')}}" class="text-center">
 							<span>Về chúng tôi</span>
 						</a>
 					</li>
-					<!-- <li class=" ">
-						<a href="#" class="text-center">
-							<span>Hướng dẫn mua hàng</span>
-						</a>
-					</li> -->
-					<!-- <li class=" ">
-						<a href="#" class="text-center">
-							<span>Hệ thống cửa hàng</span>
-						</a>
-					</li> -->
 				</ul>
 			</div>
 		</div>
@@ -488,8 +475,8 @@
 				<div class="grid__item large--one-third medium--one-third small--one-third">
 					<div class="hd-logo text-left">
 
-						<a href="index.html">
-							<img src="{{asset('uploads/site'). '/' . Settings::get('site_logo')}}" alt="Tuấn Nguyên" />
+						<a href="{{url('/')}}">
+							<img src="{{asset('uploads/site'). '/' . @Settings::get('site_logo')}}" alt="{{@Settings::get('site_name')}}" />
 						</a>
 
 					</div>
