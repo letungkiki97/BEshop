@@ -14,5 +14,9 @@ return array (
 	'image_alt' => 'alt',
 	'main_image' => 'Ảnh chính',
 	'hover_image' => 'Ảnh hover',
-	'no_data' => 'Không có dữ liệu'
+	'no_data' => 'Không có dữ liệu',
+		'back' => 'Back',
+	'ok' => 'OK',
+	'created_by' => 'Người tạo',
+	'updated_by' => 'Người chỉnh sửa'
 );
