@@ -343,7 +343,7 @@ class ProductController extends UserController
         if($name && $ext && in_array($ext, ['jpg', 'png', 'jpeg', 'gif'])) {
             $name = str_replace('.'.$ext, '', $name);
             $name = str_slug($name) . '.' . $ext;
-            $to = 'uploads/products/' . $name;
+            $to = public_path() .'/uploads/products/' . $name;
             if ($this->saveImage($request->url, $to)) {
                 $image = Image::create([
                     'name' => $name,
@@ -351,7 +351,7 @@ class ProductController extends UserController
                     'alt' => $request->alt,
                     'path' => 'products'
                 ]);
-                if(Thumbnail::generate_image_thumbnail($to,'uploads/products/thumb_' . $name)) {
+                if(Thumbnail::generate_image_thumbnail($to,public_path() .'/uploads/products/thumb_' . $name)) {
                     return $image;
                 }
             }

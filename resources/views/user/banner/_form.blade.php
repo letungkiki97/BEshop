@@ -17,13 +17,6 @@
                 <span class="help-block">{{ $errors->first('name', ':message') }}</span>
             </div>
         </div>
-        <div class="form-group col-xs-4 {{ $errors->has('time') ? 'has-error' : '' }}">
-            {!! Form::label('time', __('banner.time'), array('class' => 'control-label')) !!}
-            <div class="controls">
-                {!! Form::number('time', null, array('class' => 'form-control')) !!}
-                <span class="help-block">{{ $errors->first('time', ':message') }}</span>
-            </div>
-        </div>
         <div class="form-group col-xs-4 {{ $errors->has('size') ? 'has-error' : '' }}">
             {!! Form::label('size', __('banner.size'), array('class' => 'control-label')) !!}
             <div class="controls">
