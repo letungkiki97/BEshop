@@ -4,7 +4,7 @@
 </div>
 @endif
 <div class="pull-right">
-	@if($user_data->inRole('admin') && in_array($type, ['customer', 'product', 'supplier', 'supplier_price']))
+	@if($user_data->inRole('admin') && in_array($type, ['customer', 'supplier', 'supplier_price']))
     <a href="{{ $type.'/import' }}" class="btn btn-success">
         <i class="fa fa-upload"></i> {{ __('table.import') }}</a>
     @endif

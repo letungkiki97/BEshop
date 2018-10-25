@@ -53,9 +53,9 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
 
-    'domain' => 'http://caza.yez.vn',
-    'domain_backend' => 'http://xcms.caza.vn',
-    'domain_test_site' => 'http://newcaza.yez.vn',
+    'domain' => 'https://tuannguyen168.vn/',
+    'domain_backend' => 'https://tuannguyen168.vn/quantri',
+    'domain_test_site' => 'https://tuannguyen168.vn/',
 
     /*
     |--------------------------------------------------------------------------

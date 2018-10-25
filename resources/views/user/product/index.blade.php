@@ -7,7 +7,7 @@
 
 {{-- Content --}}
 <?php
-$domain = (strpos(\URL::full(), 'cazacrm.yez.vn') !== FALSE)?\Config::get('app.domain_test_site'):\Config::get('app.domain');
+$domain = (@strpos(\URL::full(), '') !== FALSE)?\Config::get('app.domain_test_site'):\Config::get('app.domain');
 ?>
 @section('content')
     <div class="page-header clearfix">
@@ -20,10 +20,10 @@ $domain = (strpos(\URL::full(), 'cazacrm.yez.vn') !== FALSE)?\Config::get('app.d
                 <i class="material-icons">dashboard</i>
                 {{ $title }}
             </h4>
-                                <span class="pull-right">
-                                    <i class="fa fa-fw fa-chevron-up clickable"></i>
-                                    <i class="fa fa-fw fa-times removepanel clickable"></i>
-                                </span>
+            <span class="pull-right">
+                <i class="fa fa-fw fa-chevron-up clickable"></i>
+                <i class="fa fa-fw fa-times removepanel clickable"></i>
+            </span>
         </div>
         <div class="panel-body">
             @include('layouts._toolbox')
@@ -64,7 +64,7 @@ $domain = (strpos(\URL::full(), 'cazacrm.yez.vn') !== FALSE)?\Config::get('app.d
                                     <a href="javascript:void(0)" class="delete_item" data-name="{{ $item->product_sku }}" data-id="{{$item->id}}" title="{{ __('table.delete') }}"><i class="fa fa-fw fa-times text-danger"></i></a>
                                     @endif
                                     @if($item->published)
-                                    <a href="{{ $domain.'/shop/'.$item->slug }}" title = "{{$item->product_name}}" target="_blank"><i class="fa fa-eye"></i></a> 
+                                    <a href="{{ $domain.'san-pham/'.$item->slug }}" title = "{{$item->product_name}}" target="_blank"><i class="fa fa-eye"></i></a> 
                                     @endif
                                 </td>
                             </tr>
