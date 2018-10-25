@@ -139,15 +139,16 @@
 							</div>
 						</div>
 
-						<div class="hfs-product-wrapper">
-							<div id="owl-home-flash-sale" class="owl-carousel owl-theme">
-								@foreach($productmaymocs as $k=>$v)
-								<div class="item">
-									<div class="product-item">
-										<div class="product-img">
-											<a href="{{url('san-pham/'.@$v->id)}}">
-												<img class="lazyload" src="{{url('uploads/products/'.@$v->image->name)}}" data-src="{{url('uploads/products/'.@$v->image->name)}}"
-												 title="{{@$v->image->title}}" alt="{{@$v->image->alt}}" />
+							<div class="hfs-product-wrapper">
+								<div id="owl-home-flash-sale" class="owl-carousel owl-theme">
+									@foreach($productmaymocs as $k=>$v)
+									<div class="item">
+										<div class="product-item">
+											<div class="product-img">
+												<a href="{{url('san-pham/'.@$v->id)}}">
+													<img class="lazyload" src="{{url('uploads/products/'.@$v->image->name)}}"
+													 data-src="{{url('uploads/products/'.@$v->image->name)}}"
+													  title="{{@$v->image->title}}" alt="{{@$v->image->alt}}"/>
 
 												<img class="lazyload" src="{{url('uploads/products/'.@$v->image->name)}}" data-src="{{url('uploads/products/'.@$v->image->name)}}"
 												 title="{{@$v->image->title}}" alt="{{@$v->image->alt}}" />
@@ -252,62 +253,85 @@
 						<div class="section-desc">
 							Cùng tham quan các sản phẩm nỏi bật mới nhất của chúng tôi
 						</div>
-						<div class="tab clearfix text-center">
-							@foreach($categoryparents as $k=>$v)
-							<button class="pro-tablinks" onclick="openProTabs(event, 'collection{{$k}}')" id="defaultOpenProTabs">
-								{{strtoupper($v->name)}}
-							</button>
-							@endforeach
-						</div>
-						@foreach($categoryparents as $k=>$v)
-						<div id="collection{{$k}}" class="pro-tabcontent">
-							<div class="grid-uniform md-mg-left-15">
-								@foreach($v->products as $k2=>$v2)
-								<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
-									<div class="product-item">
-										<div class="product-img">
-											<a href="{{url('san-pham/'.@$v2->id)}}">
-												<img id="{{@$v2->image->id}}" class="only-one lazyload" src="{{url('uploads/products/'.@$v2->image->name)}}"
-												 data-src="{{url('uploads/products/'.@$v2->image->name)}}" title="{{@$v2->image->title}}" alt="{{@$v2->image->alt}}" />
-											</a>
-											<div class="product-actions medium--hide small--hide">
-												<div>
-													<button type="button" class="btnQuickView quick-view medium--hide small--hide" data-handle="{{url('san-pham/'.@$v2->id)}}">
-														<span> <i class="fa fa-search-plus" aria-hidden="true"></i></span>
-													</button>
+						<div class="home-section-body">
+							<div class="section-desc">
+								Cùng tham quan các sản phẩm nỏi bật mới nhất của chúng tôi
+							</div>
+							<div class="tab clearfix text-center">
+                                @foreach($categoryparents as $k=>$v)
+								<button class="pro-tablinks" onclick="openProTabs(event, 'collection{{$k}}')" id="defaultOpenProTabs">
+									{{strtoupper($v->name)}}
+								</button>
+                                @endforeach
+							</div>
+                            @foreach($categoryparents as $k=>$v)
+								<div id="collection{{$k}}" class="pro-tabcontent">
+									<div class="grid-uniform md-mg-left-15">
+										@foreach($v->products as $k2=>$v2)
+											<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
+												<div class="product-item">
+													<div class="product-img">
+														<a href="{{url('san-pham/'.@$v2->id)}}">
+															<img id="{{@$v2->image->id}}" class="only-one lazyload" src="{{url('uploads/products/'.@$v2->image->name)}}"
+																 data-src="{{url('uploads/products/'.@$v2->image->name)}}"
+																 title="{{@$v2->image->title}}" alt="{{@$v2->image->alt}}" />
+														</a>
+														<div class="product-actions medium--hide small--hide">
+															<div>
+																<button type="button" class="btnQuickView quick-view medium--hide small--hide"
+																		data-handle="{{url('san-pham/'.@$v2->id)}}">
+																	<span> <i class="fa fa-search-plus" aria-hidden="true"></i></span>
+																</button>
+															</div>
+														</div>
+													</div>
+													<div class="product-item-info">
+														<div class="product-title">
+															<a href="{{url('san-pham/'.@$v2->id)}}">
+																{{$v2->product_name}}</a>
+														</div>
+														<div class="product-desc" style="display: block">
+															{{str_limit(@$v2->description, $limit = 150, $end = '...')}}
+														</div>
+													</div>
+													<div class="product-buynow">
+														<button type="button" {{$v2->made_to_order?"":"disabled"}}  class="btnAddToCart  medium--hide small--hide" data-id=""><span>{{$v2->made_to_order?"Còn hàng":"Hết hàng"}}</span></button>
+													</div>
 												</div>
 											</div>
-										</div>
-										<div class="product-item-info">
-											<div class="product-title">
-												<a href="{{url('san-pham/'.@$v2->id)}}">
-													{{$v2->product_name}}</a>
-											</div>
-											<div class="product-desc" style="display: block">
-												{{str_limit(@$v2->description, $limit = 150, $end = '...')}}
-											</div>
-										</div>
-										<div class="product-buynow">
-											<button type="button" {{$v2->made_to_order?"":"disabled"}} class="btnAddToCart  medium--hide small--hide"
-											 data-id=""><span>{{$v2->made_to_order?"Còn hàng":"Hết hàng"}}</span></button>
-										</div>
-									</div>
-								</div>
-								@endforeach
-								@foreach($v->categories as $k1=>$v1)
-								@foreach($v1->products as $k2=>$v2)
-								<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
-									<div class="product-item">
-										<div class="product-img">
-											<a href="{{url('san-pham/'.@$v2->id)}}">
-												<img id="{{@$v2->image->id}}" class="only-one lazyload" src="{{url('uploads/products/'.@$v2->image->name)}}"
-												 data-src="{{url('uploads/products/'.@$v2->image->name)}}" title="{{@$v2->image->title}}" alt="{{@$v2->image->alt}}" />
-											</a>
-											<div class="product-actions medium--hide small--hide">
-												<div>
-													<button type="button" class="btnQuickView quick-view medium--hide small--hide" data-handle="/products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-7">
-														<span> <i class="fa fa-search-plus" aria-hidden="true"></i></span>
-													</button>
+										@endforeach
+										@foreach($v->categories as $k1=>$v1)
+											@foreach($v1->products as $k2=>$v2)
+												<div class="grid__item large--one-quarter medium--one-third small--one-half md-pd-left15">
+													<div class="product-item">
+														<div class="product-img">
+															<a href="{{url('san-pham/'.@$v2->id)}}">
+																<img id="{{@$v2->image->id}}" class="only-one lazyload" src="{{url('uploads/products/'.@$v2->image->name)}}"
+																	 data-src="{{url('uploads/products/'.@$v2->image->name)}}"
+																	 title="{{@$v2->image->title}}" alt="{{@$v2->image->alt}}" />
+															</a>
+															<div class="product-actions medium--hide small--hide">
+																<div>
+																	<button type="button" class="btnQuickView quick-view medium--hide small--hide"
+																			data-handle="/products/suplo-smart-gravity-holder-cute-mount-10w-fast-wireless-car-charger-bracket-car-accessories-7">
+																		<span> <i class="fa fa-search-plus" aria-hidden="true"></i></span>
+																	</button>
+																</div>
+															</div>
+														</div>
+														<div class="product-item-info">
+															<div class="product-title">
+																<a href="{{url('san-pham/'.@$v2->id)}}">
+																	{{$v2->product_name}}</a>
+															</div>
+															<div class="product-desc" style="display: block">
+																{{str_limit(@$v2->description, $limit = 150, $end = '...')}}
+															</div>
+														</div>
+														<div class="product-buynow">
+                                                            <button type="button" {{$v2->made_to_order?"":"disabled"}}  class="btnAddToCart  medium--hide small--hide" data-id=""><span>{{$v2->made_to_order?"Còn hàng":"Hết hàng"}}</span></button>
+														</div>
+													</div>
 												</div>
 											</div>
 										</div>
