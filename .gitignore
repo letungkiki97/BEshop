@@ -1,7 +1,3 @@
 .env
 /.env
 /*.env
-.phpintel
-.phpintel/
-/.phpintel
-/*.phpintel
