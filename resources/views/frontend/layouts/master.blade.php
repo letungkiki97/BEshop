@@ -484,7 +484,7 @@
 
 	<div id="fixed-social-network" class="medium--hide small--hide">
 
-		<a href="https://www.facebook.com/" class="fb-icon"><i class="fab fa-facebook-f"></i> Facebook</a>
+		<a href="https://www.facebook.com/nguyenlieumaythamlotsanoto/" class="fb-icon"><i class="fab fa-facebook-f"></i> Facebook</a>
 
 
 		<a href="https://www.instagram.com/" class="ins-icon"><i class="fab fa-instagram"></i> Instagram</a>

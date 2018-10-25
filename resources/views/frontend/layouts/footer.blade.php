@@ -49,23 +49,23 @@
                             <ul class="no-bullets">
 
                                 <li>
-                                    <a href="../search.html">Tìm kiếm</a>
+                                    <a href="#">Tìm kiếm</a>
                                 </li>
 
                                 <li>
-                                    <a href="../pages/about-us.html">Giới thiệu</a>
+                                    <a href="#">Giới thiệu</a>
                                 </li>
 
                                 <li>
-                                    <a href="../index.html">Trang chủ</a>
+                                    <a href="/">Trang chủ</a>
                                 </li>
 
                                 <li>
-                                    <a href="../pages/tat-ca-tin-tuc.html">Blog</a>
+                                    <a href="#">Blog</a>
                                 </li>
 
                                 <li>
-                                    <a href="../pages/about-us.html">Liên hệ</a>
+                                    <a href="/lien-he">Liên hệ</a>
                                 </li>
 
                             </ul>
@@ -83,23 +83,23 @@
                             <ul class="no-bullets">
 
                                 <li>
-                                    <a href="../pages/about-us.html">Về chúng tôi</a>
+                                    <a href="/gioi-thieu">Về chúng tôi</a>
                                 </li>
 
                                 <li>
-                                    <a href="../pages/about-us.html">Liên hệ</a>
+                                    <a href="/lien-he">Liên hệ</a>
                                 </li>
 
                                 <li>
-                                    <a href="../pages/about-us.html">Điều khoản</a>
+                                    <a href="#">Điều khoản</a>
                                 </li>
 
                                 <li>
-                                    <a href="../pages/about-us.html">Chính sách</a>
+                                    <a href="#">Chính sách</a>
                                 </li>
 
                                 <li>
-                                    <a href="../pages/about-us.html">Hướng dẫn</a>
+                                    <a href="#">Hướng dẫn</a>
                                 </li>
 
                             </ul>
@@ -117,23 +117,23 @@
                             <ul class="no-bullets">
 
                                 <li>
-                                    <a href="all.html">Sản phẩm mới</a>
+                                    <a href="">Sản phẩm mới</a>
                                 </li>
 
                                 <li>
-                                    <a href="all.html">Khuyến mãi</a>
+                                    <a href="#">Khuyến mãi</a>
                                 </li>
 
                                 <li>
-                                    <a href="all.html">Mua nhiều nhất</a>
+                                    <a href="#">Mua nhiều nhất</a>
                                 </li>
 
                                 <li>
-                                    <a href="../pages/about-us.html">Liên hệ</a>
+                                    <a href="/lien-he">Liên hệ</a>
                                 </li>
 
                                 <li>
-                                    <a href="../pages/about-us.html">Về chúng tôi</a>
+                                    <a href="/gioi-thieu">Về chúng tôi</a>
                                 </li>
 
                             </ul>
@@ -151,19 +151,19 @@
                             <ul class="no-bullets">
 
                                 <li>
-                                    <a href="onsale.html">Khuyến mãi</a>
+                                    <a href="#">Khuyến mãi</a>
                                 </li>
 
                                 <li>
-                                    <a href="san-pham-moi-ve.html">Mới về</a>
+                                    <a href="#">Mới về</a>
                                 </li>
 
                                 <li>
-                                    <a href="all.html">Trang chủ</a>
+                                    <a href="/">Trang chủ</a>
                                 </li>
 
                                 <li>
-                                    <a href="../search.html">Tìm kiếm</a>
+                                    <a href="#">Tìm kiếm</a>
                                 </li>
 
                             </ul>
@@ -180,14 +180,14 @@
                 <div class="grid mg-left-0">
                     <div class="grid__item large--one-half medium--one-half small--one-whole pd-left0">
                         <div class="ft-copyrights-content small--text-center">
-                            Copyrights © 2018 by <a target="_blank" href="http://suplo.vn/">Suplo</a>. <a target="_blank"
-                                href="https://www.haravan.com/">Powered by Haravan</a>
+                            Copyrights © 2018 by <a target="_blank" href="tuannguyen168.vn">Tuấn Nguyên</a>. <a target="_blank"
+                                href="">Bản quyền thuộc về Tuấn Nguyên</a>
                         </div>
                     </div>
                     <div class="grid__item large--one-half large--text-right medium--one-half medium--text-right small--one-whole small--text-center pd-left0">
                         <div class="ft-social-network">
 
-                            <a href="https://www.facebook.com/SuploTeam/" class="fb-icon"><i class="fab fa-facebook"
+                            <a href="https://www.facebook.com/nguyenlieumaythamlotsanoto/" class="fb-icon"><i class="fab fa-facebook"
                                     aria-hidden="true"></i></a>
 
 
