@@ -22,4 +22,7 @@ return array (
   'select_image' => 'Select image',
   'start_upload' => 'Start upload',
   'upload_image' => 'Upload',
+  'upload_files' => 'Upload Files',
+  'media_library' => 'Media Library',
+  'insert_into_page' => 'Insert Into Page',
 );

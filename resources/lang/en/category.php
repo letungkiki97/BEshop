@@ -1,13 +1,13 @@
 <?php 
 return array (
   'code' => 'Code',
-  'loaisp' => 'Thuộc loại',
+  'loaisp' => 'Category',
   'edit' => 'Edit product category',
-  'meta_description' => 'Meta title',
-  'meta_title' => 'Meta description',
-  'name' => 'Name',
+  'meta_description' => 'Meta description',
+  'meta_title' => 'Meta title',
+  'name' => 'Name Category',
   'new' => 'New product category',
   'parent' => 'Father category',
   'slug' => 'Slug',
-  'title' => 'Product category',
+  'title' => 'Title category',
 );

@@ -30,11 +30,12 @@ return array (
   'remove_movement' => 'Movement type (Remove)',
   'sales_person' => 'Sales person',
   'shipping_return' => 'Shipping + Returns',
-  'site_email' => 'Site email',
-  'site_logo' => 'Site Logo',
-  'site_name' => 'Site name',
+  'site_email' => 'Company email',
+  'site_logo' => 'Company Logo',
+  'site_name' => 'Company Name',
   'time_format' => 'Time format',
   'title' => 'Setting',
   'tracking_number' => 'Tracking Number',
   'why_buy' => 'Why buy from article',
+  'slogan' =>'Company Slogan'
 );
