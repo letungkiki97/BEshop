@@ -6,7 +6,6 @@ return array (
   'link' => 'Link',
   'name' => 'Name',
   'new' => 'New banner',
-  'time' => 'Time',
   'size' => 'Size',
   'slide' => 'Slide',
   'title' => 'Banner',

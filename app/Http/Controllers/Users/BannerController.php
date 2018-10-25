@@ -54,7 +54,7 @@ class BannerController extends UserController
 
     public function store(BannerRequest $request)
     {
-        $banner = Banner::create($request->only('name', 'time', 'size'));
+        $banner = Banner::create($request->only('name', 'size'));
         $images = [];
         if ($request->images) {
             $no = 0;
@@ -106,7 +106,7 @@ class BannerController extends UserController
 
     public function update(BannerRequest $request, Banner $banner)
     {
-        $banner->update($request->only('name', 'time', 'size'));
+        $banner->update($request->only('name', 'size'));
         $images = [];
         if ($request->images) {
             $no = 0;
@@ -183,7 +183,7 @@ class BannerController extends UserController
         if ($name && $ext && in_array($ext, ['jpg', 'png', 'jpeg', 'gif'])) {
             $name = str_replace('.' . $ext, '', $name);
             $name = str_slug($name) . '_' . time() . '.' . $ext;
-            $to = $_SERVER['DOCUMENT_ROOT'] . '/uploads/news/' . $name;
+            $to = public_path() . '/uploads/news/' . $name;
             if ($this->saveImage($request->url, $to)) {
                 $image = Image::create([
                     'name' => $name,
@@ -192,7 +192,7 @@ class BannerController extends UserController
                     'path' => 'news',
                     'status' => 1,
                 ]);
-                if (Thumbnail::generate_image_thumbnail($to, $_SERVER['DOCUMENT_ROOT'] . '/uploads/news/thumb_' . $name)) {
+                if (Thumbnail::generate_image_thumbnail($to, public_path() . '/uploads/news/thumb_' . $name)) {
                     $data = view('user.banner._file', compact('image'))->render();
                     return $data;
                 }

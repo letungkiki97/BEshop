@@ -30,7 +30,7 @@
                         <th><input type="checkbox" class="check"></th>
                         <th>{{ __('table.id') }}</th>
                         <th>{{ __('banner.name') }}</th>
-                        <th>{{ __('banner.time') }}</th>
+                        <th>{{ __('banner.image') }}</th>
                         <th>{{ __('banner.size') }}</th>
                         <th>{{ __('table.actions') }}</th>
                     </tr>
@@ -42,7 +42,7 @@
                                 <td><input type="checkbox" class="check" data-id="{{$item->id}}"></td>
                                 <td>{{ $item->id }}</td>
                                 <td>{{ $item->name }}</td>
-                                <td>{{ $item->time }}</td>
+                                <td>{{ @count($item->images) }}</td>
                                 <td>{{ $item->size ?: 'Full page' }}</td>
                                 <td>
                                     <a href="{{ url('quantri/banner/' . $item->id . '/edit' ) }}"  title="{{ __('table.edit') }}"><i class="fa fa-fw fa-pencil text-warning"></i> </a>
