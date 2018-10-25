@@ -64,7 +64,8 @@ class FrontendController extends Controller
             $categry = Category::where('slug',$slug)->first();
             if(!empty($categry)){
                 if($categry->parent_id == 0){
-                   $categrys = Category::where('parent_id',$categry->id)->pluck('slug')->toArray();;
+                   $categrys = Category::where('parent_id',$categry->id)->pluck('slug')->toArray();
+                   @array_push($categrys,$slug);
                    $product = $product->whereHas('category',function($q2) use ($categrys){
                         $q2->whereIn('slug',$categrys);
                     });
@@ -73,6 +74,7 @@ class FrontendController extends Controller
                         $q2->where('slug',$slug);
                     });
                 }
+                $slug = $categry->name;
             }
         }
         $count = $product->count();
@@ -84,7 +86,7 @@ class FrontendController extends Controller
     public function producttype(Request $request,$id)
     {
         $length = $request->length ?: 20;
-        $product = Product::where('published',1)->orderBy('id', 'desc');
+        $product = Product::where(['published'=>1,'catego'=>$id])->orderBy('id', 'desc');
         $count = $product->count();
         $product = $product->paginate($length);
         $page_info = $this->pageInfo($request->page, $length, $count);

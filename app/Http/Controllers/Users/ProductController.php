@@ -396,14 +396,14 @@ class ProductController extends UserController
                 $img_name = $item->img_name;
                 $img_name_arr = explode('.', $img_name);
                 $img_type = trim($img_name_arr[count($img_name_arr) - 1]);
-                $new_img_name = $item->product_sku . '-' . $item->slug . '-cazavn-' . $item->img_id . '.' . $img_type;
+                $new_img_name = $item->product_sku . '-' . $item->slug . '-' . $item->img_id . '.' . $img_type;
                 $new_img_alt = $item->img_alt;
                 $new_img_title = $item->img_title;
                 if (!$item->img_alt) {
                     $new_img_alt = $item->product_name;
                 }
                 if (!$item->img_title) {
-                    $new_img_title = $item->product_name . ' cazavn';
+                    $new_img_title = $item->product_name . ' -lt';
                 }
                 $data_img['name'] = $new_img_name;
                 $data_img['alt'] = $new_img_alt;

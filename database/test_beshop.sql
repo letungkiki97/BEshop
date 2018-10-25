@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 25, 2018 lúc 07:04 PM
+-- Thời gian đã tạo: Th10 25, 2018 lúc 07:29 PM
 -- Phiên bản máy phục vụ: 10.1.34-MariaDB
 -- Phiên bản PHP: 7.1.19
 
@@ -60,6 +60,13 @@ CREATE TABLE `banner` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `banner`
+--
+
+INSERT INTO `banner` (`id`, `name`, `image`, `size`, `created_at`, `updated_at`) VALUES
+(1, 'CÁC MẪU XE THỂ THAO', '', 820, '2018-10-25 17:11:38', '2018-10-25 17:12:00');
+
 -- --------------------------------------------------------
 
 --
@@ -92,6 +99,15 @@ CREATE TABLE `banner_image` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `banner_image`
+--
+
+INSERT INTO `banner_image` (`id`, `image_id`, `banner_id`, `position`, `link`, `text_text`, `text_color`, `text_font`, `text_size`, `text_left`, `text_right`, `text_top`, `text_bottom`, `button_background`, `button_text`, `button_color`, `button_font`, `button_size`, `button_left`, `button_right`, `button_top`, `button_bottom`, `created_at`, `updated_at`) VALUES
+(1, 11, 1, 1, 'san-pham', 'Bằng tất cả tâm huyết, năng lực vượt trội và quy mô không ngừng phát triển, Suplo cam kết nỗ lực hết mình nhằm cung cấp sản phẩm và dịch vụ đúng với những giá trị mà khách hàng mong đợi.', 'FFFFFF', 'Arial', '', '', '', '', '', 'FFFFFF', 'Xem Thêm', 'FFFFFF', 'Arial', '', '', '', '', '', NULL, NULL),
+(2, 10, 1, 2, 'san-pham', 'Bằng tất cả tâm huyết, năng lực vượt trội và quy mô không ngừng phát triển, Suplo cam kết nỗ lực hết mình nhằm cung cấp sản phẩm và dịch vụ đúng với những giá trị mà khách hàng mong đợi.', 'FFFFFF', 'Arial', '', '', '', '', '', 'FFFFFF', 'Xem Thêm', 'FFFFFF', 'Arial', '', '', '', '', '', NULL, NULL),
+(3, 12, 1, 3, 'san-pham', 'Bằng tất cả tâm huyết, năng lực vượt trội và quy mô không ngừng phát triển, Suplo cam kết nỗ lực hết mình nhằm cung cấp sản phẩm và dịch vụ đúng với những giá trị mà khách hàng mong đợi.', 'FFFFFF', 'Arial', '', '', '', '', '', 'FFFFFF', 'Xem Thêm', 'FFFFFF', 'Arial', '', '', '', '', '', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -185,7 +201,11 @@ INSERT INTO `images` (`id`, `name`, `title`, `alt`, `path`, `created_at`, `updat
 (6, 'AUDI1-xe-kia-sedona-3.3l-gath-2016-cazavn-6.jpg', 'XE  KIA SEDONA  3.3L GATH 2016 cazavn', 'XE KIA SEDONA  3.3L GATH 2016', 'products', '2018-10-25 16:06:40', '2018-10-25 16:06:42', 0),
 (7, 'AUDI1-xe-mitsubishi-pajero-sport-g-4x2-at-2014-cazavn-7.jpg', 'XE MITSUBISHI PAJERO SPORT G 4X2 AT 2014 cazavn', 'XE MITSUBISHI PAJERO SPORT G 4X2 AT  2014', 'products', '2018-10-25 16:35:31', '2018-10-25 16:35:57', 0),
 (8, 'AUDI1-xe-mitsubishi-pajero-sport-g-4x2-at-2014-cazavn-8.jpg', 'XE MITSUBISHI PAJERO SPORT G 4X2 AT 2014 cazavn', 'XE MITSUBISHI PAJERO SPORT G 4X2 AT  2014', 'products', '2018-10-25 16:35:42', '2018-10-25 16:35:57', 0),
-(9, 'AUDI1-xe-mitsubishi-pajero-sport-g-4x2-at-2014-cazavn-9.jpg', 'XE MITSUBISHI PAJERO SPORT G 4X2 AT 2014 cazavn', 'XE MITSUBISHI PAJERO SPORT G 4X2 AT  2014', 'products', '2018-10-25 16:35:53', '2018-10-25 16:35:57', 0);
+(9, 'AUDI1-xe-mitsubishi-pajero-sport-g-4x2-at-2014-cazavn-9.jpg', 'XE MITSUBISHI PAJERO SPORT G 4X2 AT 2014 cazavn', 'XE MITSUBISHI PAJERO SPORT G 4X2 AT  2014', 'products', '2018-10-25 16:35:53', '2018-10-25 16:35:57', 0),
+(10, 'ms-banner-img1_1540487445.jpg', '', '', 'banner', '2018-10-25 17:10:45', '2018-10-25 17:10:45', 0),
+(11, 'ms-banner-img2_1540487445.jpg', '', '', 'banner', '2018-10-25 17:10:45', '2018-10-25 17:10:45', 0),
+(12, 'ms-banner-img3_1540487445.jpg', '', '', 'banner', '2018-10-25 17:10:45', '2018-10-25 17:10:45', 0),
+(14, 'MAYMOC1-m-y-c-crv-14.JPG', 'MÁY ĐỤC CRV cazavn', 'MÁY ĐỤC CRV', 'products', '2018-10-25 17:16:51', '2018-10-25 17:22:37', 0);
 
 -- --------------------------------------------------------
 
@@ -268,7 +288,8 @@ CREATE TABLE `products` (
 INSERT INTO `products` (`id`, `catego`, `product_name`, `product_image`, `category_id`, `status`, `sale_price`, `description`, `long_description`, `user_id`, `main_sku`, `product_sku`, `made_to_order`, `product_gallery`, `file_3d`, `product_url`, `published`, `product_weight`, `product_length`, `product_width`, `product_depth`, `delivery_category_id`, `promotion_price`, `promotion_from`, `promotion_to`, `professional_price`, `re_order_point`, `unit_value`, `total_value`, `created_at`, `updated_at`, `deleted_at`, `is_variant`, `lead_time`, `unlink`, `slug`, `meta_title`, `meta_description`, `focus_keyword`, `assigned_to`, `hover_image`, `main_variant`) VALUES
 (1, 1, 'XE  MITSUBISHI TRITON GL 4X4 MT 2014', '1', 1, 1, 0, 'Xe sx và đk lần đầu 2014, chạy zin hơn 7v chút, biển hn, keo chỉ và máy móc nguyên bản.', 'Xe sx v&agrave; đk lần đầu 2014, chạy zin hơn 7v ch&uacute;t, biển hn, keo chỉ v&agrave; m&aacute;y m&oacute;c nguy&ecirc;n bản. V&igrave; mua sử dụng cho c&ocirc;ng việc n&ecirc;n m&igrave;nh cũng độ kh&aacute; nhiều thứ hay ho như bộ lốp lazang to, loa c&aacute;nh, sub, m&agrave;n h&igrave;nh, camera, hiển thị tr&ecirc;n gương, ghế da v&agrave; bộ l&oacute;t da to&agrave;n xe ...<br />\r\nXe c&ograve;n đăng kiểm 8/2019.&nbsp;<br />\r\nAi c&oacute; nhu cầu cứ qua xem rồi chốt gi&aacute;', 1, '', 'OTO01', 1, NULL, NULL, '', 1, 0, 0, 0, 0, NULL, 0, NULL, NULL, 0, 0, 0, 0, '2018-10-25 15:59:34', '2018-10-25 15:59:55', NULL, 0, 0, NULL, 'xe-mitsubishi-triton-gl-4x4-mt-2014', '', '', '', 0, 0, 0),
 (2, 1, 'XE  KIA SEDONA  3.3L GATH 2016', '4', 2, 1, 0, '', '', 1, '', 'AUDI1', 0, NULL, NULL, '', 1, 0, 0, 0, 0, NULL, 0, NULL, NULL, 0, 0, 0, 0, '2018-10-25 16:06:42', '2018-10-25 16:06:42', NULL, 0, 0, NULL, 'xe-kia-sedona-3.3l-gath-2016', '', '', '', 0, 0, 0),
-(3, 1, 'XE MITSUBISHI PAJERO SPORT G 4X2 AT 2014', '7', 2, 1, 0, 'Nhìn xe không cần mô tả nhiều , chạy em này đảm bảo ăn đứt Fotuner đời 2014 ,,gầm bệ cực chắc xe 3.0 máy xăng , số gẩy vô lăng ,,điều hòa tự động có cửa gió sau,,,', 'Nh&igrave;n xe kh&ocirc;ng cần m&ocirc; tả nhiều , chạy em n&agrave;y đảm bảo ăn đứt Fotuner đời 2014 ,,gầm bệ cực chắc xe 3.0 m&aacute;y xăng , số gẩy v&ocirc; lăng ,,điều h&ograve;a tự động c&oacute; cửa gi&oacute; sau,,,', 1, '', 'AUDI1', 1, NULL, NULL, '', 1, 0, 0, 0, 0, NULL, 0, NULL, NULL, 0, 0, 0, 0, '2018-10-25 16:35:57', '2018-10-25 16:35:57', NULL, 0, 0, NULL, 'xe-mitsubishi-pajero-sport-g-4x2-at-2014', '', '', '', 0, 0, 0);
+(3, 1, 'XE MITSUBISHI PAJERO SPORT G 4X2 AT 2014', '7', 2, 1, 0, 'Nhìn xe không cần mô tả nhiều , chạy em này đảm bảo ăn đứt Fotuner đời 2014 ,,gầm bệ cực chắc xe 3.0 máy xăng , số gẩy vô lăng ,,điều hòa tự động có cửa gió sau,,,', 'Nh&igrave;n xe kh&ocirc;ng cần m&ocirc; tả nhiều , chạy em n&agrave;y đảm bảo ăn đứt Fotuner đời 2014 ,,gầm bệ cực chắc xe 3.0 m&aacute;y xăng , số gẩy v&ocirc; lăng ,,điều h&ograve;a tự động c&oacute; cửa gi&oacute; sau,,,', 1, '', 'AUDI1', 1, NULL, NULL, '', 1, 0, 0, 0, 0, NULL, 0, NULL, NULL, 0, 0, 0, 0, '2018-10-25 16:35:57', '2018-10-25 16:35:57', NULL, 0, 0, NULL, 'xe-mitsubishi-pajero-sport-g-4x2-at-2014', '', '', '', 0, 0, 0),
+(4, 2, 'MÁY ĐỤC CRV', '14', 5, 1, 0, 'Máy khắc đá CRV là dòng máy khắc gỗ khổ lớn, máy có 2 đầu mũi, khắc được cùng lúc nhiều sản phẩm đẹp . Là loại máy khắc đá nhiều đầu rất khả dụng với nhu cầu sản xuất đá tại Việt Nam.', '<p>D&ograve;ng m&aacute;y CNC đ&aacute; l&agrave; d&ograve;ng m&aacute;y cao cấp , được trang bị những c&ocirc;ng nghệ hiện đại nhất: Hệ thống đ&egrave;n b&aacute;o lỗi, đ&egrave;n chiếu s&aacute;ng sản phẩm, cảm biến nhiệt, hệ thống n&uacute;t bấm khẩn cấp, hệ thống bơm dầu động...Khung m&aacute;y được l&agrave;m bằng th&eacute;p đ&uacute;c nhập khẩu từ Đ&Agrave;I LOAN. Với chất lượng v&agrave; độ cứng cao giảm thiểu rung lắc, n&acirc;ng cao chất lượng sản phẩm</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Hệ thống điều khiển CA100 với giao diện tiếng việt dễ d&agrave;ng sử dụng. Kh&ocirc;ng cần sử dụng m&aacute;y t&iacute;nh, chống virut, chống nhiễu tốt. C&oacute; thể t&ugrave;y chọn hệ thống điều khiển NcStudio V5 / V8.</p>', 1, '', 'MAYMOC1', 0, NULL, NULL, '', 1, 0, 0, 0, 0, NULL, 0, NULL, NULL, 0, 0, 0, 0, '2018-10-25 17:15:27', '2018-10-25 17:22:37', NULL, 0, 0, NULL, 'm-y-c-crv', '', '', '', 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -294,6 +315,13 @@ CREATE TABLE `product_color` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `product_color`
+--
+
+INSERT INTO `product_color` (`product_id`, `color_id`, `created_at`, `updated_at`) VALUES
+(4, 6, NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -318,7 +346,8 @@ INSERT INTO `product_image` (`product_id`, `image_id`) VALUES
 (2, 6),
 (3, 7),
 (3, 8),
-(3, 9);
+(3, 9),
+(4, 14);
 
 -- --------------------------------------------------------
 
@@ -381,7 +410,9 @@ INSERT INTO `revisions` (`id`, `revisionable_type`, `revisionable_id`, `user_id`
 (76, 'App\\Models\\Product', 2, 1, 'created_at', NULL, '2018-10-25 23:06:42', '2018-10-25 16:06:42', '2018-10-25 16:06:42'),
 (78, 'App\\Models\\Product', 3, 1, 'created_at', NULL, '2018-10-25 23:35:57', '2018-10-25 16:35:57', '2018-10-25 16:35:57'),
 (79, 'App\\Models\\User', 1, 1, 'user_avatar', '44079040-1174639989342005-5520548119562944512-n_1540480084.jpg', 'chevrolet-cruze-2017-2018-1_1540486383.jpg', '2018-10-25 16:53:03', '2018-10-25 16:53:03'),
-(80, 'App\\Models\\Category', 5, 1, 'name', 'May Móc', 'Máy Móc', '2018-10-25 17:03:52', '2018-10-25 17:03:52');
+(80, 'App\\Models\\Category', 5, 1, 'name', 'May Móc', 'Máy Móc', '2018-10-25 17:03:52', '2018-10-25 17:03:52'),
+(81, 'App\\Models\\Product', 4, 1, 'created_at', NULL, '2018-10-26 00:15:27', '2018-10-25 17:15:27', '2018-10-25 17:15:27'),
+(83, 'App\\Models\\Product', 4, 1, 'catego', '1', '2', '2018-10-25 17:22:37', '2018-10-25 17:22:37');
 
 -- --------------------------------------------------------
 
@@ -702,13 +733,13 @@ ALTER TABLE `activations`
 -- AUTO_INCREMENT cho bảng `banner`
 --
 ALTER TABLE `banner`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `banner_image`
 --
 ALTER TABLE `banner_image`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `categories`
@@ -726,7 +757,7 @@ ALTER TABLE `colors`
 -- AUTO_INCREMENT cho bảng `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT cho bảng `persistences`
@@ -738,13 +769,13 @@ ALTER TABLE `persistences`
 -- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `revisions`
 --
 ALTER TABLE `revisions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 
 --
 -- AUTO_INCREMENT cho bảng `roles`
