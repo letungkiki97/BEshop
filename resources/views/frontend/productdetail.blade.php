@@ -106,9 +106,10 @@
                       <span class="title">Tình trạng: </span> <span>{{$product->made_to_order?"Còn hàng":"Hết hàng"}}</span>
                     </div>
                     <div class="pro-price clearfix">
-                      <span class="current-price ProductPrice">{{number_format($product->professional_price)}}₫</span>
-                      <?php if ($product->sale_price && $product->sale_price > 0)  : ?>
-                      <span class="original-price ComparePrice"><s>{{number_format($product->sale_price)}}₫</s></span>
+                      <span class="current-price ProductPrice">{{number_format($product->sale_price)}}₫</span>professional_price
+                      
+                      <?php if ($product->promotion_price && $product->promotion_price > 0)  : ?>
+                      <span class="original-price ComparePrice"><s>{{number_format($product->promotion_price)}}₫</s></span>
                       <?php endif ?>
                       <div class="sale-percentage"><span class="PriceSaving"></span></div>
                     </div>
