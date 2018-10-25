@@ -18,7 +18,7 @@ Route::group(array(), function () {
     /******************   san pham  ********************************/
     Route::get('/productcategory/{slug}','FrontendController@productcategory');
     Route::get('/producttype/{id}','FrontendController@producttype');
-    Route::get('/san-pham/{id}','ProductController@show');
+    Route::get('/san-pham/{slug}','ProductController@show');
 });
 
 
