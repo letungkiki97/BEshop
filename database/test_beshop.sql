@@ -3,14 +3,14 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 25, 2018 lúc 05:34 PM
+-- Thời gian đã tạo: Th10 25, 2018 lúc 06:53 PM
 -- Phiên bản máy phục vụ: 10.1.34-MariaDB
 -- Phiên bản PHP: 7.1.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
-SET time_zone = "+07:00";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -172,6 +172,21 @@ CREATE TABLE `images` (
   `status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `images`
+--
+
+INSERT INTO `images` (`id`, `name`, `title`, `alt`, `path`, `created_at`, `updated_at`, `status`) VALUES
+(1, 'OTO01-xe-mitsubishi-triton-gl-4x4-mt-2014-cazavn-1.jpg', 'XE MITSUBISHI TRITON GL 4X4 MT 2014 cazavn', 'XE MITSUBISHI TRITON GL 4X4 MT 2014', 'products', '2018-10-25 15:59:05', '2018-10-25 15:59:55', 0),
+(2, 'OTO01-xe-mitsubishi-triton-gl-4x4-mt-2014-cazavn-2.jpg', 'XE MITSUBISHI TRITON GL 4X4 MT 2014 cazavn', 'XE MITSUBISHI TRITON GL 4X4 MT 2014', 'products', '2018-10-25 15:59:20', '2018-10-25 15:59:55', 0),
+(3, 'OTO01-xe-mitsubishi-triton-gl-4x4-mt-2014-cazavn-3.jpg', 'XE MITSUBISHI TRITON GL 4X4 MT 2014 cazavn', 'XE MITSUBISHI TRITON GL 4X4 MT 2014', 'products', '2018-10-25 15:59:32', '2018-10-25 15:59:55', 0),
+(4, 'AUDI1-xe-kia-sedona-3.3l-gath-2016-cazavn-4.jpg', 'XE  KIA SEDONA  3.3L GATH 2016 cazavn', 'XE KIA SEDONA  3.3L GATH 2016', 'products', '2018-10-25 16:06:18', '2018-10-25 16:06:42', 0),
+(5, 'AUDI1-xe-kia-sedona-3.3l-gath-2016-cazavn-5.jpg', 'XE  KIA SEDONA  3.3L GATH 2016 cazavn', 'XE KIA SEDONA  3.3L GATH 2016', 'products', '2018-10-25 16:06:29', '2018-10-25 16:06:42', 0),
+(6, 'AUDI1-xe-kia-sedona-3.3l-gath-2016-cazavn-6.jpg', 'XE  KIA SEDONA  3.3L GATH 2016 cazavn', 'XE KIA SEDONA  3.3L GATH 2016', 'products', '2018-10-25 16:06:40', '2018-10-25 16:06:42', 0),
+(7, 'AUDI1-xe-mitsubishi-pajero-sport-g-4x2-at-2014-cazavn-7.jpg', 'XE MITSUBISHI PAJERO SPORT G 4X2 AT 2014 cazavn', 'XE MITSUBISHI PAJERO SPORT G 4X2 AT  2014', 'products', '2018-10-25 16:35:31', '2018-10-25 16:35:57', 0),
+(8, 'AUDI1-xe-mitsubishi-pajero-sport-g-4x2-at-2014-cazavn-8.jpg', 'XE MITSUBISHI PAJERO SPORT G 4X2 AT 2014 cazavn', 'XE MITSUBISHI PAJERO SPORT G 4X2 AT  2014', 'products', '2018-10-25 16:35:42', '2018-10-25 16:35:57', 0),
+(9, 'AUDI1-xe-mitsubishi-pajero-sport-g-4x2-at-2014-cazavn-9.jpg', 'XE MITSUBISHI PAJERO SPORT G 4X2 AT 2014 cazavn', 'XE MITSUBISHI PAJERO SPORT G 4X2 AT  2014', 'products', '2018-10-25 16:35:53', '2018-10-25 16:35:57', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -246,6 +261,15 @@ CREATE TABLE `products` (
   `main_variant` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `products`
+--
+
+INSERT INTO `products` (`id`, `catego`, `product_name`, `product_image`, `category_id`, `status`, `sale_price`, `description`, `long_description`, `user_id`, `main_sku`, `product_sku`, `made_to_order`, `product_gallery`, `file_3d`, `product_url`, `published`, `product_weight`, `product_length`, `product_width`, `product_depth`, `delivery_category_id`, `promotion_price`, `promotion_from`, `promotion_to`, `professional_price`, `re_order_point`, `unit_value`, `total_value`, `created_at`, `updated_at`, `deleted_at`, `is_variant`, `lead_time`, `unlink`, `slug`, `meta_title`, `meta_description`, `focus_keyword`, `assigned_to`, `hover_image`, `main_variant`) VALUES
+(1, 1, 'XE  MITSUBISHI TRITON GL 4X4 MT 2014', '1', 1, 1, 0, 'Xe sx và đk lần đầu 2014, chạy zin hơn 7v chút, biển hn, keo chỉ và máy móc nguyên bản.', 'Xe sx v&agrave; đk lần đầu 2014, chạy zin hơn 7v ch&uacute;t, biển hn, keo chỉ v&agrave; m&aacute;y m&oacute;c nguy&ecirc;n bản. V&igrave; mua sử dụng cho c&ocirc;ng việc n&ecirc;n m&igrave;nh cũng độ kh&aacute; nhiều thứ hay ho như bộ lốp lazang to, loa c&aacute;nh, sub, m&agrave;n h&igrave;nh, camera, hiển thị tr&ecirc;n gương, ghế da v&agrave; bộ l&oacute;t da to&agrave;n xe ...<br />\r\nXe c&ograve;n đăng kiểm 8/2019.&nbsp;<br />\r\nAi c&oacute; nhu cầu cứ qua xem rồi chốt gi&aacute;', 1, '', 'OTO01', 1, NULL, NULL, '', 1, 0, 0, 0, 0, NULL, 0, NULL, NULL, 0, 0, 0, 0, '2018-10-25 15:59:34', '2018-10-25 15:59:55', NULL, 0, 0, NULL, 'xe-mitsubishi-triton-gl-4x4-mt-2014', '', '', '', 0, 0, 0),
+(2, 1, 'XE  KIA SEDONA  3.3L GATH 2016', '4', 2, 1, 0, '', '', 1, '', 'AUDI1', 0, NULL, NULL, '', 1, 0, 0, 0, 0, NULL, 0, NULL, NULL, 0, 0, 0, 0, '2018-10-25 16:06:42', '2018-10-25 16:06:42', NULL, 0, 0, NULL, 'xe-kia-sedona-3.3l-gath-2016', '', '', '', 0, 0, 0),
+(3, 1, 'XE MITSUBISHI PAJERO SPORT G 4X2 AT 2014', '7', 2, 1, 0, 'Nhìn xe không cần mô tả nhiều , chạy em này đảm bảo ăn đứt Fotuner đời 2014 ,,gầm bệ cực chắc xe 3.0 máy xăng , số gẩy vô lăng ,,điều hòa tự động có cửa gió sau,,,', 'Nh&igrave;n xe kh&ocirc;ng cần m&ocirc; tả nhiều , chạy em n&agrave;y đảm bảo ăn đứt Fotuner đời 2014 ,,gầm bệ cực chắc xe 3.0 m&aacute;y xăng , số gẩy v&ocirc; lăng ,,điều h&ograve;a tự động c&oacute; cửa gi&oacute; sau,,,', 1, '', 'AUDI1', 1, NULL, NULL, '', 1, 0, 0, 0, 0, NULL, 0, NULL, NULL, 0, 0, 0, 0, '2018-10-25 16:35:57', '2018-10-25 16:35:57', NULL, 0, 0, NULL, 'xe-mitsubishi-pajero-sport-g-4x2-at-2014', '', '', '', 0, 0, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -280,6 +304,21 @@ CREATE TABLE `product_image` (
   `product_id` int(11) NOT NULL,
   `image_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `product_image`
+--
+
+INSERT INTO `product_image` (`product_id`, `image_id`) VALUES
+(1, 1),
+(1, 2),
+(1, 3),
+(2, 4),
+(2, 5),
+(2, 6),
+(3, 7),
+(3, 8),
+(3, 9);
 
 -- --------------------------------------------------------
 
@@ -336,10 +375,13 @@ INSERT INTO `revisions` (`id`, `revisionable_type`, `revisionable_id`, `user_id`
 (61, 'App\\Models\\User', 1, 1, 'first_name', 'Admin', 'Adminaaaa', '2018-10-25 15:08:05', '2018-10-25 15:08:05'),
 (65, 'App\\Models\\Product', 1, 1, 'deleted_at', '2018-10-25 22:09:17', NULL, '2018-10-25 15:17:13', '2018-10-25 15:17:13'),
 (66, 'App\\Models\\User', 1, 1, 'first_name', 'Adminaaaa', 'Admin', '2018-10-25 15:22:01', '2018-10-25 15:22:01'),
-(67, 'App\\Models\\User', 1, 1, 'last_name', 'Admin', 'CRM', '2018-10-25 15:22:01', '2018-10-25 15:22:01'),
 (68, 'App\\Models\\Product', 2, 1, 'created_at', NULL, '2018-10-25 22:26:24', '2018-10-25 15:26:24', '2018-10-25 15:26:24'),
 (71, 'App\\Models\\Product', 2, 1, 'published', '0', '1', '2018-10-25 15:30:04', '2018-10-25 15:30:04'),
-(72, 'App\\Models\\Product', 2, 1, 'deleted_at', NULL, '2018-10-25 22:30:14', '2018-10-25 15:30:14', '2018-10-25 15:30:14');
+(72, 'App\\Models\\Product', 2, 1, 'deleted_at', NULL, '2018-10-25 22:30:14', '2018-10-25 15:30:14', '2018-10-25 15:30:14'),
+(75, 'App\\Models\\Product', 1, 1, 'published', '0', '1', '2018-10-25 15:59:55', '2018-10-25 15:59:55'),
+(76, 'App\\Models\\Product', 2, 1, 'created_at', NULL, '2018-10-25 23:06:42', '2018-10-25 16:06:42', '2018-10-25 16:06:42'),
+(78, 'App\\Models\\Product', 3, 1, 'created_at', NULL, '2018-10-25 23:35:57', '2018-10-25 16:35:57', '2018-10-25 16:35:57'),
+(79, 'App\\Models\\User', 1, 1, 'user_avatar', '44079040-1174639989342005-5520548119562944512-n_1540480084.jpg', 'chevrolet-cruze-2017-2018-1_1540486383.jpg', '2018-10-25 16:53:03', '2018-10-25 16:53:03');
 
 -- --------------------------------------------------------
 
@@ -482,7 +524,7 @@ INSERT INTO `settings` (`setting_key`, `setting_value`) VALUES
 ('sales_person', 'i:0;'),
 ('shipping_return', 's:574:\"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\";'),
 ('site_email', 's:15:\"admin@admin.com\";'),
-('site_logo', 's:16:\"b_1540480942.jpg\";'),
+('site_logo', 's:19:\"logo_1540486419.png\";'),
 ('site_name', 's:3:\"CRM\";'),
 ('slogan', 's:146:\"Care Cam kết nỗ lực hết mình nhằm cung cấp sản phẩm và dịch vụ đúng với những giá trị mà khách hàng mong đợi.\";'),
 ('stripe_publishable', 's:0:\"\";'),
@@ -529,7 +571,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `permissions`, `last_login`, `first_name`, `last_name`, `phone_number`, `user_avatar`, `user_id`, `created_at`, `updated_at`, `deleted_at`, `lang`, `status`, `storage_id`, `to_storage`, `description`) VALUES
-(1, 'admin@admin.com', '$2y$10$TRbYufe1k.IGtPjHsQZWAu7lcpUijLw6tnvAQ.hzTI0o2a90aFSdi', NULL, '2018-10-23 14:08:43', 'Admin', 'CRM', '0123456789', '44079040-1174639989342005-5520548119562944512-n_1540480084.jpg', 1, '2017-08-14 18:20:22', '2018-10-25 15:22:01', NULL, 'en', 1, 1, 42, NULL);
+(1, 'admin@admin.com', '$2y$10$TRbYufe1k.IGtPjHsQZWAu7lcpUijLw6tnvAQ.hzTI0o2a90aFSdi', NULL, '2018-10-23 14:08:43', 'Admin', 'CRM', '0123456789', 'chevrolet-cruze-2017-2018-1_1540486383.jpg', 1, '2017-08-14 18:20:22', '2018-10-25 16:53:03', NULL, 'en', 1, 1, 42, NULL);
 
 -- --------------------------------------------------------
 
@@ -684,7 +726,7 @@ ALTER TABLE `colors`
 -- AUTO_INCREMENT cho bảng `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT cho bảng `persistences`
@@ -696,13 +738,13 @@ ALTER TABLE `persistences`
 -- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `revisions`
 --
 ALTER TABLE `revisions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 
 --
 -- AUTO_INCREMENT cho bảng `roles`
