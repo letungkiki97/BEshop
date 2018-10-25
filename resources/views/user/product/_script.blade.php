@@ -1,4 +1,12 @@
 <script>
+
+    $("#product_name").keyup(function(){
+        var Text = $(this).val();
+        Text = Text.toLowerCase();
+        Text = Text.replace(/[^a-zA-Z0-9]+/g,'-');
+        $("#slug").val(Text);        
+    });
+
     $('.promotion').on('input paste keyup', function() {
         setTimeout(function(e) {
             if($('#promotion_price_percent').val() && $('#sale_price').val()) {

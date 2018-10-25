@@ -81,14 +81,28 @@
                                         </div>
                                         @endforeach
                                     </div>
+                                    <style type="text/css">
+                                        .pagination-custom > span.current a{
+                                            color: unset;
+                                            border:unset;
+                                            background: unset;
+                                        }
+                                    </style>
                                     <div class="pagination not-filter">
                                         <div id="pagination-" class="text-center clear-left">
                                             <div class="pagination-custom">
-                                                <span class="page page-node current">1</span>
-                                                <span class="page"><a class="page-node" href="all4658.html?page=2">2</a></span>
-                                                <span class="nextPage"><a href="all4658.html?page=2">
-                                                    <i class="fa fa-angle-double-right"
-                                                            aria-hidden="true"></i></a></span>
+                                                @if ($product->lastPage() > 1)
+                                                @for ($i = 1; $i <= $product->lastPage(); $i++)
+                                                 <span class="page {{ ($product->currentPage() == $i) ? ' current' : '' }}">
+                                                    <a href="{{ $product->url($i) }}">{{ $i }}</a>
+                                                </span>
+                                                @endfor
+                                                    @if(!($product->currentPage() == $product->lastPage()))
+                                                    <span class="nextPage">
+                                                        <a href="{{ $product->url($product->currentPage()+1) }}"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                                                    </span>
+                                                    @endif
+                                                @endif
                                             </div>
                                         </div>
                                     </div>

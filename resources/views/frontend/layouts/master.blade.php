@@ -409,7 +409,7 @@
 					@if(empty($v->parent_id))
 					<li class="mobile-nav__item" aria-haspopup="true">
 						<div class="mobile-nav__has-sublist">
-							<a href="{{url('productcategory/'.$v->slug)}}" class="mobile-nav__link">{{$v->name}}</a>
+							<a href="{{url('categorys/'.$v->slug)}}" class="mobile-nav__link">{{$v->name}}</a>
 
 							<div class="mobile-nav__toggle">
 								<button type="button" class="icon-fallback-text mobile-nav__toggle-open">
@@ -425,7 +425,7 @@
 						<ul class="mobile-nav__sublist">
 							@foreach($v->categories as $k1=>$v1)
 							<li class="mobile-nav__item ">
-								<a href="{{url('productcategory/'.$v1->slug)}}" class="mobile-nav__link"> {{$v1->name}}</a>
+								<a href="{{url('categorys/'.$v1->slug)}}" class="mobile-nav__link"> {{$v1->name}}</a>
 							</li>
 							@endforeach
 						</ul>
@@ -516,7 +516,7 @@
 
 			<!-- <div class="grid__item medium--two-tenths small--two-tenths pd-left0">
 				<div class="mobile-nav-item">
-					<a href="productcategory/o-to">
+					<a href="categorys/o-to">
 						<i class="fas fa-tag"></i><br />Hàng mới
 					</a>
 				</div>

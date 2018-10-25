@@ -51,7 +51,7 @@
 				<div class="inner">
 					<div class="grid md-mg-left-10">
 						<div class="grid__item large--one-third medium--one-third small--one-whole md-pd-left10">
-							<a href="{{url('producttype/1')}}" class="banner-item">
+							<a href="{{url('categorys-type/1')}}" class="banner-item">
 								<div class="banner-img">
 									<img src="{{url('frontend/img/banner_img1.jpg')}}" alt="Phụ kiện xe hơi 2019">
 								</div>
@@ -63,7 +63,7 @@
 							</a>
 						</div>
 						<div class="grid__item large--one-third medium--one-third small--one-whole md-pd-left10">
-							<a href="{{url('producttype/2')}}" class="banner-item">
+							<a href="{{url('categorys-type/2')}}" class="banner-item">
 								<div class="banner-img">
 									<img src="{{url('frontend/img/banner_img2.jpg')}}" alt="Phụ kiện công suất tốt">
 								</div>
@@ -75,7 +75,7 @@
 							</a>
 						</div>
 						<div class="grid__item large--one-third medium--one-third small--one-whole md-pd-left10">
-							<a href="{{url('producttype/3')}}" class="banner-item">
+							<a href="{{url('categorys-type/3')}}" class="banner-item">
 								<div class="banner-img">
 									<img src="{{url('frontend/img/banner_img3.jpg')}}" alt="Khuyến mãi tháng 9">
 								</div>

@@ -28,13 +28,13 @@
                             @foreach($categorys as $k=>$v)
 								@if(empty($v->parent_id))
 								<li>
-								<a href="{{url('productcategory/'.$v->slug)}}">
+								<a href="{{url('categorys/'.$v->slug)}}">
 								   {{$v->name}}
 								</a>
 									<ul class="no-bullets">
 										@foreach($v->categories as $k1=>$v1)
 											<li>
-												<a href="{{url('productcategory/'.$v1->slug)}}"> {{$v1->name}}</a>
+												<a href="{{url('categorys/'.$v1->slug)}}"> {{$v1->name}}</a>
 											</li>
 										@endforeach
 									</ul>
