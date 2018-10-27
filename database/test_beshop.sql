@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 25, 2018 lúc 07:29 PM
--- Phiên bản máy phục vụ: 10.1.34-MariaDB
--- Phiên bản PHP: 7.1.19
+-- Host: localhost:3306
+-- Generation Time: Oct 27, 2018 at 04:15 PM
+-- Server version: 5.6.41-cll-lve
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `test_beshop`
+-- Database: `tuannguy_laravel`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `activations`
+-- Table structure for table `activations`
 --
 
 CREATE TABLE `activations` (
@@ -39,7 +39,7 @@ CREATE TABLE `activations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `activations`
+-- Dumping data for table `activations`
 --
 
 INSERT INTO `activations` (`id`, `user_id`, `code`, `completed`, `completed_at`, `created_at`, `updated_at`) VALUES
@@ -48,7 +48,7 @@ INSERT INTO `activations` (`id`, `user_id`, `code`, `completed`, `completed_at`,
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `banner`
+-- Table structure for table `banner`
 --
 
 CREATE TABLE `banner` (
@@ -61,7 +61,7 @@ CREATE TABLE `banner` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `banner`
+-- Dumping data for table `banner`
 --
 
 INSERT INTO `banner` (`id`, `name`, `image`, `size`, `created_at`, `updated_at`) VALUES
@@ -70,7 +70,7 @@ INSERT INTO `banner` (`id`, `name`, `image`, `size`, `created_at`, `updated_at`)
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `banner_image`
+-- Table structure for table `banner_image`
 --
 
 CREATE TABLE `banner_image` (
@@ -101,18 +101,17 @@ CREATE TABLE `banner_image` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `banner_image`
+-- Dumping data for table `banner_image`
 --
 
 INSERT INTO `banner_image` (`id`, `image_id`, `banner_id`, `position`, `link`, `text_text`, `text_color`, `text_font`, `text_size`, `text_left`, `text_right`, `text_top`, `text_bottom`, `button_background`, `button_text`, `button_color`, `button_font`, `button_size`, `button_left`, `button_right`, `button_top`, `button_bottom`, `created_at`, `updated_at`) VALUES
-(1, 11, 1, 1, 'san-pham', 'Bằng tất cả tâm huyết, năng lực vượt trội và quy mô không ngừng phát triển, Suplo cam kết nỗ lực hết mình nhằm cung cấp sản phẩm và dịch vụ đúng với những giá trị mà khách hàng mong đợi.', 'FFFFFF', 'Arial', '', '', '', '', '', 'FFFFFF', 'Xem Thêm', 'FFFFFF', 'Arial', '', '', '', '', '', NULL, NULL),
-(2, 10, 1, 2, 'san-pham', 'Bằng tất cả tâm huyết, năng lực vượt trội và quy mô không ngừng phát triển, Suplo cam kết nỗ lực hết mình nhằm cung cấp sản phẩm và dịch vụ đúng với những giá trị mà khách hàng mong đợi.', 'FFFFFF', 'Arial', '', '', '', '', '', 'FFFFFF', 'Xem Thêm', 'FFFFFF', 'Arial', '', '', '', '', '', NULL, NULL),
-(3, 12, 1, 3, 'san-pham', 'Bằng tất cả tâm huyết, năng lực vượt trội và quy mô không ngừng phát triển, Suplo cam kết nỗ lực hết mình nhằm cung cấp sản phẩm và dịch vụ đúng với những giá trị mà khách hàng mong đợi.', 'FFFFFF', 'Arial', '', '', '', '', '', 'FFFFFF', 'Xem Thêm', 'FFFFFF', 'Arial', '', '', '', '', '', NULL, NULL);
+(1, 11, 1, 1, 'categorys/o-to', 'Tuấn Nguyên chuyên cung cấp nguyên liệu may thảm và thảm lót sàn ô tô', 'FFFFFF', 'Arial', '', '', '', '', '', 'FFFFFF', 'Xem Thêm', 'FFFFFF', 'Arial', '', '', '', '', '', NULL, NULL),
+(2, 10, 1, 2, '/categorys/o-to', 'Tuấn nguyên cung cấp hầu hết các form thảm oto có mặt hầu hết trên thi trường với chất lượng cao', 'FFFFFF', 'Arial', '', '', '', '', '', 'FFFFFF', 'Xem Thêm', 'FFFFFF', 'Arial', '', '', '', '', '', NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `categories`
+-- Table structure for table `categories`
 --
 
 CREATE TABLE `categories` (
@@ -130,12 +129,12 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `categories`
+-- Dumping data for table `categories`
 --
 
 INSERT INTO `categories` (`id`, `name`, `user_id`, `created_at`, `updated_at`, `deleted_at`, `code`, `parent_id`, `slug`, `meta_title`, `meta_description`) VALUES
 (1, 'Mẫu Ô TÔ', 0, '2018-10-23 02:53:30', '2018-10-23 02:56:06', NULL, 'OTO', 0, 'o-to', 'danh mục cha ô tô', 'danh sách hãng ô tô'),
-(2, 'Audi', 0, '2018-10-23 02:56:44', '2018-10-23 02:56:44', NULL, 'AUDI', 1, 'audi', '', 'audi'),
+(2, 'TOYOTA', 0, '2018-10-23 02:56:44', '2018-10-25 18:29:41', NULL, 'TOYOTA', 1, 'toyota', 'toyota', 'toyota'),
 (3, 'Lambogini', 0, '2018-10-23 03:37:28', '2018-10-23 03:37:28', NULL, 'LAMBOGINI', 1, 'Lambogini', '', 'Lambogini'),
 (4, 'NGUYÊN LIỆU VẬT TƯ', 0, '2018-10-23 03:38:02', '2018-10-23 03:49:43', NULL, 'NLVT', 0, 'nguyen-lieu-vat-tu', '', 'NGUYÊN LIỆU VẬT TƯ'),
 (5, 'Máy Móc', 0, '2018-10-23 03:46:11', '2018-10-25 17:03:52', NULL, 'MAYMOC', 0, 'may-moc-va-chuyen-giao-cong-nghe', '', 'May Móc Và Chuyển Giao Công Nghê'),
@@ -145,7 +144,7 @@ INSERT INTO `categories` (`id`, `name`, `user_id`, `created_at`, `updated_at`, `
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `colors`
+-- Table structure for table `colors`
 --
 
 CREATE TABLE `colors` (
@@ -157,7 +156,7 @@ CREATE TABLE `colors` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `colors`
+-- Dumping data for table `colors`
 --
 
 INSERT INTO `colors` (`id`, `color`, `value`, `created_at`, `updated_at`) VALUES
@@ -174,7 +173,7 @@ INSERT INTO `colors` (`id`, `color`, `value`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `images`
+-- Table structure for table `images`
 --
 
 CREATE TABLE `images` (
@@ -189,28 +188,34 @@ CREATE TABLE `images` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `images`
+-- Dumping data for table `images`
 --
 
 INSERT INTO `images` (`id`, `name`, `title`, `alt`, `path`, `created_at`, `updated_at`, `status`) VALUES
-(1, 'OTO01-xe-mitsubishi-triton-gl-4x4-mt-2014-cazavn-1.jpg', 'XE MITSUBISHI TRITON GL 4X4 MT 2014 cazavn', 'XE MITSUBISHI TRITON GL 4X4 MT 2014', 'products', '2018-10-25 15:59:05', '2018-10-25 15:59:55', 0),
-(2, 'OTO01-xe-mitsubishi-triton-gl-4x4-mt-2014-cazavn-2.jpg', 'XE MITSUBISHI TRITON GL 4X4 MT 2014 cazavn', 'XE MITSUBISHI TRITON GL 4X4 MT 2014', 'products', '2018-10-25 15:59:20', '2018-10-25 15:59:55', 0),
-(3, 'OTO01-xe-mitsubishi-triton-gl-4x4-mt-2014-cazavn-3.jpg', 'XE MITSUBISHI TRITON GL 4X4 MT 2014 cazavn', 'XE MITSUBISHI TRITON GL 4X4 MT 2014', 'products', '2018-10-25 15:59:32', '2018-10-25 15:59:55', 0),
+(1, 'TOYOTA1-form-s-n-t-toyota-prado-2-h-ng-gh-i-2014-2016-1.jpg', 'XE MITSUBISHI TRITON GL 4X4 MT 2014 cazavn', 'XE MITSUBISHI TRITON GL 4X4 MT 2014', 'products', '2018-10-25 15:59:05', '2018-10-25 19:00:20', 0),
+(2, 'TOYOTA1-form-s-n-t-toyota-prado-2-h-ng-gh-i-2014-2016-2.jpg', 'XE MITSUBISHI TRITON GL 4X4 MT 2014 cazavn', 'XE MITSUBISHI TRITON GL 4X4 MT 2014', 'products', '2018-10-25 15:59:20', '2018-10-25 19:00:20', 0),
+(3, 'TOYOTA1-form-s-n-t-toyota-prado-2-h-ng-gh-i-2014-2016-3.jpg', 'XE MITSUBISHI TRITON GL 4X4 MT 2014 cazavn', 'XE MITSUBISHI TRITON GL 4X4 MT 2014', 'products', '2018-10-25 15:59:32', '2018-10-25 18:57:34', 0),
 (4, 'AUDI1-xe-kia-sedona-3.3l-gath-2016-cazavn-4.jpg', 'XE  KIA SEDONA  3.3L GATH 2016 cazavn', 'XE KIA SEDONA  3.3L GATH 2016', 'products', '2018-10-25 16:06:18', '2018-10-25 16:06:42', 0),
 (5, 'AUDI1-xe-kia-sedona-3.3l-gath-2016-cazavn-5.jpg', 'XE  KIA SEDONA  3.3L GATH 2016 cazavn', 'XE KIA SEDONA  3.3L GATH 2016', 'products', '2018-10-25 16:06:29', '2018-10-25 16:06:42', 0),
 (6, 'AUDI1-xe-kia-sedona-3.3l-gath-2016-cazavn-6.jpg', 'XE  KIA SEDONA  3.3L GATH 2016 cazavn', 'XE KIA SEDONA  3.3L GATH 2016', 'products', '2018-10-25 16:06:40', '2018-10-25 16:06:42', 0),
-(7, 'AUDI1-xe-mitsubishi-pajero-sport-g-4x2-at-2014-cazavn-7.jpg', 'XE MITSUBISHI PAJERO SPORT G 4X2 AT 2014 cazavn', 'XE MITSUBISHI PAJERO SPORT G 4X2 AT  2014', 'products', '2018-10-25 16:35:31', '2018-10-25 16:35:57', 0),
-(8, 'AUDI1-xe-mitsubishi-pajero-sport-g-4x2-at-2014-cazavn-8.jpg', 'XE MITSUBISHI PAJERO SPORT G 4X2 AT 2014 cazavn', 'XE MITSUBISHI PAJERO SPORT G 4X2 AT  2014', 'products', '2018-10-25 16:35:42', '2018-10-25 16:35:57', 0),
-(9, 'AUDI1-xe-mitsubishi-pajero-sport-g-4x2-at-2014-cazavn-9.jpg', 'XE MITSUBISHI PAJERO SPORT G 4X2 AT 2014 cazavn', 'XE MITSUBISHI PAJERO SPORT G 4X2 AT  2014', 'products', '2018-10-25 16:35:53', '2018-10-25 16:35:57', 0),
+(7, 'AUDI1--form-s-n-t-toyota-vios-i-2014-2017-7.jpg', 'XE MITSUBISHI PAJERO SPORT G 4X2 AT 2014 cazavn', 'XE MITSUBISHI PAJERO SPORT G 4X2 AT  2014', 'products', '2018-10-25 16:35:31', '2018-10-25 18:33:39', 0),
+(8, 'AUDI1--form-s-n-t-toyota-vios-i-2014-2017-8.jpg', 'XE MITSUBISHI PAJERO SPORT G 4X2 AT 2014 cazavn', 'XE MITSUBISHI PAJERO SPORT G 4X2 AT  2014', 'products', '2018-10-25 16:35:42', '2018-10-25 18:33:39', 0),
+(9, 'AUDI1--form-s-n-t-toyota-vios-i-2014-2017-9.jpg', 'XE MITSUBISHI PAJERO SPORT G 4X2 AT 2014 cazavn', 'XE MITSUBISHI PAJERO SPORT G 4X2 AT  2014', 'products', '2018-10-25 16:35:53', '2018-10-25 18:33:39', 0),
 (10, 'ms-banner-img1_1540487445.jpg', '', '', 'banner', '2018-10-25 17:10:45', '2018-10-25 17:10:45', 0),
 (11, 'ms-banner-img2_1540487445.jpg', '', '', 'banner', '2018-10-25 17:10:45', '2018-10-25 17:10:45', 0),
 (12, 'ms-banner-img3_1540487445.jpg', '', '', 'banner', '2018-10-25 17:10:45', '2018-10-25 17:10:45', 0),
-(14, 'MAYMOC1-m-y-c-crv-14.JPG', 'MÁY ĐỤC CRV cazavn', 'MÁY ĐỤC CRV', 'products', '2018-10-25 17:16:51', '2018-10-25 17:22:37', 0);
+(15, 'MAYMOC1-m-y-c-crv-15.jpg', 'MÁY ĐỤC CRV -lt', 'MÁY ĐỤC CRV', 'products', '2018-10-25 17:53:48', '2018-10-25 18:05:48', 0),
+(16, 'AUDI1--form-s-n-t-toyota-vios-i-2014-2017-16.jpg', 'TOYOTAL VIOS', 'TOYOTAL VIOS', 'products', '2018-10-25 18:35:36', '2018-10-25 18:36:58', 0),
+(17, 'AUDI1--form-s-n-t-toyota-vios-i-2014-2017-17.jpg', 'FORM SÀN Ô TÔ TOYOTA VIOS ĐỜI 2014-2017 -lt', 'FORM SÀN Ô TÔ TOYOTA VIOS ĐỜI 2014-2017', 'products', '2018-10-25 18:36:15', '2018-10-25 18:36:58', 0),
+(18, 'AUDI1-form-s-n-t-toyota-prado-i-2010-2018-18.jpg', 'FORM SÀN Ô TÔ TOYOTA PRADO ĐỜI 2010-2018 -lt', 'FORM SÀN Ô TÔ TOYOTA PRADO ĐỜI 2010-2018', 'products', '2018-10-25 18:42:43', '2018-10-25 18:42:46', 0),
+(19, 'TOYOTA1-form-s-n-t-toyota-prado-2-h-ng-gh-i-2014-2016-19.jpg', 'FORM SÀN Ô TÔ TOYOTA PRADO 2 HÀNG GHẾ ĐỜI 2014-2016 -lt', 'FORM SÀN Ô TÔ TOYOTA PRADO 2 HÀNG GHẾ ĐỜI 2014-2016', 'products', '2018-10-25 18:57:25', '2018-10-25 18:57:34', 0),
+(20, 'TOYOTA1-form-s-n-t-toyota-prado-2-h-ng-gh-i-2014-2016-20.jpg', 'PRADO 2 HANG GHE', 'PRADO 2 HANG GHE', 'products', '2018-10-25 18:59:01', '2018-10-25 19:00:20', 0),
+(21, 'TOYOTA1-form-s-n-t-toyota-prado-2-h-ng-gh-i-2014-2016-21.jpg', 'FORM SÀN Ô TÔ TOYOTA PRADO 2 HÀNG GHẾ ĐỜI 2014-2016 -lt', 'FORM SÀN Ô TÔ TOYOTA PRADO 2 HÀNG GHẾ ĐỜI 2014-2016', 'products', '2018-10-25 19:00:13', '2018-10-25 19:00:20', 0);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `persistences`
+-- Table structure for table `persistences`
 --
 
 CREATE TABLE `persistences` (
@@ -222,18 +227,22 @@ CREATE TABLE `persistences` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `persistences`
+-- Dumping data for table `persistences`
 --
 
 INSERT INTO `persistences` (`id`, `user_id`, `code`, `created_at`, `updated_at`) VALUES
 (3, 1, 'p64iotlFRKtAG4lDtrMcgresM00ypldY', '2018-10-23 02:12:09', '2018-10-23 02:12:09'),
 (4, 1, 'vDzYDrVpK2EBo1IGD6K4uQ6tlwePLtYO', '2018-10-23 02:20:53', '2018-10-23 02:20:53'),
-(5, 1, 'NRQQ6PFAMBO0A7bKb5YP0bdrXpP6Aa8v', '2018-10-23 14:08:43', '2018-10-23 14:08:43');
+(5, 1, 'NRQQ6PFAMBO0A7bKb5YP0bdrXpP6Aa8v', '2018-10-23 14:08:43', '2018-10-23 14:08:43'),
+(6, 1, 'vPUTjCZbKk7BDArkVhUY1dJnL5tYAc9E', '2018-10-25 17:53:00', '2018-10-25 17:53:00'),
+(7, 1, 'PAELNmQzdeHTJS5a7ZAvLRMiwUj7PUY2', '2018-10-25 17:56:53', '2018-10-25 17:56:53'),
+(8, 1, 'Vlr2hcVR10CosIhFQGktsbbXg3v06QnK', '2018-10-26 01:26:25', '2018-10-26 01:26:25'),
+(9, 1, 'udTVoxeqe0heBv2TfBi1nZVedIriWT2c', '2018-10-26 07:39:41', '2018-10-26 07:39:41');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `products`
+-- Table structure for table `products`
 --
 
 CREATE TABLE `products` (
@@ -282,19 +291,19 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `products`
+-- Dumping data for table `products`
 --
 
 INSERT INTO `products` (`id`, `catego`, `product_name`, `product_image`, `category_id`, `status`, `sale_price`, `description`, `long_description`, `user_id`, `main_sku`, `product_sku`, `made_to_order`, `product_gallery`, `file_3d`, `product_url`, `published`, `product_weight`, `product_length`, `product_width`, `product_depth`, `delivery_category_id`, `promotion_price`, `promotion_from`, `promotion_to`, `professional_price`, `re_order_point`, `unit_value`, `total_value`, `created_at`, `updated_at`, `deleted_at`, `is_variant`, `lead_time`, `unlink`, `slug`, `meta_title`, `meta_description`, `focus_keyword`, `assigned_to`, `hover_image`, `main_variant`) VALUES
-(1, 1, 'XE  MITSUBISHI TRITON GL 4X4 MT 2014', '1', 1, 1, 0, 'Xe sx và đk lần đầu 2014, chạy zin hơn 7v chút, biển hn, keo chỉ và máy móc nguyên bản.', 'Xe sx v&agrave; đk lần đầu 2014, chạy zin hơn 7v ch&uacute;t, biển hn, keo chỉ v&agrave; m&aacute;y m&oacute;c nguy&ecirc;n bản. V&igrave; mua sử dụng cho c&ocirc;ng việc n&ecirc;n m&igrave;nh cũng độ kh&aacute; nhiều thứ hay ho như bộ lốp lazang to, loa c&aacute;nh, sub, m&agrave;n h&igrave;nh, camera, hiển thị tr&ecirc;n gương, ghế da v&agrave; bộ l&oacute;t da to&agrave;n xe ...<br />\r\nXe c&ograve;n đăng kiểm 8/2019.&nbsp;<br />\r\nAi c&oacute; nhu cầu cứ qua xem rồi chốt gi&aacute;', 1, '', 'OTO01', 1, NULL, NULL, '', 1, 0, 0, 0, 0, NULL, 0, NULL, NULL, 0, 0, 0, 0, '2018-10-25 15:59:34', '2018-10-25 15:59:55', NULL, 0, 0, NULL, 'xe-mitsubishi-triton-gl-4x4-mt-2014', '', '', '', 0, 0, 0),
-(2, 1, 'XE  KIA SEDONA  3.3L GATH 2016', '4', 2, 1, 0, '', '', 1, '', 'AUDI1', 0, NULL, NULL, '', 1, 0, 0, 0, 0, NULL, 0, NULL, NULL, 0, 0, 0, 0, '2018-10-25 16:06:42', '2018-10-25 16:06:42', NULL, 0, 0, NULL, 'xe-kia-sedona-3.3l-gath-2016', '', '', '', 0, 0, 0),
-(3, 1, 'XE MITSUBISHI PAJERO SPORT G 4X2 AT 2014', '7', 2, 1, 0, 'Nhìn xe không cần mô tả nhiều , chạy em này đảm bảo ăn đứt Fotuner đời 2014 ,,gầm bệ cực chắc xe 3.0 máy xăng , số gẩy vô lăng ,,điều hòa tự động có cửa gió sau,,,', 'Nh&igrave;n xe kh&ocirc;ng cần m&ocirc; tả nhiều , chạy em n&agrave;y đảm bảo ăn đứt Fotuner đời 2014 ,,gầm bệ cực chắc xe 3.0 m&aacute;y xăng , số gẩy v&ocirc; lăng ,,điều h&ograve;a tự động c&oacute; cửa gi&oacute; sau,,,', 1, '', 'AUDI1', 1, NULL, NULL, '', 1, 0, 0, 0, 0, NULL, 0, NULL, NULL, 0, 0, 0, 0, '2018-10-25 16:35:57', '2018-10-25 16:35:57', NULL, 0, 0, NULL, 'xe-mitsubishi-pajero-sport-g-4x2-at-2014', '', '', '', 0, 0, 0),
-(4, 2, 'MÁY ĐỤC CRV', '14', 5, 1, 0, 'Máy khắc đá CRV là dòng máy khắc gỗ khổ lớn, máy có 2 đầu mũi, khắc được cùng lúc nhiều sản phẩm đẹp . Là loại máy khắc đá nhiều đầu rất khả dụng với nhu cầu sản xuất đá tại Việt Nam.', '<p>D&ograve;ng m&aacute;y CNC đ&aacute; l&agrave; d&ograve;ng m&aacute;y cao cấp , được trang bị những c&ocirc;ng nghệ hiện đại nhất: Hệ thống đ&egrave;n b&aacute;o lỗi, đ&egrave;n chiếu s&aacute;ng sản phẩm, cảm biến nhiệt, hệ thống n&uacute;t bấm khẩn cấp, hệ thống bơm dầu động...Khung m&aacute;y được l&agrave;m bằng th&eacute;p đ&uacute;c nhập khẩu từ Đ&Agrave;I LOAN. Với chất lượng v&agrave; độ cứng cao giảm thiểu rung lắc, n&acirc;ng cao chất lượng sản phẩm</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Hệ thống điều khiển CA100 với giao diện tiếng việt dễ d&agrave;ng sử dụng. Kh&ocirc;ng cần sử dụng m&aacute;y t&iacute;nh, chống virut, chống nhiễu tốt. C&oacute; thể t&ugrave;y chọn hệ thống điều khiển NcStudio V5 / V8.</p>', 1, '', 'MAYMOC1', 0, NULL, NULL, '', 1, 0, 0, 0, 0, NULL, 0, NULL, NULL, 0, 0, 0, 0, '2018-10-25 17:15:27', '2018-10-25 17:22:37', NULL, 0, 0, NULL, 'm-y-c-crv', '', '', '', 0, 0, 0);
+(1, 1, 'FORM SÀN Ô TÔ TOYOTA PRADO 2 HÀNG GHẾ ĐỜI 2014-2016', '21', 2, 1, 0, 'Form sàn được Tuấn Nguyên đo đạc chuẩn xác do đội ngũ tay nghề lâu năm.\r\nđược kiểm nghiệm qua thực tế lắp đặt, đảm bảo mẫu form vừa vặn với sàn xe.\r\nBảo hành form xe nếu có sự cố sai lệch, không đúng kích thước.\r\nChuyển giao form miễn phí cho đại lý, xưởng là khách hàng sử dụng cộng nghệ may tham của Tuấn Nguyên', '<p>Form s&agrave;n &ocirc; t&ocirc; Tuấn Nguy&ecirc;n đem đến cho kh&aacute;ch h&agrave;ng mẫu form xe: XXX đời XXX chuẩn x&aacute;c, vừa vặn nhất.&nbsp;<br />\r\ndo được lắp đặt tr&ecirc;n thực tế v&agrave; qua c&ocirc;ng nghệ qu&eacute;t form s&agrave;n xe mới nhất.<br />\r\nTuấn nguy&ecirc;n cam kết cho gi&aacute; trị của sản phẩm.<br />\r\nQu&ecirc;n đi những phiền to&aacute;i khi form lệch chuẩn, v&agrave; phải sửa đi sửa lại. Sản phẩm sẽ đem đến cho kh&aacute;ch h&agrave;ng sự an t&acirc;m v&agrave; phục vụ chuy&ecirc;n nghiệp. Chỉ cần đặt form l&ecirc;n v&agrave; cắt, kh&ocirc;ng lo lắng về vấn đề sửa lại thảm s&agrave;n bị sai.<br />\r\nƯu đ&atilde;i đặc biệt cho kh&aacute;ch h&agrave;ng sử dụng c&ocirc;ng nghệ may của Tuấn Nguy&ecirc;n sẽ được tặng to&agrave;n bộ form mẫu miễn ph&iacute;.<br />\r\nBảo h&agrave;nh Form mẫu khi c&oacute; bất k&igrave; lỗi n&agrave;o về thiết kế v&agrave; thực tế lắm đặt<br />\r\nTuấn Nguy&ecirc;n: &Uacute;y t&iacute;n l&agrave; ch&iacute;nh- Chất lượng l&agrave;m đầu</p>\r\n\r\n<p><img alt=\"\" src=\"/uploads/browse/images/Toyota%20Prado%202%20h%C3%A0ng%20gh%E1%BA%BF%202014-2016.jpg\" style=\"height:1200px; width:934px\" /></p>', 1, '', 'TOYOTA1', 1, NULL, NULL, '', 1, 0, 0, 0, 0, NULL, 0, NULL, NULL, 0, 0, 0, 0, '2018-10-25 15:59:34', '2018-10-25 19:00:20', NULL, 0, 0, NULL, 'form-s-n-t-toyota-prado-2-h-ng-gh-i-2014-2016', '', '', '', 0, 0, 0),
+(2, 1, 'FORM SÀN Ô TÔ TOYOTA PRADO ĐỜI 2010-2018', '18', 2, 1, 0, 'Form sàn được Tuấn Nguyên đo đạc chuẩn xác do đội ngũ tay nghề lâu năm.\r\nđược kiểm nghiệm qua thực tế lắp đặt, đảm bảo mẫu form vừa vặn với sàn xe.\r\nBảo hành form xe nếu có sự cố sai lệch, không đúng kích thước.\r\nChuyển giao form miễn phí cho đại lý, xưởng là khách hàng sử dụng cộng nghệ may tham của Tuấn Nguyên.', '<p>Form s&agrave;n &ocirc; t&ocirc; Tuấn Nguy&ecirc;n đem đến cho kh&aacute;ch h&agrave;ng mẫu form xe: TOYOTA PRADO ĐỜI 2010-2018 chuẩn x&aacute;c, vừa vặn nhất.&nbsp;<br />\r\ndo được lắp đặt tr&ecirc;n thực tế v&agrave; qua c&ocirc;ng nghệ qu&eacute;t form s&agrave;n xe mới nhất.<br />\r\nTuấn nguy&ecirc;n cam kết cho gi&aacute; trị của sản phẩm.<br />\r\nQu&ecirc;n đi những phiền to&aacute;i khi form lệch chuẩn, v&agrave; phải sửa đi sửa lại. Sản phẩm sẽ đem đến cho kh&aacute;ch h&agrave;ng sự an t&acirc;m v&agrave; phục vụ chuy&ecirc;n nghiệp. Chỉ cần đặt form l&ecirc;n v&agrave; cắt, kh&ocirc;ng lo lắng về vấn đề sửa lại thảm s&agrave;n bị sai.<br />\r\nƯu đ&atilde;i đặc biệt cho kh&aacute;ch h&agrave;ng sử dụng c&ocirc;ng nghệ may của Tuấn Nguy&ecirc;n sẽ được tặng to&agrave;n bộ form mẫu miễn ph&iacute;.<br />\r\nBảo h&agrave;nh Form mẫu khi c&oacute; bất k&igrave; lỗi n&agrave;o về thiết kế v&agrave; thực tế lắm đặt<br />\r\nTuấn Nguy&ecirc;n: &Uacute;y t&iacute;n l&agrave; ch&iacute;nh- Chất lượng l&agrave;m đầu</p>\r\n\r\n<p><img alt=\"\" src=\"/uploads/browse/images/Toyota%20Prado%202010-2018.jpg\" style=\"height:1200px; width:947px\" /></p>', 1, '', 'AUDI1', 0, NULL, NULL, '', 1, 0, 0, 0, 0, NULL, 0, NULL, NULL, 0, 0, 0, 0, '2018-10-25 16:06:42', '2018-10-25 18:42:46', NULL, 0, 0, NULL, 'form-s-n-t-toyota-prado-i-2010-2018', '', '', '', 0, 0, 0),
+(3, 1, 'FORM SÀN Ô TÔ TOYOTA VIOS ĐỜI 2014-2017', '16', 2, 1, 0, 'Form sàn được Tuấn Nguyên đo đạc chuẩn xác do đội ngũ tay nghề lâu năm.\r\nđược kiểm nghiệm qua thực tế lắp đặt, đảm bảo mẫu form vừa vặn với sàn xe.\r\nBảo hành form xe nếu có sự cố sai lệch, không đúng kích thước.\r\nChuyển giao form miễn phí cho đại lý, xưởng là khách hàng sử dụng cộng nghệ may tham của Tuấn Nguyên.', '<p>Form s&agrave;n &ocirc; t&ocirc; Tuấn Nguy&ecirc;n đem đến cho kh&aacute;ch h&agrave;ng mẫu form xe: TOYOTA VIOS ĐỜI 2014-2017 chuẩn x&aacute;c, vừa vặn nhất.&nbsp;<br />\r\ndo được lắp đặt tr&ecirc;n thực tế v&agrave; qua c&ocirc;ng nghệ qu&eacute;t form s&agrave;n xe mới nhất.<br />\r\nTuấn nguy&ecirc;n cam kết cho gi&aacute; trị của sản phẩm.<br />\r\nQu&ecirc;n đi những phiền to&aacute;i khi form lệch chuẩn, v&agrave; phải sửa đi sửa lại. Sản phẩm sẽ đem đến cho kh&aacute;ch h&agrave;ng sự an t&acirc;m v&agrave; phục vụ chuy&ecirc;n nghiệp. Chỉ cần đặt form l&ecirc;n v&agrave; cắt, kh&ocirc;ng lo lắng về vấn đề sửa lại thảm s&agrave;n bị sai.<br />\r\nƯu đ&atilde;i đặc biệt cho kh&aacute;ch h&agrave;ng sử dụng c&ocirc;ng nghệ may của Tuấn Nguy&ecirc;n sẽ được tặng to&agrave;n bộ form mẫu miễn ph&iacute;.<br />\r\nBảo h&agrave;nh Form mẫu khi c&oacute; bất k&igrave; lỗi n&agrave;o về thiết kế v&agrave; thực tế lắm đặt<br />\r\nTuấn Nguy&ecirc;n: &Uacute;y t&iacute;n l&agrave; ch&iacute;nh- Chất lượng l&agrave;m đầu</p>\r\n\r\n<p><img alt=\"\" src=\"/uploads/browse/images/Toyota%20Vios%202014-2017.jpg\" style=\"height:1200px; width:963px\" /></p>', 1, '', 'AUDI1', 1, NULL, NULL, '', 1, 0, 0, 0, 0, NULL, 0, NULL, NULL, 0, 0, 0, 0, '2018-10-25 16:35:57', '2018-10-25 18:36:58', NULL, 0, 0, NULL, '-form-s-n-t-toyota-vios-i-2014-2017', '', '', '', 0, 0, 0),
+(4, 2, 'MÁY ĐỤC CRV', '15', 5, 1, 0, 'Máy khắc đá CRV là dòng máy khắc gỗ khổ lớn, máy có 2 đầu mũi, khắc được cùng lúc nhiều sản phẩm đẹp . Là loại máy khắc đá nhiều đầu rất khả dụng với nhu cầu sản xuất đá tại Việt Nam.', '<p>D&ograve;ng m&aacute;y CNC đ&aacute; l&agrave; d&ograve;ng m&aacute;y cao cấp , được trang bị những c&ocirc;ng nghệ hiện đại nhất: Hệ thống đ&egrave;n b&aacute;o lỗi, đ&egrave;n chiếu s&aacute;ng sản phẩm, cảm biến nhiệt, hệ thống n&uacute;t bấm khẩn cấp, hệ thống bơm dầu động...Khung m&aacute;y được l&agrave;m bằng th&eacute;p đ&uacute;c nhập khẩu từ Đ&Agrave;I LOAN. Với chất lượng v&agrave; độ cứng cao giảm thiểu rung lắc, n&acirc;ng cao chất lượng sản phẩm</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Hệ thống điều khiển CA100 với giao diện tiếng việt dễ d&agrave;ng sử dụng. Kh&ocirc;ng cần sử dụng m&aacute;y t&iacute;nh, chống virut, chống nhiễu tốt. C&oacute; thể t&ugrave;y chọn hệ thống điều khiển NcStudio V5 / V8.</p>', 1, '', 'MAYMOC1', 0, NULL, NULL, '', 1, 0, 0, 0, 0, NULL, 0, NULL, NULL, 0, 0, 0, 0, '2018-10-25 17:15:27', '2018-10-25 17:53:53', NULL, 0, 0, NULL, 'm-y-c-crv', '', '', '', 0, 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `product_category`
+-- Table structure for table `product_category`
 --
 
 CREATE TABLE `product_category` (
@@ -305,7 +314,7 @@ CREATE TABLE `product_category` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `product_color`
+-- Table structure for table `product_color`
 --
 
 CREATE TABLE `product_color` (
@@ -316,7 +325,7 @@ CREATE TABLE `product_color` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `product_color`
+-- Dumping data for table `product_color`
 --
 
 INSERT INTO `product_color` (`product_id`, `color_id`, `created_at`, `updated_at`) VALUES
@@ -325,7 +334,7 @@ INSERT INTO `product_color` (`product_id`, `color_id`, `created_at`, `updated_at
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `product_image`
+-- Table structure for table `product_image`
 --
 
 CREATE TABLE `product_image` (
@@ -334,25 +343,23 @@ CREATE TABLE `product_image` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `product_image`
+-- Dumping data for table `product_image`
 --
 
 INSERT INTO `product_image` (`product_id`, `image_id`) VALUES
 (1, 1),
 (1, 2),
-(1, 3),
-(2, 4),
-(2, 5),
-(2, 6),
-(3, 7),
-(3, 8),
-(3, 9),
-(4, 14);
+(4, 15),
+(3, 16),
+(3, 17),
+(2, 18),
+(1, 20),
+(1, 21);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `revisions`
+-- Table structure for table `revisions`
 --
 
 CREATE TABLE `revisions` (
@@ -368,7 +375,7 @@ CREATE TABLE `revisions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `revisions`
+-- Dumping data for table `revisions`
 --
 
 INSERT INTO `revisions` (`id`, `revisionable_type`, `revisionable_id`, `user_id`, `key`, `old_value`, `new_value`, `created_at`, `updated_at`) VALUES
@@ -377,7 +384,6 @@ INSERT INTO `revisions` (`id`, `revisionable_type`, `revisionable_id`, `user_id`
 (7, 'App\\Models\\Product', 1, 1, 'product_url', '', '2', '2018-10-23 02:33:28', '2018-10-23 02:33:28'),
 (8, 'App\\Models\\Product', 1, 1, 'meta_title', '', '3', '2018-10-23 02:33:28', '2018-10-23 02:33:28'),
 (9, 'App\\Models\\Product', 1, 1, 'meta_description', '', '5', '2018-10-23 02:33:28', '2018-10-23 02:33:28'),
-(11, 'App\\Models\\Product', 1, 1, 'product_image', NULL, '8145', '2018-10-23 02:33:50', '2018-10-23 02:33:50'),
 (13, 'App\\Models\\Category', 69, 1, 'name', 'Tranh treo tường', 'Tranh treo tường1', '2018-10-23 02:43:02', '2018-10-23 02:43:02'),
 (16, 'App\\Models\\Category', 69, 1, 'code', 'A1', 'A11', '2018-10-23 02:44:39', '2018-10-23 02:44:39'),
 (17, 'App\\Models\\Category', 1, 1, 'created_at', NULL, '2018-10-23 09:53:30', '2018-10-23 02:53:30', '2018-10-23 02:53:30'),
@@ -393,31 +399,41 @@ INSERT INTO `revisions` (`id`, `revisionable_type`, `revisionable_id`, `user_id`
 (33, 'App\\Models\\Category', 4, 1, 'meta_description', 'PHỤ KIỆN XE', 'NGUYÊN LIỆU VẬT TƯ', '2018-10-23 03:49:43', '2018-10-23 03:49:43'),
 (34, 'App\\Models\\Category', 7, 1, 'created_at', NULL, '2018-10-23 10:50:26', '2018-10-23 03:50:26', '2018-10-23 03:50:26'),
 (35, 'App\\Models\\Category', 7, 1, 'parent_id', '0', '5', '2018-10-23 03:50:37', '2018-10-23 03:50:37'),
-(36, 'App\\Models\\Product', 1, 1, 'category_id', '2', '1', '2018-10-23 04:14:17', '2018-10-23 04:14:17'),
 (38, 'App\\Models\\Product', 2, 1, 'created_at', NULL, '2018-10-23 11:19:06', '2018-10-23 04:19:06', '2018-10-23 04:19:06'),
 (39, 'App\\Models\\Product', 2, 1, 'sale_price', '0', '1200000', '2018-10-23 04:21:33', '2018-10-23 04:21:33'),
 (40, 'App\\Models\\Product', 2, 1, 'promotion_price', '0', '1176000', '2018-10-23 04:21:33', '2018-10-23 04:21:33'),
-(42, 'App\\Models\\Product', 2, 1, 'published', '0', '1', '2018-10-23 04:23:01', '2018-10-23 04:23:01'),
-(56, 'App\\Models\\Product', 1, 1, 'product_image', '5', '8', '2018-10-23 14:34:50', '2018-10-23 14:34:50'),
-(60, 'App\\Models\\Product', 1, 1, 'product_image', '11', '12', '2018-10-25 07:15:00', '2018-10-25 07:15:00'),
 (61, 'App\\Models\\User', 1, 1, 'first_name', 'Admin', 'Adminaaaa', '2018-10-25 15:08:05', '2018-10-25 15:08:05'),
-(65, 'App\\Models\\Product', 1, 1, 'deleted_at', '2018-10-25 22:09:17', NULL, '2018-10-25 15:17:13', '2018-10-25 15:17:13'),
 (66, 'App\\Models\\User', 1, 1, 'first_name', 'Adminaaaa', 'Admin', '2018-10-25 15:22:01', '2018-10-25 15:22:01'),
-(68, 'App\\Models\\Product', 2, 1, 'created_at', NULL, '2018-10-25 22:26:24', '2018-10-25 15:26:24', '2018-10-25 15:26:24'),
-(71, 'App\\Models\\Product', 2, 1, 'published', '0', '1', '2018-10-25 15:30:04', '2018-10-25 15:30:04'),
-(72, 'App\\Models\\Product', 2, 1, 'deleted_at', NULL, '2018-10-25 22:30:14', '2018-10-25 15:30:14', '2018-10-25 15:30:14'),
-(75, 'App\\Models\\Product', 1, 1, 'published', '0', '1', '2018-10-25 15:59:55', '2018-10-25 15:59:55'),
-(76, 'App\\Models\\Product', 2, 1, 'created_at', NULL, '2018-10-25 23:06:42', '2018-10-25 16:06:42', '2018-10-25 16:06:42'),
 (78, 'App\\Models\\Product', 3, 1, 'created_at', NULL, '2018-10-25 23:35:57', '2018-10-25 16:35:57', '2018-10-25 16:35:57'),
-(79, 'App\\Models\\User', 1, 1, 'user_avatar', '44079040-1174639989342005-5520548119562944512-n_1540480084.jpg', 'chevrolet-cruze-2017-2018-1_1540486383.jpg', '2018-10-25 16:53:03', '2018-10-25 16:53:03'),
 (80, 'App\\Models\\Category', 5, 1, 'name', 'May Móc', 'Máy Móc', '2018-10-25 17:03:52', '2018-10-25 17:03:52'),
 (81, 'App\\Models\\Product', 4, 1, 'created_at', NULL, '2018-10-26 00:15:27', '2018-10-25 17:15:27', '2018-10-25 17:15:27'),
-(83, 'App\\Models\\Product', 4, 1, 'catego', '1', '2', '2018-10-25 17:22:37', '2018-10-25 17:22:37');
+(85, 'App\\Models\\Product', 4, 1, 'product_image', '14', '15', '2018-10-25 17:53:53', '2018-10-25 17:53:53'),
+(88, 'App\\Models\\Category', 2, 1, 'name', 'Audi', 'TOYOTA', '2018-10-25 18:29:41', '2018-10-25 18:29:41'),
+(89, 'App\\Models\\Category', 2, 1, 'code', 'AUDI', 'TOYOTA', '2018-10-25 18:29:41', '2018-10-25 18:29:41'),
+(90, 'App\\Models\\Category', 2, 1, 'slug', 'audi', 'toyota', '2018-10-25 18:29:41', '2018-10-25 18:29:41'),
+(91, 'App\\Models\\Category', 2, 1, 'meta_title', '', 'toyota', '2018-10-25 18:29:41', '2018-10-25 18:29:41'),
+(92, 'App\\Models\\Category', 2, 1, 'meta_description', 'audi', 'toyota', '2018-10-25 18:29:41', '2018-10-25 18:29:41'),
+(93, 'App\\Models\\Product', 3, 1, 'product_name', 'XE MITSUBISHI PAJERO SPORT G 4X2 AT 2014', 'FORM SÀN Ô TÔ TOYOTA VIOS ĐỜI 2014-2017', '2018-10-25 18:33:39', '2018-10-25 18:33:39'),
+(94, 'App\\Models\\Product', 3, 1, 'description', 'Nhìn xe không cần mô tả nhiều , chạy em này đảm bảo ăn đứt Fotuner đời 2014 ,,gầm bệ cực chắc xe 3.0 máy xăng , số gẩy vô lăng ,,điều hòa tự động có cửa gió sau,,,', 'Form sàn được Tuấn Nguyên đo đạc chuẩn xác do đội ngũ tay nghề lâu năm.\r\nđược kiểm nghiệm qua thực tế lắp đặt, đảm bảo mẫu form vừa vặn với sàn xe.\r\nBảo hành form xe nếu có sự cố sai lệch, không đúng kích thước.\r\nChuyển giao form miễn phí cho đại lý, xưởng là khách hàng sử dụng cộng nghệ may tham của Tuấn Nguyên.', '2018-10-25 18:33:39', '2018-10-25 18:33:39'),
+(95, 'App\\Models\\Product', 3, 1, 'long_description', 'Nh&igrave;n xe kh&ocirc;ng cần m&ocirc; tả nhiều , chạy em n&agrave;y đảm bảo ăn đứt Fotuner đời 2014 ,,gầm bệ cực chắc xe 3.0 m&aacute;y xăng , số gẩy v&ocirc; lăng ,,điều h&ograve;a tự động c&oacute; cửa gi&oacute; sau,,,', '<p>Form s&agrave;n &ocirc; t&ocirc; Tuấn Nguy&ecirc;n đem đến cho kh&aacute;ch h&agrave;ng mẫu form xe: TOYOTA VIOS ĐỜI 2014-2017 chuẩn x&aacute;c, vừa vặn nhất.&nbsp;<br />\r\ndo được lắp đặt tr&ecirc;n thực tế v&agrave; qua c&ocirc;ng nghệ qu&eacute;t form s&agrave;n xe mới nhất.<br />\r\nTuấn nguy&ecirc;n cam kết cho gi&aacute; trị của sản phẩm.<br />\r\nQu&ecirc;n đi những phiền to&aacute;i khi form lệch chuẩn, v&agrave; phải sửa đi sửa lại. Sản phẩm sẽ đem đến cho kh&aacute;ch h&agrave;ng sự an t&acirc;m v&agrave; phục vụ chuy&ecirc;n nghiệp. Chỉ cần đặt form l&ecirc;n v&agrave; cắt, kh&ocirc;ng lo lắng về vấn đề sửa lại thảm s&agrave;n bị sai.<br />\r\nƯu đ&atilde;i đặc biệt cho kh&aacute;ch h&agrave;ng sử dụng c&ocirc;ng nghệ may của Tuấn Nguy&ecirc;n sẽ được tặng to&agrave;n bộ form mẫu miễn ph&iacute;.<br />\r\nBảo h&agrave;nh Form mẫu khi c&oacute; bất k&igrave; lỗi n&agrave;o về thiết kế v&agrave; thực tế lắm đặt<br />\r\nTuấn Nguy&ecirc;n: &Uacute;y t&iacute;n l&agrave; ch&iacute;nh- Chất lượng l&agrave;m đầu</p>\r\n\r\n<p><img alt=\"\" src=\"/uploads/browse/images/Toyota%20Vios%202014-2017.jpg\" style=\"height:1200px; width:963px\" /></p>', '2018-10-25 18:33:39', '2018-10-25 18:33:39'),
+(97, 'App\\Models\\Product', 3, 1, 'product_image', '7', '16', '2018-10-25 18:36:58', '2018-10-25 18:36:58'),
+(98, 'App\\Models\\Product', 2, 1, 'product_name', 'XE  KIA SEDONA  3.3L GATH 2016', 'FORM SÀN Ô TÔ TOYOTA PRADO ĐỜI 2010-2018', '2018-10-25 18:42:46', '2018-10-25 18:42:46'),
+(99, 'App\\Models\\Product', 2, 1, 'product_image', '4', '18', '2018-10-25 18:42:46', '2018-10-25 18:42:46'),
+(100, 'App\\Models\\Product', 2, 1, 'description', '', 'Form sàn được Tuấn Nguyên đo đạc chuẩn xác do đội ngũ tay nghề lâu năm.\r\nđược kiểm nghiệm qua thực tế lắp đặt, đảm bảo mẫu form vừa vặn với sàn xe.\r\nBảo hành form xe nếu có sự cố sai lệch, không đúng kích thước.\r\nChuyển giao form miễn phí cho đại lý, xưởng là khách hàng sử dụng cộng nghệ may tham của Tuấn Nguyên.', '2018-10-25 18:42:46', '2018-10-25 18:42:46'),
+(101, 'App\\Models\\Product', 2, 1, 'long_description', '', '<p>Form s&agrave;n &ocirc; t&ocirc; Tuấn Nguy&ecirc;n đem đến cho kh&aacute;ch h&agrave;ng mẫu form xe: TOYOTA PRADO ĐỜI 2010-2018 chuẩn x&aacute;c, vừa vặn nhất.&nbsp;<br />\r\ndo được lắp đặt tr&ecirc;n thực tế v&agrave; qua c&ocirc;ng nghệ qu&eacute;t form s&agrave;n xe mới nhất.<br />\r\nTuấn nguy&ecirc;n cam kết cho gi&aacute; trị của sản phẩm.<br />\r\nQu&ecirc;n đi những phiền to&aacute;i khi form lệch chuẩn, v&agrave; phải sửa đi sửa lại. Sản phẩm sẽ đem đến cho kh&aacute;ch h&agrave;ng sự an t&acirc;m v&agrave; phục vụ chuy&ecirc;n nghiệp. Chỉ cần đặt form l&ecirc;n v&agrave; cắt, kh&ocirc;ng lo lắng về vấn đề sửa lại thảm s&agrave;n bị sai.<br />\r\nƯu đ&atilde;i đặc biệt cho kh&aacute;ch h&agrave;ng sử dụng c&ocirc;ng nghệ may của Tuấn Nguy&ecirc;n sẽ được tặng to&agrave;n bộ form mẫu miễn ph&iacute;.<br />\r\nBảo h&agrave;nh Form mẫu khi c&oacute; bất k&igrave; lỗi n&agrave;o về thiết kế v&agrave; thực tế lắm đặt<br />\r\nTuấn Nguy&ecirc;n: &Uacute;y t&iacute;n l&agrave; ch&iacute;nh- Chất lượng l&agrave;m đầu</p>\r\n\r\n<p><img alt=\"\" src=\"/uploads/browse/images/Toyota%20Prado%202010-2018.jpg\" style=\"height:1200px; width:947px\" /></p>', '2018-10-25 18:42:46', '2018-10-25 18:42:46'),
+(102, 'App\\Models\\Product', 2, 1, 'slug', 'xe-kia-sedona-3.3l-gath-2016', 'form-s-n-t-toyota-prado-i-2010-2018', '2018-10-25 18:42:46', '2018-10-25 18:42:46'),
+(103, 'App\\Models\\Product', 1, 1, 'product_name', 'XE  MITSUBISHI TRITON GL 4X4 MT 2014', 'FORM SÀN Ô TÔ TOYOTA PRADO 2 HÀNG GHẾ ĐỜI 2014-2016', '2018-10-25 18:56:22', '2018-10-25 18:56:22'),
+(104, 'App\\Models\\Product', 1, 1, 'category_id', '1', '2', '2018-10-25 18:56:22', '2018-10-25 18:56:22'),
+(105, 'App\\Models\\Product', 1, 1, 'description', 'Xe sx và đk lần đầu 2014, chạy zin hơn 7v chút, biển hn, keo chỉ và máy móc nguyên bản.', 'Form sàn được Tuấn Nguyên đo đạc chuẩn xác do đội ngũ tay nghề lâu năm.\r\nđược kiểm nghiệm qua thực tế lắp đặt, đảm bảo mẫu form vừa vặn với sàn xe.\r\nBảo hành form xe nếu có sự cố sai lệch, không đúng kích thước.\r\nChuyển giao form miễn phí cho đại lý, xưởng là khách hàng sử dụng cộng nghệ may tham của Tuấn Nguyên', '2018-10-25 18:56:22', '2018-10-25 18:56:22'),
+(106, 'App\\Models\\Product', 1, 1, 'long_description', 'Xe sx v&agrave; đk lần đầu 2014, chạy zin hơn 7v ch&uacute;t, biển hn, keo chỉ v&agrave; m&aacute;y m&oacute;c nguy&ecirc;n bản. V&igrave; mua sử dụng cho c&ocirc;ng việc n&ecirc;n m&igrave;nh cũng độ kh&aacute; nhiều thứ hay ho như bộ lốp lazang to, loa c&aacute;nh, sub, m&agrave;n h&igrave;nh, camera, hiển thị tr&ecirc;n gương, ghế da v&agrave; bộ l&oacute;t da to&agrave;n xe ...<br />\r\nXe c&ograve;n đăng kiểm 8/2019.&nbsp;<br />\r\nAi c&oacute; nhu cầu cứ qua xem rồi chốt gi&aacute;', '<p>Form s&agrave;n &ocirc; t&ocirc; Tuấn Nguy&ecirc;n đem đến cho kh&aacute;ch h&agrave;ng mẫu form xe: XXX đời XXX chuẩn x&aacute;c, vừa vặn nhất.&nbsp;<br />\r\ndo được lắp đặt tr&ecirc;n thực tế v&agrave; qua c&ocirc;ng nghệ qu&eacute;t form s&agrave;n xe mới nhất.<br />\r\nTuấn nguy&ecirc;n cam kết cho gi&aacute; trị của sản phẩm.<br />\r\nQu&ecirc;n đi những phiền to&aacute;i khi form lệch chuẩn, v&agrave; phải sửa đi sửa lại. Sản phẩm sẽ đem đến cho kh&aacute;ch h&agrave;ng sự an t&acirc;m v&agrave; phục vụ chuy&ecirc;n nghiệp. Chỉ cần đặt form l&ecirc;n v&agrave; cắt, kh&ocirc;ng lo lắng về vấn đề sửa lại thảm s&agrave;n bị sai.<br />\r\nƯu đ&atilde;i đặc biệt cho kh&aacute;ch h&agrave;ng sử dụng c&ocirc;ng nghệ may của Tuấn Nguy&ecirc;n sẽ được tặng to&agrave;n bộ form mẫu miễn ph&iacute;.<br />\r\nBảo h&agrave;nh Form mẫu khi c&oacute; bất k&igrave; lỗi n&agrave;o về thiết kế v&agrave; thực tế lắm đặt<br />\r\nTuấn Nguy&ecirc;n: &Uacute;y t&iacute;n l&agrave; ch&iacute;nh- Chất lượng l&agrave;m đầu</p>\r\n\r\n<p><img alt=\"\" src=\"/uploads/browse/images/Toyota%20Prado%202%20h%C3%A0ng%20gh%E1%BA%BF%202014-2016.jpg\" style=\"height:1200px; width:934px\" /></p>', '2018-10-25 18:56:22', '2018-10-25 18:56:22'),
+(111, 'App\\Models\\Product', 1, 1, 'product_image', '19', '20', '2018-10-25 18:59:36', '2018-10-25 18:59:36'),
+(113, 'App\\Models\\Product', 1, 1, 'product_image', '20', '21', '2018-10-25 19:00:20', '2018-10-25 19:00:20'),
+(115, 'App\\Models\\User', 1, 1, 'last_login', '2018-10-26 08:26:25', '2018-10-26 14:39:41', '2018-10-26 07:39:41', '2018-10-26 07:39:41');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `roles`
+-- Table structure for table `roles`
 --
 
 CREATE TABLE `roles` (
@@ -430,7 +446,7 @@ CREATE TABLE `roles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `roles`
+-- Dumping data for table `roles`
 --
 
 INSERT INTO `roles` (`id`, `slug`, `name`, `permissions`, `created_at`, `updated_at`) VALUES
@@ -449,7 +465,7 @@ INSERT INTO `roles` (`id`, `slug`, `name`, `permissions`, `created_at`, `updated
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `role_users`
+-- Table structure for table `role_users`
 --
 
 CREATE TABLE `role_users` (
@@ -460,7 +476,7 @@ CREATE TABLE `role_users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `role_users`
+-- Dumping data for table `role_users`
 --
 
 INSERT INTO `role_users` (`user_id`, `role_id`, `created_at`, `updated_at`) VALUES
@@ -480,7 +496,7 @@ INSERT INTO `role_users` (`user_id`, `role_id`, `created_at`, `updated_at`) VALU
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `settings`
+-- Table structure for table `settings`
 --
 
 CREATE TABLE `settings` (
@@ -489,13 +505,13 @@ CREATE TABLE `settings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `settings`
+-- Dumping data for table `settings`
 --
 
 INSERT INTO `settings` (`setting_key`, `setting_value`) VALUES
 ('_token', 's:40:\"mtHrxadP61g5MWzh2ZV4zrC4e52jeH1Pdhjrcrf5\";'),
 ('add_movement', 's:2:\"14\";'),
-('address', 's:49:\"Số 11 Lương Yên, Q.Hai Bà Trưng, Hà Nội\";'),
+('address', 's:76:\"số 17,Ngõ 10, Nguyễn Thị Định, Trung Hòa, Cầu Giấy, Hà Nội\";'),
 ('allowed_extensions', 's:24:\"gif,jpg,jpeg,png,pdf,txt\";'),
 ('api_token', 's:32:\"6yD0nzFlkYCtbNchnUKkz8glysCYDoqi\";'),
 ('backup_type', 's:5:\"local\";'),
@@ -524,7 +540,7 @@ INSERT INTO `settings` (`setting_key`, `setting_value`) VALUES
 ('facebook', 's:31:\"https://www.facebook.com/cazavn\";'),
 ('ga_code', 's:14:\"UA-126658743-1\";'),
 ('gtm_code', 's:11:\"GTM-MN8TT4M\";'),
-('hotline', 's:11:\"02473028882\";'),
+('hotline', 's:28:\"0979373758 hoặc 0964952294\";'),
 ('individual_customer', 's:2:\"17\";'),
 ('instagram', 's:36:\"https://www.instagram.com/caza.vn59/\";'),
 ('international_transport_rate_kg', 'd:30000;'),
@@ -535,8 +551,8 @@ INSERT INTO `settings` (`setting_key`, `setting_value`) VALUES
 ('link_2', 's:30:\"http://newcaza.yez.vn/magazine\";'),
 ('link_3', 's:39:\"http://newcaza.yez.vn/shop/category/ghe\";'),
 ('link_4', 's:21:\"http://newcaza.yez.vn\";'),
-('long_description1', 's:0:\"\";'),
-('long_description2', 's:0:\"\";'),
+('long_description1', 's:1894:\"<div \">\r\n<h1><span style=\"font-size:36px\"><strong>Li&ecirc;n hệ</strong></span></h1>\r\n<img alt=\"\" class=\"img-logo\" src=\"/uploads/browse/images/logo(3).jpg\" style=\"height:243px; width:412px\" />\r\n<div class=\"box entry-content mark-links post-content\">\r\n<p><span style=\"font-size:18px\"><strong>Ng&acirc;n H&agrave;ng Vietcombank chi nh&aacute;nh T&acirc;y Hồ&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strong></span></p>\r\n\r\n<p><span style=\"font-size:18px\">Số t&agrave;i khoản: 0991000007854</span></p>\r\n\r\n<p><span style=\"font-size:18px\">T&ecirc;n t&agrave;i khoản : B&ugrave;i Thị Thủy</span></p>\r\n\r\n<p><span style=\"font-size:18px\">Sở giao dịch&nbsp;H&agrave; Nội</span></p>\r\n\r\n<p><span style=\"font-size:18px\"><strong>Ng&acirc;n h&agrave;ng Agribank chi nh&aacute;nh H&agrave; Th&agrave;nh&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></span></p>\r\n\r\n<p><span style=\"font-size:18px\">Số t&agrave;i khoản: 1303206122800</span></p>\r\n\r\n<p><span style=\"font-size:18px\">T&ecirc;n t&agrave;i khoản: B&ugrave;i Thị Thủy</span></p>\r\n\r\n<h2><span style=\"font-size:18px\"><strong>C&ocirc;ng ty TNHH sản xuất v&agrave; thương mại Tuấn Nguy&ecirc;n&nbsp;</strong></span></h2>\r\n\r\n<p><span style=\"font-size:18px\">Nh&agrave; cung cấp uy t&iacute;n</span></p>\r\n\r\n<p><span style=\"font-size:18px\">Địa chỉ: Số nh&agrave; 12,d&atilde;y B,khu 105 đường Lạc Long Qu&acirc;n,T&acirc;y Hồ,H&agrave; Nội</span></p>\r\n\r\n<p><span style=\"font-size:18px\">Điện thoại:&nbsp;01657137288 &ndash; 0973387133</span></p>\r\n\r\n<p><span style=\"font-size:18px\">Email:&nbsp;thamototuannguyen@gmail.com</span></p>\r\n</div>\r\n</div>\";'),
+('long_description2', 's:9211:\"<div class=\"inner\">\r\n<div class=\"grid\">\r\n<div class=\"grid__item large--one-whole\">\r\n<div class=\"page-head\">\r\n<h1>C&ocirc;ng ty TNHH sản xuất v&agrave; thương mại Tuấn Nguy&ecirc;n</h1>\r\n</div>\r\n\r\n<div class=\"rte\">\r\n<p>C&ugrave;ng với sự ph&aacute;t triển của ng&agrave;nh c&ocirc;ng nghệ &ocirc; t&ocirc; C&ocirc;ng ty TNHH sản xuất v&agrave; thương mại Tuấn Nguy&ecirc;n đ&atilde; c&oacute; 5 năm kinh nghiệm may thảm 4D,5D,6D v&agrave; bắt đầu từ ng&agrave;y 14/04/2016 C&ocirc;ng ty ch&uacute;ng t&ocirc;i mở rộng th&ecirc;m lĩnh vực chuyển giao c&ocirc;ng nghệ cho c&aacute;c xưởng sản xuất mới th&agrave;nh lập. Trải qua hơn 5 năm th&agrave;nh lập,ph&aacute;t triền dưới sự l&atilde;nh đạo của Gi&aacute;m Đốc c&ugrave;ng những nỗ lực phấn đấu của c&aacute;c nh&acirc;n vi&ecirc;n,C&ocirc;ng ty đ&atilde; kh&ocirc;ng ngừng ph&aacute;t triển trở th&agrave;nh doanh nghiệp uy t&iacute;n,chuy&ecirc;n nghiệp v&agrave; dần c&oacute; chỗ đứng tr&ecirc;n thị trường</p>\r\n<!-- Text gioi thieu -->\r\n\r\n<p style=\"margin-left:0px; margin-right:0px\">&nbsp;&nbsp;<img alt=\"\" class=\"attachment-266x266\" src=\"https://tuannguyen168.vn/wp-content/uploads/2015/11/08de245476fa98a4c1eb.jpg\" style=\"border:0px; float:right; font:inherit; height:auto !important; margin:0px; max-width:100%; padding:0px; vertical-align:baseline; width:402px\" />Logo C&ocirc;ng ty TNHH sản xuất v&agrave; thương mại Tuấn Nguy&ecirc;n</p>\r\n\r\n<p style=\"margin-left:0px; margin-right:0px\">Với slogan &ldquo; tất cả v&igrave; xế y&ecirc;u của bạn &ldquo;&nbsp; <img alt=\"\" src=\"/uploads/browse/images/logo.jpg\" style=\"float:right; height:243px; width:412px\" /></p>\r\n\r\n<p style=\"margin-left:0px; margin-right:0px\">C&ocirc;ng ty đ&atilde;, đang cung cấp c&aacute;c c&aacute;c sản phẩm v&agrave; dịch vụ ng&agrave;nh &ocirc; t&ocirc; đa dạng</p>\r\n\r\n<p style=\"margin-left:0px; margin-right:0px\">phục vụ kh&aacute;ch h&agrave;ng như :</p>\r\n\r\n<ul style=\"margin-left:2.5em; margin-right:0px\">\r\n <li>Cung cấp thảm v&agrave; nguy&ecirc;n vật liệu sản xuất thảm 5D,6D</li>\r\n  <li>Cung cấp c&aacute;c m&aacute;y m&oacute;c sản xuất hiện đại trong ng&agrave;nh may thảm &ocirc; t&ocirc;,lắp đặt miễn ph&iacute; tại nh&agrave;</li>\r\n  <li>Cung cấp to&agrave;n bộ c&aacute;c fom, mẫu của c&aacute;c h&atilde;ng xe, c&aacute;c đời kh&aacute;c nhau</li>\r\n <li>Dạy to&agrave;n bộ quy tr&igrave;nh sản xuất thảm,chuyển giao c&ocirc;ng nghệ cho c&aacute;c xưởng mới th&agrave;nh lập</li>\r\n</ul>\r\n\r\n<p style=\"margin-left:0px; margin-right:0px\">Phương ch&acirc;m đặt kh&aacute;ch h&agrave;ng l&ecirc;n h&agrave;ng đầu,lấy kh&aacute;ch h&agrave;ng l&agrave;m gi&aacute; trị cốt l&otilde;i C&ocirc;ng ty lu&ocirc;n lắng nghe,thấu hiểu ,tiếp thu những y&ecirc;u cầu,nhận x&eacute;t của kh&aacute;ch h&agrave;ng để ph&aacute;t triển c&ocirc;ng ty ng&agrave;y c&agrave;ng vững mạnh hơn,phục vụ kh&aacute;ch h&agrave;ng chất lượng tốt nhất.</p>\r\n\r\n<p style=\"margin-left:0px; margin-right:0px\">C&ocirc;ng ty TNHH sản xuất v&agrave; thương mại Tuấn Nguy&ecirc;n ch&acirc;n th&agrave;nh cảm ơn qu&yacute; kh&aacute;ch h&agrave;ng đ&atilde; lu&ocirc;n ủng hộ v&agrave; tin d&ugrave;ng sản phẩm của C&ocirc;ng ty.</p>\r\n\r\n<p style=\"margin-left:0px; margin-right:0px\"><span style=\"color:#ff0000\">&nbsp;<strong>Xem ngay nếu bạn quan t&acirc;m:&nbsp;</strong></span></p>\r\n\r\n<p style=\"margin-left:0px; margin-right:0px\">https://www.facebook.com/nguyenlieumaytham5d/&nbsp;</p>\r\n\r\n<p style=\"margin-left:0px; margin-right:0px\"><strong>&nbsp;<a href=\"https://tuannguyen168.vn/cam-ket-ve-chat-luong-va-dich-vu\" style=\"color: rgb(201, 58, 42); margin: 0px; padding: 0px; border: 0px; font: inherit; vertical-align: baseline; text-decoration-line: none; transition: all 0.25s ease 0s;\">Cam kết về chất lượng dịch vụ, sản phẩm khi mua h&agrave;ng</a></strong></p>\r\n\r\n<h2 style=\"margin-left:0px; margin-right:0px\">Một v&agrave;i h&igrave;nh ảnh về C&ocirc;ng ty</h2>\r\n\r\n<p style=\"margin-left:0px; margin-right:0px\">Giấy đăng k&yacute; kinh doanh C&ocirc;ng Ty :</p>\r\n\r\n<p style=\"margin-left:0px; margin-right:0px\"><img alt=\"\" class=\"attachment-266x266\" src=\"https://tuannguyen168.vn/wp-content/uploads/2018/07/GI%E1%BA%A4Y-%C4%90KKD_M%E1%BA%B6T-TR%C6%AF%E1%BB%9AC.jpg\" style=\"border:0px; font:inherit; height:auto !important; margin:0px; max-width:100%; padding:0px; vertical-align:baseline; width:235px\" /><img alt=\"\" class=\"attachment-266x266\" src=\"https://tuannguyen168.vn/wp-content/uploads/2018/07/GI%E1%BA%A4Y-%C4%90KKD_M%E1%BA%B6T-SAU.jpg\" style=\"border:0px; font:inherit; height:auto !important; margin:0px; max-width:100%; padding:0px; vertical-align:baseline; width:232px\" /></p>\r\n\r\n<p style=\"margin-left:0px; margin-right:0px\">Thảm tr&aacute;m cafe rối cafe</p>\r\n\r\n<p style=\"margin-left:0px; margin-right:0px\">Đến với&nbsp;<strong>C&ocirc;ng ty Tuấn Nguy&ecirc;n</strong>,đội ngũ thợ l&agrave;nh nghề c&oacute; kinh nghiệm l&acirc;u năm c&ugrave;ng với những thiết bị hiện đại trong ng&agrave;nh sản xuất thảm,đội ngũ nh&acirc;n vi&ecirc;n tư vấn nhiệt t&igrave;nh, năng động v&agrave; am hiểu sản phẩm của ch&uacute;ng t&ocirc;i sẽ gi&uacute;p bạn lựa chọn được những sản phẩm ph&ugrave; hợp nhất.</p>\r\n\r\n<p style=\"margin-left:0px; margin-right:0px\">Ngo&agrave;i sản xuất thảm 5D,6D,C&ocirc;ng ty c&ograve;n chuy&ecirc;n<strong>&nbsp;cung cấp nguy&ecirc;n vật liệu sản xuất thảm,cung cấp m&aacute;y thiết bị hiện đại</strong>&nbsp;<strong>v&agrave; chuyển giao c&ocirc;ng nghệ sản xuất thảm cho xưởng mới mở&nbsp;&hellip;</strong>&nbsp;Sản phẩm lu&ocirc;n được kiểm tra chất lượng kỹ lưỡng để gửi tới kh&aacute;ch h&agrave;ng.</p>\r\n\r\n<p style=\"margin-left:0px; margin-right:0px\">Sự h&agrave;i l&ograve;ng của kh&aacute;ch h&agrave;ng về sản phẩm, dịch vụ l&agrave; bước tiến gi&uacute;p C&ocirc;ng ty ph&aacute;t triển mạnh hơn. Do đ&oacute;, với mục ti&ecirc;u đặt lợi &iacute;ch v&agrave; sự uy t&iacute;n của người sử dụng l&ecirc;n h&agrave;ng đầu, đưa tới tay người ti&ecirc;u d&ugrave;ng những sản phẩm&nbsp;<strong>h&agrave;ng tốt nhất &ndash; gi&aacute; hợp l&yacute; nhất&nbsp;</strong>&nbsp;ch&uacute;ng t&ocirc;i tin rằng sẽ mang lại niềm tin vững chắc, đ&aacute;p ứng sự kỳ vọng của qu&yacute; kh&aacute;ch h&agrave;ng.</p>\r\n\r\n<h2 style=\"margin-left:0px; margin-right:0px\">1 v&agrave;i h&igrave;nh ảnh xưởng sản xuất thảm 5D,6D</h2>\r\n\r\n<p style=\"margin-left:0px; margin-right:0px\"><img alt=\"\" class=\"attachment-266x266\" src=\"https://tuannguyen168.vn/wp-content/uploads/2015/11/df032e9afc30126e4b21.jpg\" style=\"border:0px; font:inherit; height:auto !important; margin:0px; max-width:100%; padding:0px; vertical-align:baseline; width:363px\" /></p>\r\n\r\n<p style=\"margin-left:0px; margin-right:0px\">Cắt thảm để may kh&acirc;u đầu ti&ecirc;n</p>\r\n\r\n<p style=\"margin-left:0px; margin-right:0px\"><img alt=\"\" class=\"attachment-266x266\" src=\"https://tuannguyen168.vn/wp-content/uploads/2015/11/72926538b79259cc0083.jpg\" style=\"border:0px; font:inherit; height:auto !important; margin:0px; max-width:100%; padding:0px; vertical-align:baseline; width:422px\" /></p>\r\n\r\n<p style=\"margin-left:0px; margin-right:0px\">May thảm 5D,6D</p>\r\n\r\n<p style=\"margin-left:0px; margin-right:0px\"><img alt=\"\" class=\"attachment-266x266\" src=\"https://tuannguyen168.vn/wp-content/uploads/2015/11/IMG_2503.jpg\" style=\"border:0px; font:inherit; height:auto !important; margin:0px; max-width:100%; padding:0px; vertical-align:baseline; width:475px\" /></p>\r\n\r\n<p style=\"margin-left:0px; margin-right:0px\">Ho&agrave;n thiện sản phẩm thảm 6D</p>\r\n\r\n<p style=\"margin-left:0px; margin-right:0px\"><img alt=\"\" class=\"attachment-266x266\" src=\"https://tuannguyen168.vn/wp-content/uploads/2015/11/29342287_106085190234268_5738173652889763840_n.jpg\" style=\"border:0px; font:inherit; height:auto !important; margin:0px; max-width:100%; padding:0px; vertical-align:baseline; width:462px\" /></p>\r\n\r\n<p style=\"margin-left:0px; margin-right:0px\">Sản phẩm c&oacute; nhiều k&iacute;ch thước,mẫu để qu&yacute; kh&aacute;ch lựa chọn</p>\r\n\r\n<p style=\"margin-left:0px; margin-right:0px\"><strong><span style=\"color:#ff0000\">C&ocirc;ng ty TNHH sản xuất v&agrave; thương mại Tuấn Nguy&ecirc;n nhận giao h&agrave;ng khắp 63 tỉnh th&agrave;nh của nước ta&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></strong></p>\r\n\r\n<p style=\"margin-left:0px; margin-right:0px\"><img alt=\"\" class=\"attachment-266x266\" src=\"https://tuannguyen168.vn/wp-content/uploads/2015/11/IMG_2544.jpg\" style=\"border:0px; font:inherit; height:auto !important; margin:0px; max-width:100%; padding:0px; vertical-align:baseline; width:471px\" /></p>\r\n<!-- end text gioi thieu --></div>\r\n</div>\r\n</div>\r\n</div>\";'),
 ('mapping', 'a:0:{}'),
 ('max_upload_file_size', 's:5:\"10000\";'),
 ('minimum_characters', 'i:3;'),
@@ -554,10 +570,10 @@ INSERT INTO `settings` (`setting_key`, `setting_value`) VALUES
 ('remove_movement', 's:2:\"20\";'),
 ('sales_person', 'i:0;'),
 ('shipping_return', 's:574:\"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\";'),
-('site_email', 's:15:\"admin@admin.com\";'),
-('site_logo', 's:19:\"logo_1540486419.png\";'),
-('site_name', 's:3:\"CRM\";'),
-('slogan', 's:146:\"Care Cam kết nỗ lực hết mình nhằm cung cấp sản phẩm và dịch vụ đúng với những giá trị mà khách hàng mong đợi.\";'),
+('site_email', 's:23:\"tuannguyen168@gmail.com\";'),
+('site_logo', 's:19:\"logo_1540490343.png\";'),
+('site_name', 's:14:\"Tuấn Nguyên\";'),
+('slogan', 's:152:\"Tuấn Nguyên kết nỗ lực hết mình nhằm cung cấp sản phẩm và dịch vụ đúng với những giá trị mà khách hàng mong đợi.\";'),
 ('stripe_publishable', 's:0:\"\";'),
 ('stripe_secret', 's:0:\"\";'),
 ('time_format', 's:3:\"H:i\";'),
@@ -573,7 +589,7 @@ INSERT INTO `settings` (`setting_key`, `setting_value`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -598,16 +614,16 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `permissions`, `last_login`, `first_name`, `last_name`, `phone_number`, `user_avatar`, `user_id`, `created_at`, `updated_at`, `deleted_at`, `lang`, `status`, `storage_id`, `to_storage`, `description`) VALUES
-(1, 'admin@admin.com', '$2y$10$TRbYufe1k.IGtPjHsQZWAu7lcpUijLw6tnvAQ.hzTI0o2a90aFSdi', NULL, '2018-10-23 14:08:43', 'Admin', 'CRM', '0123456789', 'chevrolet-cruze-2017-2018-1_1540486383.jpg', 1, '2017-08-14 18:20:22', '2018-10-25 16:53:03', NULL, 'en', 1, 1, 42, NULL);
+(1, 'admin@admin.com', '$2y$10$TRbYufe1k.IGtPjHsQZWAu7lcpUijLw6tnvAQ.hzTI0o2a90aFSdi', NULL, '2018-10-26 07:39:41', 'Admin', 'CRM', '0123456789', 'chevrolet-cruze-2017-2018-1_1540486383.jpg', 1, '2017-08-14 18:20:22', '2018-10-26 07:39:41', NULL, 'vi', 1, 1, 42, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `user_login`
+-- Table structure for table `user_login`
 --
 
 CREATE TABLE `user_login` (
@@ -620,93 +636,97 @@ CREATE TABLE `user_login` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `user_login`
+-- Dumping data for table `user_login`
 --
 
 INSERT INTO `user_login` (`id`, `user_id`, `ip_address`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 1, '::1', '2018-10-23 14:08:44', '2018-10-23 14:08:44', NULL);
+(1, 1, '::1', '2018-10-23 14:08:44', '2018-10-23 14:08:44', NULL),
+(2, 1, '1.52.123.43', '2018-10-25 17:53:00', '2018-10-25 17:53:00', NULL),
+(3, 1, '58.187.29.110', '2018-10-25 17:56:53', '2018-10-25 17:56:53', NULL),
+(4, 1, '118.70.185.166', '2018-10-26 01:26:25', '2018-10-26 01:26:25', NULL),
+(5, 1, '58.187.67.165', '2018-10-26 07:39:41', '2018-10-26 07:39:41', NULL);
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `activations`
+-- Indexes for table `activations`
 --
 ALTER TABLE `activations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `banner`
+-- Indexes for table `banner`
 --
 ALTER TABLE `banner`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `banner_image`
+-- Indexes for table `banner_image`
 --
 ALTER TABLE `banner_image`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `categories`
+-- Indexes for table `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `colors`
+-- Indexes for table `colors`
 --
 ALTER TABLE `colors`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `images`
+-- Indexes for table `images`
 --
 ALTER TABLE `images`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `persistences`
+-- Indexes for table `persistences`
 --
 ALTER TABLE `persistences`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `persistences_code_unique` (`code`);
 
 --
--- Chỉ mục cho bảng `products`
+-- Indexes for table `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `revisions`
+-- Indexes for table `revisions`
 --
 ALTER TABLE `revisions`
   ADD PRIMARY KEY (`id`),
   ADD KEY `revisions_revisionable_id_revisionable_type_index` (`revisionable_id`,`revisionable_type`);
 
 --
--- Chỉ mục cho bảng `roles`
+-- Indexes for table `roles`
 --
 ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `roles_slug_unique` (`slug`);
 
 --
--- Chỉ mục cho bảng `role_users`
+-- Indexes for table `role_users`
 --
 ALTER TABLE `role_users`
   ADD PRIMARY KEY (`user_id`,`role_id`);
 
 --
--- Chỉ mục cho bảng `settings`
+-- Indexes for table `settings`
 --
 ALTER TABLE `settings`
   ADD UNIQUE KEY `settings_setting_key_unique` (`setting_key`);
 
 --
--- Chỉ mục cho bảng `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
@@ -714,86 +734,86 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- Chỉ mục cho bảng `user_login`
+-- Indexes for table `user_login`
 --
 ALTER TABLE `user_login`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `activations`
+-- AUTO_INCREMENT for table `activations`
 --
 ALTER TABLE `activations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `banner`
+-- AUTO_INCREMENT for table `banner`
 --
 ALTER TABLE `banner`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `banner_image`
+-- AUTO_INCREMENT for table `banner_image`
 --
 ALTER TABLE `banner_image`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT cho bảng `categories`
+-- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT cho bảng `colors`
+-- AUTO_INCREMENT for table `colors`
 --
 ALTER TABLE `colors`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
--- AUTO_INCREMENT cho bảng `images`
+-- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT cho bảng `persistences`
+-- AUTO_INCREMENT for table `persistences`
 --
 ALTER TABLE `persistences`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT cho bảng `products`
+-- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT cho bảng `revisions`
+-- AUTO_INCREMENT for table `revisions`
 --
 ALTER TABLE `revisions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=116;
 
 --
--- AUTO_INCREMENT cho bảng `roles`
+-- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT cho bảng `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `user_login`
+-- AUTO_INCREMENT for table `user_login`
 --
 ALTER TABLE `user_login`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

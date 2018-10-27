@@ -49,11 +49,12 @@
     <session id="1302591147">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.30" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.open.time.44" value="1" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -336,6 +337,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -347,12 +349,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../caza-system" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../lcrm" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
@@ -394,6 +395,7 @@
       <workItem from="1540259465181" duration="9956000" />
       <workItem from="1540270655246" duration="7972000" />
       <workItem from="1540285652463" duration="2454000" />
+      <workItem from="1540535656711" duration="21000" />
     </task>
     <task id="LOCAL-00001" summary="add menu admin">
       <created>1540277133785</created>
@@ -406,12 +408,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25858000" />
+    <option name="totallyTimeSpent" value="25879000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="50" y="-11" width="1871" height="1092" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32254526" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32638508" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -423,7 +425,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.3294979" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32881" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" />
@@ -787,11 +789,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="524">
           <caret line="329" column="128" selection-start-line="329" selection-start-column="128" selection-end-line="329" selection-end-column="128" />
-          <folding>
-            <element signature="e#14553#14576#0#HTML" expanded="true" />
-            <element signature="e#14883#15439#0#HTML" />
-            <element signature="e#16273#16364#0#HTML" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
