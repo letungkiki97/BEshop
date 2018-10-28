@@ -52,6 +52,71 @@
         </ul>
     </li>
     @endif
+    {{-- Purchase group --}}
+    @if(isset($user_data) && ($user_data->hasAccess(['purchase_management.list']) ||  $user_data->inRole('admin')))
+    <li {!! (Request::is( 'quantri/order/*') || Request::is( 'quantri/order')) !!}>
+        <a>
+            <span class="nav-caret pull-right">
+          <i class="fa fa-fw fa-caret-down"></i>
+        </span>
+            <span class="nav-icon">
+            <i class="fa fa-fw fa-ship text-primary"></i>
+        </span>
+            <span class="nav-text">{{__('left_menu.purchase_management')}}</span>
+        </a>
+        <ul class="nav-sub">
+            @if($user_data->hasAccess(['order.list']) || $user_data->inRole('admin'))
+            <li {!! ((Request::is( 'quantri/order/*') || Request::is( 'quantri/order')) && !request()->status ? 'class="active"' : '') !!}>
+                <a href="{{url('quantri/order')}}">
+                    <i class="fa fa-fw fa-ship text-info"></i>
+                    <span class="nav-text">{{__('left_menu.purchase')}} - All</span>
+                </a>
+            </li>
+            @endif
+            @if($user_data->hasAccess(['order.draft']) || $user_data->inRole('admin'))
+            <li {!! (Request::is( 'quantri/order*') && request()->status == 'Draft' ? 'class="active"' : '') !!}>
+                <a href="{{url('quantri/order?status=Draft')}}">
+                    <i class="fa fa-fw fa-ship text-warning"></i>
+                    <span class="nav-text">{{__('left_menu.purchase')}} - Draft</span>
+                </a>
+            </li>
+            @endif
+            @if($user_data->hasAccess(['order.active']) || $user_data->inRole('admin'))
+            <li {!! (Request::is( 'quantri/order*') && request()->status == 'Active' ? 'class="active"' : '') !!}>
+                <a href="{{url('quantri/order?status=Active')}}">
+                    <i class="fa fa-fw fa-ship"></i>
+                    <span class="nav-text">{{__('left_menu.purchase')}} - Active</span>
+                </a>
+            </li>
+            @endif
+            @if($user_data->hasAccess(['order.received']) || $user_data->inRole('admin'))
+            <li {!! (Request::is( 'quantri/order*') && request()->status == 'Received' ? 'class="active"' : '') !!}>
+                <a href="{{url('quantri/order?status=Received')}}">
+                    <i class="fa fa-fw fa-ship text-success"></i>
+                    <span class="nav-text">{{__('left_menu.purchase')}} - Received</span>
+                </a>
+            </li>
+            @endif
+            @if($user_data->hasAccess(['order.paid']) || $user_data->inRole('admin'))
+            <li {!! (Request::is( 'quantri/order*') && request()->status == 'Paid' ? 'class="active"' : '') !!}>
+                <a href="{{url('quantri/order?status=Paid')}}">
+                    <i class="fa fa-fw fa-ship text-primary"></i>
+                    <span class="nav-text">{{__('left_menu.purchase')}} - Paid</span>
+                </a>
+            </li>
+            @endif
+            @if($user_data->hasAccess(['order.cancelled']) || $user_data->inRole('admin'))
+            <li {!! (Request::is( 'quantri/order*') && request()->status == 'Cancelled' ? 'class="active"' : '') !!}>
+                <a href="{{url('quantri/order?status=Cancelled')}}">
+                    <i class="fa fa-fw fa-ship text-danger"></i>
+                    <span class="nav-text">{{__('left_menu.purchase')}} - Cancelled</span>
+                </a>
+            </li>
+            @endif
+        </ul>
+    </li>
+    @endif 
+
     {{-- Content group --}}
     @if(isset($user_data) && ($user_data->hasAccess(['content_management.list']) || $user_data->inRole('admin')))
         <li {!! Request::is( 'quantri/image/*') || Request::is('quantri/image') ? 'class="active"' : '' !!}>
