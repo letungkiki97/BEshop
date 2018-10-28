@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Oct 27, 2018 at 04:15 PM
--- Server version: 5.6.41-cll-lve
--- PHP Version: 5.6.30
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th10 28, 2018 lúc 12:08 PM
+-- Phiên bản máy phục vụ: 10.1.34-MariaDB
+-- Phiên bản PHP: 7.1.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `tuannguy_laravel`
+-- Cơ sở dữ liệu: `test_beshop`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `activations`
+-- Cấu trúc bảng cho bảng `activations`
 --
 
 CREATE TABLE `activations` (
@@ -39,7 +39,7 @@ CREATE TABLE `activations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `activations`
+-- Đang đổ dữ liệu cho bảng `activations`
 --
 
 INSERT INTO `activations` (`id`, `user_id`, `code`, `completed`, `completed_at`, `created_at`, `updated_at`) VALUES
@@ -48,7 +48,7 @@ INSERT INTO `activations` (`id`, `user_id`, `code`, `completed`, `completed_at`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `banner`
+-- Cấu trúc bảng cho bảng `banner`
 --
 
 CREATE TABLE `banner` (
@@ -61,7 +61,7 @@ CREATE TABLE `banner` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `banner`
+-- Đang đổ dữ liệu cho bảng `banner`
 --
 
 INSERT INTO `banner` (`id`, `name`, `image`, `size`, `created_at`, `updated_at`) VALUES
@@ -70,7 +70,7 @@ INSERT INTO `banner` (`id`, `name`, `image`, `size`, `created_at`, `updated_at`)
 -- --------------------------------------------------------
 
 --
--- Table structure for table `banner_image`
+-- Cấu trúc bảng cho bảng `banner_image`
 --
 
 CREATE TABLE `banner_image` (
@@ -101,7 +101,7 @@ CREATE TABLE `banner_image` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `banner_image`
+-- Đang đổ dữ liệu cho bảng `banner_image`
 --
 
 INSERT INTO `banner_image` (`id`, `image_id`, `banner_id`, `position`, `link`, `text_text`, `text_color`, `text_font`, `text_size`, `text_left`, `text_right`, `text_top`, `text_bottom`, `button_background`, `button_text`, `button_color`, `button_font`, `button_size`, `button_left`, `button_right`, `button_top`, `button_bottom`, `created_at`, `updated_at`) VALUES
@@ -111,7 +111,7 @@ INSERT INTO `banner_image` (`id`, `image_id`, `banner_id`, `position`, `link`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Cấu trúc bảng cho bảng `categories`
 --
 
 CREATE TABLE `categories` (
@@ -129,7 +129,7 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `categories`
+-- Đang đổ dữ liệu cho bảng `categories`
 --
 
 INSERT INTO `categories` (`id`, `name`, `user_id`, `created_at`, `updated_at`, `deleted_at`, `code`, `parent_id`, `slug`, `meta_title`, `meta_description`) VALUES
@@ -144,7 +144,7 @@ INSERT INTO `categories` (`id`, `name`, `user_id`, `created_at`, `updated_at`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `colors`
+-- Cấu trúc bảng cho bảng `colors`
 --
 
 CREATE TABLE `colors` (
@@ -156,7 +156,7 @@ CREATE TABLE `colors` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `colors`
+-- Đang đổ dữ liệu cho bảng `colors`
 --
 
 INSERT INTO `colors` (`id`, `color`, `value`, `created_at`, `updated_at`) VALUES
@@ -173,7 +173,7 @@ INSERT INTO `colors` (`id`, `color`, `value`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `images`
+-- Cấu trúc bảng cho bảng `images`
 --
 
 CREATE TABLE `images` (
@@ -188,7 +188,7 @@ CREATE TABLE `images` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `images`
+-- Đang đổ dữ liệu cho bảng `images`
 --
 
 INSERT INTO `images` (`id`, `name`, `title`, `alt`, `path`, `created_at`, `updated_at`, `status`) VALUES
@@ -215,7 +215,30 @@ INSERT INTO `images` (`id`, `name`, `title`, `alt`, `path`, `created_at`, `updat
 -- --------------------------------------------------------
 
 --
--- Table structure for table `persistences`
+-- Cấu trúc bảng cho bảng `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `order_date` date NOT NULL,
+  `receiving_date` date NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `user_phone` varchar(15) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `payment` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `url` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `total` bigint(20) NOT NULL,
+  `vat` int(11) NOT NULL,
+  `discount` int(11) NOT NULL,
+  `order_from` tinyint(1) NOT NULL,
+  `note` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `persistences`
 --
 
 CREATE TABLE `persistences` (
@@ -227,7 +250,7 @@ CREATE TABLE `persistences` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `persistences`
+-- Đang đổ dữ liệu cho bảng `persistences`
 --
 
 INSERT INTO `persistences` (`id`, `user_id`, `code`, `created_at`, `updated_at`) VALUES
@@ -242,7 +265,7 @@ INSERT INTO `persistences` (`id`, `user_id`, `code`, `created_at`, `updated_at`)
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Cấu trúc bảng cho bảng `products`
 --
 
 CREATE TABLE `products` (
@@ -291,7 +314,7 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `products`
+-- Đang đổ dữ liệu cho bảng `products`
 --
 
 INSERT INTO `products` (`id`, `catego`, `product_name`, `product_image`, `category_id`, `status`, `sale_price`, `description`, `long_description`, `user_id`, `main_sku`, `product_sku`, `made_to_order`, `product_gallery`, `file_3d`, `product_url`, `published`, `product_weight`, `product_length`, `product_width`, `product_depth`, `delivery_category_id`, `promotion_price`, `promotion_from`, `promotion_to`, `professional_price`, `re_order_point`, `unit_value`, `total_value`, `created_at`, `updated_at`, `deleted_at`, `is_variant`, `lead_time`, `unlink`, `slug`, `meta_title`, `meta_description`, `focus_keyword`, `assigned_to`, `hover_image`, `main_variant`) VALUES
@@ -303,7 +326,7 @@ INSERT INTO `products` (`id`, `catego`, `product_name`, `product_image`, `catego
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product_category`
+-- Cấu trúc bảng cho bảng `product_category`
 --
 
 CREATE TABLE `product_category` (
@@ -314,7 +337,7 @@ CREATE TABLE `product_category` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product_color`
+-- Cấu trúc bảng cho bảng `product_color`
 --
 
 CREATE TABLE `product_color` (
@@ -325,7 +348,7 @@ CREATE TABLE `product_color` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `product_color`
+-- Đang đổ dữ liệu cho bảng `product_color`
 --
 
 INSERT INTO `product_color` (`product_id`, `color_id`, `created_at`, `updated_at`) VALUES
@@ -334,7 +357,7 @@ INSERT INTO `product_color` (`product_id`, `color_id`, `created_at`, `updated_at
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product_image`
+-- Cấu trúc bảng cho bảng `product_image`
 --
 
 CREATE TABLE `product_image` (
@@ -343,7 +366,7 @@ CREATE TABLE `product_image` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `product_image`
+-- Đang đổ dữ liệu cho bảng `product_image`
 --
 
 INSERT INTO `product_image` (`product_id`, `image_id`) VALUES
@@ -359,7 +382,18 @@ INSERT INTO `product_image` (`product_id`, `image_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `revisions`
+-- Cấu trúc bảng cho bảng `product_orders`
+--
+
+CREATE TABLE `product_orders` (
+  `product_id` int(11) NOT NULL,
+  `purchase_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `revisions`
 --
 
 CREATE TABLE `revisions` (
@@ -375,7 +409,7 @@ CREATE TABLE `revisions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `revisions`
+-- Đang đổ dữ liệu cho bảng `revisions`
 --
 
 INSERT INTO `revisions` (`id`, `revisionable_type`, `revisionable_id`, `user_id`, `key`, `old_value`, `new_value`, `created_at`, `updated_at`) VALUES
@@ -428,12 +462,12 @@ INSERT INTO `revisions` (`id`, `revisionable_type`, `revisionable_id`, `user_id`
 (106, 'App\\Models\\Product', 1, 1, 'long_description', 'Xe sx v&agrave; đk lần đầu 2014, chạy zin hơn 7v ch&uacute;t, biển hn, keo chỉ v&agrave; m&aacute;y m&oacute;c nguy&ecirc;n bản. V&igrave; mua sử dụng cho c&ocirc;ng việc n&ecirc;n m&igrave;nh cũng độ kh&aacute; nhiều thứ hay ho như bộ lốp lazang to, loa c&aacute;nh, sub, m&agrave;n h&igrave;nh, camera, hiển thị tr&ecirc;n gương, ghế da v&agrave; bộ l&oacute;t da to&agrave;n xe ...<br />\r\nXe c&ograve;n đăng kiểm 8/2019.&nbsp;<br />\r\nAi c&oacute; nhu cầu cứ qua xem rồi chốt gi&aacute;', '<p>Form s&agrave;n &ocirc; t&ocirc; Tuấn Nguy&ecirc;n đem đến cho kh&aacute;ch h&agrave;ng mẫu form xe: XXX đời XXX chuẩn x&aacute;c, vừa vặn nhất.&nbsp;<br />\r\ndo được lắp đặt tr&ecirc;n thực tế v&agrave; qua c&ocirc;ng nghệ qu&eacute;t form s&agrave;n xe mới nhất.<br />\r\nTuấn nguy&ecirc;n cam kết cho gi&aacute; trị của sản phẩm.<br />\r\nQu&ecirc;n đi những phiền to&aacute;i khi form lệch chuẩn, v&agrave; phải sửa đi sửa lại. Sản phẩm sẽ đem đến cho kh&aacute;ch h&agrave;ng sự an t&acirc;m v&agrave; phục vụ chuy&ecirc;n nghiệp. Chỉ cần đặt form l&ecirc;n v&agrave; cắt, kh&ocirc;ng lo lắng về vấn đề sửa lại thảm s&agrave;n bị sai.<br />\r\nƯu đ&atilde;i đặc biệt cho kh&aacute;ch h&agrave;ng sử dụng c&ocirc;ng nghệ may của Tuấn Nguy&ecirc;n sẽ được tặng to&agrave;n bộ form mẫu miễn ph&iacute;.<br />\r\nBảo h&agrave;nh Form mẫu khi c&oacute; bất k&igrave; lỗi n&agrave;o về thiết kế v&agrave; thực tế lắm đặt<br />\r\nTuấn Nguy&ecirc;n: &Uacute;y t&iacute;n l&agrave; ch&iacute;nh- Chất lượng l&agrave;m đầu</p>\r\n\r\n<p><img alt=\"\" src=\"/uploads/browse/images/Toyota%20Prado%202%20h%C3%A0ng%20gh%E1%BA%BF%202014-2016.jpg\" style=\"height:1200px; width:934px\" /></p>', '2018-10-25 18:56:22', '2018-10-25 18:56:22'),
 (111, 'App\\Models\\Product', 1, 1, 'product_image', '19', '20', '2018-10-25 18:59:36', '2018-10-25 18:59:36'),
 (113, 'App\\Models\\Product', 1, 1, 'product_image', '20', '21', '2018-10-25 19:00:20', '2018-10-25 19:00:20'),
-(115, 'App\\Models\\User', 1, 1, 'last_login', '2018-10-26 08:26:25', '2018-10-26 14:39:41', '2018-10-26 07:39:41', '2018-10-26 07:39:41');
+(116, 'App\\Models\\User', 1, 1, 'lang', 'vi', 'en', '2018-10-27 12:31:47', '2018-10-27 12:31:47');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `roles`
+-- Cấu trúc bảng cho bảng `roles`
 --
 
 CREATE TABLE `roles` (
@@ -446,7 +480,7 @@ CREATE TABLE `roles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `roles`
+-- Đang đổ dữ liệu cho bảng `roles`
 --
 
 INSERT INTO `roles` (`id`, `slug`, `name`, `permissions`, `created_at`, `updated_at`) VALUES
@@ -465,7 +499,7 @@ INSERT INTO `roles` (`id`, `slug`, `name`, `permissions`, `created_at`, `updated
 -- --------------------------------------------------------
 
 --
--- Table structure for table `role_users`
+-- Cấu trúc bảng cho bảng `role_users`
 --
 
 CREATE TABLE `role_users` (
@@ -476,7 +510,7 @@ CREATE TABLE `role_users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `role_users`
+-- Đang đổ dữ liệu cho bảng `role_users`
 --
 
 INSERT INTO `role_users` (`user_id`, `role_id`, `created_at`, `updated_at`) VALUES
@@ -496,7 +530,7 @@ INSERT INTO `role_users` (`user_id`, `role_id`, `created_at`, `updated_at`) VALU
 -- --------------------------------------------------------
 
 --
--- Table structure for table `settings`
+-- Cấu trúc bảng cho bảng `settings`
 --
 
 CREATE TABLE `settings` (
@@ -505,7 +539,7 @@ CREATE TABLE `settings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `settings`
+-- Đang đổ dữ liệu cho bảng `settings`
 --
 
 INSERT INTO `settings` (`setting_key`, `setting_value`) VALUES
@@ -589,7 +623,7 @@ INSERT INTO `settings` (`setting_key`, `setting_value`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Cấu trúc bảng cho bảng `users`
 --
 
 CREATE TABLE `users` (
@@ -614,16 +648,16 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `users`
+-- Đang đổ dữ liệu cho bảng `users`
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `permissions`, `last_login`, `first_name`, `last_name`, `phone_number`, `user_avatar`, `user_id`, `created_at`, `updated_at`, `deleted_at`, `lang`, `status`, `storage_id`, `to_storage`, `description`) VALUES
-(1, 'admin@admin.com', '$2y$10$TRbYufe1k.IGtPjHsQZWAu7lcpUijLw6tnvAQ.hzTI0o2a90aFSdi', NULL, '2018-10-26 07:39:41', 'Admin', 'CRM', '0123456789', 'chevrolet-cruze-2017-2018-1_1540486383.jpg', 1, '2017-08-14 18:20:22', '2018-10-26 07:39:41', NULL, 'vi', 1, 1, 42, NULL);
+(1, 'admin@admin.com', '$2y$10$TRbYufe1k.IGtPjHsQZWAu7lcpUijLw6tnvAQ.hzTI0o2a90aFSdi', NULL, '2018-10-26 07:39:41', 'Admin', 'CRM', '0123456789', 'chevrolet-cruze-2017-2018-1_1540486383.jpg', 1, '2017-08-14 18:20:22', '2018-10-27 12:31:47', NULL, 'en', 1, 1, 42, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_login`
+-- Cấu trúc bảng cho bảng `user_login`
 --
 
 CREATE TABLE `user_login` (
@@ -636,7 +670,7 @@ CREATE TABLE `user_login` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `user_login`
+-- Đang đổ dữ liệu cho bảng `user_login`
 --
 
 INSERT INTO `user_login` (`id`, `user_id`, `ip_address`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -647,86 +681,92 @@ INSERT INTO `user_login` (`id`, `user_id`, `ip_address`, `created_at`, `updated_
 (5, 1, '58.187.67.165', '2018-10-26 07:39:41', '2018-10-26 07:39:41', NULL);
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `activations`
+-- Chỉ mục cho bảng `activations`
 --
 ALTER TABLE `activations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `banner`
+-- Chỉ mục cho bảng `banner`
 --
 ALTER TABLE `banner`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `banner_image`
+-- Chỉ mục cho bảng `banner_image`
 --
 ALTER TABLE `banner_image`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `categories`
+-- Chỉ mục cho bảng `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `colors`
+-- Chỉ mục cho bảng `colors`
 --
 ALTER TABLE `colors`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `images`
+-- Chỉ mục cho bảng `images`
 --
 ALTER TABLE `images`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `persistences`
+-- Chỉ mục cho bảng `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `persistences`
 --
 ALTER TABLE `persistences`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `persistences_code_unique` (`code`);
 
 --
--- Indexes for table `products`
+-- Chỉ mục cho bảng `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `revisions`
+-- Chỉ mục cho bảng `revisions`
 --
 ALTER TABLE `revisions`
   ADD PRIMARY KEY (`id`),
   ADD KEY `revisions_revisionable_id_revisionable_type_index` (`revisionable_id`,`revisionable_type`);
 
 --
--- Indexes for table `roles`
+-- Chỉ mục cho bảng `roles`
 --
 ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `roles_slug_unique` (`slug`);
 
 --
--- Indexes for table `role_users`
+-- Chỉ mục cho bảng `role_users`
 --
 ALTER TABLE `role_users`
   ADD PRIMARY KEY (`user_id`,`role_id`);
 
 --
--- Indexes for table `settings`
+-- Chỉ mục cho bảng `settings`
 --
 ALTER TABLE `settings`
   ADD UNIQUE KEY `settings_setting_key_unique` (`setting_key`);
 
 --
--- Indexes for table `users`
+-- Chỉ mục cho bảng `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
@@ -734,83 +774,89 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- Indexes for table `user_login`
+-- Chỉ mục cho bảng `user_login`
 --
 ALTER TABLE `user_login`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `activations`
+-- AUTO_INCREMENT cho bảng `activations`
 --
 ALTER TABLE `activations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `banner`
+-- AUTO_INCREMENT cho bảng `banner`
 --
 ALTER TABLE `banner`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `banner_image`
+-- AUTO_INCREMENT cho bảng `banner_image`
 --
 ALTER TABLE `banner_image`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `categories`
+-- AUTO_INCREMENT cho bảng `categories`
 --
 ALTER TABLE `categories`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `colors`
+-- AUTO_INCREMENT cho bảng `colors`
 --
 ALTER TABLE `colors`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
--- AUTO_INCREMENT for table `images`
+-- AUTO_INCREMENT cho bảng `images`
 --
 ALTER TABLE `images`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT for table `persistences`
+-- AUTO_INCREMENT cho bảng `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT cho bảng `persistences`
 --
 ALTER TABLE `persistences`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `products`
+-- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `revisions`
+-- AUTO_INCREMENT cho bảng `revisions`
 --
 ALTER TABLE `revisions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=116;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
 
 --
--- AUTO_INCREMENT for table `roles`
+-- AUTO_INCREMENT cho bảng `roles`
 --
 ALTER TABLE `roles`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `user_login`
+-- AUTO_INCREMENT cho bảng `user_login`
 --
 ALTER TABLE `user_login`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
